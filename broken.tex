@@ -4,6 +4,11 @@
                 marginparwidth=20mm]{geometry}
 \usepackage{tikz}
 
+\usepackage[draft, layout=margin]{fixme}
+\fxsetup{theme=color}
+\FXRegisterAuthor{ss}{ass}{SS}
+\FXRegisterAuthor{mc}{amc}{MC}
+\FXRegisterAuthor{mg}{amg}{MG}
 \newcommand\mandy[1]{{\color{blue} \sf $\clubsuit\clubsuit\clubsuit$ Mandy: [#1]}}
 \newcommand\markg[1]{{\color{red} \sf $\clubsuit\clubsuit\clubsuit$ Mark: [#1]}}
 
@@ -179,7 +184,7 @@ $(\RR_{\geq 0}(0,-1), 1+A_2^c)  \}$ gives us rays in $\DD_{(b,c)} \backslash
 \DD_{\mathrm{in},(b,c)}$. Continuing to iterate the compositions of $S_1$ and $S_2$, 
 the rays will converge to the rays with slopes $-\frac{bc \pm \sqrt{bc(bc-4)}}{2b}$. This gives a complete description of the rays outside of the cone spanned by the two rays. Inside the cone, it is likely that there is a non-trivial
 ray of every possible rational slope. 
-\mandy{more detail at end?}\markg{Wait and see what other facts we need about
+\mcnote{more detail at end?}\mgnote{Wait and see what other facts we need about
 the diagram.} The chamber structure one sees outside of the quadratic 
 irrational cone is very well-behaved and familiar in the theory of
 cluster algebra. This chamber structure coincides with the Fock-Goncharov 
@@ -469,7 +474,7 @@ $cz^{m_0}A_1^{d_1}A_2^{d_2}$ with $d_1,d_2\ge 0$, $d_1+d_2>0$. This proves
 the result.
 \end{proof}
 
-\markg{It might be appropriate to add stuff about the quantum version here.
+\mgnote[layout=inline]{It might be appropriate to add stuff about the quantum version here.
 Right now I don't know if we can easily prove enough facts about the
 quantum version for our main result. I suggest we wait until the rest
 is written up and then I see whether it is possible to extend the proof
