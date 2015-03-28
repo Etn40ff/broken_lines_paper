@@ -1,0 +1,74 @@
+% This package provides marginal notes for multi-user editing
+% Based on an original code by N. Reading
+%
+% USAGE:
+% This package, called without options, adhere to the global draft/final latex options i.e. unless draft is passed to \documentclass it does nothing.
+% To override the global behaviour just pass manually the option draft or final that you want. For example
+% \usepackage[draft]{tofix}
+% will force the notes to appear
+% the extra option hidenumbers can be used avoid printing numbers in the text
+% \usepackage[draft,hidenumbers]{tofix}
+% to make a comment the command is
+% \tofix[Your name goes here ]{Your comment goes here.}
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tofix}[2015/03/27 Multi user marginal notes]
+
+% load required packages
+\RequirePackage{color}
+\RequirePackage{tikz}
+
+% define the boolean options we will need
+\newif\iftofixShow
+\newif\iftofixShowNumber
+
+% parse options
+\DeclareOption{draft}{
+  \tofixShowtrue
+  \tofixShowNumbertrue
+}
+
+\DeclareOption{final}{
+  \tofixShowfalse
+  \tofixShowNumberfalse
+}
+
+\DeclareOption{hidenumbers}{
+  \tofixShowNumberfalse
+}
+
+% read options
+\ProcessOptions\relax
+
+\ExecuteOptions{draft}
+
+% TODO: allow the user to set the colors via key options
+\newcommand{\tofixNumberColor}{red}
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\newcommand{\tofixAuthorColor}{darkgreen}
+
+% TODO: allow the user to set the width via an option
+% WARNING: I do not like this: it messes up with the general marginpar command and we should leave this alone
+% for the moment being is commented out
+%\addtolength{\marginparwidth}{3mm}
+
+\newcounter{tofixCounter}
+\setcounter{tofixCounter}{0}
+
+\iftofixShowNumber
+  \newcommand\tofixNumber{\tikz[baseline=(C.base)]\node[draw,circle,inner sep=0.5pt,line width=0.2mm, color=\tofixNumberColor](C) {\small \arabic{tofixCounter}};\!}
+\else
+  \newcommand{\tofixNumber}{}
+\fi
+
+
+\iftofixShow
+  \newcommand{\tofix}[2][]{
+    \!\!\refstepcounter{tofixCounter}\tofixNumber\marginpar{\textcolor{\tofixNumberColor}{\arabic{tofixCounter}.}\,\,\tiny #2\,\,\,\textcolor{\tofixAuthorColor}{\small#1}}
+  }
+\else
+  \newcommand{\tofix}[2][]{}
+\fi
+
+\endinput
