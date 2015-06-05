@@ -44,7 +44,7 @@
 \newcommand{\fom}{\mathfrak{m}}
 \newcommand{\gr}{\mathrm{gr}}
 \newcommand{\Mono}{\operatorname{Mono}}
-
+\newcommand{\Spec}{\operatorname{Spec}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Theta functions and greedy bases}
@@ -203,7 +203,7 @@ applying Theorem \ref{KS} to $\DD_{\mathrm{in},(b,c)}$.
 \begin{figure}
   \centering
   \begin{tikzpicture}
-    \draw (3,0) -- (-3,0) node[left] {$1+A_1^{-1}$};
+    \draw (3,0) -- (-3,0) node[left] {$1+A_1^{-2}$};
     \draw (0,-3) -- (0,3) node[above] {$1+A_2$};
     \draw (0,0) -- (3,-3) node[below right] {$1+A_1^{-2}A_2^2$};
     \draw (0,0) -- (3,-1.5) node[below right] {$1+A_1^{-2}A_2$};
@@ -330,12 +330,28 @@ and the corresponding cluster algebras:
 \end{theorem}
 
 \begin{proof}
-  This is a special case of \cite{GHKK}, Theorem 4.4.
-  \saySS{\label{say:different statement} The statement of \cite{GHKK},
-    Theorem 4.4 is quite different from our Theorem \ref{univLaurent}; do you
-    think we could add more explanations on how to get the latter from the
-    former? Maybe I am just being stupid and it is completely obvious from the
-    scattering diagram point of view.}
+  This is essentially \cite{GHKK}, Theorem 4.4, applied to the case at hand.
+  Specifically, let $\cA$ be the custer variety defined by the given choice of
+  seed. By definition, $\cA$ is given by gluing together a collection of tori
+  via cluster transformations, and a regular function on $\cA$ is precisely a
+  universal Laurent polynomial, i.e., a Laurent polynomial which remains a
+  Laurent polynomial after any sequence of mutations. On the other hand, in
+  \cite{GHKK}, \S 4, another variety $\cA'$ is defined. This is done by
+  associating a torus $\cA_{\tau}':= \Spec \Bbbk[M]$ to a chamber $\tau\subseteq
+  M_{\RR}$ of $\DD$. For any two chambers $\tau,\tau'$ we can glue $\cA_{\tau}'$
+  to $\cA_{\tau'}'$ using the rational map defined on function fields by
+  $\theta_{\gamma,\DD}:\Bbbk(A_1,A_2)\rightarrow \Bbbk(A_1,A_2)$, where $\gamma$
+  is a path beginning in $\tau'$ and ending in $\tau$. Performing these gluings
+  gives $\cA'$.
+
+  Now \cite{GHKK}, Theorem 4.4 gives an explicit isomorphism between $\cA$ and
+  $\cA'$, and thus the algebra of regular functions on $\cA$ and $\cA'$ are
+  isomorphic. Furthermore, this isomorphism restricts to the identity on the
+  torus of $\cA$ corresponding to the initial seed and the torus of $\cA'$
+  corresponding to the positive chamber. In particular, a function $f$ on this
+  torus extends to a function on $\cA'$ if $\theta_{\gamma,\DD}(f)$ lies in
+  $\Bbbk[M]$ for any path $\gamma$ from the positive chamber to any other
+  chamber. This shows the characterization of universal Laurent polynomials.
 \end{proof}
 
 We will now define broken lines. Broken lines were introduced in \cite{G10} as a
@@ -481,9 +497,11 @@ The following summarizes the main properties of the theta functions as shown in
 
 \begin{proof}
   (1) is a main result of \cite{CPS}, quoted in this context in \cite{GHKK},
-  Theorem 3.5.  The second statement follows from \cite{GHKK}, Proposition 8.26.
-  \saySS{Similarly to the marginal note \ref{say:different statement} the
-    statement of the cited result is quite different from the one given here.}
+  Theorem 3.5.  The second statement is \cite{GHKK}, Example 7.18: there,
+  $\Theta$ is the subset of $M$ consisting of those $m$ for which
+  $\vartheta_{Q,m}$ is a Laurent polynomial for $Q$ in the interior of 
+  some chamber of $\DD$ (and hence by \cite{GHKK}, Proposition 7.1, all 
+  chambers).
   Next, (3) follows from (2) by Theorem \ref{univLaurent}. 
   Finally, (4) follows from \cite{GHKK}, Proposition 3.8 (use the argument of
   \cite{GHKK}, Theorem 4.8 in the case that the chamber is not the positive
@@ -526,16 +544,6 @@ The following summarizes the main properties of the theta functions as shown in
 
 
 \section{Relation to greedy bases}
-As mentioned in Remark \ref{rk:theta functions g-vector}, theta functions are
-parametrized by their ${\bf g}$-vectors. On the other hand the description of
-greedy elements given in \cite{LLZ} is in terms of their ${\bf d}$-vectors (cf.
-Remark 1.9 ibid.). 
-
-In order to compare the two we will leverage the observation that, in rank 2,
-these families of vectors are related by an easy piecewise-linear transformation
-as explained in the paragraph following Conjecture 3.21 in \cite{RS}. We will do
-so via a scattering diagram $\DD_{\mathrm{gr},(b,c)}$ closely related to
-$\DD_{(b,c)}$.
 \saySS{At a certain point in our discussion in Snowbird we decided we were going
   to use the scattering diagram $\DD_{\mathrm{gr},(b,c)}$ instead of
   $-\DD_{\mathrm{gr},(b,c)}$ because we would have the base point $Q$ in the
@@ -548,6 +556,16 @@ $\DD_{(b,c)}$.
 \sayMG{I would be slightly inclined to stick with the convention we
   are currently using in the paper, as it is a less drastic change
   from what is used in GHKK}
+As mentioned in Remark \ref{rk:theta functions g-vector}, theta functions are
+parametrized by their ${\bf g}$-vectors. On the other hand the description of
+greedy elements given in \cite{LLZ} is in terms of their ${\bf d}$-vectors (cf.
+Remark 1.9 ibid.). 
+
+In order to compare the two we will leverage the observation that, in rank 2,
+these families of vectors are related by an easy piecewise-linear transformation
+as explained in the paragraph following Conjecture 3.21 in \cite{RS}. We will do
+so via a scattering diagram $\DD_{\mathrm{gr},(b,c)}$ closely related to
+$\DD_{(b,c)}$.
 
 Let $e_1,e_2$ be the dual basis of $f_1, f_2$, and define a piecewise-linear map
 $T:M_\RR\rightarrow M_\RR$ given by
