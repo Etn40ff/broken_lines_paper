@@ -1,0 +1,8 @@
+The git version of our paper on broken lines and greedy bases
+
+To write a marginal note add an alias to the \say command similar to the ones
+already there and write your comments with
+\saySS{This comment was written by Salvatore}
+
+To get write access to this repository get a github account and e-mail your
+username to me: I will add you shortly after.
