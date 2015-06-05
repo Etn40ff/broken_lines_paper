@@ -1,4 +1,4 @@
-\documentclass[12pt]{amsart}
+\documentclass[11pt]{amsart}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{latexsym}
@@ -6,9 +6,11 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,citecolor=blue,linkcolor=blue}
 
+%\usepackage[margin=1in]{geometry}
 
 % add yourself here in order to make comments on the side
 \usepackage[draft]{say}
+\newcommand{\sayDR}[1]{\say[DR]{#1}}
 \newcommand{\saySS}[1]{\say[SS]{#1}}
 \newcommand{\sayMC}[1]{\say[MC]{#1}}
 \newcommand{\sayMG}[1]{\say[MG]{#1}}
@@ -52,6 +54,288 @@
 
 \begin{document}
 \maketitle
+
+\section{Rank 2 cluster algebras and their greedy bases}
+\saySS{This section was written by Dylan independently while Mark, Mandy and
+  myself were working on sections 2 and 3. We should check that notations and
+  conventions are consistent. I am ready to bet that we need to take a transpose
+  somewhere.}
+Fix $b,c>0$ and consider rational functions $x_m\in\QQ(x_1,x_2)$, for $m\in\ZZ$,
+defined recursively by 
+\[
+  x_{m-1}x_{m+1}=
+  \begin{cases}
+    x_m^b+1 & \text{if $m$ is odd;}\\
+    x_m^c+1 & \text{if $m$ is even.}
+  \end{cases}
+\] 
+These functions are called \emph{cluster variables} and the \emph{cluster
+algebra} $\cA(b,c)$ is the $\ZZ$-subalgebra of $\QQ(x_1,x_2)$ which they
+generate.  While the cluster variables appear to be rational functions, it is a
+remarkable fact that cancellations inevitably occur and one always obtains
+Laurent expressions.  This result is known as the ``Laurent Phenomenon" and was
+proven by Fomin and Zelevinsky \cite{FZ}.
+\begin{theorem}\cite[Theorem~3.1]{FZ} 
+  For any $k,m\in\ZZ$ we have $x_m\in\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$.
+\end{theorem}
+\sayDR{In fact, they made the stronger conjecture that all of these Laurent
+  expressions have positive coefficients.}
+
+An element $x\in\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
+$(a_1,a_2)\in\ZZ^2$} if it can be written in the form
+\[
+  x=x_1^{-a_1}x_2^{-a_2}\sum\limits_{p,q\ge0}c(p,q)x_1^{bp}x_2^{cq}
+\]
+where $c(p,q)\in\ZZ$ with $c(0,0)=1$.  We will call such an $x$ \emph{positive
+in the first cluster} if $c(p,q)\ge0$ for all $p,q\ge0$.
+\begin{prop}\cite[Proposition~1.5]{LLZ}
+  Let $x$ be pointed at $(a_1,a_2)\in\ZZ^2$ and suppose
+  $x\in\ZZ_{\ge0}[x_0^{\pm1},x_1^{\pm1}]
+  \cap\ZZ_{\ge0}[x_1^{\pm1},x_2^{\pm1}]
+  \cap\ZZ_{\ge0}[x_2^{\pm1},x_3^{\pm1}]$.
+  Then the pointed coefficients $c(p,q)$ satisfy the following recursive
+  inequality:
+  \begin{align}
+    \label{eq:consecutive positivity inequality}
+    c(p,q)\ge\max\bigg(
+    &\sum\limits_{k=1}^p (-1)^{k-1}c(p-k,q){a_2-cq+k-1\choose k}\\
+    \nonumber&\sum\limits_{\ell=1}^q (-1)^{\ell-1}c(p,q-\ell){a_1-bp+\ell-1\choose \ell}\bigg).
+  \end{align}
+\end{prop}
+A positive element $x\in\cA(b,c)$ is called \emph{indecomposable} if it cannot
+be written as a sum of two positive elements.  In the search for positive bases
+of $\cA(b,c)$ one is naturally led to investigate the indecomposable positive
+elements.  A sufficient condition for a positive pointed element $x$ to be
+indecomposable is the inequality \eqref{eq:consecutive positivity inequality}
+being an equality.  It turns out that this requirement alone uniquely determines
+a collection of elements of $\cA(b,c)$ with nice properties.
+
+\begin{theorem}\label{th:greedy}\cite[Theorem~1.7]{LLZ}
+  For any $(a_1,a_2)\in\ZZ^2$ there exists a unique indecomposable positive
+  element $x[a_1,a_2]\in\cA(b,c)$ which is pointed at $(a_1,a_2)$ and whose
+  pointed coefficients satisfy the recursion
+  \begin{align}
+    \label{eq:greey recursion}
+    c(p,q)=\max\bigg(
+    &\sum\limits_{k=1}^p (-1)^{k-1}c(p-k,q){a_2-cq+k-1\choose k}\\
+    \nonumber&\sum\limits_{\ell=1}^q (-1)^{\ell-1}c(p,q-\ell){a_1-bp+\ell-1\choose \ell}\bigg).
+  \end{align}
+  Moreover, the collection $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ is a basis of
+  $\cA(b,c)$ which contains the cluster monomials and is independent of the
+  choice of an initial cluster.
+\end{theorem}
+We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
+$\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis}.  Let
+$R_{a_1,a_2}=\{(p,q)\in\ZZ_{\ge0}^2:c(p,q)\ne0 \text{ in } x[a_1,a_2]\}$ denote
+the \emph{pointed support} of $x[a_1,a_2]$.  Theorem~\ref{th:greedy} is a
+consequence of the following characterization of the greedy elements by their
+pointed supports.
+
+\begin{theorem}\label{th:pointed supports}\cite[Proposition~4.1 and Theorem~???]{LLZ,LLZ2}
+  \saySS{We miss a reference here.}
+  For $(a_1,a_2)\in\ZZ^2$, the pointed support of $x[a_1,a_2]$ is determined as follows.
+\begin{enumerate}
+  \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
+  \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p,0): 0 \leq p \leq a_2\}$.
+  \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,q): 0 \leq q \leq a_1\}$.
+  \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\big\{(p,q)\in\ZZ_{\ge0}^2\big|\; p\le a_{2},\; q\le a_{1}-bp\big\}$.
+  \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\big\{(p,q)\in\ZZ_{\ge0}^2\big|\; q\le a_{1},\; p\le a_{2}-cq\big\}$.
+  \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
+  $$\aligned
+  R_{a_1,a_2}=&\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le p< \frac{a_1}{b},\; q+\Big(b-\frac{ba_2}{ca_1}\Big)p<a_1\bigg\}\\
+  &\bigcup\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le q<
+    \frac{a_2}{c},\; p+\Big(c-\frac{ca_1}{ba_2}\Big)q<a_2\bigg\}\\
+  &\hspace{1.5em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
+  \endaligned
+  $$
+  \sayDR{I do not like how these allign; we should fix this in the final
+    version.}
+\end{enumerate}
+Moreover, if $x\in\cA(b,c)$ is any element pointed at $(a_1,a_2)$ whose pointed
+support is equal to $R_{a_1,a_2}$, then $x=x[a_1,a_2]$. 
+\end{theorem}
+
+\begin{remark}
+  Consider the points 
+  \[
+    O=(0,0), \quad A=(a_2,0), \quad B=(a_1/b, a_2/c), \quad C=(0,a_1),
+  \]
+  \[
+    D_{1}=(a_{2},a_{1}-ba_{2}), \quad D_{2}=(a_{2}-ca_{1},a_{1}).
+  \]  
+  Then the pointed support of $x[a_1,a_2]$ can be visualized as follows:
+  \begin{center}
+    \begin{tikzpicture}[scale=.7]
+      %(1)
+      \begin{scope}[shift={(.5, 5.5)}]
+        \usetikzlibrary{patterns}
+        \draw (0,0) node[anchor=east] {\tiny $O$};
+        \draw[->] (0,0) -- (2.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,2.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (2pt);
+        \draw (-1,-.5) circle (1.5pt);
+        \draw (-1,-.5) node[anchor=south] {\tiny $B$};
+        \draw (0.5,-.6) node[anchor=north] {\footnotesize (1) $a_1,a_2\le0$};
+      \end{scope}
+      %(2)
+      \begin{scope}[shift={(6, 5.5)}]
+        \usetikzlibrary{patterns}
+        \draw (0,0) node[anchor=east] {\tiny$O$};
+        \draw (2,0) node[anchor=south] {\tiny$A$};
+        \draw[->] (0,0) -- (2.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,2.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (1.5pt);
+        \fill (2,0) circle (1.5pt);
+         \draw [very thick] (0,0) -- (2,0);
+        \draw (-1,.5) circle (1.5pt);
+        \draw (-1,.5) node[anchor=south] {\tiny $B$};
+        \draw (1,-.6) node[anchor=north] {\footnotesize (2) $a_1\le 0<a_2$};
+      \end{scope}
+      %(3)
+      \begin{scope}[shift={(11.5,5.5)}]
+        \usetikzlibrary{patterns}
+        \draw (0,0) node[anchor=east] {\tiny$O$};
+        \draw (0,2) node[anchor=east] {\tiny$C$};
+        \draw[->] (0,0) -- (2.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,2.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (1.5pt);
+        \fill (0,2) circle (1.5pt);
+        \draw [very thick] (0,0) -- (0,2);
+        \draw (1,-.3) circle (1.5pt);
+        \draw (1,-.3) node[anchor=west] {\tiny $B$};
+        \draw (1,-.6) node[anchor=north] {\footnotesize (3) $a_2\le0<a_1$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+  \begin{center}
+    \begin{tikzpicture}[scale=.7]
+      %(4)
+      \begin{scope}
+        \usetikzlibrary{patterns}
+        %\fill[pattern=horizontal lines] (-2.5,2)--(-1,.5)--(-1,-1)--(-2.5,-1)--(-2.5,2);
+        \draw (0,3)--(1.5,1.5)--(1.5,0);
+        \draw[dashed](0,3)--(2.15,1.25) (2.15,1.15)--(1.5,0);
+        \draw (2.2,1.2) circle (2pt);
+        \draw (2.3,1.2) node[anchor=west] {\tiny$B$};
+        \fill [black!10] (0,3)--(1.5,1.5)--(1.5,0)--(0,0)--(0,3);
+        \draw (0,0) node[anchor=east] {\tiny$O$};
+        \draw (1.5,-.1) node[anchor=south west] {\tiny$A$};
+        \draw (1.4,1.5) node[anchor= south west] {\tiny$D_{1}$};
+        \draw (0,3) node[anchor=east] {\tiny$C$};
+        \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (1.5pt);
+        \fill (0,3) circle (1.5pt);
+        \fill (1.5,0) circle (1.5pt);
+        \fill (1.5,1.5) circle (1.5pt);
+        \draw (1.5,-.5) node[anchor=north] {\footnotesize (4) $0<ba_2\leq a_1$};
+      \end{scope}
+      %(5)
+      \begin{scope}[shift={(5.5,0)}]
+        \usetikzlibrary{patterns}
+        \draw (3,0)--(1.3,1)--(0,1);
+        \draw[dashed](3,0)--(0.95,1.45) (0.85,1.47)--(0,1);
+        \draw (0.9,1.5) circle (2pt);
+        \draw (0.9,1.5) node[anchor=south] {\tiny$B$};
+        \fill [black!10] (3,0)--(1.3,1)--(0,1)--(0,0)--(3,0);
+        \draw (0,0) node[anchor=east] {\tiny$O$};
+        \draw (2.7,0) node[anchor=south west] {\tiny$A$};
+        \draw (1.3,.9) node[anchor=south west] {\tiny$D_{2}$};
+        \draw (0,1) node[anchor=east] {\tiny$C$};
+        \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (1.5pt);
+        \fill (0,1) circle (1.5pt);
+        \fill (3,0) circle (1.5pt);
+        \fill (1.3,1) circle (1.5pt);
+        \draw (1.5,-.5) node[anchor=north] {\footnotesize (5) $0<ca_1\leq a_2$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+  \begin{center}
+    \begin{tikzpicture}[scale=.7]
+      %(6')
+      \begin{scope}[shift={(11,0)}]
+        \usetikzlibrary{patterns}
+        \draw[dashed] (0,3)--(1.5,1.8)--(2.5,0);
+        \draw[color=white,fill=white] (1.5,1.8) circle (2pt);
+        \fill [black!10]  (0,3)--(1.5,1.77)--(2.5,0)--(0,0)--(0,3);
+        \draw (1.5,1.8) circle (2pt);
+        \draw (0,0) node[anchor=east] {\tiny$O$};
+        \draw (2.2,0) node[anchor=south west] {\tiny$A$};
+        \draw (1.5,1.8) node[anchor=south west] {\tiny$B$};
+        \draw (0,3) node[anchor=east] {\tiny$C$};
+        \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (1.5pt);
+        \fill (0,3) circle (1.5pt);
+        \fill (2.5,0) circle (1.5pt);
+        \draw (1.5,-.5) node[anchor=north] {\footnotesize (6) $0<a_1<ba_2$,};
+        \draw (1.5,-1) node[anchor=north] {\footnotesize \hspace{10pt} $0<a_2<ca_1$,};
+        \draw (1.5,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ non-imaginary root}};
+      \end{scope}
+      %(6)
+      \begin{scope}[shift={(16,0)}]
+        \usetikzlibrary{patterns}
+        \draw[dashed] (0,3)--(.7,.78) (.78,.7)--(2.5,0);
+        \fill [black!10]  (0,3)--(.7,.7)--(2.5,0)--(0,0)--(0,3);
+        \draw (0,0) node[anchor=east] {\tiny$O$};
+        \draw (2.2,0) node[anchor=south west] {\tiny$A$};
+        \draw (.7,.7) circle (2pt);
+        \draw (.7,.7) node[anchor=south west] {\tiny$B$};
+        \draw (0,3) node[anchor=east] {\tiny$C$};
+        \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (1.5pt);
+        \fill (0,3) circle (1.5pt);
+        \fill (2.5,0) circle (1.5pt);
+        \draw (1.5,-.5) node[anchor=north] {\footnotesize (6) $0<a_1<ba_2$,};
+        \draw (1.5,-1) node[anchor=north] {\footnotesize \hspace{10pt} $0<a_2<ca_1$,};
+        \draw (1.5,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{imaginary root}};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+\end{remark}
+\sayDR{Please remember to do the small cosmetic adjustments that will make this
+  figure much awsomer.}
+
+To prove Theorem~\ref{th:pointed supports} Lee, Li, and Zelevinsky develop a
+combinatorial construction via compatible pairs on a maximal Dyck path.  
+
+For $(a_1,a_2)\in\ZZ_{\ge0}^2$, a Dyck path in the rectangle
+$[0,a_1]\times[0,a_2]$ is a lattice path beginning at $(0,0)$ which takes steps
+to the east and north to end at $(a_1,a_2)$ while never crossing above the main
+diagonal.  Let $D_{a_1,a_2}$ denote the maximal such Dyck path, i.e. any lattice
+point lying strictly above the Dyck path $D_{a_1,a_2}$ also lies above the main
+diagonal.  
+
+Let $H$ and $V$ denote the sets of horizontal and vertical edges of
+$D_{a_1,a_2}$.  For edges $e_1,e_2\in D_{a_1,a_2}$ write $e_1e_2$ for the
+subpath of $D_{a_1,a_2}$ which begins at $e_1$ and terminates at $e_2$.  When
+$e_1$ comes after $e_2$ the path $e_1e_2$ begins at $e_1$ goes to the end of
+$D_{a_1,a_2}$ and then continues from the beginning of $D_{a_1,a_2}$ to $e_2$.
+Write $(e_1e_2)_H$ and $(e_1e_2)_V$ for the sets of horizontal and vertical
+edges in $e_1e_2$.
+
+For $S_1\subset H$ and $S_2\subset V$ we call the pair $(S_1,S_2)$
+\emph{compatible} if for each $h\in S_1$ and $v\in S_2$ there exists an edge
+$e\in hv$ such that one of the following holds:
+\begin{align*}
+ \tag{HSC}\label{eq:horizontal shadow condition}\big|(he)_V\big|=b\big|(he)_H\cap S_1\big|\quad&\text{and}\quad e\ne v;\\
+ \tag{VSC}\label{eq:vertical shadow condition}\big|(ev)_H\big|=c\big|(ev)_V\cap S_2\big|\quad&\text{and}\quad e\ne h.\\
+\end{align*}
+We call the first the ``horizontal shadow condition" and call the second the
+``vertical shadow condition".
+\begin{theorem}
+  \label{th:combinatorial greedy}\cite[Theorem~1.11]{LLZ}
+  For any $(a_1,a_2)\in\ZZ^2$ we have
+  \begin{equation}
+    \label{eq:combinatorial greedy}
+    x[a_1,a_2]=x_1^{-a_1}x_2^{-a_2}\sum\limits_{(S_1,S_2)}x_1^{b|S_2|}x_2^{c|S_1|},
+  \end{equation}
+  where $(S_1,S_2)$ runs over all compatible pairs in the maximal Dyck path
+  $D_{[a_1]_+,[a_2]_+}$.
+\end{theorem}
 
 \section{Scattering diagrams and broken lines}
 \saySS{We are using Fock-Goncharov conventions through the paper; in particular
@@ -770,16 +1054,22 @@ The following demonstrates the utility of using $\DD_{\gr,(b,c)}$:
   with $m$ being its ${\bf g}$-vector and $T(m)$ the negative of its 
   ${\bf d}$-vector.
 \end{remark}
-
+\saySS{Eventually we want to make a saner version of the bibliography; this is
+  kind of an hack.}
 \begin{thebibliography}{99}
   
   \bibitem[CPS]{CPS} M.~Carl, M.~Pumperla, and B.~Siebert, A tropical view of Landau-Ginzburg models, available at http://www.math.uni-hamburg.de/home/siebert/preprints/LGtrop.pdf
-  \bibitem[G10]{G10} M.~Gross,  \emph{Mirror symmetry for $\mathbb{P}^2$ and tropical geometry}, Adv.\ Math., {\bf 224} (2010), 169--245. \bibitem[GHK11]{GHK11} M.~Gross, P.~Hacking and S.~Keel, \emph{Mirror symmetry for log Calabi-Yau surfaces I}, preprint, 2011.
+  \bibitem[FZ]{FZ} S.~Fomin and A.~Zelevinsky, Cluster algebras I: Foundations,  \textsl{J. Amer. Math. Soc.} \textbf{15} (2002), no. 2, pp.~497--529.
+  \bibitem[G10]{G10} M.~Gross,  \emph{Mirror symmetry for $\mathbb{P}^2$ and tropical geometry}, Adv.\ Math., {\bf 224} (2010), 169--245. 
+  \bibitem[GHK11]{GHK11} M.~Gross, P.~Hacking and S.~Keel, \emph{Mirror symmetry for log Calabi-Yau surfaces I}, preprint, 2011.
   \bibitem[GHKK]{GHKK} M.~Gross, P.~Hacking, S.~Keel, M.~Kontsevich, \emph{Canonical bases for cluster algebras}, preprint, 2014.
   \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, J.~Weyman \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf 
-  \bibitem[LLZ]{LLZ}K.~Lee, L.~Li, A.~Zelevinsky \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math. (N.S.), {\bf 20}, (2014), 57--82,
+  \bibitem[LLZ2]{LLZ2} K. Lee, L. Li and A. Zelevinsky, Positivity and tameness in rank 2 cluster algebras, \textsl{J. Alg. Comb.} 2014, doi: 10.1007/s10801-014-0509-6.
+  \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, Greedy elements in rank 2 cluster algebras, \textsl{Selecta Math.} \textbf{20} (2014), 57--82.
+  \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, A.~Zelevinsky \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math. (N.S.), {\bf 20}, (2014), 57--82,
   \bibitem[R]{R} N.~Reading, \emph{Universal geometric cluster algebras}, Mathematische Zeitschrift, {\bf 277 } (2014), 499-547.
   \bibitem[RS]{RS} N.~Reading, D.~Speyer, \emph{Combinatorial frameworks for cluster algebras}, preprint, 2011.
+  \bibitem[SZ]{SZ} P.~Sherman and A.~Zelevinsky, Positivity and Canonical Bases in Rank 2 Cluster Algebras of Finite and Affine Types, \textsl{Mosc. Math. J.} \textbf{4} (2004), no. 4, 947--974.
 
 \end{thebibliography}
 
