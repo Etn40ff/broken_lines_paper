@@ -142,8 +142,8 @@ pointed supports.
   \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
   \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p,0): 0 \leq p \leq a_2\}$.
   \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,q): 0 \leq q \leq a_1\}$.
-  \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\big\{(p,q)\in\ZZ_{\ge0}^2\big|\; p\le a_{2},\; q\le a_{1}-bp\big\}$.
-  \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\big\{(p,q)\in\ZZ_{\ge0}^2\big|\; q\le a_{1},\; p\le a_{2}-cq\big\}$.
+  \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; p\le a_{2},\; q\le a_{1}-bp\right\}$.
+  \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; q\le a_{1},\; p\le a_{2}-cq\right\}$.
   \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
   $$\aligned
   R_{a_1,a_2}=&\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le p< \frac{a_1}{b},\; q+\Big(b-\frac{ba_2}{ca_1}\Big)p<a_1\bigg\}\\
@@ -405,7 +405,7 @@ For a scattering diagram $\fD$, we denote the support of $\fD$ as
 
 To each wall $(\fd, f_{\fd})$, given a direction $v$ transversal to $\fd$, one
 can associate the element $\theta_{v,\fd}\in
-{\mathrm{Aut}}_{\Bbbk-alg}\big(\widehat{\Bbbk[P]}\big)$ defined by
+{\mathrm{Aut}}_{\Bbbk-alg}\left(\widehat{\Bbbk[P]}\right)$ defined by
 \[
   \theta_{v,\fd} (A^m) := A^m f_{\fd}^{m\cdot n }, 
 \]
@@ -462,10 +462,10 @@ $(0,1)$. Then the ``initial'' scattering diagram associated to the above exchang
 matrix is
 \[
   \fD_{\mathrm{in},(b,c)} := 
-  \big\{
+  \left\{
     \big( \RR (-1,0), 1+A_1^{-b}\big), 
     \big( \RR (0,1), 1+A_2^c\big) 
-  \big\}.
+  \right\}.
 \]
 
 We will denote by $\fD_{(b,c)}$ the consistent scattering diagram obtained by
@@ -476,18 +476,18 @@ applying Theorem \ref{KS} to $\fD_{\mathrm{in},(b,c)}$.
   Consider $\cA(2,1)$. Then we get
   \[
     \fD_{\mathrm{in},(2,1)} =  
-    \{ 
-      (\RR (-1,0), 1+A_1^{-2}), 
-      (\RR (0,1), 1+A_2)  
-    \}   
+    \left\{ 
+      \big(\RR (-1,0), 1+A_1^{-2}\big), 
+      \big(\RR (0,1), 1+A_2\big)  
+    \right\}   
   \]
   and the associated consistent scattering diagram $\fD_{(2,1)}$ (shown in
   Figure~\ref{fig:diagex}) contains $\fD_{\mathrm{in},(2,1)}$ together with
   the two walls
   \[ 
-    \left( \RR_{\leq 0} (-1,1), 1+A_1^{-2}A_2^2 \right)
+    \big( \RR_{\leq 0} (-1,1), 1+A_1^{-2}A_2^2 \big)
     \quad \mbox{and} \quad
-    \left( \RR_{\leq 0} (-2,1), 1+A_1^{-2}A_2 \right).
+    \big( \RR_{\leq 0} (-2,1), 1+A_1^{-2}A_2 \big).
   \]
 \end{example}
 
@@ -518,11 +518,11 @@ linear on $M_\RR$ set
   \label{eqn:linear action}
   S(\fd,f_\fd(A^{m_0}))
   :=
-  \left( S(\fd), f_\fd(A^{S(m_0)}) \right)
+  \left( S(\fd), f_\fd\left(A^{S(m_0)}\right) \right)
 \end{equation}
 Note that, even if $(\fd,f_\fd)$ is a wall, $S(\fd,f_\fd)$ needs not be a wall
 since $S(m_0)$ may lay outside of the cone $\sigma$ (in which case we also get
-that  $f_\fd(A^{S(m_0)})$ is not an element of $\widehat{\Bbbk [P]}$).
+that  $f_\fd\left(A^{S(m_0)}\right)$ is not an element of $\widehat{\Bbbk [P]}$).
 
 Now consider the two linear involutions $S_1$ and $S_2$ given by
 \[
@@ -547,26 +547,26 @@ If $(\fd, f_{\fd}) \in \fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ and $S_i
 \fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$. Moreover both 
 \begin{equation}
   \label{eq:first-walls}
-  S_2(\RR_{\leq 0}(-1,0),1+A_1^{-b})
+  S_2\big(\RR_{\leq 0}(-1,0),1+A_1^{-b}\big)
   %
   \quad
   \mbox{and}
   \quad
   %
-  S_1(\RR_{\leq 0}(0,1),1+A_2^c)
+  S_1\big(\RR_{\leq 0}(0,1),1+A_2^c\big)
 \end{equation}
-are walls in $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ (even though
+are walls in $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ even though
 neither 
 \[
-  (\RR_{\leq 0}(-1,0),1+A_1^{-b})
+  \big(\RR_{\leq 0}(-1,0),1+A_1^{-b}\big)
   %
   \quad
   \mbox{nor}
   \quad
   %
-  (\RR_{\leq 0}(0,1),1+A_2^c)
+  \big(\RR_{\leq 0}(0,1),1+A_2^c\big)
 \]
-are walls in $\fD_{(b,c)}$). These considerations gives us a recipe to produce
+are walls in $\fD_{(b,c)}$. These considerations gives us a recipe to produce
 elements of $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$: it is enough to apply
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
 
@@ -818,7 +818,7 @@ The following summarizes the main properties of the theta functions as shown in
   Note that 
   \[ 
     \vartheta _{Q, (2,-2)} = 
-    (\vartheta_{Q, (1,-1)}) ^2 -2. 
+    \left(\vartheta_{Q, (1,-1)}\right) ^2 -2. 
   \]
   In this scattering diagram $\fD_{(2,2)}$, the ray with slope $(1,-1)$ does
   not lie in the interior of any chamber. So neither $\vartheta_{Q,(1,-1)}$ nor 
@@ -866,12 +866,12 @@ Let $T:M_\RR\rightarrow M_\RR$ be the piecewise-linear map given by
 We will denote its domains of linearity by 
 \[ 
   \mathcal{H}_{+} := 
-  \{ m \in M_{\mathbb{R}}\, |\, m_2 \geq 0 \} 
+  \left\{ m \in M_{\mathbb{R}}\, |\, m_2 \geq 0 \right\} 
   \quad
   \mbox{and}
   \quad
   \mathcal{H}_{-} := 
-  \{ m \in M_{\mathbb{R}} \,|\, m_2 \leq 0 \}.
+  \left\{ m \in M_{\mathbb{R}} \,|\, m_2 \leq 0 \right\}.
 \]
 Let $T_+$ and $T_-$ be the linear extensions to $M_\RR$ of $T|_{\mathcal{H}_+}$
 and $T|_{\mathcal{H}_-}$ respectively ($T_+$ is just the identity map but it
@@ -911,17 +911,22 @@ $T$; therefore, under $T$, it breaks into two parts:
 
 Next note that, since $T(-1,0)=(-1,0)$ and $T(b,-1)=(0,-1)$, $T$ maps all the
 walls of $\fD_{(b,c)}\setminus\fD_{\mathrm{in},(b,c)}$ to the third quadrant. 
-Indeed $\big(\RR_{\leq0}(-b,1),1+A_1^{-bc}A_2^c\big)$ is the wall with the
-biggest slope in $\fD_{(b,c)}\setminus\fD_{\mathrm{in},(b,c)}$; its image is
-$\big( \RR_{\le0} (0,1), 1+A_2^c\big)$.
+Indeed 
+\[
+  \big(\RR_{\leq0}(-b,1),1+A_1^{-bc}A_2^c\big)
+\]
+is the wall with the biggest slope in
+$\fD_{(b,c)}\setminus\fD_{\mathrm{in},(b,c)}$ and its image is 
+\[
+  \big( \RR_{\le0} (0,1), 1+A_2^c\big).
+\]
 
 \begin{defn}
   $\fD_{\gr,(b,c)}$ is the scattering diagram obtained from
-  $T(\fD_{(b,c)})$ by replacing 
+  $T\left(\fD_{(b,c)}\right)$ by replacing 
   \begin{itemize}
     \item
       $\big(\RR (-1,0), 1+A_1^{-b}\big)$ with $\big(\RR  (1,0), 1+A_1^b\big)$,
-    
     \item 
       both $ \big( \RR_{\ge0} (0,1), 1+A_2^c\big)$ and $\big( \RR_{\le0} (0,1),
       1+A_2^c\big)$ with $ \big( \RR (0,1), 1+A_2^c\big)$.
@@ -935,7 +940,7 @@ $\big( \RR_{\le0} (0,1), 1+A_2^c\big)$.
   \cite[Theorem 1.7]{GHKK}, gives an alternative way to introduce it. Indeed, in
   analogy with the definition of $\fD_{(b,c)}$, one could consider the
   scattering diagram
-  $\fD_{\gr,\mathrm{in},(b,c)}$ given by
+  $\fD_{\gr,\mathrm{in},(b,c)}$ given by 
   \[
     \fD_{\gr,\mathrm{in},(b,c)}=
     \left\{
@@ -962,11 +967,11 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $L$ in $\gamma$.
   we have
   \[ 
     \vartheta^{\gr}_{T(Q),T( m)} = 
-    T_{+} (\vartheta_{Q, m}) 
+    T_{+} \left(\vartheta_{Q, m}\right) 
     \quad
     \mbox{or} 
     \quad
-    T_{-} (\vartheta_{Q, m})
+    T_{-} \left(\vartheta_{Q, m}\right)
   \]
   respectively.
 \end{theorem}
@@ -977,9 +982,9 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $L$ in $\gamma$.
   $L$, $L'$ be the domains of linearity of $\gamma$ before and after bending
   along $\RR (-1,0)$. So $c(L') A^{m(L')}$ is a term in 
   \[
-    \theta_{-m(L),\RR(-1,0)} (c(L) A^{m(L)})
+    \theta_{-m(L),\RR(-1,0)} \left(c(L) A^{m(L)}\right)
     = 
-    c(L) A^{m(L)} (1+A_1^{-b}) ^{|m_2(L)|}.
+    c(L) A^{m(L)} \left(1+A_1^{-b}\right) ^{|m_2(L)|}.
   \]
 
   First, assume $\gamma$ passes from $\mathcal{H}_-$ to $\mathcal{H}_+$. In this
@@ -987,20 +992,20 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $L$ in $\gamma$.
   $c(L')A^{T_+(m(L'))} =c(L')A^{m(L')}$ attached to $L'$ in
   $T\circ\gamma$ to satisfy the bending rule, it must be a term in
   \[
-    \theta_{-T_-(m(L)),\RR (1,0)} (c(L) A^{T_-(m(L))}). 
+    \theta_{-T_-(m(L)),\RR (1,0)} \left(c(L) A^{T_-(m(L))}\right). 
   \]
   Since the second component of $T_-(m(L))$ is $m_2(L)$ we get
   \begin{align*} 
-    \theta_{-T_-(m(L)),\RR (1,0)} (c(L) A^{T_-(m(L))}) 
+    \theta_{-T_-(m(L)),\RR (1,0)} \left(c(L) A^{T_-(m(L))}\right) 
     & =
-    c(L) A^{T_-(m(L))} (1+A_1^b) ^{-m_2(L)}
+    c(L) A^{T_-(m(L))} \left(1+A_1^b\right) ^{-m_2(L)}
     \\
     & = 
     c(L) A^{m(L)} A_1^{b m_2(L)} 
-    (1+A_1^b)^{-m_2(L)} 
+    \left(1+A_1^b\right)^{-m_2(L)} 
     \\
     & = 
-    c(L) A^{m(L)} (1+A_1^{-b}) ^{-m_1(L)}.
+    c(L) A^{m(L)} \left(1+A_1^{-b}\right) ^{-m_1(L)}.
   \end{align*}
   This shows that $T_k(\gamma)$ satisfies the correct rule when bending along
   $(\RR (1,0), 1+A_1^b)$ if $\gamma$ passes from $\mathcal{H}_-$ to
@@ -1013,7 +1018,7 @@ The following demonstrates the utility of using $\fD_{\gr,(b,c)}$:
 \begin{prop}
   For any  $m\in M$, if $Q$ lies in the first quadrant, then 
   \[
-    \vartheta^{\gr}_{Q, m}=A^{m}(1+f(A_1,A_2))
+    \vartheta^{\gr}_{Q, m}=A^{m}\left(1+f(A_1,A_2)\right)
   \]
   where $f\in (A_1,A_2)\subseteq \Bbbk[A_1,A_2]$.
   In particular, $m$ is the negative of the ${\bf d}$-vector of
