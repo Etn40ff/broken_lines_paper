@@ -690,35 +690,35 @@ circumstances.
   \emph{exponent} $m$ and endpoint $q$ is a continuous and piecewise linear path
   $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with
   a finite number of domains of linearity, along with a choice of monomials
-  $c(L) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $L \subseteq ( -
+  $c(\ell) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $\ell \subseteq ( -
   \infty, 0]$ of $\gamma$. 
   
-  The path $\gamma$ and the monomials $c(L) x^{m(L)}$ need to satisfy the
+  The path $\gamma$ and the monomials $c(\ell) x^{m(\ell)}$ need to satisfy the
   following conditions:
   \begin{itemize}
     \item 
       $\gamma(0) = Q$.
     
     \item 
-      If $L$ is the first (i.e., unbounded) domain of linearity of $\gamma$,
+      If $\ell$ is the first (i.e., unbounded) domain of linearity of $\gamma$,
       then 
       \[
-        c(L) x^{m(L)} = x^{m}.
+        c(\ell) x^{m(\ell)} = x^{m}.
       \]
 
     \item 
-      For $t$ in a domain of linearity $L$, $\gamma'(t) = -m(L)$.
+      For $t$ in a domain of linearity $\ell$, $\gamma'(t) = -m(\ell)$.
 
     \item 
       $\gamma$ bends only when it crosses a wall. If $\gamma$ bends from the
-      domain of linearity $L$ to $ L'$ when crossing $(\fd, f_{\fd})$, then
-      $c(L')x^{m(L')}$ is a term in 
+      domain of linearity $\ell$ to $ \ell'$ when crossing $(\fd, f_{\fd})$, then
+      $c(\ell')x^{m(\ell')}$ is a term in 
       \[
-        \theta_{-m(L), \fd} \left(c(L) x^{m(L)}\right).
+        \theta_{-m(\ell), \fd} \left(c(\ell) x^{m(\ell)}\right).
       \]
   \end{itemize}
 \end{defn}
-We will refer to $m(L)\in \mathbb{Z}^2$ as the \emph{momentum} of that region.
+We will refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{momentum} of that region.
 
 We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$  denote by
@@ -996,11 +996,11 @@ $\fD_{(b,c)}\setminus\fD_{\mathrm{in},(b,c)}$ and its image is
 
 For a broken line $\gamma$ in $\fD_{(b,c)}$, we denote its image under $T$ as
 $T(\gamma)$: this is the broken line in $\fD_{\gr,(b,c)}$ whose underlying map
-is $\gamma\circ T$. Given any domain of linearity $L$ of $\gamma$, by
-subdividing it when necessary, we can always assume that either $\gamma(L)
-\subset \mathcal{H}_{+} $ or $\gamma(L)\subset \mathcal{H}_{-}$. The monomial
-attached to $L$ in $T(\gamma)$ is then obtained by applying, accordingly, either
-$T_+$ or $T_-$ to the exponent of the monomial attached to $L$ in $\gamma$.
+is $\gamma\circ T$. Given any domain of linearity $\ell$ of $\gamma$, by
+subdividing it when necessary, we can always assume that either $\gamma(\ell)
+\subset \mathcal{H}_{+} $ or $\gamma(\ell)\subset \mathcal{H}_{-}$. The monomial
+attached to $\ell$ in $T(\gamma)$ is then obtained by applying, accordingly, either
+$T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 
 \begin{theorem}
   \label{thm:T_on_broken_lines}
@@ -1022,33 +1022,33 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $L$ in $\gamma$.
 \begin{proof}
   This is essentially the same as the argument of \cite{GHKK}, Prop.\ 3.6.  To
   prove the statement, we only need to check the bending at the $x$-axis. Let
-  $L$, $L'$ be the domains of linearity of $\gamma$ before and after bending
-  along $\RR (-1,0)$. So $c(L') x^{m(L')}$ is a term in 
+  $\ell$, $\ell'$ be the domains of linearity of $\gamma$ before and after bending
+  along $\RR (-1,0)$. So $c(\ell') x^{m(\ell')}$ is a term in 
   \[
-    \theta_{-m(L),\RR(-1,0)} \left(c(L) x^{m(L)}\right)
+    \theta_{-m(\ell),\RR(-1,0)} \left(c(\ell) x^{m(\ell)}\right)
     = 
-    c(L) x^{m(L)} \left(1+x_1^{-b}\right) ^{|m_2(L)|}.
+    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{|m_2(\ell)|}.
   \]
 
   First, assume $\gamma$ passes from $\mathcal{H}_-$ to $\mathcal{H}_+$. In this
-  case, we have $m_2(L) < 0$. Now in order for the monomial
-  $c(L')x^{T_+(m(L'))} =c(L')x^{m(L')}$ attached to $L'$ in
+  case, we have $m_2(\ell) < 0$. Now in order for the monomial
+  $c(\ell')x^{T_+(m(\ell'))} =c(\ell')x^{m(\ell')}$ attached to $\ell'$ in
   $T\circ\gamma$ to satisfy the bending rule, it must be a term in
   \[
-    \theta_{-T_-(m(L)),\RR (1,0)} \left(c(L) x^{T_-(m(L))}\right). 
+    \theta_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right). 
   \]
-  Since the second component of $T_-(m(L))$ is $m_2(L)$ we get
+  Since the second component of $T_-(m(\ell))$ is $m_2(\ell)$ we get
   \begin{align*} 
-    \theta_{-T_-(m(L)),\RR (1,0)} \left(c(L) x^{T_-(m(L))}\right) 
+    \theta_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right) 
     & =
-    c(L) x^{T_-(m(L))} \left(1+x_1^b\right) ^{-m_2(L)}
+    c(\ell) x^{T_-(m(\ell))} \left(1+x_1^b\right) ^{-m_2(\ell)}
     \\
     & = 
-    c(L) x^{m(L)} x_1^{b m_2(L)} 
-    \left(1+x_1^b\right)^{-m_2(L)} 
+    c(\ell) x^{m(\ell)} x_1^{b m_2(\ell)} 
+    \left(1+x_1^b\right)^{-m_2(\ell)} 
     \\
     & = 
-    c(L) x^{m(L)} \left(1+x_1^{-b}\right) ^{-m_1(L)}.
+    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_1(\ell)}.
   \end{align*}
   This shows that $T_k(\gamma)$ satisfies the correct rule when bending along
   $(\RR (1,0), 1+x_1^b)$ if $\gamma$ passes from $\mathcal{H}_-$ to
