@@ -14,6 +14,7 @@
 \newcommand{\saySS}[1]{\say[SS]{#1}}
 \newcommand{\sayMC}[1]{\say[MC]{#1}}
 \newcommand{\sayMG}[1]{\say[MG]{#1}}
+\newcommand{\sayGM}[1]{\say[GM]{#1}}
 
 % ambients
 \newtheorem{lemma}{Lemma}[section]
@@ -1226,8 +1227,20 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{thm: main}]
-By the construction of $\Theta_m^\mathbf{d}$, its Newton 
+\sayGM{This proof needs: a restatement of Theorem \ref{thm: dylan} which doesn't say `pointed' and only requires the right inequalities.}
+
+If $m=(m_1,m_2)$ such that $m_1\leq0$, $m_2\leq0$, $m_1\geq bm_2$, or $m_2\geq cm_1$, then $\Theta_m^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$.
+
+Next, assume that $m=(m_1,m_2)$ such that
+\[ 0<m_1<bm_2,\;\;\; 0<m_2<am_1\]
+The coefficient of $x^{(a_1,a_2)}$ in $\Theta_m^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrac{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
+\[ m_1\leq a_1\leq \left(\frac{m_1}{m_2}-b\right)a_2,\;\;\; m_2\leq a_2\leq \left(\frac{m_2}{m_1}-b\right)a_1\]
+Furthermore, the upper bounds are only satisfied in the specific cases when $(a_1,a_2)$ is equal to $(a_1-ba_2,a_2)$ or $(a_1,a_2-ca_1)$.  
+Since $\Theta_{m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Theorem \ref{thm: dylan} implies that $\Theta_m^\mathbb{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
+
+To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each element.  The coefficient of $x^{(m_1,m_2)}$ in $x[-m_1,-m_2]$ is $1$, by the definition of a pointed element. The coefficient of $x^{(m_1,m_2)}$ in $\Theta_m^\mathbf{d}$ is the sum of the coefficients of all broken lines in $\mathfrak{D}_{(b,c)}^\mathbf{d}$ with initial exponent $(m_1,m_2)$ and final exponent $(m_1,m_2)$.  Since any bend in a broken line would increase one of the components of the exponent, this only happens for the unique broken line with initial exponent $(m_1,m_2)$ that has no bends. Hence, the coefficient of $x^{(m_1,m_2)}$ in $\Theta_m^\mathbf{d}$ is $1$, and so $\Theta_m^\mathbf{d}=x[-m_1,-m_2]$.
 \end{proof}
+
 
 \begin{thebibliography}{99}
   
