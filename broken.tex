@@ -666,12 +666,12 @@ circumstances.
 \begin{defn} 
   \label{brokendef}
   Let $\fD$ be a scattering diagram, $m \in M \backslash \{0\}$ and $Q \in
-  M_{\RR} \backslash \text{Supp}(\fD)$.  A \emph{broken line} with initial slope
-  $m$ and endpoint $Q$ is a continuous and piecewise linear path $\gamma : ( -
-  \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with a finite
-  number of domains of linearity, along with a choice of monomials $c(L) A^{m(L)}
-  \in \Bbbk[M]$ one for each domain of linearity $L \subseteq ( - \infty, 0]$ of
-  $\gamma$. 
+  M_{\RR} \backslash \text{Supp}(\fD)$.  A \emph{broken line} with initial
+  momentum $m$ and endpoint $Q$ is a continuous and piecewise linear path
+  $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with
+  a finite number of domains of linearity, along with a choice of monomials
+  $c(L) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $L \subseteq ( -
+  \infty, 0]$ of $\gamma$. 
   
   The path $\gamma$ and the monomials $c(L) A^{m(L)}$ need to satisfy the
   following conditions:
@@ -703,7 +703,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \[ 
     \vartheta_{Q, m} = \sum_{\gamma} \Mono (\gamma), 
   \] 
-  where the sum is over all broken lines with initial slope $m$ and endpoint
+  where the sum is over all broken lines with initial momentum $m$ and endpoint
   $Q$.
 \end{defn}
 
@@ -711,7 +711,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \label{brokenex}
   Consider the scattering diagram $\fD_{(2,2)}$ and let $Q$ be a small
   irrational perturbation of the point $(1.5,1)$. There are three broken lines
-  with initial slope $m = (1,-1)$ and endpoint $Q$ as shown in
+  with initial momentum $m = (1,-1)$ and endpoint $Q$ as shown in
   Figure~\ref{figbrokenex}.
   First of all, we can have a broken line $\gamma_1$ which does not bend.
   Therefore
@@ -763,6 +763,10 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
     \draw[green!75!black] (-2.5,0) -- node[left] {\small $A_1^{-1} A_2^{-1}$}  (0,2.5);
     \draw[green!75!black] (0.5, -3)  --node[left] {\small $A_1 A_2^{-1}$} (-2.5,0);
     \draw[green!75!black] (0.5,-3) node[above]{$\gamma_3$};
+    \draw[color=blue,fill=blue] (0.5,0) circle (0.5mm);
+    \draw[color=green!75!black,fill=green!75!black] (0,2.5) circle (0.5mm);
+    \draw[color=green!75!black,fill=green!75!black] (-2.5,0) circle (0.5mm);
+    \draw[color=black,fill=black] (1.5,1) circle (0.5mm);
   \end{tikzpicture}
   \caption{Example~\ref{brokenex}} 
   \label{figbrokenex}
@@ -822,7 +826,7 @@ The following summarizes the main properties of the theta functions as shown in
 
 \begin{example}
   Let us try one more calculation with broken lines. We take the same scattering
-  diagram as in example~\ref{brokenex}. Now take the initial slope $m=(2,-2)$
+  diagram as in example~\ref{brokenex}. Now take the initial momentum $m=(2,-2)$
   with the same endpoint $Q$. By similar calculations we get 
   \[ 
     \vartheta _{Q, (2,-2)} = 
@@ -833,7 +837,7 @@ The following summarizes the main properties of the theta functions as shown in
     \vartheta _{Q, (2,-2)} = 
     \left(\vartheta_{Q, (1,-1)}\right) ^2 -2. 
   \]
-  In this scattering diagram $\fD_{(2,2)}$, the ray with slope $(1,-1)$ does
+  In this scattering diagram $\fD_{(2,2)}$, the ray with momentum $(1,-1)$ does
   not lie in the interior of any chamber. So neither $\vartheta_{Q,(1,-1)}$ nor 
   $\vartheta _{Q, (2,-2)}$ are cluster monomials.
 
