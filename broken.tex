@@ -156,31 +156,34 @@ pointed supports.
 
 \begin{theorem}\label{th:pointed supports}(\cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2})
   For $(a_1,a_2)\in\ZZ^2$, the pointed support of $x[a_1,a_2]$ is determined as follows.
-\begin{enumerate}
-  \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
-  \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p,0): 0 \leq p \leq a_2\}$.
-  \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,q): 0 \leq q \leq a_1\}$.
-  \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; p\le a_{2},\; q\le a_{1}-bp\right\}$.
-  \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; q\le a_{1},\; p\le a_{2}-cq\right\}$.
-  \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
-  $$\aligned
-  R_{a_1,a_2}=&\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le p< \frac{a_1}{b},\; q+\Big(b-\frac{ba_2}{ca_1}\Big)p<a_1\bigg\}\\
-  &\bigcup\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le q<
-    \frac{a_2}{c},\; p+\Big(c-\frac{ca_1}{ba_2}\Big)q<a_2\bigg\}\\
-  &\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
-  \endaligned
-  $$
-\end{enumerate}
-Moreover, if $x\in\cA(b,c)$ is any positive element pointed at $(a_1,a_2)$ whose pointed support is equal to $R_{a_1,a_2}$, then $x=x[a_1,a_2]$. 
+  \begin{enumerate}
+    \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
+    \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p,0): 0 \leq p \leq a_2\}$.
+    \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,q): 0 \leq q \leq a_1\}$.
+    \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; p\le a_{2},\; q\le a_{1}-bp\right\}$.
+    \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; q\le a_{1},\; p\le a_{2}-cq\right\}$.
+    \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
+    $$\aligned
+    R_{a_1,a_2}=&\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le p< \frac{a_1}{b},\; q+\Big(b-\frac{ba_2}{ca_1}\Big)p<a_1\bigg\}\\
+    &\bigcup\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le q<\frac{a_2}{c},\; p+\Big(c-\frac{ca_1}{ba_2}\Big)q<a_2\bigg\}\\
+    &\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
+    \endaligned
+    $$
+  \end{enumerate}
+  Moreover, if $x\in\cA(b,c)$ is any element pointed at $(a_1,a_2)$ whose Newton polytope is contained in that of $x[a_1,a_2]$, then $x=x[a_1,a_2]$. 
 \end{theorem}
 \begin{proof}
- The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.  Suppose $x\in\cA(b,c)$ is a positive element pointed at $(a_1,a_2)$ and the pointed support of $x$ is equal to $R_{a_1,a_2}$.  If $x$ is indecomposable, then we must have $x=x[a_1,a_2]$.  So suppose 
+  The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.
+
+  Suppose $x\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polytope of $x$ is contained in that of $x[a_1,a_2]$.  If $x\ne x[a_1,a_2]$, then there exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ \sayDR{exponents chosen for notational convenience} appearing in $x$ with a different coefficient than in $x[a_1,a_2]$.  Since $x$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $x$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.
+
+  There are two case to consider.  If $\frac{a'_2}{a'_1}\le\frac{a_2}{a_1}$, then we consider the point $(-a'_1,-a'_2+ca'_2)$
 \end{proof}
 
 \begin{remark}
   Consider the points 
   \[
-    O=(0,0), \quad A=(-a_1+ba_2,0), \quad B=(-a_1,-a_2), \quad C=(-a_1,-a_2+ca_1),
+    O=(0,0), \quad A=(-a_1+ba_2,-a_2), \quad B=(-a_1,-a_2), \quad C=(-a_1,-a_2+ca_1),
   \]
   \[
     D_{1}=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2}), \quad D_{2}=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1}).
