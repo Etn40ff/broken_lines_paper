@@ -671,12 +671,12 @@ circumstances.
 \begin{defn} 
   \label{brokendef}
   Let $\fD$ be a scattering diagram, $m \in M \backslash \{0\}$ and $Q \in
-  M_{\RR} \backslash \text{Supp}(\fD)$.  A \emph{broken line} with initial slope
-  $m$ and endpoint $Q$ is a continuous and piecewise linear path $\gamma : ( -
-  \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with a finite
-  number of domains of linearity, along with a choice of monomials $c(L) A^{m(L)}
-  \in \Bbbk[M]$ one for each domain of linearity $L \subseteq ( - \infty, 0]$ of
-  $\gamma$. 
+  M_{\RR} \backslash \text{Supp}(\fD)$.  A \emph{broken line} with initial
+  momentum $m$ and endpoint $Q$ is a continuous and piecewise linear path
+  $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with
+  a finite number of domains of linearity, along with a choice of monomials
+  $c(L) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $L \subseteq ( -
+  \infty, 0]$ of $\gamma$. 
   
   The path $\gamma$ and the monomials $c(L) A^{m(L)}$ need to satisfy the
   following conditions:
@@ -708,7 +708,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \[ 
     \vartheta_{Q, m} = \sum_{\gamma} \Mono (\gamma), 
   \] 
-  where the sum is over all broken lines with initial slope $m$ and endpoint
+  where the sum is over all broken lines with initial momentum $m$ and endpoint
   $Q$.
 \end{defn}
 
@@ -716,7 +716,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \label{brokenex}
   Consider the scattering diagram $\fD_{(2,2)}$ and let $Q$ be a small
   irrational perturbation of the point $(1.5,1)$. There are three broken lines
-  with initial slope $m = (1,-1)$ and endpoint $Q$ as shown in
+  with initial momentum $m = (1,-1)$ and endpoint $Q$ as shown in
   Figure~\ref{figbrokenex}.
   First of all, we can have a broken line $\gamma_1$ which does not bend.
   Therefore
@@ -764,10 +764,14 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
     \draw[blue] (0.5,0) -- node[left] {\small $A_1^{-1} A_2^{-1}$}  (1.5,1);
     \draw[blue] (0.5,0) -- node[below] {\small $A_1 A_2^{-1}$} (3,-2.5);
     \draw[blue] (3,-2.5) node[left]{$\gamma_2$};
-    \draw[green] (0,2.5)  -- node[right] {\small $A_1^{-1}A_2$} (1.5,1);
-    \draw[green] (-2.5,0) -- node[left] {\small $A_1^{-1} A_2^{-1}$}  (0,2.5);
-    \draw[green] (0.5, -3)  --node[left] {\small $A_1 A_2^{-1}$} (-2.5,0);
-    \draw[green] (0.5,-3) node[above]{$\gamma_3$};
+    \draw[green!75!black] (0,2.5)  -- node[right] {\small $A_1^{-1}A_2$} (1.5,1);
+    \draw[green!75!black] (-2.5,0) -- node[left] {\small $A_1^{-1} A_2^{-1}$}  (0,2.5);
+    \draw[green!75!black] (0.5, -3)  --node[left] {\small $A_1 A_2^{-1}$} (-2.5,0);
+    \draw[green!75!black] (0.5,-3) node[above]{$\gamma_3$};
+    \draw[color=blue,fill=blue] (0.5,0) circle (0.5mm);
+    \draw[color=green!75!black,fill=green!75!black] (0,2.5) circle (0.5mm);
+    \draw[color=green!75!black,fill=green!75!black] (-2.5,0) circle (0.5mm);
+    \draw[color=black,fill=black] (1.5,1) circle (0.5mm);
   \end{tikzpicture}
   \caption{Example~\ref{brokenex}} 
   \label{figbrokenex}
@@ -827,7 +831,7 @@ The following summarizes the main properties of the theta functions as shown in
 
 \begin{example}
   Let us try one more calculation with broken lines. We take the same scattering
-  diagram as in example~\ref{brokenex}. Now take the initial slope $m=(2,-2)$
+  diagram as in example~\ref{brokenex}. Now take the initial momentum $m=(2,-2)$
   with the same endpoint $Q$. By similar calculations we get 
   \[ 
     \vartheta _{Q, (2,-2)} = 
@@ -838,7 +842,7 @@ The following summarizes the main properties of the theta functions as shown in
     \vartheta _{Q, (2,-2)} = 
     \left(\vartheta_{Q, (1,-1)}\right) ^2 -2. 
   \]
-  In this scattering diagram $\fD_{(2,2)}$, the ray with slope $(1,-1)$ does
+  In this scattering diagram $\fD_{(2,2)}$, the ray with momentum $(1,-1)$ does
   not lie in the interior of any chamber. So neither $\vartheta_{Q,(1,-1)}$ nor 
   $\vartheta _{Q, (2,-2)}$ are cluster monomials.
 
@@ -1092,57 +1096,106 @@ Let $\Gamma$ be a broken line in $\mathfrak{D}_{(b,c)}$.  At any point $Q=(q_1,q
 The angular momentum is constant on $\Gamma$.
 \end{lemma}
 \begin{proof}
-Let $Q=(q_1,q_2)$ and $Q'=(q_1',q_2')$ be two points on $\Gamma$.
-First, assume that $Q$ and $Q'$ are in the same linear region of $\Gamma$, with momentum $m=(m_1,m_2)$.  There is some $t$ such that 
-\[ (q_1',q_2') = (q_1+tm_1,q_2+tm_2) \]
+Let $Q$ and $Q'$ be two points on $\Gamma$.
+First, assume that $Q=(Q_1,Q_2)$ and $Q'=(Q_1',Q_2')$ are in the same linear region of $\Gamma$, with momentum $m=(m_1,m_2)$.  There is some $t$ such that 
+\[ (Q_1',Q_2') = (Q_1+tm_1,Q_2+tm_2) \]
 Then the angular momentum at $Q'$ is 
-\[ (q_1+tm_1)m_2-(q_2+tm_2)m_1 = q_1m_2+tm_1m_2-q_2m_1-tm_2m_2 = q_1m_2 - q_2m_1 \]
+\[ (Q_1+tm_1)m_2-(Q_2+tm_2)m_1 = Q_1m_2 - Q_2m_1 \]
 
-Next, assume that $Q$ and $Q'$ are points on $\Gamma$ on either side of a bend at a wall $(\fd, f_{\fd})$ at point $q=(q_1,q_2)$.  If the momentum of $\Gamma$ is $m=(m_1,m_2)$ and $f_{\fd}$ is a series in $A^{(w_1,w_2)}$, then the momentum of $\Gamma$ at $Q'$ must be of the form $(m_1+iw_1,m_2+iw_2)$ for some positive integer $i$.  By the argument of the previous paragraph, the angular momentum at $Q$ is $q_1m_2-q_2m_1$
+Next, assume that $Q$ and $Q'$ are points on $\Gamma$ on either side of a bend at a wall $(\fd, f_{\fd})$ at point $q=(q_1,q_2)$.  If the momentum of $\Gamma$ is $m=(m_1,m_2)$ and $f_{\fd}$ is a series in $A^{(w_1,w_2)}$, then the momentum of $\Gamma$ at $Q'$ must be of the form $(m_1+kw_1,m_2+kw_2)$ for some positive integer $i$.  By the argument of the previous paragraph, the angular momentum at $Q$ is $q_1m_2-q_2m_1$
 and the angular momentum at $Q'$ is
-\[ q_1(m_2+iw_2)-q_2(m_1+iw_1) = (q_1m_2-q_2m_1)+i(q_1w_2-q_2w_1) \]
+\[ q_1(m_2+iw_2)-q_2(m_1+iw_1) = (q_1m_2-q_2m_1)+k(q_1w_2-q_2w_1) \]
 Since the point $(q_1,q_2)$ lies on the ray through $(w_1,w_2)$, the expression $q_1w_2-q_2w_1$ is zero, and so the angular momenta at $Q$ and $Q'$ are the same.  This equality extends transitively to any pair of points $Q,Q'$ on $\Gamma$.
 \end{proof}
 The sign of the angular momentum is a useful invariant for characterizing the qualitative behavior of a broken line.
-For a broken line ending in the first quadrant, the sign of the angular momentum characterizes whether that broken line could have passed through the second quadrant (positive) or the fourth quadrant (negative).
+For a broken line ending in the first quadrant, the sign of the angular momentum characterizes whether that broken line could have passed through the fourth quadrant (positive) or the second quadrant (negative).
 
 \begin{lemma}
-Let $\Gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $Q$ in the first quadrant.  
-\begin{itemize}	
-	\item If $\Gamma$ has positive angular momentum, then the slope of the linear domains of $\Gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
-	\item If $\Gamma$ has negative angular momentum, then the slope of the linear domains of $\Gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
-\end{itemize}
+Let $\Gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $Q$ in the first quadrant. If $\Gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\Gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
+%\begin{itemize}	
+	%\item If $\Gamma$ has positive angular momentum, then the slope of the linear domains of $\Gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
+	%\item If $\Gamma$ has negative angular momentum, then the slope of the linear domains of $\Gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
+%\end{itemize}
 \end{lemma}
+
+\tikzstyle{wall}=[draw=black!25,thick]
+\tikzstyle{dot} = [blue,fill=blue,inner sep=0.25mm,circle,draw,minimum size=.5mm]
+
+\noindent Figure \ref{fig: brokenlineexample} depicts a broken line with positive angular momentum.  The slopes of the linear domains decreases from $\frac{5}{4}$ to $1$ to $\frac{1}{2}$ before increasing to $+\infty$.
+
+\begin{figure}[h!t]
+\begin{tikzpicture}
+    \begin{scope}[scale=.75]
+    	\clip (-5.5,-5.5) rectangle (5.5,5.5);
+    	%\draw[step=1,draw=black!10,very thin] (-10,-10) grid (10,10);
+        \draw[wall] (0,0) to (0,10);
+        \draw[wall] (0,0) to (-10,0);
+        
+        \draw[wall] (0,0) to (-12,-6);
+        \draw[wall] (0,0) to (-12,-8);
+        \draw[wall] (0,0) to (-12,-9);
+        \draw[wall] (0,0) to (-12,-9.6);
+        \draw[wall] (0,0) to (-12,-10);
+        \draw[wall] (0,0) to (-12,-10.28);
+        \draw[wall] (0,0) to (-6,-12);
+        \draw[wall] (0,0) to (-9,-12);
+        \draw[wall] (0,0) to (-9.6,-12);
+        \draw[wall] (0,0) to (-10,-12);
+        \draw[wall] (0,0) to (-10.28,-12);        
+        \path[fill=black!25] (0,0) to (-10.5,-12) to (-12,-10.5) to (0,0);
+        \draw[wall, draw=red!25] (0,0) to (-10,-10);
+        \draw[wall,black] (0,0) to (10,0);
+        \draw[wall,black] (0,0) to (0,-10);
+        \draw[wall,black] (0,0) to (-8,-12);
+				
+			  \draw[blue,thick] (2,1.73) to node[right] {$m=(0,1)$} (2,0) to node[below right] {$m=(2,1)$} (0,-1) to node[below right] {$m=(2,2)$} (-2,-3) to node[right] {$m=(4,5)$} (-6,-7);
+				\node[dot] at (2,0) {};
+				\node[dot] at (0,-1) {};
+				\node[dot] at (-2,-3) {};
+				\node[dot,draw=black, fill=black] (Q) at (2,1.73) {};
+				\node[above right] at (Q) {$Q$};
+				
+				\node[below left,black!25] at (5.5,5.5) {Quadrant I};
+				\node[below right,black!25] at (-5.5,5.5) {Quadrant II};
+				\node[above left,black!25] at (5.5,-5.5) {Quadrant IV};
+				
+    \end{scope}
+\end{tikzpicture}
+\caption{A broken line with positive angular momentum}
+\label{fig: brokenlineexample}
+\end{figure}
+
 \begin{proof}
 The lemma is straightforward except for broken lines with initial momentum $(m_1,m_2)$ with $m_1,m_2>0$.  
-Consider a bend of $\Gamma$ a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(A^{(w_1,w_2})))$.  If the momentum immediately before the bend is $(m_1,m_2)$, the momentum immediately after the bend is $(m_1-iw_1,m_2-iw_2)$ for some positive integer $i$.  
+Consider a bend of $\Gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(A^{(w_1,w_2})))$.  If the momentum immediately before the bend is $(m_1,m_2)$, the momentum immediately after the bend is $(m_1-kw_1,m_2-kw_2)$ for some positive integer $k$.  
 
-Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that the exponent $(w_1,w_2)$ is a negative scalar multiple of $(q_1,q_2)$. If the angular momentum $(q_1m_2-q_2m_1)$ is positive, the cross-product $w_1m_2-w_2m_1$ is negative. 
-\[ w_1m_2-w_2m_1=m_1(m_2-iw_2)-m_2(m_1-iw_1)<0 \Rightarrow \frac{m_2-iw_2}{m_1-iw_1} < \frac{m_2}{m_1}\]
+Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent vector $(w_1,w_2)$. If the angular momentum $q_1m_2-q_2m_1$ is positive, then the cross-product $w_1m_2-w_2m_1$ is negative. 
+\[ w_1m_2-w_2m_1=m_1(m_2-kw_2)-m_2(m_1-kw_1)<0 \Rightarrow \frac{m_2-kw_2}{m_1-kw_1} < \frac{m_2}{m_1}\]
 If the angular momentum is negative, the slope increases by the same argument.
 \end{proof}
 
-We can now constrain the possible final momentum of a broken line, which may be used to bound the Newton polytope of the corresponding theta function.
+We can now constrain the possible final momentum of a broken line, which will be used to bound the Newton polytope of the corresponding theta function.
 
 \begin{lemma}
-Let $\Gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$ which begins in the third quadrant, with endpoint $Q$ in the first quadrant.  Denote the  initial momentum by $m=(m_1,m_2)$ and final momentum by $m^Q=(m_1^Q,m_2^Q)$.  
+Let $\Gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$ which begins in the third quadrant, with endpoint $Q$ in the first quadrant.  Denote the  initial momentum by $m=(m_1,m_2)$ and the final momentum by $m^Q=(m_1^Q,m_2^Q)$.  
 \begin{enumerate}
-	\item $m_1-m_1^Q\in b\mathbb{N}$ and $m_2-m_2^Q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
-	\item If $\Gamma$ has positive angular momentum, then $m_2^Q>0$ and
-	\[ m_1^Q\geq\left( \frac{m_1}{m_2}-b\right)m_2^Q\]
-	with equality only when $m^Q =( m_1-bm_2,m_2)$.
-	\item If $\Gamma$ has negative angular momentum, then $ m_1^Q>0$ and
-	\[ m_2^Q\geq\left( \frac{m_2}{m_1}-c\right)m_1^Q\]
-	with equality only when $m^Q =( m_1,m_2-cm_1)$.
+	%\item $m_1-m_1^Q\in b\mathbb{N}$ and $m_2-m_2^Q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
+	\item If $\Gamma$ has positive angular momentum, then $m_2\geq m_2^Q>0$ and
+	\[ m_1\geq m_1^Q\geq\left( \frac{m_1}{m_2}-b\right)m_2^Q\]
+	where the lower bound is equality only when $m^Q =( m_1-bm_2,m_2)$.
+	\item If $\Gamma$ has negative angular momentum, then $m_1\geq  m_1^Q>0$ and
+	\[ m_2 \geq m_2^Q\geq\left( \frac{m_2}{m_1}-c\right)m_1^Q\]
+	where the lower bound is equality only when $m^Q =( m_1,m_2-cm_1)$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
 Assume $\Gamma$ has positive angular momentum; consequently, $\Gamma$ passes through the fourth quadrant before entering the first quadrant.  Let $(m_1',m_2')$ be the momentum on $\Gamma$ in the fourth quadrant.  By the preceding lemma, $\frac{m_2'}{m_1'}\leq \frac{m_2}{m_1}$ with equality only if $\Gamma$ doesn't bend before it reaches the fourth quadrant.  
 
-As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+A^{(b,0)})$.  By definition, the momentum on $\Gamma$ in the first quadrant must be an exponent that appears in $A^{(-m_1',-m_2')}(1+A^{(b,0)})^{m_2'}$.  It follows that 
-\[ (m_1^Q,m_2^Q) = (m_1'-ib,m_2')\]
-for some integer $0\leq i \leq m_2'$.  Consequently, $m_2^Q=m_2'\geq0$ and 
-\[ m_2^Q\geq m_1' - bm_2' = \left(\frac{m_1'}{m_2'} - b\right) m_2'  = \left(\frac{m_1'}{m_2'} - b\right) m_2^Q \geq \left(\frac{m_1}{m_2} - b\right) m_2^Q\]
+As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+A^{(b,0)})$.  By definition, the momentum on $\Gamma$ in the first quadrant must be an exponent that appears in $A^{(-m_1',-m_2')}(1+A^{(b,0)})^{m_2'}$.  It follows that%The possible monomials which may occur in this expression are of the form $A^{(-m_1'+kb,-m_2')}$ for some $0\leq k\leq m_2'$, and so 
+\[ (m_1^Q,m_2^Q) = (m_1'-kb,m_2')\]
+for some $0\leq k\leq m_2'$.
+Consequently, $m_2^Q=m_2'\geq0$ and 
+\[ m_1^Q\geq m_1' - bm_2' = \left(\frac{m_1'}{m_2'} - b\right) m_2'  = \left(\frac{m_1'}{m_2'} - b\right) m_2^Q \geq \left(\frac{m_1}{m_2} - b\right) m_2^Q\]
 The second inequality is equality only if $(m_1',m_2')=(m_1,m_2)$, and so the composite inequality is equality only if $m^Q =( m_1-bm_2,m_2)$.
 
 Analogous inequalities hold for negative angular momentum by the same argument.
