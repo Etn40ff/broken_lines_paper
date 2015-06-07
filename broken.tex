@@ -56,27 +56,30 @@
 \author{CCGMMRSW}
 
 \begin{document}
-\maketitle
 
 \begin{abstract}
 We prove the equality of two canonical bases of a rank 2 cluster algebra, the greedy basis of Lee-Li-Zelevinsky and the theta basis of Gross-Hacking-Keel-Kontsevich.
 \end{abstract}
 
+\maketitle
+
 \section{Introduction}
 
 Cluster algebras are commutative rings with partial bases of a special form, originally discovered in the context of dual canonical bases in Lie theory.  Their axiomatics encapsulates the fact that many kinds of canonical bases in nature have large subsets which are governed by a uniform combinatorics.  Elements of these subsets are monomials in distinguished elements called cluster variables, which are grouped into overlapping collections called clusters.  Each cluster has an associated skew-symmetrizable matrix, and the entire cluster algebra can be reconstructed recursively from any particular cluster along with this matrix.
 
-A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a complete basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{???}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{???}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
+A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a complete basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup,GMN}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
 
 The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivty conjecture asserts that the coefficients of these polynomials are positive integers.  The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.  
 
-The second basis we consider is the theta basis of Gross-Hacking-Keel-Kontsevich \cite{GHKK}.  Unlike the greedy basis it is defined for cluster algebras of arbitrary rank.  The coefficients of Laurent expansions of its elements enumerate combinatorial objects called broken lines, which morally capture the geometry of holomorphic disks in the mirror cluster variety.  Broken lines are piecewise-linear paths in a tropicalization of the cluster variety, whose points of non-linearity lie along an object known as a scattering diagram.  This diagram encodes the relations among cluster transformations, or among elements of the tropical vertex group.
+The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the greedy basis it is defined for cluster algebras of arbitrary rank.  The coefficients of Laurent expansions of its elements enumerate combinatorial objects called broken lines, which morally capture the geometry of holomorphic disks in the mirror cluster variety.  Broken lines are piecewise-linear paths in a tropicalization of the cluster variety, whose points of non-linearity lie along an object known as a scattering diagram.  This diagram encodes the relations among cluster transformations, or among elements of the tropical vertex group.
 
 \begin{theorem}
 Let $\mathcal{A}$ be a rank 2 cluster algebra.  The greedy and theta bases of $\mathcal{A}$ coincide.
 \end{theorem}
 
 The proof is based on an analysis of the Newton polygons of elements of the theta basis.  It can be shown that elements of the greedy basis are essentially determined by which coefficients of their Laurent expansion are nonzero.  That is, if an element of $\mathcal{A}$ is positive and Laurent in three adjacent clusters and has the same nonzero coefficients as a greedy basis element in any particular Laurent expansion, it must in fact coincide with that element.  Thus to show that elements of the theta basis are elements of the greedy basis, it suffices to establish certain bounds on the behavior of broken lines rather than explicitly enumerating them.
+
+The organization of the paper is as follows.  In sections 2 and 3 we review the basis definitions and properties of the greedy and theta bases, respectively.  The natural parametrizing sets of the two bases, the $d$-vectors and $g$-vectors, are distinct, and in section 4 we explain how to relate them.  This determines a bijection between the two bases, and in section 5 we show that the basis elements mapped to each other by this bijection actually coincide, proving the main theorem.
 
 \textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2015 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible.
 
@@ -1206,18 +1209,25 @@ TO DO.
 \end{proof}
 \begin{thebibliography}{99}
   
-  \bibitem[CPS]{CPS} M.~Carl, M.~Pumperla, and B.~Siebert, A tropical view of Landau-Ginzburg models, available at http://www.math.uni-hamburg.de/home/siebert/preprints/LGtrop.pdf
-  \bibitem[FZ]{FZ} S.~Fomin and A.~Zelevinsky, Cluster algebras I: Foundations,  \textsl{J. Amer. Math. Soc.} \textbf{15} (2002), no. 2, pp.~497--529.
+  \bibitem[BZ]{BZ} A.~Berenstein and A.~Zelevinsky, \emph{Triangular bases in quantum cluster algebras}, Int. Math. Res. Not., \textbf{2014} (2014), no. 6, 1651--1688.
+  \bibitem[CPS]{CPS} M.~Carl, M.~Pumperla, and B.~Siebert, \emph{A tropical view of Landau-Ginzburg models}, preprint, available at http://www.math.uni-hamburg.de/home/siebert/preprints/LGtrop.pdf, 2010.
+  \bibitem[Dup]{Dup} G.~Dupont, \emph{Generic variables in acyclic cluster algebras}, J. Pure Appl. Algebra, \textbf{215} (2011), 628--641.
+  \bibitem[FG]{FG} V.~Fock and A.~B.~Goncharov, \emph{Moduli spaces of local systems and higher Teichm\"{u}ller theory}, Publ. Math. de l'IH\'{E}S, {\bf 103} (2006), 1-211.
+  \bibitem[FZ]{FZ} S.~Fomin and A.~Zelevinsky, \emph{Cluster algebras I: Foundations},  J. Amer. Math. Soc., \textbf{15} (2002), no. 2, 497--529.
   \bibitem[G10]{G10} M.~Gross,  \emph{Mirror symmetry for $\mathbb{P}^2$ and tropical geometry}, Adv.\ Math., {\bf 224} (2010), 169--245. 
-  \bibitem[GHK11]{GHK11} M.~Gross, P.~Hacking and S.~Keel, \emph{Mirror symmetry for log Calabi-Yau surfaces I}, preprint, 2011.
-  \bibitem[GHKK]{GHKK} M.~Gross, P.~Hacking, S.~Keel, M.~Kontsevich, \emph{Canonical bases for cluster algebras}, preprint, 2014.
-  \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, J.~Weyman \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf 
-  \bibitem[LLZ2]{LLZ2} K. Lee, L. Li and A. Zelevinsky, Positivity and tameness in rank 2 cluster algebras, \textsl{J. Alg. Comb.} 2014, doi: 10.1007/s10801-014-0509-6.
-  \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, Greedy elements in rank 2 cluster algebras, \textsl{Selecta Math.} \textbf{20} (2014), 57--82.
-  \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, A.~Zelevinsky \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math. (N.S.), {\bf 20}, (2014), 57--82,
-  \bibitem[R]{R} N.~Reading, \emph{Universal geometric cluster algebras}, Mathematische Zeitschrift, {\bf 277 } (2014), 499-547.
-  \bibitem[RS]{RS} N.~Reading, D.~Speyer, \emph{Combinatorial frameworks for cluster algebras}, preprint, 2011.
-  \bibitem[SZ]{SZ} P.~Sherman and A.~Zelevinsky, Positivity and Canonical Bases in Rank 2 Cluster Algebras of Finite and Affine Types, \textsl{Mosc. Math. J.} \textbf{4} (2004), no. 4, 947--974.
+  \bibitem[GLS]{GLS} C.~Geiss, B.~Leclerc, and J.~Schr\"{o}er, \emph{Semicanonical bases and preprojective algebras}, Ann. Sci. de l'\'{E}cole Norm. Sup., {\bf 38} (2005), no. 2, 193--253.
+  \bibitem[GHK11]{GHK11} M.~Gross, P.~Hacking, and S.~Keel, \emph{Mirror symmetry for log Calabi-Yau surfaces I}, Publ. Math. de l'IH\'{E}S, (2015), 1--104.
+  \bibitem[GHKK]{GHKK} M.~Gross, P.~Hacking, S.~Keel, and M.~Kontsevich, \emph{Canonical bases for cluster algebras}, preprint, arXiv:1411.1394, 2014.
+  \bibitem[GMN]{GMN} D.~Gaiotto, G.~W.~Moore, and A.~Neitzke, \emph{Framed BPS states}, Adv. Theor. Math. Phys., {\bf 17} (2013), no. 2, 241--397.
+  \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, and J.~Weyman, \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf, 2014.
+  \bibitem[KQ]{KQ} Y.~Kimura and F.~Qin, \emph{Graded quiver varieties, quantum cluster algebras and dual canonical basis}, Adv. Math., {\bf 262} (2012), 261--312.
+  \bibitem[LLZ2]{LLZ2} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Positivity and tameness in rank 2 cluster algebras}, J. Alg. Comb., {\bf 40} (2014), no. 3, 823--840.
+  \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math., \textbf{20} (2014), 57--82.
+  \bibitem[MSW]{MSW} G.~Musiker, R.~Schiffler, and L.~Williams, \emph{Bases for cluster algebras from surfaces}, Compositio Math., {\bf 149} (2013), no. 2, 217--263.
+  \bibitem[R]{R} N.~Reading, \emph{Universal geometric cluster algebras}, Math. Zeit., {\bf 277 } (2014), 499-547.
+  \bibitem[RS]{RS} N.~Reading and D.~Speyer, \emph{Combinatorial frameworks for cluster algebras}, Int. Math. Res. Not., (2015), 1--65.
+  \bibitem[Rup]{Rup} D.~Rupel, \emph{The Feigin tetrahedron}, SIGMA, {\bf 11} (2015), no. 24, 1--30.
+  \bibitem[SZ]{SZ} P.~Sherman and A.~Zelevinsky, \emph{Positivity and canonical bases in rank 2 cluster algebras of finite and affine types}, Mosc. Math. J., \textbf{4} (2004), no. 4, 947--974.
 
 \end{thebibliography}
 
