@@ -58,6 +58,28 @@
 \begin{document}
 \maketitle
 
+\begin{abstract}
+We prove the equality of two canonical bases of a rank 2 cluster algebra, the greedy basis of Lee-Li-Zelevinsky and the theta basis of Gross-Hacking-Keel-Kontsevich.
+\end{abstract}
+
+\section{Introduction}
+
+Cluster algebras are commutative rings with partial bases of a special form, originally discovered in the context of dual canonical bases in Lie theory.  Their axiomatics encapsulates the fact that many kinds of canonical bases in nature have large subsets which are governed by a uniform combinatorics.  Elements of these subsets are monomials in distinguished elements called cluster variables, which are grouped into overlapping collections called clusters.  Each cluster has an associated skew-symmetrizable matrix, and the entire cluster algebra can be reconstructed recursively from any particular cluster along with this matrix.
+
+A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a complete basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{???}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{???}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
+
+The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivty conjecture asserts that the coefficients of these polynomials are positive integers.  The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.  
+
+The second basis we consider is the theta basis of Gross-Hacking-Keel-Kontsevich \cite{GHKK}.  Unlike the greedy basis it is defined for cluster algebras of arbitrary rank.  The coefficients of Laurent expansions of its elements enumerate combinatorial objects called broken lines, which morally capture the geometry of holomorphic disks in the mirror cluster variety.  Broken lines are piecewise-linear paths in a tropicalization of the cluster variety, whose points of non-linearity lie along an object known as a scattering diagram.  This diagram encodes the relations among cluster transformations, or among elements of the tropical vertex group.
+
+\begin{theorem}
+Let $\mathcal{A}$ be a rank 2 cluster algebra.  The greedy and theta bases of $\mathcal{A}$ coincide.
+\end{theorem}
+
+The proof is based on an analysis of the Newton polygons of elements of the theta basis.  It can be shown that elements of the greedy basis are essentially determined by which coefficients of their Laurent expansion are nonzero.  That is, if an element of $\mathcal{A}$ is positive and Laurent in three adjacent clusters and has the same nonzero coefficients as a greedy basis element in any particular Laurent expansion, it must in fact coincide with that element.  Thus to show that elements of the theta basis are elements of the greedy basis, it suffices to establish certain bounds on the behavior of broken lines rather than explicitly enumerating them.
+
+\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2015 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible.
+
 \section{Rank 2 cluster algebras and their greedy bases}
 \saySS{This section was written by Dylan independently while Mark, Mandy and
   myself were working on sections 2 and 3. We should check that notations and
@@ -1047,6 +1069,83 @@ The following demonstrates the utility of using $\fD_{\gr,(b,c)}$:
 \end{remark}
 \saySS{Eventually we want to make a saner version of the bibliography; this is
   kind of an hack.}
+
+\section{Proof that the bases coincide}
+
+We may now state the main theorem in our current notation.
+
+\begin{thm}
+For any integers $b,c>0$ and for each $(m_1,m_2)\in \mathbb{Z}^2$, we have that 
+\[ \Theta_{(m_1,m_2)} = x[?,?]\]
+as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
+\end{thm}
+
+The proof will be to show that $\Theta_{(m_1,m_2)}$ is a pointed element with the same Newton polytope as $x[?,?]$.  By Theorem \ref{thm:  ???}, this is already enough to show that $\Theta_{(m_1,m_2)}=x[?,?]$.
+
+Let $\Gamma$ be a broken line in $\mathfrak{D}_{(b,c)}$.  At any point $Q=(q_1,q_2)\in \Gamma$ at which $\Gamma$ is linear with momentum $m=(m_1,m_2)$, define the \textbf{angular momentum} of $\Gamma$ at $Q$ to be $q_1m_2-q_2m_1$.
+\begin{lemma}
+The angular momentum is constant on $\Gamma$.
+\end{lemma}
+\begin{proof}
+Let $Q=(q_1,q_2)$ and $Q'=(q_1',q_2')$ be two points on $\Gamma$.
+First, assume that $Q$ and $Q'$ are in the same linear region of $\Gamma$, with momentum $m=(m_1,m_2)$.  There is some $t$ such that 
+\[ (q_1',q_2') = (q_1+tm_1,q_2+tm_2) \]
+Then the angular momentum at $Q'$ is 
+\[ (q_1+tm_1)m_2-(q_2+tm_2)m_1 = q_1m_2+tm_1m_2-q_2m_1-tm_2m_2 = q_1m_2 - q_2m_1 \]
+
+Next, assume that $Q$ and $Q'$ are points on $\Gamma$ on either side of a bend at a wall $(\fd, f_{\fd})$ at point $q=(q_1,q_2)$.  If the momentum of $\Gamma$ is $m=(m_1,m_2)$ and $f_{\fd}$ is a series in $A^{(w_1,w_2)}$, then the momentum of $\Gamma$ at $Q'$ must be of the form $(m_1+iw_1,m_2+iw_2)$ for some positive integer $i$.  By the argument of the previous paragraph, the angular momentum at $Q$ is $q_1m_2-q_2m_1$
+and the angular momentum at $Q'$ is
+\[ q_1(m_2+iw_2)-q_2(m_1+iw_1) = (q_1m_2-q_2m_1)+i(q_1w_2-q_2w_1) \]
+Since the point $(q_1,q_2)$ lies on the ray through $(w_1,w_2)$, the expression $q_1w_2-q_2w_1$ is zero, and so the angular momenta at $Q$ and $Q'$ are the same.  This equality extends transitively to any pair of points $Q,Q'$ on $\Gamma$.
+\end{proof}
+The sign of the angular momentum is a useful invariant for characterizing the qualitative behavior of a broken line.
+For a broken line ending in the first quadrant, the sign of the angular momentum characterizes whether that broken line could have passed through the second quadrant (positive) or the fourth quadrant (negative).
+
+\begin{lemma}
+Let $\Gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $Q$ in the first quadrant.  
+\begin{itemize}	
+	\item If $\Gamma$ has positive angular momentum, then the slope of the linear domains of $\Gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
+	\item If $\Gamma$ has negative angular momentum, then the slope of the linear domains of $\Gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+The lemma is straightforward except for broken lines with initial momentum $(m_1,m_2)$ with $m_1,m_2>0$.  
+Consider a bend of $\Gamma$ a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(A^{(w_1,w_2})))$.  If the momentum immediately before the bend is $(m_1,m_2)$, the momentum immediately after the bend is $(m_1-iw_1,m_2-iw_2)$ for some positive integer $i$.  
+
+Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that the exponent $(w_1,w_2)$ is a negative scalar multiple of $(q_1,q_2)$. If the angular momentum $(q_1m_2-q_2m_1)$ is positive, the cross-product $w_1m_2-w_2m_1$ is negative. 
+\[ w_1m_2-w_2m_1=m_1(m_2-iw_2)-m_2(m_1-iw_1)<0 \Rightarrow \frac{m_2-iw_2}{m_1-iw_1} < \frac{m_2}{m_1}\]
+If the angular momentum is negative, the slope increases by the same argument.
+\end{proof}
+
+We can now constrain the possible final momentum of a broken line, which may be used to bound the Newton polytope of the corresponding theta function.
+
+\begin{lemma}
+Let $\Gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$ which begins in the third quadrant, with endpoint $Q$ in the first quadrant.  Denote the  initial momentum by $m=(m_1,m_2)$ and final momentum by $m^Q=(m_1^Q,m_2^Q)$.  
+\begin{enumerate}
+	\item $m_1-m_1^Q\in b\mathbb{N}$ and $m_2-m_2^Q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
+	\item If $\Gamma$ has positive angular momentum, then $m_2^Q>0$ and
+	\[ m_1^Q\geq\left( \frac{m_1}{m_2}-b\right)m_2^Q\]
+	with equality only when $m^Q =( m_1-bm_2,m_2)$.
+	\item If $\Gamma$ has negative angular momentum, then $ m_1^Q>0$ and
+	\[ m_2^Q\geq\left( \frac{m_2}{m_1}-c\right)m_1^Q\]
+	with equality only when $m^Q =( m_1,m_2-cm_1)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Assume $\Gamma$ has positive angular momentum; consequently, $\Gamma$ passes through the fourth quadrant before entering the first quadrant.  Let $(m_1',m_2')$ be the momentum on $\Gamma$ in the fourth quadrant.  By the preceding lemma, $\frac{m_2'}{m_1'}\leq \frac{m_2}{m_1}$ with equality only if $\Gamma$ doesn't bend before it reaches the fourth quadrant.  
+
+As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+A^{(b,0)})$.  By definition, the momentum on $\Gamma$ in the first quadrant must be an exponent that appears in $A^{(-m_1',-m_2')}(1+A^{(b,0)})^{m_2'}$.  It follows that 
+\[ (m_1^Q,m_2^Q) = (m_1'-ib,m_2')\]
+for some integer $0\leq i \leq m_2'$.  Consequently, $m_2^Q=m_2'\geq0$ and 
+\[ m_2^Q\geq m_1' - bm_2' = \left(\frac{m_1'}{m_2'} - b\right) m_2'  = \left(\frac{m_1'}{m_2'} - b\right) m_2^Q \geq \left(\frac{m_1}{m_2} - b\right) m_2^Q\]
+The second inequality is equality only if $(m_1',m_2')=(m_1,m_2)$, and so the composite inequality is equality only if $m^Q =( m_1-bm_2,m_2)$.
+
+Analogous inequalities hold for negative angular momentum by the same argument.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm: ???}]
+TO DO.
+\end{proof}
 \begin{thebibliography}{99}
   
   \bibitem[CPS]{CPS} M.~Carl, M.~Pumperla, and B.~Siebert, A tropical view of Landau-Ginzburg models, available at http://www.math.uni-hamburg.de/home/siebert/preprints/LGtrop.pdf
