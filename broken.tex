@@ -52,7 +52,7 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Theta functions and greedy bases}
+\title{The greedy basis is the theta basis}
 \author{CCGMMRSW}
 
 \begin{document}
@@ -61,8 +61,7 @@
 \section{Rank 2 cluster algebras and their greedy bases}
 \saySS{This section was written by Dylan independently while Mark, Mandy and
   myself were working on sections 2 and 3. We should check that notations and
-  conventions are consistent. I am ready to bet that we need to take a transpose
-  somewhere.}
+  conventions are consistent. I am ready to bet that we need to take a transpose somewhere.}\sayDR{Done, the conventions for mutations match.}
 Fix $b,c>0$ and consider rational functions $x_m\in\QQ(x_1,x_2)$, for $m\in\ZZ$,
 defined recursively by 
 \[
@@ -77,8 +76,8 @@ algebra} $\cA(b,c)$ is the $\ZZ$-subalgebra of $\QQ(x_1,x_2)$ which they
 generate.  While the cluster variables appear to be rational functions, it is a
 remarkable fact that cancellations inevitably occur and one always obtains
 Laurent expressions.  This result is known as the ``Laurent Phenomenon" and was
-proven by Fomin and Zelevinsky \cite{FZ}.
-\begin{theorem}\cite[Theorem~3.1]{FZ} 
+proven by Fomin and Zelevinsky.
+\begin{theorem}\label{th:Laurent}\cite[Theorem~3.1]{FZ} 
   For any $k,m\in\ZZ$ we have $x_m\in\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$.
 \end{theorem}
 \sayDR{In fact, they made the stronger conjecture that all of these Laurent
@@ -87,10 +86,10 @@ proven by Fomin and Zelevinsky \cite{FZ}.
 An element $x\in\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
 $(a_1,a_2)\in\ZZ^2$} if it can be written in the form
 \[
-  x=x_1^{-a_1}x_2^{-a_2}\sum\limits_{p,q\ge0}c(p,q)x_1^{bp}x_2^{cq}
+  x=x_1^{-a_1}x_2^{-a_2}\sum\limits_{p,q\ge0}c(p,q)x_1^{bp}x_2^{cq},
 \]
 where $c(p,q)\in\ZZ$ with $c(0,0)=1$.  We will call such an $x$ \emph{positive
-in the first cluster} if $c(p,q)\ge0$ for all $p,q\ge0$.
+in the first cluster} if $c(p,q)\ge0$ for all $p,q\ge0$.  An element $x\in\cA(b,c)$ is simply called \emph{positive} if its Laurent expansion in each $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ has positive coefficients.
 \begin{prop}\cite[Proposition~1.5]{LLZ}
   Let $x$ be pointed at $(a_1,a_2)\in\ZZ^2$ and suppose
   $x\in\ZZ_{\ge0}[x_0^{\pm1},x_1^{\pm1}]
@@ -128,15 +127,14 @@ a collection of elements of $\cA(b,c)$ with nice properties.
   choice of an initial cluster.
 \end{theorem}
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
-$\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis}.  Let
+call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  Let
 $R_{a_1,a_2}=\{(p,q)\in\ZZ_{\ge0}^2:c(p,q)\ne0 \text{ in } x[a_1,a_2]\}$ denote
-the \emph{pointed support} of $x[a_1,a_2]$.  Theorem~\ref{th:greedy} is a
-consequence of the following characterization of the greedy elements by their
+the \emph{pointed support} of $x[a_1,a_2]$.  Theorem~\ref{th:greedy} is proven using the following characterization of the greedy elements by their
 pointed supports.
 
-\begin{theorem}\label{th:pointed supports}\cite[Proposition~4.1 and Theorem~???]{LLZ,LLZ2}
+\begin{theorem}\label{th:pointed supports}(\cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2})
   For $(a_1,a_2)\in\ZZ^2$, the pointed support of
-  \sayDR{Rewrite this in terms of the Newton polytope}
+  \sayDR{Rewrite this in terms of the Newton polytope}\sayDR{But the pictures of the pointed support look better.}
   $x[a_1,a_2]$ is determined as follows.
 \begin{enumerate}
   \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
@@ -149,16 +147,15 @@ pointed supports.
   R_{a_1,a_2}=&\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le p< \frac{a_1}{b},\; q+\Big(b-\frac{ba_2}{ca_1}\Big)p<a_1\bigg\}\\
   &\bigcup\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le q<
     \frac{a_2}{c},\; p+\Big(c-\frac{ca_1}{ba_2}\Big)q<a_2\bigg\}\\
-  &\hspace{1.5em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
+  &\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
   \endaligned
   $$
-  \sayDR{I do not like how these allign; we should fix this in the final
-    version.}
 \end{enumerate}
-\saySS{We miss a reference here. It should be \cite[Corollary 3.5]{LLZ2}}
-Moreover, if $x\in\cA(b,c)$ is any element pointed at $(a_1,a_2)$ whose pointed
-support is equal to $R_{a_1,a_2}$, then $x=x[a_1,a_2]$. 
+Moreover, if $x\in\cA(b,c)$ is any positive element pointed at $(a_1,a_2)$ whose pointed support is equal to $R_{a_1,a_2}$, then $x=x[a_1,a_2]$. 
 \end{theorem}
+\begin{proof}
+ The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.  \sayDR{``Moreover'' portion in progress.}%Suppose $x\in\cA(b,c)$ is a positive element pointed at $(a_1,a_2)$ and the pointed support of $x$ is equal to $R_{a_1,a_2}$.  If $x$ is indecomposable, then we must have $x=x[a_1,a_2]$.  So suppose 
+\end{proof}
 
 \begin{remark}
   Consider the points 
@@ -172,137 +169,131 @@ support is equal to $R_{a_1,a_2}$, then $x=x[a_1,a_2]$.
   \begin{center}
     \begin{tikzpicture}[scale=.7]
       %(1)
-      \begin{scope}[shift={(.5, 5.5)}]
+      \begin{scope}[shift={(-2.75, 5.5)}]
         \usetikzlibrary{patterns}
         \draw (0,0) node[anchor=east] {\tiny $O$};
-        \draw[->] (0,0) -- (2.5,0) node[above] {\tiny $p$};
-        \draw[->] (0,0) -- (0,2.5) node[left] {\tiny $q$};
+        \draw[->] (0,0) -- (3,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3) node[left] {\tiny $q$};
         \fill (0,0) circle (2pt);
-        \draw (-1,-.5) circle (1.5pt);
+        \draw (-1,-.5) circle (2pt);
         \draw (-1,-.5) node[anchor=south] {\tiny $B$};
-        \draw (0.5,-.6) node[anchor=north] {\footnotesize (1) $a_1,a_2\le0$};
+        \draw (1.07,-.6) node[anchor=north] {\footnotesize (1) $a_1,a_2\le0$};
       \end{scope}
       %(2)
-      \begin{scope}[shift={(6, 5.5)}]
+      \begin{scope}[shift={(2.75, 5.5)}]
         \usetikzlibrary{patterns}
         \draw (0,0) node[anchor=east] {\tiny$O$};
         \draw (2,0) node[anchor=south] {\tiny$A$};
-        \draw[->] (0,0) -- (2.5,0) node[above] {\tiny $p$};
-        \draw[->] (0,0) -- (0,2.5) node[left] {\tiny $q$};
-        \fill (0,0) circle (1.5pt);
-        \fill (2,0) circle (1.5pt);
-         \draw [very thick] (0,0) -- (2,0);
-        \draw (-1,.5) circle (1.5pt);
+        \draw[->] (0,0) -- (3,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3) node[left] {\tiny $q$};
+        \fill (0,0) circle (2pt);
+        \fill (2,0) circle (2pt);
+         \draw [thick] (0,0) -- (2,0);
+        \draw (-1,.5) circle (2pt);
         \draw (-1,.5) node[anchor=south] {\tiny $B$};
-        \draw (1,-.6) node[anchor=north] {\footnotesize (2) $a_1\le 0<a_2$};
+        \draw (1.27,-.6) node[anchor=north] {\footnotesize (2) $a_1\le 0<a_2$};
       \end{scope}
       %(3)
-      \begin{scope}[shift={(11.5,5.5)}]
+      \begin{scope}[shift={(8.25,5.5)}]
         \usetikzlibrary{patterns}
         \draw (0,0) node[anchor=east] {\tiny$O$};
         \draw (0,2) node[anchor=east] {\tiny$C$};
-        \draw[->] (0,0) -- (2.5,0) node[above] {\tiny $p$};
-        \draw[->] (0,0) -- (0,2.5) node[left] {\tiny $q$};
-        \fill (0,0) circle (1.5pt);
-        \fill (0,2) circle (1.5pt);
-        \draw [very thick] (0,0) -- (0,2);
-        \draw (1,-.3) circle (1.5pt);
+        \draw[->] (0,0) -- (3,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3) node[left] {\tiny $q$};
+        \fill (0,0) circle (2pt);
+        \fill (0,2) circle (2pt);
+        \draw [thick] (0,0) -- (0,2);
+        \draw (1,-.3) circle (2pt);
         \draw (1,-.3) node[anchor=west] {\tiny $B$};
-        \draw (1,-.6) node[anchor=north] {\footnotesize (3) $a_2\le0<a_1$};
+        \draw (1.27,-.6) node[anchor=north] {\footnotesize (3) $a_2\le0<a_1$};
       \end{scope}
-    \end{tikzpicture}
-  \end{center}
-  \begin{center}
-    \begin{tikzpicture}[scale=.7]
       %(4)
-      \begin{scope}
+      \begin{scope}[shift={(0,0)}]
         \usetikzlibrary{patterns}
         %\fill[pattern=horizontal lines] (-2.5,2)--(-1,.5)--(-1,-1)--(-2.5,-1)--(-2.5,2);
-        \draw (0,3)--(1.5,1.5)--(1.5,0);
-        \draw[dashed](0,3)--(2.15,1.25) (2.15,1.15)--(1.5,0);
+        \fill[black!10] (0,3)--(1.5,1.5)--(1.5,0)--(0,0)--(0,3);
+        \draw[thick] (0,3)--(1.5,1.5)--(1.5,0)--(0,0)--(0,3);
+        \draw[dashed,thick](0,3)--(2.15,1.25) (2.15,1.15)--(1.5,0);
         \draw (2.2,1.2) circle (2pt);
         \draw (2.3,1.2) node[anchor=west] {\tiny$B$};
-        \fill [black!10] (0,3)--(1.5,1.5)--(1.5,0)--(0,0)--(0,3);
         \draw (0,0) node[anchor=east] {\tiny$O$};
         \draw (1.5,-.1) node[anchor=south west] {\tiny$A$};
         \draw (1.4,1.5) node[anchor= south west] {\tiny$D_{1}$};
         \draw (0,3) node[anchor=east] {\tiny$C$};
         \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
         \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
-        \fill (0,0) circle (1.5pt);
-        \fill (0,3) circle (1.5pt);
-        \fill (1.5,0) circle (1.5pt);
-        \fill (1.5,1.5) circle (1.5pt);
-        \draw (1.5,-.5) node[anchor=north] {\footnotesize (4) $0<ba_2\leq a_1$};
+        \fill (0,0) circle (2pt);
+        \fill (0,3) circle (2pt);
+        \fill (1.5,0) circle (2pt);
+        \fill (1.5,1.5) circle (2pt);
+        \draw (1.37,-.5) node[anchor=north] {\footnotesize (4) $0<ba_2\leq a_1$};
       \end{scope}
       %(5)
       \begin{scope}[shift={(5.5,0)}]
         \usetikzlibrary{patterns}
-        \draw (3,0)--(1.3,1)--(0,1);
-        \draw[dashed](3,0)--(0.95,1.45) (0.85,1.47)--(0,1);
+        \fill[black!10] (3,0)--(1.3,1)--(0,1)--(0,0)--(3,0);
+        \draw[thick] (3,0)--(1.3,1)--(0,1)--(0,0)--(3,0);
+        \draw[dashed,thick](3,0)--(0.95,1.45) (0.85,1.47)--(0,1);
         \draw (0.9,1.5) circle (2pt);
         \draw (0.9,1.5) node[anchor=south] {\tiny$B$};
-        \fill [black!10] (3,0)--(1.3,1)--(0,1)--(0,0)--(3,0);
         \draw (0,0) node[anchor=east] {\tiny$O$};
         \draw (2.7,0) node[anchor=south west] {\tiny$A$};
         \draw (1.3,.9) node[anchor=south west] {\tiny$D_{2}$};
         \draw (0,1) node[anchor=east] {\tiny$C$};
         \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
         \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
-        \fill (0,0) circle (1.5pt);
-        \fill (0,1) circle (1.5pt);
-        \fill (3,0) circle (1.5pt);
-        \fill (1.3,1) circle (1.5pt);
-        \draw (1.5,-.5) node[anchor=north] {\footnotesize (5) $0<ca_1\leq a_2$};
-      \end{scope}
-    \end{tikzpicture}
-  \end{center}
-  \begin{center}
-    \begin{tikzpicture}[scale=.7]
-      %(6')
-      \begin{scope}[shift={(11,0)}]
-        \usetikzlibrary{patterns}
-        \draw[dashed] (0,3)--(1.5,1.8)--(2.5,0);
-        \draw[color=white,fill=white] (1.5,1.8) circle (2pt);
-        \fill [black!10]  (0,3)--(1.5,1.77)--(2.5,0)--(0,0)--(0,3);
-        \draw (1.5,1.8) circle (2pt);
-        \draw (0,0) node[anchor=east] {\tiny$O$};
-        \draw (2.2,0) node[anchor=south west] {\tiny$A$};
-        \draw (1.5,1.8) node[anchor=south west] {\tiny$B$};
-        \draw (0,3) node[anchor=east] {\tiny$C$};
-        \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
-        \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
-        \fill (0,0) circle (1.5pt);
-        \fill (0,3) circle (1.5pt);
-        \fill (2.5,0) circle (1.5pt);
-        \draw (1.5,-.5) node[anchor=north] {\footnotesize (6) $0<a_1<ba_2$,};
-        \draw (1.5,-1) node[anchor=north] {\footnotesize \hspace{10pt} $0<a_2<ca_1$,};
-        \draw (1.5,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ non-imaginary root}};
+        \fill (0,0) circle (2pt);
+        \fill (0,1) circle (2pt);
+        \fill (3,0) circle (2pt);
+        \fill (1.3,1) circle (2pt);
+        \draw (1.37,-.5) node[anchor=north] {\footnotesize (5) $0<ca_1\leq a_2$};
       \end{scope}
       %(6)
-      \begin{scope}[shift={(16,0)}]
+      \begin{scope}[shift={(0,-5.5)}]
         \usetikzlibrary{patterns}
-        \draw[dashed] (0,3)--(.7,.78) (.78,.7)--(2.5,0);
-        \fill [black!10]  (0,3)--(.7,.7)--(2.5,0)--(0,0)--(0,3);
+        \fill[black!10]  (0,3)--(1.5,2.3)--(2,0)--(0,0)--(0,3);
+        \draw[dashed,thick] (0,3)--(1.5,2.3)--(2,0);
+        \draw[thick] (0,3)--(0,0)--(2,0); 
+        \fill[white] (1.5,2.3) circle (2pt);
+        \draw (1.5,2.3) circle (2pt);
         \draw (0,0) node[anchor=east] {\tiny$O$};
-        \draw (2.2,0) node[anchor=south west] {\tiny$A$};
-        \draw (.7,.7) circle (2pt);
-        \draw (.7,.7) node[anchor=south west] {\tiny$B$};
+        \draw (1.8,0) node[anchor=south west] {\tiny$A$};
+        \draw (1.5,2.3) node[anchor=south west] {\tiny$B$};
         \draw (0,3) node[anchor=east] {\tiny$C$};
         \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
         \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
-        \fill (0,0) circle (1.5pt);
-        \fill (0,3) circle (1.5pt);
-        \fill (2.5,0) circle (1.5pt);
-        \draw (1.5,-.5) node[anchor=north] {\footnotesize (6) $0<a_1<ba_2$,};
-        \draw (1.5,-1) node[anchor=north] {\footnotesize \hspace{10pt} $0<a_2<ca_1$,};
-        \draw (1.5,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{imaginary root}};
+        \fill (0,0) circle (2pt);
+        \fill (0,3) circle (2pt);
+        \fill (2,0) circle (2pt);
+        \draw (1.42,-.5) node[anchor=north] {\footnotesize (6) $0<a_1<ba_2$,};
+        \draw (1.46,-1) node[anchor=north] {\footnotesize \hspace{10pt} $0<a_2<ca_1$,};
+        \draw (1.17,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ non-imaginary root}};
+      \end{scope}
+      %(6')
+      \begin{scope}[shift={(5.5,-5.5)}]
+        \usetikzlibrary{patterns}
+        \fill[black!10]  (0,3)--(.7,.5)--(2,0)--(0,0)--(0,3);
+        \draw[dashed,thick] (0,3)--(.7,.5)--(2,0);
+        \draw[thick] (0,3)--(0,0)--(2,0);
+        \draw (0,0) node[anchor=east] {\tiny$O$};
+        \draw (1.8,0) node[anchor=south west] {\tiny$A$};
+        \fill[white] (.7,.5) circle (2pt);
+        \draw (.7,.5) circle (2pt);
+        \draw (.7,.5) node[anchor=south west] {\tiny$B$};
+        \draw (0,3) node[anchor=east] {\tiny$C$};
+        \draw[->] (0,0) -- (3.5,0) node[above] {\tiny $p$};
+        \draw[->] (0,0) -- (0,3.5) node[left] {\tiny $q$};
+        \fill (0,0) circle (2pt);
+        \fill (0,3) circle (2pt);
+        \fill (2,0) circle (2pt);
+        \draw (1.47,-.5) node[anchor=north] {\footnotesize (6) $0<a_1<ba_2$,};
+        \draw (1.51,-1) node[anchor=north] {\footnotesize \hspace{10pt} $0<a_2<ca_1$,};
+        \draw (1.27,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ imaginary root}};
       \end{scope}
     \end{tikzpicture}
+    \quad\quad\quad\quad
   \end{center}
 \end{remark}
-\sayDR{Please remember to do the small cosmetic adjustments that will make this
-  figure much awsomer.}
 
 To prove Theorem~\ref{th:pointed supports} Lee, Li, and Zelevinsky develop a
 combinatorial construction via compatible pairs on a maximal Dyck path.  
