@@ -52,7 +52,7 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{A Rank Two Haiku:\\ The Greedy Basis Equals \\ The Theta Basis}
+\title[Greedy Basis is the Theta Basis]{A Rank Two Haiku:\\ The Greedy Basis Equals \\ The Theta Basis}
 \author{CCGMMRSW}
 
 \begin{document}
@@ -1094,30 +1094,31 @@ as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis 
 
 The proof will be to show that $\Theta_{(m_1,m_2)}$ is a pointed element with the same Newton polytope as $x[?,?]$.  By Theorem \ref{thm:  ???}, this is already enough to show that $\Theta_{(m_1,m_2)}=x[?,?]$.
 
-Let $\Gamma$ be a broken line in $\mathfrak{D}_{(b,c)}$.  At any point $Q=(q_1,q_2)\in \Gamma$ at which $\Gamma$ is linear with momentum $m=(m_1,m_2)$, define the \textbf{angular momentum} of $\Gamma$ at $Q$ to be $q_1m_2-q_2m_1$.
+Let $\Gamma$ be a broken line in $\mathfrak{D}_{(b,c)}$.  At any point $Q=(q_1,q_2)\in \Gamma$ at which $\Gamma$ is linear with momentum $m=(m_1,m_2)$, define the \emph{angular momentum} of $\Gamma$ at $Q$ to be $q_1m_2-q_2m_1$.
+
 \begin{lemma}
-The angular momentum is constant on $\Gamma$.
+The angular momentum is constant on $\gamma$.
 \end{lemma}
 \begin{proof}
-Let $Q$ and $Q'$ be two points on $\Gamma$.
-First, assume that $Q=(Q_1,Q_2)$ and $Q'=(Q_1',Q_2')$ are in the same linear region of $\Gamma$, with momentum $m=(m_1,m_2)$.  There is some $t$ such that 
-\[ (Q_1',Q_2') = (Q_1+tm_1,Q_2+tm_2) \]
-Then the angular momentum at $Q'$ is 
-\[ (Q_1+tm_1)m_2-(Q_2+tm_2)m_1 = Q_1m_2 - Q_2m_1 \]
+Let $q$ and $q'$ be two points on $\gamma$.
+First, assume that $q=(q_1,q_2)$ and $q'=(q_1',q_2')$ are in the same linear region of $\gamma$, with momentum $m=(m_1,m_2)$.  There is some $t$ such that 
+\[ (q_1',q_2') = (q_1+tm_1,q_2+tm_2) \]
+Then the angular momentum at $q'$ is 
+\[ (q_1+tm_1)m_2-(q_2+tm_2)m_1 = q_1m_2 - q_2m_1 \]
 
-Next, assume that $Q$ and $Q'$ are points on $\Gamma$ on either side of a bend at a wall $(\fd, f_{\fd})$ at point $q=(q_1,q_2)$.  If the momentum of $\Gamma$ is $m=(m_1,m_2)$ and $f_{\fd}$ is a series in $A^{(w_1,w_2)}$, then the momentum of $\Gamma$ at $Q'$ must be of the form $(m_1+kw_1,m_2+kw_2)$ for some positive integer $i$.  By the argument of the previous paragraph, the angular momentum at $Q$ is $q_1m_2-q_2m_1$
-and the angular momentum at $Q'$ is
-\[ q_1(m_2+iw_2)-q_2(m_1+iw_1) = (q_1m_2-q_2m_1)+k(q_1w_2-q_2w_1) \]
-Since the point $(q_1,q_2)$ lies on the ray through $(w_1,w_2)$, the expression $q_1w_2-q_2w_1$ is zero, and so the angular momenta at $Q$ and $Q'$ are the same.  This equality extends transitively to any pair of points $Q,Q'$ on $\Gamma$.
+Next, assume that $q$ and $q'$ are points on $\gamma$ on either side of a bend at a wall $(\fd, f_{\fd})$ at point $q''=(q_1'',q_2'')$.  If the momentum of $\gamma$ is $m=(m_1,m_2)$ and $f_{\fd}$ is a series in $A^{(w_1,w_2)}$, then the momentum of $\gamma$ at $q'$ must be of the form $(m_1+kw_1,m_2+kw_2)$ for some positive integer $k$.  By the argument of the previous paragraph, the angular momentum at $q$ is $q_1''m_2-q_2''m_1$
+and the angular momentum at $q'$ is
+\[ q_1''(m_2+iw_2)-q_2''(m_1+iw_1) = (q_1''m_2-q_2''m_1)+k(q_1''w_2-q_2''w_1) \]
+Since the point $(q_1'',q_2'')$ lies on the ray through $(w_1,w_2)$, the expression $q_1''w_2-q_2''w_1$ is zero, and so the angular momenta at $q$ and $q'$ are the same.  This equality extends transitively to any pair of points $q,q'$ on $\gamma$.
 \end{proof}
 The sign of the angular momentum is a useful invariant for characterizing the qualitative behavior of a broken line.
 For a broken line ending in the first quadrant, the sign of the angular momentum characterizes whether that broken line could have passed through the fourth quadrant (positive) or the second quadrant (negative).
 
 \begin{lemma}
-Let $\Gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $Q$ in the first quadrant. If $\Gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\Gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
+Let $\gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
 %\begin{itemize}	
-	%\item If $\Gamma$ has positive angular momentum, then the slope of the linear domains of $\Gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
-	%\item If $\Gamma$ has negative angular momentum, then the slope of the linear domains of $\Gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
+	%\item If $\gamma$ has positive angular momentum, then the slope of the linear domains of $\gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
+	%\item If $\gamma$ has negative angular momentum, then the slope of the linear domains of $\gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
 %\end{itemize}
 \end{lemma}
 
@@ -1155,8 +1156,8 @@ Let $\Gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $Q$ in the
 				\node[dot] at (2,0) {};
 				\node[dot] at (0,-1) {};
 				\node[dot] at (-2,-3) {};
-				\node[dot,draw=black, fill=black] (Q) at (2,1.73) {};
-				\node[above right] at (Q) {$Q$};
+				\node[dot,draw=black, fill=black] (q) at (2,1.73) {};
+				\node[above right] at (q) {$q$};
 				
 				\node[below left,black!25] at (5.5,5.5) {Quadrant I};
 				\node[below right,black!25] at (-5.5,5.5) {Quadrant II};
@@ -1170,7 +1171,7 @@ Let $\Gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $Q$ in the
 
 \begin{proof}
 The lemma is straightforward except for broken lines with initial momentum $(m_1,m_2)$ with $m_1,m_2>0$.  
-Consider a bend of $\Gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(A^{(w_1,w_2})))$.  If the momentum immediately before the bend is $(m_1,m_2)$, the momentum immediately after the bend is $(m_1-kw_1,m_2-kw_2)$ for some positive integer $k$.  
+Consider a bend of $\gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(A^{(w_1,w_2})))$.  If the momentum immediately before the bend is $(m_1,m_2)$, the momentum immediately after the bend is $(m_1-kw_1,m_2-kw_2)$ for some positive integer $k$.  
 
 Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent vector $(w_1,w_2)$. If the angular momentum $q_1m_2-q_2m_1$ is positive, then the cross-product $w_1m_2-w_2m_1$ is negative. 
 \[ w_1m_2-w_2m_1=m_1(m_2-kw_2)-m_2(m_1-kw_1)<0 \Rightarrow \frac{m_2-kw_2}{m_1-kw_1} < \frac{m_2}{m_1}\]
@@ -1180,26 +1181,26 @@ If the angular momentum is negative, the slope increases by the same argument.
 We can now constrain the possible final momentum of a broken line, which will be used to bound the Newton polytope of the corresponding theta function.
 
 \begin{lemma}
-Let $\Gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$ which begins in the third quadrant, with endpoint $Q$ in the first quadrant.  Denote the  initial momentum by $m=(m_1,m_2)$ and the final momentum by $m^Q=(m_1^Q,m_2^Q)$.  
+Let $\gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$ which begins in the third quadrant, with endpoint $q$ in the first quadrant.  Denote the  initial momentum by $m=(m_1,m_2)$ and the final momentum by $m^q=(m_1^q,m_2^q)$.  
 \begin{enumerate}
-	%\item $m_1-m_1^Q\in b\mathbb{N}$ and $m_2-m_2^Q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
-	\item If $\Gamma$ has positive angular momentum, then $m_2\geq m_2^Q>0$ and
-	\[ m_1\geq m_1^Q\geq\left( \frac{m_1}{m_2}-b\right)m_2^Q\]
-	where the lower bound is equality only when $m^Q =( m_1-bm_2,m_2)$.
-	\item If $\Gamma$ has negative angular momentum, then $m_1\geq  m_1^Q>0$ and
-	\[ m_2 \geq m_2^Q\geq\left( \frac{m_2}{m_1}-c\right)m_1^Q\]
-	where the lower bound is equality only when $m^Q =( m_1,m_2-cm_1)$.
+	%\item $m_1-m_1^q\in b\mathbb{N}$ and $m_2-m_2^q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
+	\item If $\gamma$ has positive angular momentum, then $m_2\geq m_2^q>0$ and
+	\[ m_1\geq m_1^q\geq\left( \frac{m_1}{m_2}-b\right)m_2^q\]
+	where the lower bound is equality only when $m^q =( m_1-bm_2,m_2)$.
+	\item If $\gamma$ has negative angular momentum, then $m_1\geq  m_1^q>0$ and
+	\[ m_2 \geq m_2^q\geq\left( \frac{m_2}{m_1}-c\right)m_1^q\]
+	where the lower bound is equality only when $m^q =( m_1,m_2-cm_1)$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-Assume $\Gamma$ has positive angular momentum; consequently, $\Gamma$ passes through the fourth quadrant before entering the first quadrant.  Let $(m_1',m_2')$ be the momentum on $\Gamma$ in the fourth quadrant.  By the preceding lemma, $\frac{m_2'}{m_1'}\leq \frac{m_2}{m_1}$ with equality only if $\Gamma$ doesn't bend before it reaches the fourth quadrant.  
+Assume $\gamma$ has positive angular momentum; consequently, $\gamma$ passes through the fourth quadrant before entering the first quadrant.  Let $(m_1',m_2')$ be the momentum on $\gamma$ in the fourth quadrant.  By the preceding lemma, $\frac{m_2'}{m_1'}\leq \frac{m_2}{m_1}$ with equality only if $\gamma$ doesn't bend before it reaches the fourth quadrant.  
 
-As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+A^{(b,0)})$.  By definition, the momentum on $\Gamma$ in the first quadrant must be an exponent that appears in $A^{(-m_1',-m_2')}(1+A^{(b,0)})^{m_2'}$.  It follows that%The possible monomials which may occur in this expression are of the form $A^{(-m_1'+kb,-m_2')}$ for some $0\leq k\leq m_2'$, and so 
-\[ (m_1^Q,m_2^Q) = (m_1'-kb,m_2')\]
+As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+A^{(b,0)})$.  By definition, the momentum on $\gamma$ in the first quadrant must be an exponent that appears in $A^{(-m_1',-m_2')}(1+A^{(b,0)})^{m_2'}$.  It follows that%The possible monomials which may occur in this expression are of the form $A^{(-m_1'+kb,-m_2')}$ for some $0\leq k\leq m_2'$, and so 
+\[ (m_1^q,m_2^q) = (m_1'-kb,m_2')\]
 for some $0\leq k\leq m_2'$.
-Consequently, $m_2^Q=m_2'\geq0$ and 
-\[ m_1^Q\geq m_1' - bm_2' = \left(\frac{m_1'}{m_2'} - b\right) m_2'  = \left(\frac{m_1'}{m_2'} - b\right) m_2^Q \geq \left(\frac{m_1}{m_2} - b\right) m_2^Q\]
-The second inequality is equality only if $(m_1',m_2')=(m_1,m_2)$, and so the composite inequality is equality only if $m^Q =( m_1-bm_2,m_2)$.
+Consequently, $m_2^q=m_2'\geq0$ and 
+\[ m_1^q\geq m_1' - bm_2' = \left(\frac{m_1'}{m_2'} - b\right) m_2'  = \left(\frac{m_1'}{m_2'} - b\right) m_2^q \geq \left(\frac{m_1}{m_2} - b\right) m_2^q\]
+The second inequality is equality only if $(m_1',m_2')=(m_1,m_2)$, and so the composite inequality is equality only if $m^q =( m_1-bm_2,m_2)$.
 
 Analogous inequalities hold for negative angular momentum by the same argument.
 \end{proof}
