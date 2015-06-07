@@ -67,7 +67,7 @@ We prove the equality of two canonical bases of a rank 2 cluster algebra, the gr
 
 Cluster algebras are commutative rings with partial bases of a special form, originally discovered in the context of dual canonical bases in Lie theory \cite{FZ}.  Their axiomatics encapsulates the fact that many kinds of canonical bases in nature have large subsets which are governed by a uniform combinatorics.  Elements of these subsets are monomials in distinguished elements called cluster variables, which are grouped into overlapping collections called clusters.  Each cluster has an associated skew-symmetrizable matrix, and the entire cluster algebra can be reconstructed recursively from any particular cluster along with this matrix.
 
-A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a complete basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup,GMN}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
+A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup,GMN}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
 
 The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.  
 
@@ -77,9 +77,9 @@ The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the gree
 Let $\mathcal{A}$ be a rank 2 cluster algebra.  The greedy and theta bases of $\mathcal{A}$ coincide.
 \end{theorem}
 
-The proof is based on an analysis of the Newton polygons of elements of the theta basis.  It can be shown that elements of the greedy basis are essentially determined by which coefficients of their Laurent expansion are nonzero.  That is, if an element of $\mathcal{A}$ is positive and Laurent in three adjacent clusters and has the same nonzero coefficients as a greedy basis element in any particular Laurent expansion, it must in fact coincide with that element.  Thus to show that elements of the theta basis are elements of the greedy basis, it suffices to establish certain bounds on the behavior of broken lines rather than explicitly enumerating them.
+The proof is based on an analysis of the Newton polygons of elements of the theta basis.  It can be shown that elements of the greedy basis are essentially determined by which coefficients of their Laurent expansion are nonzero.  That is, if an element of $\mathcal{A}$ is Laurent in three adjacent clusters and has the same support as a greedy basis element in any particular Laurent expansion, it must in fact coincide with that element up to a scalar.  Thus to show that elements of the theta basis are elements of the greedy basis, it suffices to establish certain bounds on the behavior of broken lines rather than explicitly enumerating them.
 
-The organization of the paper is as follows.  In sections 2 and 3 we review the basis definitions and properties of the greedy and theta bases, respectively.  The natural parametrizing sets of the two bases, the $d$-vectors and $g$-vectors, are distinct, and in section 4 we explain how to relate them.  This determines a bijection between the two bases, and in section 5 we show that the basis elements mapped to each other by this bijection actually coincide, proving the main theorem.
+The organization of the paper is as follows.  In sections 2 and 3 we review the basic definitions and properties of the greedy and theta bases, respectively.  The natural parametrizing sets of the two bases, the $d$-vectors and $g$-vectors, are distinct, and in section 4 we explain how to relate them.  This determines a bijection between the two bases, and in section 5 we show that the basis elements mapped to each other by this bijection actually coincide, proving the main theorem.
 
 \textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible.
 
@@ -87,34 +87,36 @@ The organization of the paper is as follows.  In sections 2 and 3 we review the 
 \saySS{This section was written by Dylan independently while Mark, Mandy and
   myself were working on sections 2 and 3. We should check that notations and
   conventions are consistent. I am ready to bet that we need to take a transpose somewhere.}\sayDR{Done, the conventions for mutations match.}
-Fix $b,c>0$ and consider rational functions $x_k\in\QQ(x_1,x_2)$, for $k\in\ZZ$,
-defined recursively by 
-\[
+Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$ indexed by $k\in\ZZ$ and defined recursively by 
+\begin{equation}\label{eq:exchangerelations}
   x_{k-1}x_{k+1}=
   \begin{cases}
     x_k^b+1 & \text{if $k$ is odd;}\\
     x_k^c+1 & \text{if $k$ is even.}
   \end{cases}
-\] 
+\end{equation}
 These functions are called \emph{cluster variables} and the \emph{cluster
 algebra} $\cA(b,c)$ is the $\ZZ$-subalgebra of $\QQ(x_1,x_2)$ which they
-generate.  While the cluster variables appear to be rational functions, it is a
-remarkable fact that cancellations inevitably occur and one always obtains
-Laurent expressions.  This result is known as the ``Laurent Phenomenon" and was
-proven by Fomin and Zelevinsky.
-\begin{theorem}\label{th:Laurent}\cite[Theorem~3.1]{FZ} 
-  For any $j,k\in\ZZ$ we have $x_j\in\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$.
-\end{theorem}
-\sayDR{In fact, they made the stronger conjecture that all of these Laurent
-  expressions have positive coefficients.}
+generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and each monomial $x_k^mx_{k+1}^n$ with $m, n > 0$ is called a \emph{cluster monomial}.  Given $(m_1,m_2)\in \ZZ^2$ we will sometimes write $x^m$ for $x_1^{m_1}x_2^{m_2}$.
 
-An element $z\in\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
+An essential result about the relations \eqref{eq:exchangerelations} is that they imply that $\cA(b,c)$ is in fact a subalgebra of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ rather than merely of $\QQ(x_1,x_2)$.
+\begin{theorem}\label{th:Laurent}
+\cite[Theorem~3.1]{FZ} Given any cluster variable $x_j$, we have $x_j\in\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ for every $k \in \ZZ$.
+\end{theorem}
+
+We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Laurent polynomials with positive coefficients.  An element of $\cA(b,c)$ is \emph{positive} if it is contained in $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ for every $k \in \ZZ$.
+
+\begin{theorem}\label{th:Laurent}
+\cite{LS} Each cluster variable of $\cA(b,c)$ is positive.
+\end{theorem}
+
+An element of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
 $(a_1,a_2)\in\ZZ^2$} if it can be written in the form
 \[
-  z=x_1^{-a_1}x_2^{-a_2}\sum\limits_{p_1,p_2\ge0}c(p_1,p_2)x_1^{bp_1}x_2^{cp_2},
+  x_1^{-a_1}x_2^{-a_2}\sum\limits_{p_1,p_2\ge0}c(p_1,p_2)x_1^{bp_1}x_2^{cp_2},
 \]
-where $c(p_1,p_2)\in\ZZ$ with $c(0,0)=1$.  We will call such an $z$ \emph{positive
-in the first cluster} if $c(p_1,p_2)\ge0$ for all $p_1,p_2\ge0$.  An element $z\in\cA(b,c)$ is simply called \emph{positive} if its Laurent expansion in each $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ has positive coefficients.
+where $c(p_1,p_2)\in\ZZ$ with $c(0,0)=1$.   
+%We will call such an element \emph{positive in the first cluster} if $c(p_1,p_2)\ge0$ for all $p_1,p_2\ge0$. 
 \begin{prop}\cite[Proposition~1.5]{LLZ}
   Let $z$ be pointed at $(a_1,a_2)\in\ZZ^2$ and suppose
   $z\in\ZZ_{\ge0}[x_0^{\pm1},x_1^{\pm1}]
@@ -129,7 +131,7 @@ in the first cluster} if $c(p_1,p_2)\ge0$ for all $p_1,p_2\ge0$.  An element $z\
     \nonumber&\sum\limits_{\ell=1}^{p_2} (-1)^{\ell-1}c(p_1,p_2-\ell){a_1-bp_1+\ell-1\choose \ell}\bigg).
   \end{align}
 \end{prop}
-A positive element $z\in\cA(b,c)$ is called \emph{indecomposable} if it cannot
+A positive element $\cA(b,c)$ is called \emph{indecomposable} if it cannot
 be written as a sum of two positive elements.  In the search for positive bases
 of $\cA(b,c)$ one is naturally led to investigate the indecomposable positive
 elements.  A sufficient condition for a positive pointed element $z$ to be
@@ -173,19 +175,19 @@ pointed supports.
     \endaligned
     $$
   \end{enumerate}
-  Moreover, if $z\in\cA(b,c)$ is any element pointed at $(a_1,a_2)$ whose Newton polytope is contained in that of $x[a_1,a_2]$, then $z=x[a_1,a_2]$. 
+  Moreover, if $z\in\cA(b,c)$ is any element pointed at $(a_1,a_2)$ whose Newton polygon is contained in that of $x[a_1,a_2]$, then $z=x[a_1,a_2]$. 
 \end{theorem}
 \begin{proof}
   The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.
 
-  Suppose $z\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polytope of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ \sayDR{exponents chosen for notational convenience} appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.  
+  Suppose $z\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polygon of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ \sayDR{exponents chosen for notational convenience} appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.  
 
   Below we refer to the points $O,A,B,C$ from Figure~\ref{fig:greedy polytopes}.  To reach a contradiction, there are two cases to consider.
   \begin{itemize}
-    \item If $(a'_1,a'_2)$ lies on or North of the line segment $OB$, i.e. $a_1a'_2\le a'_1a_2$, then we consider the point $C'=(-a'_1,-a'_2+ca'_2)$ at the Northern boundary of the Newton polytope of $x[a'_1,a'_2]$ and compare with the line segment $OC$.  In this case, we have
+    \item If $(a'_1,a'_2)$ lies on or North of the line segment $OB$, i.e. $a_1a'_2\le a'_1a_2$, then we consider the point $C'=(-a'_1,-a'_2+ca'_2)$ at the Northern boundary of the Newton polygon of $x[a'_1,a'_2]$ and compare with the line segment $OC$.  In this case, we have
     \[-a_1(-a'_2+ca'_1)=a_1a'_2-ca_1a'_1\le a'_1a_2-ca_1a'_1=-a'_1(-a_2+ca_1)\]
-    and thus $C'$ lies on or North of $OC$.  If $C'$ is North of $OC$ or $C'\ne C$ is on $OC$, then it lies outside the Newton polytope of $z$ which is impossible.  Thus we must have $C'=C$, but this implies $(a'_1,a'_2)=(a_1,a_2)$ which is clearly false.
-    \item If $(a'_1,a'_2)$ lies on or East of the line segment $OB$, i.e. $a'_1a_2\le a_1a'_2$, then we consider the point $A'=(-a'_1+ba'_2,-a'_2)$ at the Eastern boundary of the Newton polytope of $x[a'_1,a'_2]$ and compare with the line segment $OA$.  In this case, we have
+    and thus $C'$ lies on or North of $OC$.  If $C'$ is North of $OC$ or $C'\ne C$ is on $OC$, then it lies outside the Newton polygon of $z$ which is impossible.  Thus we must have $C'=C$, but this implies $(a'_1,a'_2)=(a_1,a_2)$ which is clearly false.
+    \item If $(a'_1,a'_2)$ lies on or East of the line segment $OB$, i.e. $a'_1a_2\le a_1a'_2$, then we consider the point $A'=(-a'_1+ba'_2,-a'_2)$ at the Eastern boundary of the Newton polygon of $x[a'_1,a'_2]$ and compare with the line segment $OA$.  In this case, we have
     \[(-a'_1+ba'_2)(-a_2)=a'_1a_2-ba_2a'_2\le a_1a'_2-ba_2a'_2=(-a_1+ba_2)(-a'_2)\]
     and thus $A'$ lies on or East of $OA$.  If $A'$ is East of $OA$ or $A'\ne A$ is on $OA$, then it lies outside the Newton polytope of $z$ which is impossible.  Thus we must have $A'=A$, but this implies $(a'_1,a'_2)=(a_1,a_2)$ which is clearly false.
   \end{itemize}
