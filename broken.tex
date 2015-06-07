@@ -1,4 +1,4 @@
-\documentclass[11pt]{amsart}
+\documentclass[10pt]{amsart}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{latexsym}
@@ -87,13 +87,13 @@ The organization of the paper is as follows.  In sections 2 and 3 we review the 
 \saySS{This section was written by Dylan independently while Mark, Mandy and
   myself were working on sections 2 and 3. We should check that notations and
   conventions are consistent. I am ready to bet that we need to take a transpose somewhere.}\sayDR{Done, the conventions for mutations match.}
-Fix $b,c>0$ and consider rational functions $x_m\in\QQ(x_1,x_2)$, for $m\in\ZZ$,
+Fix $b,c>0$ and consider rational functions $x_k\in\QQ(x_1,x_2)$, for $k\in\ZZ$,
 defined recursively by 
 \[
-  x_{m-1}x_{m+1}=
+  x_{k-1}x_{k+1}=
   \begin{cases}
-    x_m^b+1 & \text{if $m$ is odd;}\\
-    x_m^c+1 & \text{if $m$ is even.}
+    x_k^b+1 & \text{if $k$ is odd;}\\
+    x_k^c+1 & \text{if $k$ is even.}
   \end{cases}
 \] 
 These functions are called \emph{cluster variables} and the \emph{cluster
@@ -103,36 +103,36 @@ remarkable fact that cancellations inevitably occur and one always obtains
 Laurent expressions.  This result is known as the ``Laurent Phenomenon" and was
 proven by Fomin and Zelevinsky.
 \begin{theorem}\label{th:Laurent}\cite[Theorem~3.1]{FZ} 
-  For any $k,m\in\ZZ$ we have $x_m\in\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$.
+  For any $j,k\in\ZZ$ we have $x_j\in\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$.
 \end{theorem}
 \sayDR{In fact, they made the stronger conjecture that all of these Laurent
   expressions have positive coefficients.}
 
-An element $x\in\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
+An element $z\in\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
 $(a_1,a_2)\in\ZZ^2$} if it can be written in the form
 \[
-  x=x_1^{-a_1}x_2^{-a_2}\sum\limits_{p,q\ge0}c(p,q)x_1^{bp}x_2^{cq},
+  z=x_1^{-a_1}x_2^{-a_2}\sum\limits_{p_1,p_2\ge0}c(p_1,p_2)x_1^{bp_1}x_2^{cp_2},
 \]
-where $c(p,q)\in\ZZ$ with $c(0,0)=1$.  We will call such an $x$ \emph{positive
-in the first cluster} if $c(p,q)\ge0$ for all $p,q\ge0$.  An element $x\in\cA(b,c)$ is simply called \emph{positive} if its Laurent expansion in each $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ has positive coefficients.
+where $c(p_1,p_2)\in\ZZ$ with $c(0,0)=1$.  We will call such an $z$ \emph{positive
+in the first cluster} if $c(p_1,p_2)\ge0$ for all $p_1,p_2\ge0$.  An element $z\in\cA(b,c)$ is simply called \emph{positive} if its Laurent expansion in each $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ has positive coefficients.
 \begin{prop}\cite[Proposition~1.5]{LLZ}
-  Let $x$ be pointed at $(a_1,a_2)\in\ZZ^2$ and suppose
-  $x\in\ZZ_{\ge0}[x_0^{\pm1},x_1^{\pm1}]
+  Let $z$ be pointed at $(a_1,a_2)\in\ZZ^2$ and suppose
+  $z\in\ZZ_{\ge0}[x_0^{\pm1},x_1^{\pm1}]
   \cap\ZZ_{\ge0}[x_1^{\pm1},x_2^{\pm1}]
   \cap\ZZ_{\ge0}[x_2^{\pm1},x_3^{\pm1}]$.
-  Then the pointed coefficients $c(p,q)$ satisfy the following recursive
+  Then the pointed coefficients $c(p_1,p_2)$ satisfy the following recursive
   inequality:
   \begin{align}
     \label{eq:consecutive positivity inequality}
-    c(p,q)\ge\max\bigg(
-    &\sum\limits_{k=1}^p (-1)^{k-1}c(p-k,q){a_2-cq+k-1\choose k}\\
-    \nonumber&\sum\limits_{\ell=1}^q (-1)^{\ell-1}c(p,q-\ell){a_1-bp+\ell-1\choose \ell}\bigg).
+    c(p_1,p_2)\ge\max\bigg(
+    &\sum\limits_{k=1}^{p_1} (-1)^{k-1}c(p_1-k,p_2){a_2-cp_2+k-1\choose k},\\
+    \nonumber&\sum\limits_{\ell=1}^{p_2} (-1)^{\ell-1}c(p_1,p_2-\ell){a_1-bp_1+\ell-1\choose \ell}\bigg).
   \end{align}
 \end{prop}
-A positive element $x\in\cA(b,c)$ is called \emph{indecomposable} if it cannot
+A positive element $z\in\cA(b,c)$ is called \emph{indecomposable} if it cannot
 be written as a sum of two positive elements.  In the search for positive bases
 of $\cA(b,c)$ one is naturally led to investigate the indecomposable positive
-elements.  A sufficient condition for a positive pointed element $x$ to be
+elements.  A sufficient condition for a positive pointed element $z$ to be
 indecomposable is the inequality \eqref{eq:consecutive positivity inequality}
 being an equality.  It turns out that this requirement alone uniquely determines
 a collection of elements of $\cA(b,c)$ with nice properties.
@@ -143,9 +143,9 @@ a collection of elements of $\cA(b,c)$ with nice properties.
   pointed coefficients satisfy the recursion
   \begin{align}
     \label{eq:greey recursion}
-    c(p,q)=\max\bigg(
-    &\sum\limits_{k=1}^p (-1)^{k-1}c(p-k,q){a_2-cq+k-1\choose k}\\
-    \nonumber&\sum\limits_{\ell=1}^q (-1)^{\ell-1}c(p,q-\ell){a_1-bp+\ell-1\choose \ell}\bigg).
+    c(p_1,p_2)=\max\bigg(
+    &\sum\limits_{k=1}^{p_1} (-1)^{k-1}c(p_1-k,p_2){a_2-cp_2+k-1\choose k},\\
+    \nonumber&\sum\limits_{\ell=1}^{p_2} (-1)^{\ell-1}c(p_1,p_2-\ell){a_1-bp_1+\ell-1\choose \ell}\bigg).
   \end{align}
   Moreover, the collection $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ is a basis of
   $\cA(b,c)$ which contains the cluster monomials and is independent of the
@@ -153,37 +153,49 @@ a collection of elements of $\cA(b,c)$ with nice properties.
 \end{theorem}
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
 call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  Let
-$R_{a_1,a_2}=\{(p,q)\in\ZZ_{\ge0}^2:c(p,q)\ne0 \text{ in } x[a_1,a_2]\}$ denote
+$R_{a_1,a_2}=\{(p_1,p_2)\in\ZZ_{\ge0}^2:c(p_1,p_2)\ne0 \text{ in } x[a_1,a_2]\}$ denote
 the \emph{pointed support} of $x[a_1,a_2]$.  Theorem~\ref{th:greedy} is proven using the following characterization of the greedy elements by their
 pointed supports.
 
 \begin{theorem}\label{th:pointed supports}(\cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2})
   For $(a_1,a_2)\in\ZZ^2$, the pointed support of $x[a_1,a_2]$ is determined as follows.
-\begin{enumerate}
-  \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
-  \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p,0): 0 \leq p \leq a_2\}$.
-  \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,q): 0 \leq q \leq a_1\}$.
-  \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; p\le a_{2},\; q\le a_{1}-bp\right\}$.
-  \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p,q)\in\ZZ_{\ge0}^2\big|\; q\le a_{1},\; p\le a_{2}-cq\right\}$.
-  \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
-  $$\aligned
-  R_{a_1,a_2}=&\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le p< \frac{a_1}{b},\; q+\Big(b-\frac{ba_2}{ca_1}\Big)p<a_1\bigg\}\\
-  &\bigcup\bigg\{(p,q)\in\ZZ_{\ge0}^2\bigg|\; 0\le q<
-    \frac{a_2}{c},\; p+\Big(c-\frac{ca_1}{ba_2}\Big)q<a_2\bigg\}\\
-  &\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
-  \endaligned
-  $$
-\end{enumerate}
-Moreover, if $x\in\cA(b,c)$ is any positive element pointed at $(a_1,a_2)$ whose pointed support is equal to $R_{a_1,a_2}$, then $x=x[a_1,a_2]$. 
+  \begin{enumerate}
+    \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
+    \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p_1,0): 0 \leq p_1 \leq a_2\}$.
+    \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,p_2): 0 \leq p_2 \leq a_1\}$.
+    \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_1\le a_{2},\; p_2\le a_{1}-bp_1\right\}$.
+    \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_2\le a_{1},\; p_1\le a_{2}-cp_2\right\}$.
+    \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
+    $$\aligned
+    R_{a_1,a_2}=&\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_1<\frac{a_1}{b},\; p_2+\Big(b-\frac{ba_2}{ca_1}\Big)p_1<a_1\bigg\}\\
+    &\bigcup\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_2<\frac{a_2}{c},\; p_1+\Big(c-\frac{ca_1}{ba_2}\Big)p_2<a_2\bigg\}\\
+    &\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
+    \endaligned
+    $$
+  \end{enumerate}
+  Moreover, if $z\in\cA(b,c)$ is any element pointed at $(a_1,a_2)$ whose Newton polytope is contained in that of $x[a_1,a_2]$, then $z=x[a_1,a_2]$. 
 \end{theorem}
 \begin{proof}
- The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.  Suppose $x\in\cA(b,c)$ is a positive element pointed at $(a_1,a_2)$ and the pointed support of $x$ is equal to $R_{a_1,a_2}$.  If $x$ is indecomposable, then we must have $x=x[a_1,a_2]$.  So suppose 
+  The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.
+
+  Suppose $z\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polytope of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ \sayDR{exponents chosen for notational convenience} appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.  
+
+  Below we refer to the points $O,A,B,C$ from Figure~\ref{fig:greedy polytopes}.  To reach a contradiction, there are two cases to consider.
+  \begin{itemize}
+    \item If $(a'_1,a'_2)$ lies on or North of the line segment $OB$, i.e. $a_1a'_2\le a'_1a_2$, then we consider the point $C'=(-a'_1,-a'_2+ca'_2)$ at the Northern boundary of the Newton polytope of $x[a'_1,a'_2]$ and compare with the line segment $OC$.  In this case, we have
+    \[-a_1(-a'_2+ca'_1)=a_1a'_2-ca_1a'_1\le a'_1a_2-ca_1a'_1=-a'_1(-a_2+ca_1)\]
+    and thus $C'$ lies on or North of $OC$.  If $C'$ is North of $OC$ or $C'\ne C$ is on $OC$, then it lies outside the Newton polytope of $z$ which is impossible.  Thus we must have $C'=C$, but this implies $(a'_1,a'_2)=(a_1,a_2)$ which is clearly false.
+    \item If $(a'_1,a'_2)$ lies on or East of the line segment $OB$, i.e. $a'_1a_2\le a_1a'_2$, then we consider the point $A'=(-a'_1+ba'_2,-a'_2)$ at the Eastern boundary of the Newton polytope of $x[a'_1,a'_2]$ and compare with the line segment $OA$.  In this case, we have
+    \[(-a'_1+ba'_2)(-a_2)=a'_1a_2-ba_2a'_2\le a_1a'_2-ba_2a'_2=(-a_1+ba_2)(-a'_2)\]
+    and thus $A'$ lies on or East of $OA$.  If $A'$ is East of $OA$ or $A'\ne A$ is on $OA$, then it lies outside the Newton polytope of $z$ which is impossible.  Thus we must have $A'=A$, but this implies $(a'_1,a'_2)=(a_1,a_2)$ which is clearly false.
+  \end{itemize}
+  It follows that $z=x[a_1,a_2]$.
 \end{proof}
 
 \begin{remark}
   Consider the points 
   \[
-    O=(0,0), \quad A=(-a_1+ba_2,0), \quad B=(-a_1,-a_2), \quad C=(-a_1,-a_2+ca_1),
+    O=(0,0), \quad A=(-a_1+ba_2,-a_2), \quad B=(-a_1,-a_2), \quad C=(-a_1,-a_2+ca_1),
   \]
   \[
     D_{1}=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2}), \quad D_{2}=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1}).
@@ -253,7 +265,7 @@ Moreover, if $x\in\cA(b,c)$ is any positive element pointed at $(a_1,a_2)$ whose
         \fill (0,3) circle (2pt);
         \draw (0,3) node[anchor=east] {\tiny$C$};
         \fill (1.5,1.5) circle (2pt);
-        \draw (1.5,1.5) node[anchor= south west] {\tiny$D_{1}$};
+        \draw (1.5,1.5) node[anchor=east] {\tiny$D_1$};
         \draw (1.37,-0.5) node[anchor=north] {\footnotesize (4) $0<ba_2\leq a_1$};
       \end{scope}
       %(5)
@@ -274,7 +286,7 @@ Moreover, if $x\in\cA(b,c)$ is any positive element pointed at $(a_1,a_2)$ whose
         \fill (0,1) circle (2pt);
         \draw (0,1) node[anchor=east] {\tiny$C$};
         \fill (1.3,1) circle (2pt);
-        \draw (1.3,1) node[anchor=south west] {\tiny$D_{2}$};
+        \draw (1.3,1) node[anchor=north] {\tiny$D_2$};
         \draw (1.37,-.5) node[anchor=north] {\footnotesize (5) $0<ca_1\leq a_2$};
       \end{scope}
       %(6)
@@ -678,30 +690,35 @@ circumstances.
   \emph{exponent} $m$ and endpoint $q$ is a continuous and piecewise linear path
   $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with
   a finite number of domains of linearity, along with a choice of monomials
-  $c(L) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $L \subseteq ( -
+  $c(\ell) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $\ell \subseteq ( -
   \infty, 0]$ of $\gamma$. 
   
-  The path $\gamma$ and the monomials $c(L) x^{m(L)}$ need to satisfy the
+  The path $\gamma$ and the monomials $c(\ell) x^{m(\ell)}$ need to satisfy the
   following conditions:
   \begin{itemize}
     \item 
       $\gamma(0) = Q$.
     
     \item 
-      If $L$ is the first (i.e., unbounded) domain of linearity of $\gamma$,
-      then $c(L) x^{m(L)} = x^{m}$.
+      If $\ell$ is the first (i.e., unbounded) domain of linearity of $\gamma$,
+      then 
+      \[
+        c(\ell) x^{m(\ell)} = x^{m}.
+      \]
 
     \item 
-      For $t$ in a domain of linearity $L$, $\gamma'(t) = -m(L)$.
+      For $t$ in a domain of linearity $\ell$, $\gamma'(t) = -m(\ell)$.
 
     \item 
       $\gamma$ bends only when it crosses a wall. If $\gamma$ bends from the
-      domain of linearity $L$ to $ L'$ when crossing $(\fd, f_{\fd})$, then
-      $c(L')x^{m(L')}$ is a term in $\theta_{-m(L), \fd} \left(c(L)
-        x^{m(L)}\right)$.  
+      domain of linearity $\ell$ to $ \ell'$ when crossing $(\fd, f_{\fd})$, then
+      $c(\ell')x^{m(\ell')}$ is a term in 
+      \[
+        \theta_{-m(\ell), \fd} \left(c(\ell) x^{m(\ell)}\right).
+      \]
   \end{itemize}
 \end{defn}
-We will refer to $m(L)\in \mathbb{Z}^2$ as the \emph{momentum} of that region.
+We will refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{momentum} of that region.
 
 We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$  denote by
@@ -979,11 +996,11 @@ $\fD_{(b,c)}\setminus\fD_{\mathrm{in},(b,c)}$ and its image is
 
 For a broken line $\gamma$ in $\fD_{(b,c)}$, we denote its image under $T$ as
 $T(\gamma)$: this is the broken line in $\fD_{\gr,(b,c)}$ whose underlying map
-is $\gamma\circ T$. Given any domain of linearity $L$ of $\gamma$, by
-subdividing it when necessary, we can always assume that either $\gamma(L)
-\subset \mathcal{H}_{+} $ or $\gamma(L)\subset \mathcal{H}_{-}$. The monomial
-attached to $L$ in $T(\gamma)$ is then obtained by applying, accordingly, either
-$T_+$ or $T_-$ to the exponent of the monomial attached to $L$ in $\gamma$.
+is $\gamma\circ T$. Given any domain of linearity $\ell$ of $\gamma$, by
+subdividing it when necessary, we can always assume that either $\gamma(\ell)
+\subset \mathcal{H}_{+} $ or $\gamma(\ell)\subset \mathcal{H}_{-}$. The monomial
+attached to $\ell$ in $T(\gamma)$ is then obtained by applying, accordingly, either
+$T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 
 \begin{theorem}
   \label{thm:T_on_broken_lines}
@@ -1005,33 +1022,33 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $L$ in $\gamma$.
 \begin{proof}
   This is essentially the same as the argument of \cite{GHKK}, Prop.\ 3.6.  To
   prove the statement, we only need to check the bending at the $x$-axis. Let
-  $L$, $L'$ be the domains of linearity of $\gamma$ before and after bending
-  along $\RR (-1,0)$. So $c(L') x^{m(L')}$ is a term in 
+  $\ell$, $\ell'$ be the domains of linearity of $\gamma$ before and after bending
+  along $\RR (-1,0)$. So $c(\ell') x^{m(\ell')}$ is a term in 
   \[
-    \theta_{-m(L),\RR(-1,0)} \left(c(L) x^{m(L)}\right)
+    \theta_{-m(\ell),\RR(-1,0)} \left(c(\ell) x^{m(\ell)}\right)
     = 
-    c(L) x^{m(L)} \left(1+x_1^{-b}\right) ^{|m_2(L)|}.
+    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{|m_2(\ell)|}.
   \]
 
   First, assume $\gamma$ passes from $\mathcal{H}_-$ to $\mathcal{H}_+$. In this
-  case, we have $m_2(L) < 0$. Now in order for the monomial
-  $c(L')x^{T_+(m(L'))} =c(L')x^{m(L')}$ attached to $L'$ in
+  case, we have $m_2(\ell) < 0$. Now in order for the monomial
+  $c(\ell')x^{T_+(m(\ell'))} =c(\ell')x^{m(\ell')}$ attached to $\ell'$ in
   $T\circ\gamma$ to satisfy the bending rule, it must be a term in
   \[
-    \theta_{-T_-(m(L)),\RR (1,0)} \left(c(L) x^{T_-(m(L))}\right). 
+    \theta_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right). 
   \]
-  Since the second component of $T_-(m(L))$ is $m_2(L)$ we get
+  Since the second component of $T_-(m(\ell))$ is $m_2(\ell)$ we get
   \begin{align*} 
-    \theta_{-T_-(m(L)),\RR (1,0)} \left(c(L) x^{T_-(m(L))}\right) 
+    \theta_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right) 
     & =
-    c(L) x^{T_-(m(L))} \left(1+x_1^b\right) ^{-m_2(L)}
+    c(\ell) x^{T_-(m(\ell))} \left(1+x_1^b\right) ^{-m_2(\ell)}
     \\
     & = 
-    c(L) x^{m(L)} x_1^{b m_2(L)} 
-    \left(1+x_1^b\right)^{-m_2(L)} 
+    c(\ell) x^{m(\ell)} x_1^{b m_2(\ell)} 
+    \left(1+x_1^b\right)^{-m_2(\ell)} 
     \\
     & = 
-    c(L) x^{m(L)} \left(1+x_1^{-b}\right) ^{-m_1(L)}.
+    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_1(\ell)}.
   \end{align*}
   This shows that $T_k(\gamma)$ satisfies the correct rule when bending along
   $(\RR (1,0), 1+x_1^b)$ if $\gamma$ passes from $\mathcal{H}_-$ to
@@ -1088,12 +1105,12 @@ The following demonstrates the utility of using $\fD_{\gr,(b,c)}$:
 We may now state the main theorem in our current notation.
 
 \begin{thm}
-For any integers $b,c>0$ and for each $(m_1,m_2)\in \mathbb{Z}^2$, we have that 
-\[ \Theta_{(m_1,m_2)} = x[?,?]\]
+For any integers $b,c>0$ and for each $m=(m_1,m_2)\in \mathbb{Z}^2$, we have that 
+\[ \Theta_{m}^{\mathbf{d}} = x[-m_1,-m_2]\]
 as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
 \end{thm}
 
-The proof will be to show that $\Theta_{(m_1,m_2)}$ is a pointed element with the same Newton polytope as $x[?,?]$.  By Theorem \ref{thm:  ???}, this is already enough to show that $\Theta_{(m_1,m_2)}=x[?,?]$.
+The proof will be to show that $\Theta_{(m_1,m_2)}$ is a pointed element with the same Newton polytope as $x[?,?]$.  By Theorem \ref{thm:  ???}, this is already enough to show that $\Theta_{m}^\mathbf{d}=x[-m_1,-m_2]$.
 
 Let $\gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$.  At any point $q=(q_1,q_2)\in \gamma$ at which $\gamma$ is linear with exponent $m=(m_1,m_2)$, define the \emph{angular momentum} of $\gamma$ at $q$ to be $q_2m_1-q_1m_2$.
 
