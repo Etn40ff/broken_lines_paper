@@ -36,6 +36,19 @@
 \newtheorem{question}[theorem]{Question}
 \numberwithin{equation}{section}
 
+% cleverref
+\usepackage{cleveref}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{section}{Section}{Sections}
+\crefname{subsection}{Section}{Sections}
+\crefname{defn}{Definition}{Definitions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{example}{Example}{Examples}
+\crefname{figure}{Figure}{Figures}
+
 % shorthands
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\QQ}{\mathbb{Q}}
@@ -162,12 +175,12 @@ a collection of elements of $\cA(b,c)$ with nice properties.
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
 call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  Let
 $R_{a_1,a_2}=\{(p_1,p_2)\in\ZZ_{\ge0}^2:c(p_1,p_2)\ne0 \text{ in } x[a_1,a_2]\}$ denote
-the \emph{pointed support} of $x[a_1,a_2]$.  Theorem~\ref{th:greedy} is proven using the following characterization of the greedy elements by their
+the \emph{pointed support} of $x[a_1,a_2]$.  \Cref{th:greedy} is proven using the following characterization of the greedy elements by their
 pointed supports.
 
 \sayGM{*** We need to define Newton polygon and support here. (gregg)}
 
-\begin{theorem}\label{th:pointed supports}(\cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2})
+\begin{theorem}\label{th:pointed supports}\cite[Proposition~4.1]{LLZ}, \cite[Corollary 3.5]{LLZ2}
   For $(a_1,a_2)\in\ZZ^2$, the pointed support of $x[a_1,a_2]$ is determined as follows.
   \begin{enumerate}
     \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
@@ -347,7 +360,7 @@ pointed supports.
   \end{figure}
 \end{remark}
 
-To prove Theorem~\ref{th:pointed supports} Lee, Li, and Zelevinsky develop a
+To prove \cref{th:pointed supports} Lee, Li, and Zelevinsky develop a
 combinatorial construction via compatible pairs on a maximal Dyck path.  
 
 For $(a_1,a_2)\in\ZZ_{\ge0}^2$, a Dyck path in the rectangle
@@ -493,7 +506,7 @@ $(0,1)$. Define the ``initial'' scattering diagram associated $\cA(b,c)$ by
   \right\}.
 \]
 We then denote by $\fD_{(b,c)}$ the consistent scattering diagram obtained by
-applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2,1)}$ is illustrated in\ref{fig:diagex}.
+applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2,1)}$ is illustrated in \cref{fig:diagex}.
 
 %\begin{example} 
 %  \label{ex}
