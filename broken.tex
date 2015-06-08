@@ -127,7 +127,7 @@ We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Lauren
  \emph{universal Laurent polynomial} (resp.  \emph{positive universal Laurent polynomial}) if it is contained in 
  $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.
 
-\begin{theorem}\label{th:Laurent}
+\begin{theorem}
 \cite{LS} Each cluster variable of $\cA(b,c)$ is positive.
 \end{theorem}
 
@@ -182,7 +182,7 @@ pointed supports.
 
 \sayGM{*** We need to define Newton polygon and support here. (gregg)}
 
-\begin{theorem}\label{th:pointed supports}(\cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2})
+\begin{theorem}\label{th:pointed supports}\cite[Proposition~4.1]{LLZ}, \cite[Corollary 3.5]{LLZ2}
   For $(a_1,a_2)\in\ZZ^2$, the Newton polygon of $x[a_1,a_2]$ is determined as follows.
   \begin{enumerate}
     %\item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
@@ -343,7 +343,7 @@ pointed supports.
       \draw (1.27,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ imaginary root}};
     \end{scope}
   \end{tikzpicture}
-  \caption{The Newton polygon of $x[a_1,a_2]$.} 
+  \caption{Consider the points $O=(0,0)$, $A=(-a_1+ba_2,-a_2)$, $B=(-a_1,-a_2)$, $C=(-a_1,-a_2+ca_1)$, $D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2})$, and $D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1})$,  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as above.} 
   \label{fig:greedy polytopes}
 \end{figure}
 \begin{proof}
@@ -363,18 +363,7 @@ pointed supports.
   It follows that $z=x[a_1,a_2]$.
 \end{proof}
 
-\begin{remark}
-  Consider the points 
-  \[
-    O=(0,0), \quad A=(-a_1+ba_2,-a_2), \quad B=(-a_1,-a_2), \quad C=(-a_1,-a_2+ca_1),
-  \]
-  \[
-    D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2}), \quad D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1}).
-  \]  
-  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as in Figure~\ref{fig:greedy polytopes}.
-\end{remark}
-
-\begin{remark}
+\begin{remark}\label{rem:Dyck}
 The existence of integers $c(p,q)$ satisfying the recursive equations \eqref{eq:greedy recursion}, and thus the existence of the greedy basis itself, is quite non-trivial.  The authors of \cite{LLZ} characterize each $c(p,q)$ as the solution to an enumerative problem; specifically, the number of certain `compatible pairs of edges' inside a type of lattice path called a `maximal Dyck path'.
 
 This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p,q)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  %Many remarkable advances in the theory of cluster algebras have been animated by a desire to produce enumerative problems whose solutions define the coefficients of such a basis, such as additive and monodial categorifications, 
@@ -906,7 +895,7 @@ The following summarizes the main properties of the theta functions as shown in
 \end{example}
 
 
-\section{Relation to greedy bases}
+\section{From $\bfg$-vectors to $\bfd$-vectors}
 \saySS{At a certain point in our discussion in Snowbird we decided we were going
   to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
   $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
@@ -1272,7 +1261,7 @@ To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each el
 \end{proof}
 
 \begin{remark}
-As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{thm:pointed supports} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the equality of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
+As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{th:pointed supports} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the equality of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
 \end{remark}
 
 \begin{thebibliography}{99}
