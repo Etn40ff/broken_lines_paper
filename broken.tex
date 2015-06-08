@@ -100,7 +100,7 @@ Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$
 \end{equation}
 These functions are called \emph{cluster variables} and the \emph{cluster
 algebra} $\cA(b,c)$ is the $\ZZ$-subalgebra of $\QQ(x_1,x_2)$ which they
-generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and each monomial $x_k^mx_{k+1}^n$ with $m, n > 0$ is called a \emph{cluster monomial}.  Later we will denote by $M$ a rank 2 lattice with an isomorphism $\ZZ[M] \cong \ZZ[x_1^{\pm1},x_2^{\pm1}]$.  Writing elements of $\ZZ[M]$ as $x^m$ for $m \in M$, this induces an isomorphism $M \cong \ZZ^2$, $m \mapsto (m_1,m_2)$ via $x^{(m_1,m_2)} = x_1^{m_1}x_2^{m_2}$.
+generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and a monomial in $x_k$ and $x_{k+1}$ is called a \emph{cluster monomial}.  Later we will denote by $M$ a rank 2 lattice with an algebra isomorphism $\ZZ[M] \cong \ZZ[x_1^{\pm1},x_2^{\pm1}]$.  Writing elements of $\ZZ[M]$ as $x^m$ for $m \in M$, this induces an isomorphism $M \cong \ZZ^2$, $m \mapsto (m_1,m_2)$ via $x^{(m_1,m_2)} = x_1^{m_1}x_2^{m_2}$.
 
 An essential result about the relations \eqref{eq:exchangerelations} is that they imply that $\cA(b,c)$ is in fact a subalgebra of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ rather than merely of $\QQ(x_1,x_2)$.
 \begin{theorem}\label{th:Laurent}
@@ -109,7 +109,7 @@ An essential result about the relations \eqref{eq:exchangerelations} is that the
 
 We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Laurent polynomials with positive coefficients.  An element of $\cA(b,c)$ is a 
  \emph{universal Laurent polynomial} (resp.  \emph{positive universal Laurent polynomial}) if it is contained in 
- $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ for every $k \in \ZZ$).
+ $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.
 
 \begin{theorem}\label{th:Laurent}
 \cite{LS} Each cluster variable of $\cA(b,c)$ is positive.
@@ -437,8 +437,7 @@ For simplicity, we will impose the additional condition that $\fd_1\neq \fd_2$ f
 %  \text{Supp} (\fD) := \bigcup_{(\fd, f_{\fd}) \in \fD} \fd. 
 %\]
 
-To each wall $(\fd, f_{\fd})$, given a direction $v$ transversal to $\fd$, one
-can associate the element $\theta_{v,\fd}\in
+Given a wall $(\fd, f_{\fd})$ and a direction $v$ transversal to $\fd$, we associate the element $\theta_{v,\fd}\in
 {\mathrm{Aut}}_{\Bbbk-alg}\left(\widehat{\Bbbk[P]}\right)$ defined by
 \[
   \theta_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
@@ -448,25 +447,22 @@ uniquely determined by the sign convention $ v\cdot n <0$.  Note
 that the only role of the transversal direction $v$ is to fix which of the two
 normals $\pm n$ is used in the exponent. 
 
-Consider a smooth immersion
+Let $\fD$ be a scattering diagram and $\gamma$ a smooth immersion
 \[  
   \gamma: [0,1] \rightarrow M_{\mathbb{R}} \backslash  \{0 \}  
 \]
-with endpoints not in the support of $\fD$. Assume $\gamma$ is transversal to
-each wall of $\fD$ that it crosses. For each power $k \geq 1$, let  
+transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\theta_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
 \[
   0< t_1 <  t_2 < \cdots < t_s < 1 
 \]
 be the longest sequence of numbers such that $\gamma(t_i)\in\fd_i$ for some wall
-$(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.
-
-In view of the definition of scattering diagram, such a sequence is finite; we
+$(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.  In view of the definition of scattering diagram, such a sequence is finite; we
 can therefore consider the composition 
 \[
   \theta^k_{\gamma, \fD} :=
   \theta_{\gamma'(t_s),\fd_s} \circ \cdots \circ \theta_{\gamma'(t_1),\fd_1}.
 \]
-Define the \textit{path-ordered product} along $\gamma$ as
+Then we define
 \[
   \theta_{\gamma, \fD} := \lim_{k \rightarrow \infty} \theta ^k_{\gamma, \fD}. 
 \]
@@ -477,21 +473,17 @@ Define the \textit{path-ordered product} along $\gamma$ as
   $\theta_{\gamma, \fD}$ is well defined.
 \end{defn}
 
-\begin{theorem}[Kontsevich-Soibelman] 
-  \label{KS}
-  Given a scattering diagram $\fD$, there always exists a consistent scattering
+\begin{theorem}\cite{KS}
+  \label{th:KS}
+  Given any scattering diagram $\fD$, there exists a consistent scattering
   diagram $\fD'$ which contains $\fD$ such that $\fD'\setminus\fD$ only consists
   of rays.
 \end{theorem}
 
-We will now describe the scattering diagram $\fD_{(b,c)}$ associated to 
-$\cA(b,c)$.
-\saySS{This statement, including the matrix, should probably be removed.}
-\sayGM{This is done. (gregg)}
-Following Example 1.30 of \cite{GHKK}, we
+We now associate a consistent scattering diagram $\fD_{(b,c)}$ to 
+$\cA(b,c)$.  Following Example 1.30 of \cite{GHKK}, we
 take $\sigma$ to be the second quadrant, i.e., the cone generated by $(-1,0)$ and
-$(0,1)$. Then the ``initial'' scattering diagram associated to the above exchange
-matrix is
+$(0,1)$. Define the ``initial'' scattering diagram associated $\cA(b,c)$ by
 \[
   \fD_{\mathrm{in},(b,c)} := 
   \left\{
@@ -499,29 +491,28 @@ matrix is
     \big( \RR (0,1), 1+x_2^c\big) 
   \right\}.
 \]
+We then denote by $\fD_{(b,c)}$ the consistent scattering diagram obtained by
+applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.
 
-We will denote by $\fD_{(b,c)}$ the consistent scattering diagram obtained by
-applying Theorem \ref{KS} to $\fD_{\mathrm{in},(b,c)}$.
-
-\begin{example} 
-  \label{ex}
-  Consider $\cA(2,1)$. Then we get
-  \[
-    \fD_{\mathrm{in},(2,1)} =  
-    \left\{ 
-      \big(\RR (-1,0), 1+x_1^{-2}\big), 
-      \big(\RR (0,1), 1+x_2\big)  
-    \right\}   
-  \]
-  and the associated consistent scattering diagram $\fD_{(2,1)}$ (shown in
-  Figure~\ref{fig:diagex}) contains $\fD_{\mathrm{in},(2,1)}$ together with
-  the two walls
-  \[ 
-    \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
-    \quad \mbox{and} \quad
-    \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
-  \]
-\end{example}
+%\begin{example} 
+%  \label{ex}
+%Since
+%  \[
+%    \fD_{\mathrm{in},(2,1)} =  
+%    \left\{ 
+%      \big(\RR (-1,0), 1+x_1^{-2}\big), 
+%      \big(\RR (0,1), 1+x_2\big)  
+%    \right\}   
+%  \]
+%  the associated consistent scattering diagram $\fD_{(2,1)}$ (shown in
+%  Figure~\ref{fig:diagex}) contains $\fD_{\mathrm{in},(2,1)}$ together with
+%  the two walls
+%  \[ 
+%    \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
+%    \quad \mbox{and} \quad
+%    \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
+%  \]} 
+%\end{example}
 
 \begin{figure}
   \centering
@@ -531,18 +522,32 @@ applying Theorem \ref{KS} to $\fD_{\mathrm{in},(b,c)}$.
     \draw (0,0) -- (3,-3) node[below right] {$1+x_1^{-2}x_2^2$};
     \draw (0,0) -- (3,-1.5) node[below right] {$1+x_1^{-2}x_2$};
   \end{tikzpicture}
-  \caption{The scattering diagram $\fD_{(2,1)}$} 
+  \caption{The scattering diagram $\fD_{(2,1)}$.  Since
+  \[
+    \fD_{\mathrm{in},(2,1)} =  
+    \left\{ 
+      \big(\RR (-1,0), 1+x_1^{-2}\big), 
+      \big(\RR (0,1), 1+x_2\big)  
+    \right\}   
+  \]
+  the associated consistent scattering diagram $\fD_{(2,1)}$ contains $\fD_{\mathrm{in},(2,1)}$ together with
+  the two walls $\RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)$ and $\big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big)$.
+  %\[ 
+  %  \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
+  %  \quad \mbox{and} \quad
+  %  \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
+  %\]
+} 
   \label{fig:diagex}
 \end{figure}
 
-For general $b$ and $c$, the diagram $\fD_{(b,c)} \backslash
-\fD_{\mathrm{in},(b,c)}$ may consist of an infinite number of rays, and in fact
+For general $b$ and $c$, the diagram $\fD_{(b,c)}$ may consist of an infinite number of rays, and in fact
 it is infinite precisely when $bc\ge 4$. A more detailed description of the rays
 which appear can be found in \cite{GHKK}, Example 1.30. We summarize the crucial
 points here.
 
 First of all note that, in view of the definition of scattering diagram, all the
-rays in  $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ are contained in the
+rays in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ are contained in the
 fourth quadrant.  To make our next observation we need to extend the action of
 linear operators on $M_\RR$ to an action on pairs $(\fd,f_\fd)$. If $S$ is
 linear on $M_\RR$ set
@@ -992,7 +997,7 @@ $\fD_{(b,c)}\setminus\fD_{\mathrm{in},(b,c)}$ and its image is
       \big(\RR (0,1), 1+x_2^c\big)
     \right\}
   \]
-  and obtain $\fD_{(b,c)}^\bfd$ using Theorem \ref{KS}. 
+  and obtain $\fD_{(b,c)}^\bfd$ using Theorem \ref{th:KS}. 
 \end{remark}
 
 For a broken line $\gamma$ in $\fD_{(b,c)}$, we denote its image under $T$ as
@@ -1254,6 +1259,7 @@ To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each el
   \bibitem[GMN]{GMN} D.~Gaiotto, G.~W.~Moore, and A.~Neitzke, \emph{Framed BPS states}, Adv. Theor. Math. Phys., {\bf 17} (2013), no. 2, 241--397.
   \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, and J.~Weyman, \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf, 2014.
   \bibitem[KQ]{KQ} Y.~Kimura and F.~Qin, \emph{Graded quiver varieties, quantum cluster algebras and dual canonical basis}, Adv. Math., {\bf 262} (2012), 261--312.
+  \bibitem[KS]{KS} M.~Kontsevich and Y.~Soibelman, \emph{Wall-crossing structures in Donaldson-Thomas invariants, integrable systems and mirror symmetry}, preprint, arXiv:1303.3253, 2013.
   \bibitem[LLZ2]{LLZ2} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Positivity and tameness in rank 2 cluster algebras}, J. Alg. Comb., {\bf 40} (2014), no. 3, 823--840.
   \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math., \textbf{20} (2014), 57--82.
   \bibitem[LS]{LS} K.~Lee and R.~Schiffler, \emph{A combinatorial formula for rank 2 cluster variables}, J. Alg. Comb., {\bf 37} (2013), no. 1, 67--85.
