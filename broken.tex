@@ -376,43 +376,53 @@ pointed supports.
   \end{figure}
 \end{remark}
 
-To prove \cref{th:pointed supports} Lee, Li, and Zelevinsky develop a
-combinatorial construction via compatible pairs on a maximal Dyck path.  
+\begin{remark}
+The existence of integers $c(p,q)$ satisfying the recursive equations \eqref{eq:greedy recursion}, and thus the existence of the greedy basis itself, is quite non-trivial.  The authors of \cite{LLZ} characterize each $c(p,q)$ as the solution to an enumerative problem; specifically, the number of certain `compatible pairs of edges' inside a type of lattice path called a `maximal Dyck path'.
 
-For $(a_1,a_2)\in\ZZ_{\ge0}^2$, a Dyck path in the rectangle
-$[0,a_1]\times[0,a_2]$ is a lattice path beginning at $(0,0)$ which takes steps
-to the east and north to end at $(a_1,a_2)$ while never crossing above the main
-diagonal.  Let $D_{a_1,a_2}$ denote the maximal such Dyck path, i.e. any lattice
-point lying strictly above the Dyck path $D_{a_1,a_2}$ also lies above the main
-diagonal.  
+This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p,q)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  %Many remarkable advances in the theory of cluster algebras have been animated by a desire to produce enumerative problems whose solutions define the coefficients of such a basis, such as additive and monodial categorifications, 
+\end{remark}
 
-Let $H$ and $V$ denote the sets of horizontal and vertical edges of
-$D_{a_1,a_2}$.  For edges $e_1,e_2\in D_{a_1,a_2}$ write $e_1e_2$ for the
-subpath of $D_{a_1,a_2}$ which begins at $e_1$ and terminates at $e_2$.  When
-$e_1$ comes after $e_2$ the path $e_1e_2$ begins at $e_1$ goes to the end of
-$D_{a_1,a_2}$ and then continues from the beginning of $D_{a_1,a_2}$ to $e_2$.
-Write $(e_1e_2)_H$ and $(e_1e_2)_V$ for the sets of horizontal and vertical
-edges in $e_1e_2$.
+%%%Dyck path comment begins here
 
-For $S_1\subset H$ and $S_2\subset V$ we call the pair $(S_1,S_2)$
-\emph{compatible} if for each $h\in S_1$ and $v\in S_2$ there exists an edge
-$e\in hv$ such that one of the following holds:
-\begin{align*}
- \tag{HSC}\label{eq:horizontal shadow condition}\big|(he)_V\big|=b\big|(he)_H\cap S_1\big|\quad&\text{and}\quad e\ne v;\\
- \tag{VSC}\label{eq:vertical shadow condition}\big|(ev)_H\big|=c\big|(ev)_V\cap S_2\big|\quad&\text{and}\quad e\ne h.\\
-\end{align*}
-We call the first the ``horizontal shadow condition" and call the second the
-``vertical shadow condition".
-\begin{theorem}
-  \label{th:combinatorial greedy}\cite[Theorem~1.11]{LLZ}
-  For any $(a_1,a_2)\in\ZZ^2$ we have
-  \begin{equation}
-    \label{eq:combinatorial greedy}
-    x[a_1,a_2]=x_1^{-a_1}x_2^{-a_2}\sum\limits_{(S_1,S_2)}x_1^{b|S_2|}x_2^{c|S_1|},
-  \end{equation}
-  where $(S_1,S_2)$ runs over all compatible pairs in the maximal Dyck path
-  $D_{[a_1]_+,[a_2]_+}$.
-\end{theorem}
+%To prove Theorem~\ref{th:pointed supports} Lee, Li, and Zelevinsky develop a
+%combinatorial construction via compatible pairs on a maximal Dyck path.  
+%
+%For $(a_1,a_2)\in\ZZ_{\ge0}^2$, a Dyck path in the rectangle
+%$[0,a_1]\times[0,a_2]$ is a lattice path beginning at $(0,0)$ which takes steps
+%to the east and north to end at $(a_1,a_2)$ while never crossing above the main
+%diagonal.  Let $D_{a_1,a_2}$ denote the maximal such Dyck path, i.e. any lattice
+%point lying strictly above the Dyck path $D_{a_1,a_2}$ also lies above the main
+%diagonal.  
+%
+%Let $H$ and $V$ denote the sets of horizontal and vertical edges of
+%$D_{a_1,a_2}$.  For edges $e_1,e_2\in D_{a_1,a_2}$ write $e_1e_2$ for the
+%subpath of $D_{a_1,a_2}$ which begins at $e_1$ and terminates at $e_2$.  When
+%$e_1$ comes after $e_2$ the path $e_1e_2$ begins at $e_1$ goes to the end of
+%$D_{a_1,a_2}$ and then continues from the beginning of $D_{a_1,a_2}$ to $e_2$.
+%Write $(e_1e_2)_H$ and $(e_1e_2)_V$ for the sets of horizontal and vertical
+%edges in $e_1e_2$.
+%
+%For $S_1\subset H$ and $S_2\subset V$ we call the pair $(S_1,S_2)$
+%\emph{compatible} if for each $h\in S_1$ and $v\in S_2$ there exists an edge
+%$e\in hv$ such that one of the following holds:
+%\begin{align*}
+ %\tag{HSC}\label{eq:horizontal shadow condition}\big|(he)_V\big|=b\big|(he)_H\cap S_1\big|\quad&\text{and}\quad e\ne v;\\
+ %\tag{VSC}\label{eq:vertical shadow condition}\big|(ev)_H\big|=c\big|(ev)_V\cap S_2\big|\quad&\text{and}\quad e\ne h.\\
+%\end{align*}
+%We call the first the ``horizontal shadow condition" and call the second the
+%``vertical shadow condition".
+%\begin{theorem}
+  %\label{th:combinatorial greedy}\cite[Theorem~1.11]{LLZ}
+  %For any $(a_1,a_2)\in\ZZ^2$ we have
+  %\begin{equation}
+    %\label{eq:combinatorial greedy}
+    %x[a_1,a_2]=x_1^{-a_1}x_2^{-a_2}\sum\limits_{(S_1,S_2)}x_1^{b|S_2|}x_2^{c|S_1|},
+  %\end{equation}
+  %where $(S_1,S_2)$ runs over all compatible pairs in the maximal Dyck path
+  %$D_{[a_1]_+,[a_2]_+}$.
+%\end{theorem}
+
+%%%Dyck path comments ends here
 
 \section{Scattering diagrams and broken lines}
 \saySS{We are using Fock-Goncharov conventions through the paper; in particular
