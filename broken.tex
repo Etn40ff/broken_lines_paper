@@ -2,11 +2,12 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{latexsym}
+\usepackage{microtype}
 \usepackage{tikz}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,citecolor=blue,linkcolor=blue}
 
-%\usepackage[margin=1in]{geometry}
+\usepackage[margin=1in]{geometry}
 
 % add yourself here in order to make comments on the side
 \usepackage[draft]{say}
@@ -449,7 +450,7 @@ normals $\pm n$ is used in the exponent.
 
 Let $\fD$ be a scattering diagram and $\gamma$ a smooth immersion
 \[  
-  \gamma: [0,1] \rightarrow M_{\mathbb{R}} \backslash  \{0 \}  
+  \gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}  
 \]
 transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\theta_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
 \[
@@ -492,7 +493,7 @@ $(0,1)$. Define the ``initial'' scattering diagram associated $\cA(b,c)$ by
   \right\}.
 \]
 We then denote by $\fD_{(b,c)}$ the consistent scattering diagram obtained by
-applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.
+applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2,1)}$ is illustrated in\ref{fig:diagex}.
 
 %\begin{example} 
 %  \label{ex}
@@ -522,16 +523,9 @@ applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.
     \draw (0,0) -- (3,-3) node[below right] {$1+x_1^{-2}x_2^2$};
     \draw (0,0) -- (3,-1.5) node[below right] {$1+x_1^{-2}x_2$};
   \end{tikzpicture}
-  \caption{The scattering diagram $\fD_{(2,1)}$.  Since
-  \[
-    \fD_{\mathrm{in},(2,1)} =  
-    \left\{ 
-      \big(\RR (-1,0), 1+x_1^{-2}\big), 
-      \big(\RR (0,1), 1+x_2\big)  
-    \right\}   
-  \]
+  \caption{The scattering diagram $\fD_{(2,1)}$.  Since the initial diagram $\fD_{\mathrm{in},(2,1)}$ consists of the walls $\big(\RR(-1,0),\allowbreak 1+x_1^{-2}\big)$ and $\big(\RR (0,1), 1+x_2\big)$,
   the associated consistent scattering diagram $\fD_{(2,1)}$ contains $\fD_{\mathrm{in},(2,1)}$ together with
-  the two walls $\RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)$ and $\big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big)$.
+  the two walls $\big(\RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)$ and $\big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big)$.
   %\[ 
   %  \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
   %  \quad \mbox{and} \quad
@@ -579,9 +573,9 @@ Now consider the two linear involutions $S_1$ and $S_2$ given by
     -c & -1
   \end{pmatrix}.
 \]
-If $(\fd, f_{\fd}) \in \fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ and $S_i
+If $(\fd, f_{\fd}) \in \fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ and $S_i
 (\fd)$ is contained strictly in the fourth quadrant, then $S_i(\fd, f_{\fd}) \in
-\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$. Moreover both 
+\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$. Moreover both 
 \begin{equation}
   \label{eq:first-walls}
   S_2\big(\RR_{\leq 0}(-1,0),1+x_1^{-b}\big)
@@ -592,7 +586,7 @@ If $(\fd, f_{\fd}) \in \fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ and $S_i
   %
   S_1\big(\RR_{\leq 0}(0,1),1+x_2^c\big)
 \end{equation}
-are walls in $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ even though
+are walls in $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ even though
 neither 
 \[
   \big(\RR_{\leq 0}(-1,0),1+x_1^{-b}\big)
@@ -604,11 +598,11 @@ neither
   \big(\RR_{\leq 0}(0,1),1+x_2^c\big)
 \]
 are walls in $\fD_{(b,c)}$. These considerations gives us a recipe to produce
-elements of $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$: it is enough to apply
+elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
 
 We need to distinguish two cases. If $bc<4$ this procedure will construct, in
-finitely many steps, all the walls in $\fD_{(b,c)} \backslash
+finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
 \fD_{\mathrm{in},(b,c)}$.  If $bc\geq 4$, instead, we will get two infinite
 families of walls whose supports will converge to the boundary of the convex cone
 spanned by the irrational vectors
@@ -619,7 +613,7 @@ spanned by the irrational vectors
   \quad
   \left(2b,-bc - \sqrt{bc(bc-4)}\right)
 \]
-These will exhaust all the walls in  $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$
+These will exhaust all the walls in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$
 with support laying outside of this cone. The structure of the remaining part of 
 $\fD_{(b,c)}$ is not completely understood; the expectation is that there is
 a wall for each possible rational slope inside the irrational cone.
@@ -690,12 +684,12 @@ circumstances.
 
 \begin{defn} 
   \label{brokendef}
-  Let $\fD$ be a scattering diagram, $m \in M \backslash \{0\}$ and $q \in
-  M_{\RR} \backslash \text{Supp}(\fD)$.  A \emph{broken line} with initial
+  Let $\fD$ be a scattering diagram, $m \in M \smallsetminus \{0\}$ and $q \in
+  M_{\RR} \smallsetminus \text{Supp}(\fD)$.  A \emph{broken line} with initial
   \emph{exponent} $m$ and endpoint $q$ is a continuous and piecewise linear path
-  $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with
+  $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \smallsetminus \{ 0\} $ with
   a finite number of domains of linearity, along with a choice of monomials
-  $c(\ell) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $\ell \subseteq ( -
+  $c(\ell) x^{m(\ell)} \in \Bbbk[M]$ one for each domain of linearity $\ell \subseteq ( -
   \infty, 0]$ of $\gamma$. 
   
   The path $\gamma$ and the monomials $c(\ell) x^{m(\ell)}$ need to satisfy the
@@ -729,7 +723,7 @@ We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$  denote by
 $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamma$.
 \begin{defn}
-  Let $\fD, m, q$ as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $q$
+  Let $\fD, m, q$ be as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $q$
   as
   \[ 
     \Theta_{q, m} = \sum_{\gamma} \Mono (\gamma), 
@@ -809,7 +803,7 @@ The following summarizes the main properties of the theta functions as shown in
   \begin{enumerate}
     \item
       If $\fD$ is any consistent scattering diagram, $q$, $q'$ are two general
-      irrational points on $M_{\RR} \backslash$ Supp$(\fD)$, and $\gamma$ is a
+      irrational points on $M_{\RR} \smallsetminus$ Supp$(\fD)$, and $\gamma$ is a
       path joining $q$ to $q'$, then the path-ordered product 
       \saySS{Do you like this phrasing?}
       \[
