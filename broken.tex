@@ -102,14 +102,14 @@ These functions are called \emph{cluster variables} and the \emph{cluster
 algebra} $\cA(b,c)$ is the $\ZZ$-subalgebra of $\QQ(x_1,x_2)$ which they
 generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and each monomial $x_k^mx_{k+1}^n$ with $m, n > 0$ is called a \emph{cluster monomial}.  Later we will denote by $M$ a rank 2 lattice with an isomorphism $\ZZ[M] \cong \ZZ[x_1^{\pm1},x_2^{\pm1}]$.  Writing elements of $\ZZ[M]$ as $x^m$ for $m \in M$, this induces an isomorphism $M \cong \ZZ^2$, $m \mapsto (m_1,m_2)$ via $x^{(m_1,m_2)} = x_1^{m_1}x_2^{m_2}$.
 
-An essential result about the relations \eqref{eq:exchangerelations} is that they imply that $\cA(b,c)$ is in fact a subalgebra of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ rather than merely of $\QQ(x_1,x_2)$.
+An essential result about the relations \eqref{eq:exchangerelations} is that they imply that $\cA(b,c)$ is in fact a subalgebra of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ rather than merely a subalgebra of $\QQ(x_1,x_2)$.
 \begin{theorem}\label{th:Laurent}
 \cite[Theorem~3.1]{FZ} Given any cluster variable $x_j$, we have $x_j\in\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ for every $k \in \ZZ$.
 \end{theorem}
 
 We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Laurent polynomials with positive coefficients.  An element of $\cA(b,c)$ is a 
  \emph{universal Laurent polynomial} (resp.  \emph{positive universal Laurent polynomial}) if it is contained in 
- $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ for every $k \in \ZZ$).
+ $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.
 
 \begin{theorem}\label{th:Laurent}
 \cite{LS} Each cluster variable of $\cA(b,c)$ is positive.
@@ -167,18 +167,32 @@ pointed supports.
 \sayGM{*** We need to define Newton polygon and support here. (gregg)}
 
 \begin{theorem}\label{th:pointed supports}(\cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2})
-  For $(a_1,a_2)\in\ZZ^2$, the pointed support of $x[a_1,a_2]$ is determined as follows.
+  For $(a_1,a_2)\in\ZZ^2$, the Newton polygon of $x[a_1,a_2]$ is determined as follows.
   \begin{enumerate}
-    \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
-    \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p_1,0): 0 \leq p_1 \leq a_2\}$.
-    \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,p_2): 0 \leq p_2 \leq a_1\}$.
-    \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_1\le a_{2},\; p_2\le a_{1}-bp_1\right\}$.
-    \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_2\le a_{1},\; p_1\le a_{2}-cp_2\right\}$.
+    %\item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
+    \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $N_{a_1,a_2} = \{(-a_1,-a_2)\}$.
+    %\item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p_1,0): 0\leq p_1\leq a_2\}$.
+    \item If $a_1 \leq 0 < a_2$, then $N_{a_1,a_2} = \{(p_1,-a_2): -a_1\leq p_1\leq -a_1+ba_2\}$.
+    %\item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,p_2): 0 \leq p_2 \leq a_1\}$.
+    \item If $a_2 \leq 0 < a_1$, then $N_{a_1,a_2} = \{(-a_1,p_2): -a_2 \leq p_2 \leq -a_2+ca_1\}$.
+    %\item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_1\le a_{2},\; p_2\le a_{1}-bp_1\right\}$.
+    \item If $0<ba_2\leq a_1$, then 
+    \[N_{a_1,a_2}=\left\{(p_1,p_2): -a_1\le p_1\le -a_1+ba_2,\; -a_2\le p_2\le -a_2-cp_1\right\}.\]
+    %\item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_2\le a_{1},\; p_1\le a_{2}-cp_2\right\}$.
+    \item If $0<ca_1\leq a_2$, then 
+    \[N_{a_1,a_2}=\left\{(p_1,p_2): -a_1\le p_1\le -a_1-bp_2,\; -a_2\le p_2\le -a_2+ca_1\right\}.\]
+    %\item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
+    %$$\aligned
+    %R_{a_1,a_2}=&\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_1<\frac{a_1}{b},\; p_2+\Big(b-\frac{ba_2}{ca_1}\Big)p_1<a_1\bigg\}\\
+    %&\bigcup\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_2<\frac{a_2}{c},\; p_1+\Big(c-\frac{ca_1}{ba_2}\Big)p_2<a_2\bigg\}\\
+    %&\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
+    %\endaligned
+    %$$
     \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
     $$\aligned
-    R_{a_1,a_2}=&\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_1<\frac{a_1}{b},\; p_2+\Big(b-\frac{ba_2}{ca_1}\Big)p_1<a_1\bigg\}\\
-    &\bigcup\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_2<\frac{a_2}{c},\; p_1+\Big(c-\frac{ca_1}{ba_2}\Big)p_2<a_2\bigg\}\\
-    &\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
+    N_{a_1,a_2}=&\bigg\{(p_1,p_2)\bigg|\; -a_1\le p_1<0,\; -a_2\le p_2<\Big(\frac{a_2}{a_1}-c\Big)p_1\bigg\}\\
+    &\bigcup\bigg\{(p_1,p_2): -a_1\le p_1<\Big(\frac{a_1}{a_2}-b\Big)p_2,\; -a_2\le p_2<0\bigg\}\\
+    &\hspace{1.35em}\bigcup\Big\{(-a_1+ba_2,-a_2),(-a_1,-a_2+ca_1)\Big\}.
     \endaligned
     $$
   \end{enumerate}
@@ -486,8 +500,6 @@ Define the \textit{path-ordered product} along $\gamma$ as
 
 We will now describe the scattering diagram $\fD_{(b,c)}$ associated to 
 $\cA(b,c)$.
-\saySS{This statement, including the matrix, should probably be removed.}
-\sayGM{This is done. (gregg)}
 Following Example 1.30 of \cite{GHKK}, we
 take $\sigma$ to be the second quadrant, i.e., the cone generated by $(-1,0)$ and
 $(0,1)$. Then the ``initial'' scattering diagram associated to the above exchange
@@ -639,7 +651,7 @@ Igusa-Orr-Todorov-Weyman \cite{IOTW}.
 
 The following result explains the connection between scattering diagrams
 and the corresponding cluster algebras: 
-\saySS{Wen we write the introductory part on cluster algebras we might want to
+\saySS{When we write the introductory part on cluster algebras we might want to
   mention what universal Laurent polynomials are}
 \begin{theorem} 
   \label{univLaurent} 
@@ -647,9 +659,9 @@ and the corresponding cluster algebras:
   Laurent polynomial. For any path $\gamma$ for which $\theta_{\gamma,\fD}$ is
   defined, $\theta_{\gamma,\fD}(f)$ can be viewed as an element of
   $\Bbbk[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$. Then $f$ is a universal
-  Laurent polynomial for the initial seed data if, for any path $\gamma$ in
+  Laurent polynomial if, for any path $\gamma$ in
   $M_{\RR}$ with starting point in the first quadrant and endpoint in one of the
-  chambers of $\fD$, $\theta_{\gamma,\fD}(f)$ in fact lies $\Bbbk[M]$.
+  chambers of $\fD$, $\theta_{\gamma,\fD}(f)$ in fact lies in $\Bbbk[M]$.
 \end{theorem}
 
 \begin{proof}
