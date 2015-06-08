@@ -1,15 +1,17 @@
-\documentclass[10pt]{amsart}
+\documentclass[11pt]{amsart}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{latexsym}
+\usepackage{microtype}
 \usepackage{tikz}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,citecolor=blue,linkcolor=blue}
 
-%\usepackage[margin=1in]{geometry}
+\usepackage[margin=1in,marginparwidth=0.8in, marginparsep=0.1in]{geometry}
 
 % add yourself here in order to make comments on the side
 \usepackage[draft]{say}
+
 \newcommand{\sayDR}[1]{\say[DR]{#1}}
 \newcommand{\saySS}[1]{\say[SS]{#1}}
 \newcommand{\sayHW}[1]{\say[HW]{#1}}
@@ -34,6 +36,19 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{question}[theorem]{Question}
 \numberwithin{equation}{section}
+
+% cleverref
+\usepackage{cleveref}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{section}{Section}{Sections}
+\crefname{subsection}{Section}{Sections}
+\crefname{defn}{Definition}{Definitions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{example}{Example}{Examples}
+\crefname{figure}{Figure}{Figures}
 
 % shorthands
 \newcommand{\NN}{\mathbb{N}}
@@ -100,7 +115,7 @@ Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$
 \end{equation}
 These functions are called \emph{cluster variables} and the \emph{cluster
 algebra} $\cA(b,c)$ is the $\ZZ$-subalgebra of $\QQ(x_1,x_2)$ which they
-generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and each monomial $x_k^mx_{k+1}^n$ with $m, n > 0$ is called a \emph{cluster monomial}.  Later we will denote by $M$ a rank 2 lattice with an isomorphism $\ZZ[M] \cong \ZZ[x_1^{\pm1},x_2^{\pm1}]$.  Writing elements of $\ZZ[M]$ as $x^m$ for $m \in M$, this induces an isomorphism $M \cong \ZZ^2$, $m \mapsto (m_1,m_2)$ via $x^{(m_1,m_2)} = x_1^{m_1}x_2^{m_2}$.
+generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and a monomial in $x_k$ and $x_{k+1}$ is called a \emph{cluster monomial}.  Later we will denote by $M$ a rank 2 lattice with an algebra isomorphism $\ZZ[M] \cong \ZZ[x_1^{\pm1},x_2^{\pm1}]$.  Writing elements of $\ZZ[M]$ as $x^m$ for $m \in M$, this induces an isomorphism $M \cong \ZZ^2$, $m \mapsto (m_1,m_2)$ via $x^{(m_1,m_2)} = x_1^{m_1}x_2^{m_2}$.
 
 An essential result about the relations \eqref{eq:exchangerelations} is that they imply that $\cA(b,c)$ is in fact a subalgebra of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ rather than merely a subalgebra of $\QQ(x_1,x_2)$.
 \begin{theorem}\label{th:Laurent}
@@ -161,7 +176,7 @@ a collection of elements of $\cA(b,c)$ with nice properties.
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
 call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  Let
 $R_{a_1,a_2}=\{(p_1,p_2)\in\ZZ_{\ge0}^2:c(p_1,p_2)\ne0 \text{ in } x[a_1,a_2]\}$ denote
-the \emph{pointed support} of $x[a_1,a_2]$.  Theorem~\ref{th:greedy} is proven using the following characterization of the greedy elements by their
+the \emph{pointed support} of $x[a_1,a_2]$.  \Cref{th:greedy} is proven using the following characterization of the greedy elements by their
 pointed supports.
 
 \sayGM{*** We need to define Newton polygon and support here. (gregg)}
@@ -360,7 +375,7 @@ pointed supports.
   \end{figure}
 \end{remark}
 
-To prove Theorem~\ref{th:pointed supports} Lee, Li, and Zelevinsky develop a
+To prove \cref{th:pointed supports} Lee, Li, and Zelevinsky develop a
 combinatorial construction via compatible pairs on a maximal Dyck path.  
 
 For $(a_1,a_2)\in\ZZ_{\ge0}^2$, a Dyck path in the rectangle
@@ -451,8 +466,7 @@ For simplicity, we will impose the additional condition that $\fd_1\neq \fd_2$ f
 %  \text{Supp} (\fD) := \bigcup_{(\fd, f_{\fd}) \in \fD} \fd. 
 %\]
 
-To each wall $(\fd, f_{\fd})$, given a direction $v$ transversal to $\fd$, one
-can associate the element $\theta_{v,\fd}\in
+Given a wall $(\fd, f_{\fd})$ and a direction $v$ transversal to $\fd$, we associate the element $\theta_{v,\fd}\in
 {\mathrm{Aut}}_{\Bbbk-alg}\left(\widehat{\Bbbk[P]}\right)$ defined by
 \[
   \theta_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
@@ -462,25 +476,22 @@ uniquely determined by the sign convention $ v\cdot n <0$.  Note
 that the only role of the transversal direction $v$ is to fix which of the two
 normals $\pm n$ is used in the exponent. 
 
-Consider a smooth immersion
+Let $\fD$ be a scattering diagram and $\gamma$ a smooth immersion
 \[  
-  \gamma: [0,1] \rightarrow M_{\mathbb{R}} \backslash  \{0 \}  
+  \gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}  
 \]
-with endpoints not in the support of $\fD$. Assume $\gamma$ is transversal to
-each wall of $\fD$ that it crosses. For each power $k \geq 1$, let  
+transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\theta_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
 \[
   0< t_1 <  t_2 < \cdots < t_s < 1 
 \]
 be the longest sequence of numbers such that $\gamma(t_i)\in\fd_i$ for some wall
-$(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.
-
-In view of the definition of scattering diagram, such a sequence is finite; we
+$(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.  In view of the definition of scattering diagram, such a sequence is finite; we
 can therefore consider the composition 
 \[
   \theta^k_{\gamma, \fD} :=
   \theta_{\gamma'(t_s),\fd_s} \circ \cdots \circ \theta_{\gamma'(t_1),\fd_1}.
 \]
-Define the \textit{path-ordered product} along $\gamma$ as
+Then we define
 \[
   \theta_{\gamma, \fD} := \lim_{k \rightarrow \infty} \theta ^k_{\gamma, \fD}. 
 \]
@@ -491,19 +502,16 @@ Define the \textit{path-ordered product} along $\gamma$ as
   $\theta_{\gamma, \fD}$ is well defined.
 \end{defn}
 
-\begin{theorem}[Kontsevich-Soibelman] 
-  \label{KS}
-  Given a scattering diagram $\fD$, there always exists a consistent scattering
+\begin{theorem}\cite{KS}
+  \label{th:KS}
+  Given any scattering diagram $\fD$, there exists a consistent scattering
   diagram $\fD'$ which contains $\fD$ such that $\fD'\setminus\fD$ only consists
   of rays.
 \end{theorem}
 
-We will now describe the scattering diagram $\fD_{(b,c)}$ associated to 
-$\cA(b,c)$.
-Following Example 1.30 of \cite{GHKK}, we
-take $\sigma$ to be the second quadrant, i.e., the cone generated by $(-1,0)$ and
-$(0,1)$. Then the ``initial'' scattering diagram associated to the above exchange
-matrix is
+We now associate a consistent scattering diagram $\fD_{(b,c)}$ to 
+$\cA(b,c)$.  Following Example 1.30 of \cite{GHKK}, we take $\sigma$ to be the second quadrant, i.e., the cone generated by $(-1,0)$ and
+$(0,1)$. Define the ``initial'' scattering diagram associated $\cA(b,c)$ by
 \[
   \fD_{\mathrm{in},(b,c)} := 
   \left\{
@@ -511,29 +519,28 @@ matrix is
     \big( \RR (0,1), 1+x_2^c\big) 
   \right\}.
 \]
+We then denote by $\fD_{(b,c)}$ the consistent scattering diagram obtained by
+applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2,1)}$ is illustrated in \cref{fig:diagex}.
 
-We will denote by $\fD_{(b,c)}$ the consistent scattering diagram obtained by
-applying Theorem \ref{KS} to $\fD_{\mathrm{in},(b,c)}$.
-
-\begin{example} 
-  \label{ex}
-  Consider $\cA(2,1)$. Then we get
-  \[
-    \fD_{\mathrm{in},(2,1)} =  
-    \left\{ 
-      \big(\RR (-1,0), 1+x_1^{-2}\big), 
-      \big(\RR (0,1), 1+x_2\big)  
-    \right\}   
-  \]
-  and the associated consistent scattering diagram $\fD_{(2,1)}$ (shown in
-  Figure~\ref{fig:diagex}) contains $\fD_{\mathrm{in},(2,1)}$ together with
-  the two walls
-  \[ 
-    \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
-    \quad \mbox{and} \quad
-    \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
-  \]
-\end{example}
+%\begin{example} 
+%  \label{ex}
+%Since
+%  \[
+%    \fD_{\mathrm{in},(2,1)} =  
+%    \left\{ 
+%      \big(\RR (-1,0), 1+x_1^{-2}\big), 
+%      \big(\RR (0,1), 1+x_2\big)  
+%    \right\}   
+%  \]
+%  the associated consistent scattering diagram $\fD_{(2,1)}$ (shown in
+%  Figure~\ref{fig:diagex}) contains $\fD_{\mathrm{in},(2,1)}$ together with
+%  the two walls
+%  \[ 
+%    \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
+%    \quad \mbox{and} \quad
+%    \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
+%  \]} 
+%\end{example}
 
 \begin{figure}
   \centering
@@ -543,18 +550,25 @@ applying Theorem \ref{KS} to $\fD_{\mathrm{in},(b,c)}$.
     \draw (0,0) -- (3,-3) node[below right] {$1+x_1^{-2}x_2^2$};
     \draw (0,0) -- (3,-1.5) node[below right] {$1+x_1^{-2}x_2$};
   \end{tikzpicture}
-  \caption{The scattering diagram $\fD_{(2,1)}$} 
+  \caption{The scattering diagram $\fD_{(2,1)}$.  Since the initial diagram $\fD_{\mathrm{in},(2,1)}$ consists of the walls $\big(\RR(-1,0),\allowbreak 1+x_1^{-2}\big)$ and $\big(\RR (0,1), 1+x_2\big)$,
+  the associated consistent scattering diagram $\fD_{(2,1)}$ contains $\fD_{\mathrm{in},(2,1)}$ together with
+  the two walls $\big(\RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)$ and $\big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big)$.
+  %\[ 
+  %  \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
+  %  \quad \mbox{and} \quad
+  %  \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
+  %\]
+} 
   \label{fig:diagex}
 \end{figure}
 
-For general $b$ and $c$, the diagram $\fD_{(b,c)} \backslash
-\fD_{\mathrm{in},(b,c)}$ may consist of an infinite number of rays, and in fact
+For general $b$ and $c$, the diagram $\fD_{(b,c)}$ may consist of an infinite number of rays, and in fact
 it is infinite precisely when $bc\ge 4$. A more detailed description of the rays
 which appear can be found in \cite{GHKK}, Example 1.30. We summarize the crucial
 points here.
 
 First of all note that, in view of the definition of scattering diagram, all the
-rays in  $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ are contained in the
+rays in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ are contained in the
 fourth quadrant.  To make our next observation we need to extend the action of
 linear operators on $M_\RR$ to an action on pairs $(\fd,f_\fd)$. If $S$ is
 linear on $M_\RR$ set
@@ -586,9 +600,9 @@ Now consider the two linear involutions $S_1$ and $S_2$ given by
     -c & -1
   \end{pmatrix}.
 \]
-If $(\fd, f_{\fd}) \in \fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ and $S_i
+If $(\fd, f_{\fd}) \in \fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ and $S_i
 (\fd)$ is contained strictly in the fourth quadrant, then $S_i(\fd, f_{\fd}) \in
-\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$. Moreover both 
+\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$. Moreover both 
 \begin{equation}
   \label{eq:first-walls}
   S_2\big(\RR_{\leq 0}(-1,0),1+x_1^{-b}\big)
@@ -599,7 +613,7 @@ If $(\fd, f_{\fd}) \in \fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ and $S_i
   %
   S_1\big(\RR_{\leq 0}(0,1),1+x_2^c\big)
 \end{equation}
-are walls in $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$ even though
+are walls in $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ even though
 neither 
 \[
   \big(\RR_{\leq 0}(-1,0),1+x_1^{-b}\big)
@@ -611,11 +625,11 @@ neither
   \big(\RR_{\leq 0}(0,1),1+x_2^c\big)
 \]
 are walls in $\fD_{(b,c)}$. These considerations gives us a recipe to produce
-elements of $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$: it is enough to apply
+elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
 
 We need to distinguish two cases. If $bc<4$ this procedure will construct, in
-finitely many steps, all the walls in $\fD_{(b,c)} \backslash
+finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
 \fD_{\mathrm{in},(b,c)}$.  If $bc\geq 4$, instead, we will get two infinite
 families of walls whose supports will converge to the boundary of the convex cone
 spanned by the irrational vectors
@@ -626,7 +640,7 @@ spanned by the irrational vectors
   \quad
   \left(2b,-bc - \sqrt{bc(bc-4)}\right)
 \]
-These will exhaust all the walls in  $\fD_{(b,c)} \backslash \fD_{\mathrm{in},(b,c)}$
+These will exhaust all the walls in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$
 with support laying outside of this cone. The structure of the remaining part of 
 $\fD_{(b,c)}$ is not completely understood; the expectation is that there is
 a wall for each possible rational slope inside the irrational cone.
@@ -697,19 +711,19 @@ circumstances.
 
 \begin{defn} 
   \label{brokendef}
-  Let $\fD$ be a scattering diagram, $m \in M \backslash \{0\}$ and $Q \in
-  M_{\RR} \backslash \text{Supp}(\fD)$.  A \emph{broken line} with initial
+  Let $\fD$ be a scattering diagram, $m \in M \smallsetminus \{0\}$ and $q \in
+  M_{\RR} \smallsetminus \text{Supp}(\fD)$.  A \emph{broken line} with initial
   \emph{exponent} $m$ and endpoint $q$ is a continuous and piecewise linear path
-  $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with
+  $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \smallsetminus \{ 0\} $ with
   a finite number of domains of linearity, along with a choice of monomials
-  $c(\ell) A^{m(L)} \in \Bbbk[M]$ one for each domain of linearity $\ell \subseteq ( -
+  $c(\ell) x^{m(\ell)} \in \Bbbk[M]$ one for each domain of linearity $\ell \subseteq ( -
   \infty, 0]$ of $\gamma$. 
   
   The path $\gamma$ and the monomials $c(\ell) x^{m(\ell)}$ need to satisfy the
   following conditions:
   \begin{itemize}
     \item 
-      $\gamma(0) = Q$.
+      $\gamma(0) = q$.
     
     \item 
       If $\ell$ is the first (i.e., unbounded) domain of linearity of $\gamma$,
@@ -736,20 +750,20 @@ We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$  denote by
 $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamma$.
 \begin{defn}
-  Let $\fD, m, Q$ as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $Q$
+  Let $\fD, m, q$ be as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $q$
   as
   \[ 
-    \Theta_{Q, m} = \sum_{\gamma} \Mono (\gamma), 
+    \Theta_{q, m} = \sum_{\gamma} \Mono (\gamma), 
   \] 
   where the sum is over all broken lines with initial momentum $m$ and endpoint
-  $Q$.
+  $q$.
 \end{defn}
 
 \begin{example} 
   \label{brokenex}
-  Consider the scattering diagram $\fD_{(2,2)}$ and let $Q$ be a small
+  Consider the scattering diagram $\fD_{(2,2)}$ and let $q$ be a small
   irrational perturbation of the point $(1.5,1)$. There are three broken lines
-  with initial momentum $m = (1,-1)$ and endpoint $Q$ as shown in
+  with initial momentum $m = (1,-1)$ and endpoint $q$ as shown in
   Figure~\ref{figbrokenex}.
   First of all, we can have a broken line $\gamma_1$ which does not bend.
   Therefore
@@ -775,9 +789,9 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \[
     \Mono (\gamma_3) = x_1^{-1} x_2.
   \]
-  Thus the theta function associated to $m = (1,-1)$ with endpoint point $Q$ is 
+  Thus the theta function associated to $m = (1,-1)$ with endpoint point $q$ is 
   \[ 
-    \Theta_{Q, (1,-1)} =  
+    \Theta_{q, (1,-1)} =  
     x_1 x_2^{-1} + x_1^{-1} x_2^{-1} +x_1^{-1} x_2 .  
   \]
 \end{example}
@@ -789,7 +803,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
     \draw (0,-3) -- (0,3) node[above] {$1+x_2^2$};
     \draw (0,0) -- (3,-1.5) node[right] {$1+x_1^{-4}x_2^2$};
     \draw (0,0) -- (1.5,-3) node[below] {$1+x_1^{-2}x_2^4$};
-    \draw (1.5,1) node[circle, right] {$Q$};
+    \draw (1.5,1) node[circle, right] {$q$};
     \draw[dotted] (1.4,-2.8) -- (2.8,-1.4);
     \draw[red] (3,-0.5) -- (1.5,1);
     \draw[red] (2.1,0.1) node[above right]{\small $x_1 x_2^{-1}$};
@@ -815,26 +829,26 @@ The following summarizes the main properties of the theta functions as shown in
 \begin{theorem} $ $
   \begin{enumerate}
     \item
-      If $\fD$ is any consistent scattering diagram, $Q$, $Q'$ are two general
-      irrational points on $M_{\RR} \backslash$ Supp$(\fD)$, and $\gamma$ is a
-      path joining $Q$ to $Q'$, then the path-ordered product 
+      If $\fD$ is any consistent scattering diagram, $q$, $q'$ are two general
+      irrational points on $M_{\RR} \smallsetminus$ Supp$(\fD)$, and $\gamma$ is a
+      path joining $q$ to $q'$, then the path-ordered product 
       \saySS{Do you like this phrasing?}
       \[
-        \theta_{\gamma, \fD }(\Theta_{Q,m}) = \Theta_{Q', m}. 
+        \theta_{\gamma, \fD }(\Theta_{q,m}) = \Theta_{q', m}. 
       \]
     
     \item 
-      Taking $\fD=\fD_{(b,c)}$, if $Q$ lies in the interior of a chamber of
-      $\fD$, then $\Theta_{Q,m}$ is a Laurent polynomial for any $m$.
+      Taking $\fD=\fD_{(b,c)}$, if $q$ lies in the interior of a chamber of
+      $\fD$, then $\Theta_{q,m}$ is a Laurent polynomial for any $m$.
     
     \item 
-      Taking $\fD=\fD_{(b,c)}$, if $Q$ lies in the interior of the first
-      quadrant, then $\Theta_{Q,m}$ is a universal Laurent polynomial for
+      Taking $\fD=\fD_{(b,c)}$, if $q$ lies in the interior of the first
+      quadrant, then $\Theta_{q,m}$ is a universal Laurent polynomial for
       any $m$.
 
     \item 
       Taking $\fD=\fD_{(b,c)}$, if $m$ lies in the interior of a chamber of
-      $\fD$, and $Q$ lies in the same chamber, then $\Theta_{Q,m}=x^{m}$.
+      $\fD$, and $q$ lies in the same chamber, then $\Theta_{q,m}=x^{m}$.
    
   \end{enumerate}
 \end{theorem}
@@ -843,7 +857,7 @@ The following summarizes the main properties of the theta functions as shown in
   (1) is a main result of \cite{CPS}, quoted in this context in \cite{GHKK},
   Theorem 3.5.  The second statement is \cite{GHKK}, Example 7.18: there,
   $\Theta$ is the subset of $M$ consisting of those $m$ for which
-  $\Theta_{Q,m}$ is a Laurent polynomial for $Q$ in the interior of 
+  $\Theta_{q,m}$ is a Laurent polynomial for $q$ in the interior of 
   some chamber of $\fD$ (and hence by \cite{GHKK}, Proposition 7.1, all 
   chambers).
   Next, (3) follows from (2) by Theorem \ref{univLaurent}. 
@@ -854,11 +868,11 @@ The following summarizes the main properties of the theta functions as shown in
 
 \begin{remark} 
   \label{rk:theta functions g-vector}
-  If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$, and $Q$ lies in
+  If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$, and $q$ lies in
   the first quadrant, then from (1) and (4) of the above theorem,
-  $\Theta_{Q,m}=\theta_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
-  joining the chamber containing $m$ to $Q$. Moreover it follows from the
-  details of the proof of Theorem \ref{univLaurent} that $\Theta_{Q,m}$ is
+  $\Theta_{q,m}=\theta_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
+  joining the chamber containing $m$ to $q$. Moreover it follows from the
+  details of the proof of Theorem \ref{univLaurent} that $\Theta_{q,m}$ is
   a cluster monomial, and from \cite{GHKK}, Theorem 7.5, that the 
   $\bfg$-vector of this cluster monomial is precisely $m$. 
 \end{remark}
@@ -866,19 +880,19 @@ The following summarizes the main properties of the theta functions as shown in
 \begin{example}
   Let us try one more calculation with broken lines. We take the same scattering
   diagram as in example~\ref{brokenex}. Now take the initial momentum $m=(2,-2)$
-  with the same endpoint $Q$. By similar calculations we get 
+  with the same endpoint $q$. By similar calculations we get 
   \[ 
-    \Theta _{Q, (2,-2)} = 
+    \Theta _{q, (2,-2)} = 
     x_1^2 x_2^{-2} + x_1^{-2}x_2^2 + x_1^{-2}x_2^{-2} + 2 x_2^{-2} + 2x_1^{-2}.  
   \]
   Note that 
   \[ 
-    \Theta _{Q, (2,-2)} = 
-    \left(\Theta_{Q, (1,-1)}\right) ^2 -2. 
+    \Theta _{q, (2,-2)} = 
+    \left(\Theta_{q, (1,-1)}\right) ^2 -2. 
   \]
   In this scattering diagram $\fD_{(2,2)}$, the ray with momentum $(1,-1)$ does
-  not lie in the interior of any chamber. So neither $\Theta_{Q,(1,-1)}$ nor 
-  $\Theta _{Q, (2,-2)}$ are cluster monomials.
+  not lie in the interior of any chamber. So neither $\Theta_{q,(1,-1)}$ nor 
+  $\Theta _{q, (2,-2)}$ are cluster monomials.
 
   There are a number of known bases for $\cA(2,2)$, which give different results
   for the basis elements with $\bfg$-vectors $(d,-d)$ for $d>0$. Our
@@ -890,7 +904,7 @@ The following summarizes the main properties of the theta functions as shown in
 \section{Relation to greedy bases}
 \saySS{At a certain point in our discussion in Snowbird we decided we were going
   to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
-  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $Q$ in the
+  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
   first quadrant and most of the rays in the third one. By doing so we get that
   theta functions in $\fD_{\mathrm{gr},(b,c)}$ are parametrized by the
   \emph{negative} of their $\bfd$-vectors. On the other hand, in
@@ -1004,7 +1018,7 @@ $\fD_{(b,c)}\setminus\fD_{\mathrm{in},(b,c)}$ and its image is
       \big(\RR (0,1), 1+x_2^c\big)
     \right\}
   \]
-  and obtain $\fD_{(b,c)}^\bfd$ using Theorem \ref{KS}. 
+  and obtain $\fD_{(b,c)}^\bfd$ using Theorem \ref{th:KS}. 
 \end{remark}
 
 For a broken line $\gamma$ in $\fD_{(b,c)}$, we denote its image under $T$ as
@@ -1018,16 +1032,16 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 \begin{theorem}
   \label{thm:T_on_broken_lines}
   The map $T$ defines a one-to-one correspondence between broken lines in $\fD_{(b,c)}$
-  for $m$ with endpoint $Q$ and broken lines in $\fD_{(b,c)}^\bfd$ for $T(m)$
-  with endpoint $T(Q)$. In particular for $Q \in \mathcal{H}_+$ or $\mathcal{H}_-$,
+  for $m$ with endpoint $q$ and broken lines in $\fD_{(b,c)}^\bfd$ for $T(m)$
+  with endpoint $T(q)$. In particular for $q \in \mathcal{H}_+$ or $\mathcal{H}_-$,
   we have
   \[ 
-    \Theta^\bfd_{T(Q),T( m)} = 
-    T_{+} \left(\Theta_{Q, m}\right) 
+    \Theta^\bfd_{T(q),T( m)} = 
+    T_{+} \left(\Theta_{q, m}\right) 
     \quad
     \mbox{or} 
     \quad
-    T_{-} \left(\Theta_{Q, m}\right)
+    T_{-} \left(\Theta_{q, m}\right)
   \]
   respectively.
 \end{theorem}
@@ -1072,19 +1086,19 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
 
 \begin{prop}
-  For any  $m\in M$, if $Q$ lies in the first quadrant, then 
+  For any  $m\in M$, if $q$ lies in the first quadrant, then 
   \[
-    \Theta^\bfd_{Q, m}=x^{m}\left(1+f(x_1,x_2)\right)
+    \Theta^\bfd_{q, m}=x^{m}\left(1+f(x_1,x_2)\right)
   \]
   where $f\in (x_1,x_2)\subseteq \Bbbk[x_1,x_2]$.
   In particular, $m$ is the negative of the $\bfd$-vector of
-  $\Theta^\bfd_{Q,m}$.
+  $\Theta^\bfd_{q,m}$.
 \end{prop}
 
 \begin{proof}
-  For any $m\in M$ and any $Q$ in the first quadrant, there is always a broken
-  line $\gamma$ for $m$ and $Q$ that does not bend at any wall. Therefore $\Mono
-  (\gamma) = x^{m}$ always appears as a term in $\Theta^\bfd_{Q,m}$.
+  For any $m\in M$ and any $q$ in the first quadrant, there is always a broken
+  line $\gamma$ for $m$ and $q$ that does not bend at any wall. Therefore $\Mono
+  (\gamma) = x^{m}$ always appears as a term in $\Theta^\bfd_{q,m}$.
 
   However, because the functions attached to the walls of
   $\fD_{(b,c)}^\bfd$ are all of the form $1+g(x_1,x_2)$ with $g(x_1,x_2) \in
@@ -1101,11 +1115,11 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
   structure that is visible in the classical case.)}
 
 \begin{remark}
-  Combining Theorem \ref{thm:T_on_broken_lines} with the above result, when $Q$
+  Combining Theorem \ref{thm:T_on_broken_lines} with the above result, when $q$
   is in the first quadrant we obtain the parametrization of
   theta functions we were after. Indeed we get 
   \[
-    \Theta^\bfd_{Q,T(m)}=\Theta_{Q,m}
+    \Theta^\bfd_{q,T(m)}=\Theta_{q,m}
   \]
   with $m$ being its $\bfg$-vector and $T(m)$ the negative of its 
   $\bfd$-vector.
@@ -1118,14 +1132,15 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
 We may now state the main theorem in our current notation.
 
 \begin{thm}\label{thm: main}
-For any integers $b,c>0$ and for each $m=(m_1,m_2)\in \mathbb{Z}^2$, we have that 
-\[ \Theta_{m}^{\mathbf{d}} = x[-m_1,-m_2]\]
+For any integers $b,c>0$, for each $m=(m_1,m_2)\in \mathbb{Z}^2$, and for each
+generic point $q$ in the first quadrant, we have that 
+\[ \Theta_{q,m}^{\mathbf{d}} = x[-m_1,-m_2]\]
 as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
 \end{thm}
 
-The proof will be to show that $\Theta_{m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon as $x[-m_1,-m_2]$.  By Theorem \ref{th:pointed supports}, this is already enough to show that $\Theta_{m}^\mathbf{d}=x[-m_1,-m_2]$.
+The proof will be to show that $\Theta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon as $x[-m_1,-m_2]$.  By Theorem \ref{th:pointed supports}, this is already enough to show that $\Theta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 
-Let $\gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$.  At any point $q=(q_1,q_2)\in \gamma$ at which $\gamma$ is linear with exponent $m=(m_1,m_2)$, define the \emph{angular momentum} of $\gamma$ at $q$ to be $q_2m_1-q_1m_2$.
+Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^\mathbf{d}$.  At any point $q=(q_1,q_2)\in \gamma$ at which $\gamma$ is linear with exponent $m=(m_1,m_2)$, define the \emph{angular momentum} of $\gamma$ at $q$ to be $q_2m_1-q_1m_2$.
 
 \begin{lemma}
 The angular momentum is constant on $\gamma$.
@@ -1146,7 +1161,7 @@ The sign of the angular momentum is a useful invariant for characterizing the qu
 For a broken line ending in the first quadrant, the sign of the angular momentum characterizes whether that broken line could have passed through the fourth quadrant (positive) or the second quadrant (negative).
 
 \begin{lemma}
-Let $\gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
+Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{g}}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
 %\begin{itemize}	
 	%\item If $\gamma$ has positive angular momentum, then the slope of the linear domains of $\gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
 	%\item If $\gamma$ has negative angular momentum, then the slope of the linear domains of $\gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
@@ -1202,7 +1217,7 @@ Let $\gamma$ be a broken line $\mathfrak{D}_{gr,(b,c)}$ with endpoint $q$ in the
 
 \begin{proof}
 The lemma is straightforward except for broken lines with initial exponent $(m_1,m_2)$ with $m_1,m_2>0$.  
-Consider a bend of $\gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(x^{(w_1,w_2})))$.  If the exponent immediately before the bend is $(m_1,m_2)$, the exponent immediately after the bend is $(m_1+kw_1,m_2+kw_2)$ for some positive integer $k$.  
+Consider a bend of $\gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(x^{(w_1,w_2)}))$.  If the exponent immediately before the bend is $(m_1,m_2)$, the exponent immediately after the bend is $(m_1+kw_1,m_2+kw_2)$ for some positive integer $k$.  
 
 Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent $(w_1,w_2)$. If the angular momentum $q_2m_1-q_1m_2$ is positive, then the cross-product $w_2m_1-w_1m_2$ is negative. 
 \[ w_2m_1-w_1m_2=m_1(m_2+kw_2)-m_2(m_1+kw_1)<0 \Rightarrow \frac{m_2+kw_2}{m_1+kw_1} < \frac{m_2}{m_1}\]
@@ -1212,7 +1227,7 @@ If the angular momentum is negative, the slope increases by the an identical arg
 We can now constrain the possible final exponent of a broken line, which will be used to bound the Newton polygon of the corresponding theta function.
 
 \begin{lemma}
-Let $\gamma$ be a broken line in $\mathfrak{D}_{gr,(b,c)}$ which begins in the third quadrant, with endpoint $q$ in the first quadrant.  Denote the  initial exponent by $m=(m_1,m_2)$ and the final exponent by $m^q=(m_1^q,m_2^q)$.  
+Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ which begins in the third quadrant, with endpoint $q$ in the first quadrant.  Denote the  initial exponent by $m=(m_1,m_2)$ and the final exponent by $m^q=(m_1^q,m_2^q)$.  
 \begin{enumerate}
 	%\item $m_1-m_1^q\in b\mathbb{N}$ and $m_2-m_2^q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
 	\item If $\gamma$ has positive angular momentum, then $m_2\leq m_2^q<0$ and
@@ -1239,16 +1254,16 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 \begin{proof}[Proof of Theorem \ref{thm: main}]
 \sayGM{This proof needs: a restatement of Theorem \ref{th:pointed supports} which doesn't say `pointed' and only requires the right inequalities.}
 
-If $m=(m_1,m_2)$ such that $m_1\leq0$, $m_2\leq0$, $m_1\geq bm_2$, or $m_2\geq cm_1$, then $\Theta_m^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$.
+If $m=(m_1,m_2)$ such that $m_1\leq0$, $m_2\leq0$, $m_1\geq bm_2$, or $m_2\geq cm_1$, then $\Theta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$.
 
 Next, assume that $m=(m_1,m_2)$ such that
 \[ 0<m_1<bm_2,\;\;\; 0<m_2<am_1\]
-The coefficient of $x^{(a_1,a_2)}$ in $\Theta_m^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
+The coefficient of $x^{(a_1,a_2)}$ in $\Theta_{q,m}^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
 \[ m_1\leq a_1\leq \left(\frac{m_1}{m_2}-b\right)a_2,\;\;\; m_2\leq a_2\leq \left(\frac{m_2}{m_1}-b\right)a_1\]
 Furthermore, the upper bounds are only satisfied in the specific cases when $(a_1,a_2)$ is equal to $(a_1-ba_2,a_2)$ or $(a_1,a_2-ca_1)$.  
-Since $\Theta_{m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Theorem \ref{th:pointed supports} implies that $\Theta_m^\mathbb{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
+Since $\Theta_{q,m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Theorem \ref{th:pointed supports} implies that $\Theta_{q,m}^\mathbf{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
 
-To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each element.  The coefficient of $x^{(m_1,m_2)}$ in $x[-m_1,-m_2]$ is $1$, by the definition of a pointed element. The coefficient of $x^{(m_1,m_2)}$ in $\Theta_m^\mathbf{d}$ is the sum of the coefficients of all broken lines in $\mathfrak{D}_{(b,c)}^\mathbf{d}$ with initial exponent $(m_1,m_2)$ and final exponent $(m_1,m_2)$.  Since any bend in a broken line would increase one of the components of the exponent, this only happens for the unique broken line with initial exponent $(m_1,m_2)$ that has no bends. Hence, the coefficient of $x^{(m_1,m_2)}$ in $\Theta_m^\mathbf{d}$ is $1$, and so $\Theta_m^\mathbf{d}=x[-m_1,-m_2]$.
+To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each element.  The coefficient of $x^{(m_1,m_2)}$ in $x[-m_1,-m_2]$ is $1$, by the definition of a pointed element. The coefficient of $x^{(m_1,m_2)}$ in $\Theta_{q,m}^\mathbf{d}$ is the sum of the coefficients of all broken lines in $\mathfrak{D}_{(b,c)}^\mathbf{d}$ with initial exponent $(m_1,m_2)$ and final exponent $(m_1,m_2)$.  Since any bend in a broken line would increase one of the components of the exponent, this only happens for the unique broken line with initial exponent $(m_1,m_2)$ that has no bends. Hence, the coefficient of $x^{(m_1,m_2)}$ in $\Theta_{q,m}^\mathbf{d}$ is $1$, and so $\Theta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 \end{proof}
 
 
@@ -1266,6 +1281,7 @@ To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each el
   \bibitem[GMN]{GMN} D.~Gaiotto, G.~W.~Moore, and A.~Neitzke, \emph{Framed BPS states}, Adv. Theor. Math. Phys., {\bf 17} (2013), no. 2, 241--397.
   \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, and J.~Weyman, \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf, 2014.
   \bibitem[KQ]{KQ} Y.~Kimura and F.~Qin, \emph{Graded quiver varieties, quantum cluster algebras and dual canonical basis}, Adv. Math., {\bf 262} (2012), 261--312.
+  \bibitem[KS]{KS} M.~Kontsevich and Y.~Soibelman, \emph{Wall-crossing structures in Donaldson-Thomas invariants, integrable systems and mirror symmetry}, preprint, arXiv:1303.3253, 2013.
   \bibitem[LLZ2]{LLZ2} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Positivity and tameness in rank 2 cluster algebras}, J. Alg. Comb., {\bf 40} (2014), no. 3, 823--840.
   \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math., \textbf{20} (2014), 57--82.
   \bibitem[LS]{LS} K.~Lee and R.~Schiffler, \emph{A combinatorial formula for rank 2 cluster variables}, J. Alg. Comb., {\bf 37} (2013), no. 1, 67--85.
