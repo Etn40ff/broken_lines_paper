@@ -72,8 +72,33 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[The Greedy Basis is the Theta Basis]{A Rank Two Haiku:\\ The Greedy Basis Equals \\ The Theta Basis}
-\author[1]{Man Wai Cheung, Maria Angelica Cueto, Mark Gross, 
-Gregory Muller, Gregg Musiker, Dylan Rupel, Salvatore Stella, Harold Williams}
+\author[C]{Man Wai Cheung}
+\address[Man Wai Cheung]{University of California, San Diego}
+\email{mwc31@cam.ac.uk}
+
+\author[C]{Maria Angelica Cueto}
+
+\author[G]{Mark Gross}
+\address[Mark Gross]{University of Cambridge}
+\email{mg475@dpmms.cam.ac.uk}
+
+\author[G]{Greg Muller}
+\address[Greg Muller]{University of Michigan}
+\email{morilac@umich.edu}
+
+\author[M]{Gregg Musiker}
+\address[Gregg Musiker]{University of Minnesota}
+\email{musiker@math.umn.edu}
+
+\author[ggg]{Dylan Rupel}
+
+\author[S]{Salvatore Stella}
+\address[Salvatore Stella]{Universit\`a degli studi di Roma ``La Sapienza''}
+\email{sstella@ncsu.edu}
+
+\author[H]{Harold Williams}
+\address[Harold Williams]{The University of Texas at Austin}
+\email{hwilliams@math.utexas.edu}
 
 \begin{document}
 
@@ -101,12 +126,9 @@ The proof is based on an analysis of the Newton polygons of elements of the thet
 
 The organization of the paper is as follows.  In sections 2 and 3 we review the basic definitions and properties of the greedy and theta bases, respectively.  The natural parametrizing sets of the two bases, the $\bfd$-vectors and $\bfg$-vectors, are distinct, and in section 4 we explain how to relate them.  This determines a bijection between the two bases, and in section 5 we show that the basis elements mapped to each other by this bijection actually coincide, proving the main theorem.
 
-\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible.
+\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. The first author would like to thank University of Cambridge for the host during the completion of this paper.
 
 \section{Rank 2 cluster algebras and their greedy bases}
-\saySS{This section was written by Dylan independently while Mark, Mandy and
-  myself were working on sections 2 and 3. We should check that notations and
-  conventions are consistent. I am ready to bet that we need to take a transpose somewhere.}\sayDR{Done, the conventions for mutations match.}
 Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$ indexed by $k\in\ZZ$ and defined recursively by 
 \begin{equation}\label{eq:exchangerelations}
   x_{k-1}x_{k+1}=
@@ -128,7 +150,7 @@ We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Lauren
  \emph{universal Laurent polynomial} (resp.  \emph{positive universal Laurent polynomial}) if it is contained in 
  $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.
 
-\begin{theorem}\label{th:Laurent}
+\begin{theorem}
 \cite{LS} Each cluster variable of $\cA(b,c)$ is positive.
 \end{theorem}
 
@@ -176,13 +198,13 @@ a collection of elements of $\cA(b,c)$ with nice properties.
   choice of an initial cluster.
 \end{theorem}
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
-call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  Let
-$R_{a_1,a_2}=\{(p_1,p_2)\in\ZZ_{\ge0}^2:c(p_1,p_2)\ne0 \text{ in } x[a_1,a_2]\}$ denote
-the \emph{pointed support} of $x[a_1,a_2]$.  \Cref{th:greedy} is proven using the following characterization of the greedy elements by their pointed supports.
+call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.
 
-\sayGM{*** We need to define Newton polygon and support here. (gregg)}
+Given a Laurent polynomial $f=\sum_{m\in M}c_mx^m$ in $\ZZ[x_1^{\pm1},x_2^{\pm1}]$, the \emph{support} of $f$ is the set
+\[ \{m\in M \mid c_m\neq 0\} \]
+and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ of the support of $f$.  
 
-\begin{theorem}\label{th:Newton polygons}(\cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2})
+\begin{theorem}\label{th:pointed supports}\cite[Proposition~4.1]{LLZ}, \cite[Corollary 3.5]{LLZ2}
   For $(a_1,a_2)\in\ZZ^2$, the Newton polygon of $x[a_1,a_2]$ is determined as follows.
   \begin{enumerate}
     %\item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
@@ -343,13 +365,13 @@ the \emph{pointed support} of $x[a_1,a_2]$.  \Cref{th:greedy} is proven using th
       \draw (1.27,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ imaginary root}};
     \end{scope}
   \end{tikzpicture}
-  \caption{The Newton polygon of $x[a_1,a_2]$.} 
+  \caption{Consider the points $O=(0,0)$, $A=(-a_1+ba_2,-a_2)$, $B=(-a_1,-a_2)$, $C=(-a_1,-a_2+ca_1)$, $D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2})$, and $D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1})$,  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as above.} 
   \label{fig:greedy polytopes}
 \end{figure}
 \begin{proof}
   The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.  \sayGM{*** We need this proof to care about the dotted lines rather than the Newton polygon. (gregg)}
 
-  Suppose $z\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polygon of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ \sayDR{exponents chosen for notational convenience} appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.  
+  Suppose $z\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polygon of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.  
 
   Below we refer to the points $O,A,B,C$ from Figure~\ref{fig:greedy polytopes}.  To reach a contradiction, there are two cases to consider.
   \begin{itemize}
@@ -368,18 +390,7 @@ The proof of Theorem~\ref{th:Newton polygons} actually establishes the following
 \end{scholium}
 
 
-\begin{remark}
-  Consider the points 
-  \[
-    O=(0,0), \quad A=(-a_1+ba_2,-a_2), \quad B=(-a_1,-a_2), \quad C=(-a_1,-a_2+ca_1),
-  \]
-  \[
-    D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2}), \quad D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1}).
-  \]  
-  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as in Figure~\ref{fig:greedy polytopes}.
-\end{remark}
-
-\begin{remark}
+\begin{remark}\label{rem:Dyck}
 The existence of integers $c(p,q)$ satisfying the recursive equations \eqref{eq:greedy recursion}, and thus the existence of the greedy basis itself, is quite non-trivial.  The authors of \cite{LLZ} characterize each $c(p,q)$ as the solution to an enumerative problem; specifically, the number of certain `compatible pairs of edges' inside a type of lattice path called a `maximal Dyck path'.
 
 This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p,q)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  %Many remarkable advances in the theory of cluster algebras have been animated by a desire to produce enumerative problems whose solutions define the coefficients of such a basis, such as additive and monodial categorifications, 
@@ -428,13 +439,7 @@ This enumerative description not only establishes the existence of the greedy ba
 %%%Dyck path comments ends here
 
 \section{Scattering diagrams and broken lines}
-\saySS{We are using Fock-Goncharov conventions through the paper; in particular
-  we denote initial cluster variables by $A_i$ and we read mutations by rows.
-  All the relevant notions, (in particular $d$- and $g$-vectors) are
-  the ``transposed'' of those in Fomin-Zelevinsky and Lee-Li-Zelevinsky. We
-  should mention these facts in the introduction.}
-\sayGM{We now use $x$, $x_1$ and $x_2$ throughout. (gregg)}
-
+\saySS{Address whether our exchange matrix/g-vectors conventions are transposed to Fomin-Zelevinsky or not.}
 
 In this section we describe the theta basis of a rank 2 cluster algebra.  All results and constructions are from \cite{GHKK}, though our notation is adapted to the rank 2 situation.
 
@@ -658,10 +663,6 @@ These will exhaust all the walls in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in
 with support laying outside of this cone. The structure of the remaining part of 
 $\fD_{(b,c)}$ is not completely understood; the expectation is that there is
 a wall for each possible rational slope inside the irrational cone.
-\sayMC{more detail at end?}
-\sayMG{Wait and see what other facts we need about
-  the diagram.} 
-\sayGM{Seems like we do not need more. (gregg)}
 
 On the other hand the chamber structure one sees outside of the irrational cone
 is very well-behaved and familiar in the theory of cluster algebras. This
@@ -842,7 +843,7 @@ The following summarizes the main properties of the theta functions as shown in
       If $\fD$ is any consistent scattering diagram, $q$, $q'$ are two general
       irrational points on $M_{\RR} \smallsetminus$ Supp$(\fD)$, and $\gamma$ is a
       path joining $q$ to $q'$, then the path-ordered product 
-      \saySS{Do you like this phrasing?}
+      \saySS{Reconsider this phrasing.}
       \[
         \theta_{\gamma, \fD }(\Theta_{q,m}) = \Theta_{q', m}. 
       \]
@@ -911,19 +912,19 @@ The following summarizes the main properties of the theta functions as shown in
 \end{example}
 
 
-\section{Relation to greedy bases}
-\saySS{At a certain point in our discussion in Snowbird we decided we were going
-  to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
-  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
-  first quadrant and most of the rays in the third one. By doing so we get that
-  theta functions in $\fD_{\mathrm{gr},(b,c)}$ are parametrized by the
-  \emph{negative} of their $\bfd$-vectors. On the other hand, in
-  $\fD_{(b,c)}$ theta functions are parametrized by their $\bfg$-vectors.
-  This is slightly counterintuitive, maybe it is  more natural to change
-  our convention.}
-\sayMG{I would be slightly inclined to stick with the convention we
-  are currently using in the paper, as it is a less drastic change
-  from what is used in GHKK}
+\section{From $\bfg$-vectors to $\bfd$-vectors}
+%\saySS{At a certain point in our discussion in Snowbird we decided we were going
+%  to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
+%  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
+%  first quadrant and most of the rays in the third one. By doing so we get that
+%  theta functions in $\fD_{\mathrm{gr},(b,c)}$ are parametrized by the
+%  \emph{negative} of their $\bfd$-vectors. On the other hand, in
+%  $\fD_{(b,c)}$ theta functions are parametrized by their $\bfg$-vectors.
+%  This is slightly counterintuitive, maybe it is  more natural to change
+%  our convention.}
+%\sayMG{I would be slightly inclined to stick with the convention we
+%  are currently using in the paper, as it is a less drastic change
+%  from what is used in GHKK}
 As mentioned in Remark \ref{rk:theta functions g-vector}, theta functions are
 parametrized by their $\bfg$-vectors. On the other hand the description of
 greedy elements given in \cite{LLZ} is in terms of their $\bfd$-vectors (cf.
@@ -1117,12 +1118,12 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
   $d_1,d_2\ge 0$, $d_1+d_2>0$. This proves the result.
 \end{proof}
 
-\sayMG{It might be appropriate to add stuff about the quantum version here.
-  Right now I don't know if we can easily prove enough facts about the quantum
-  version for our main result. I suggest we wait until the rest is written up
-  and then I see whether it is possible to extend the proof given what we
-  currently know. (For example, in general I don't know how to get the chamber
-  structure that is visible in the classical case.)}
+%\sayMG{It might be appropriate to add stuff about the quantum version here.
+%  Right now I don't know if we can easily prove enough facts about the quantum
+%  version for our main result. I suggest we wait until the rest is written up
+%  and then I see whether it is possible to extend the proof given what we
+%  currently know. (For example, in general I don't know how to get the chamber
+%  structure that is visible in the classical case.)}
 
 \begin{remark}
   Combining Theorem \ref{thm:T_on_broken_lines} with the above result, when $q$
@@ -1134,8 +1135,8 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
   with $m$ being its $\bfg$-vector and $T(m)$ the negative of its 
   $\bfd$-vector.
 \end{remark}
-\saySS{Eventually we want to make a saner version of the bibliography; this is
-  kind of an hack.}
+%\saySS{Eventually we want to make a saner version of the bibliography; this is
+%  kind of an hack.}
 
 \section{Proof that the bases coincide}
 
@@ -1277,7 +1278,7 @@ To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each el
 \end{proof}
 
 \begin{remark}
-As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{thm:pointed supports} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the equality of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
+As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{th:pointed supports} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the equality of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
 \end{remark}
 
 \begin{thebibliography}{99}
