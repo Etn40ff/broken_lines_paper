@@ -188,12 +188,16 @@ a collection of elements of $\cA(b,c)$ with nice properties.
   choice of an initial cluster.
 \end{theorem}
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
-call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  Let
-$R_{a_1,a_2}=\{(p_1,p_2)\in\ZZ_{\ge0}^2:c(p_1,p_2)\ne0 \text{ in } x[a_1,a_2]\}$ denote
-the \emph{pointed support} of $x[a_1,a_2]$.  \Cref{th:greedy} is proven using the following characterization of the greedy elements by their
-pointed supports.
+call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  
 
-\sayGM{*** We need to define Newton polygon and support here. (gregg)}
+Given a Laurent polynomial $f=\sum_{m\in M}c_mx^m$ in $\ZZ[x_1^{\pm1},x_2^{\pm1}]$, the \emph{support} of $f$ is the set
+\[ \{m\in M \mid c_m\neq 0\} \]
+and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ of the support of $f$.  
+
+%Let
+%$R_{a_1,a_2}=\{(p_1,p_2)\in\ZZ_{\ge0}^2:c(p_1,p_2)\ne0 \text{ in } x[a_1,a_2]\}$ denote
+%the \emph{pointed support} of $x[a_1,a_2]$.  \Cref{th:greedy} is proven using the following characterization of the greedy elements by their
+%pointed supports.
 
 \begin{theorem}\label{th:pointed supports}\cite[Proposition~4.1]{LLZ}, \cite[Corollary 3.5]{LLZ2}
   For $(a_1,a_2)\in\ZZ^2$, the Newton polygon of $x[a_1,a_2]$ is determined as follows.
