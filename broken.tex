@@ -685,7 +685,7 @@ circumstances.
 
 \begin{defn} 
   \label{brokendef}
-  Let $\fD$ be a scattering diagram, $m \in M \backslash \{0\}$ and $Q \in
+  Let $\fD$ be a scattering diagram, $m \in M \backslash \{0\}$ and $q \in
   M_{\RR} \backslash \text{Supp}(\fD)$.  A \emph{broken line} with initial
   \emph{exponent} $m$ and endpoint $q$ is a continuous and piecewise linear path
   $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \backslash \{ 0\} $ with
@@ -697,7 +697,7 @@ circumstances.
   following conditions:
   \begin{itemize}
     \item 
-      $\gamma(0) = Q$.
+      $\gamma(0) = q$.
     
     \item 
       If $\ell$ is the first (i.e., unbounded) domain of linearity of $\gamma$,
@@ -724,20 +724,20 @@ We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$  denote by
 $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamma$.
 \begin{defn}
-  Let $\fD, m, Q$ as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $Q$
+  Let $\fD, m, q$ as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $q$
   as
   \[ 
-    \Theta_{Q, m} = \sum_{\gamma} \Mono (\gamma), 
+    \Theta_{q, m} = \sum_{\gamma} \Mono (\gamma), 
   \] 
   where the sum is over all broken lines with initial momentum $m$ and endpoint
-  $Q$.
+  $q$.
 \end{defn}
 
 \begin{example} 
   \label{brokenex}
-  Consider the scattering diagram $\fD_{(2,2)}$ and let $Q$ be a small
+  Consider the scattering diagram $\fD_{(2,2)}$ and let $q$ be a small
   irrational perturbation of the point $(1.5,1)$. There are three broken lines
-  with initial momentum $m = (1,-1)$ and endpoint $Q$ as shown in
+  with initial momentum $m = (1,-1)$ and endpoint $q$ as shown in
   Figure~\ref{figbrokenex}.
   First of all, we can have a broken line $\gamma_1$ which does not bend.
   Therefore
@@ -763,9 +763,9 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \[
     \Mono (\gamma_3) = x_1^{-1} x_2.
   \]
-  Thus the theta function associated to $m = (1,-1)$ with endpoint point $Q$ is 
+  Thus the theta function associated to $m = (1,-1)$ with endpoint point $q$ is 
   \[ 
-    \Theta_{Q, (1,-1)} =  
+    \Theta_{q, (1,-1)} =  
     x_1 x_2^{-1} + x_1^{-1} x_2^{-1} +x_1^{-1} x_2 .  
   \]
 \end{example}
@@ -777,7 +777,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
     \draw (0,-3) -- (0,3) node[above] {$1+x_2^2$};
     \draw (0,0) -- (3,-1.5) node[right] {$1+x_1^{-4}x_2^2$};
     \draw (0,0) -- (1.5,-3) node[below] {$1+x_1^{-2}x_2^4$};
-    \draw (1.5,1) node[circle, right] {$Q$};
+    \draw (1.5,1) node[circle, right] {$q$};
     \draw[dotted] (1.4,-2.8) -- (2.8,-1.4);
     \draw[red] (3,-0.5) -- (1.5,1);
     \draw[red] (2.1,0.1) node[above right]{\small $x_1 x_2^{-1}$};
@@ -803,26 +803,26 @@ The following summarizes the main properties of the theta functions as shown in
 \begin{theorem} $ $
   \begin{enumerate}
     \item
-      If $\fD$ is any consistent scattering diagram, $Q$, $Q'$ are two general
+      If $\fD$ is any consistent scattering diagram, $q$, $q'$ are two general
       irrational points on $M_{\RR} \backslash$ Supp$(\fD)$, and $\gamma$ is a
-      path joining $Q$ to $Q'$, then the path-ordered product 
+      path joining $q$ to $q'$, then the path-ordered product 
       \saySS{Do you like this phrasing?}
       \[
-        \theta_{\gamma, \fD }(\Theta_{Q,m}) = \Theta_{Q', m}. 
+        \theta_{\gamma, \fD }(\Theta_{q,m}) = \Theta_{q', m}. 
       \]
     
     \item 
-      Taking $\fD=\fD_{(b,c)}$, if $Q$ lies in the interior of a chamber of
-      $\fD$, then $\Theta_{Q,m}$ is a Laurent polynomial for any $m$.
+      Taking $\fD=\fD_{(b,c)}$, if $q$ lies in the interior of a chamber of
+      $\fD$, then $\Theta_{q,m}$ is a Laurent polynomial for any $m$.
     
     \item 
-      Taking $\fD=\fD_{(b,c)}$, if $Q$ lies in the interior of the first
-      quadrant, then $\Theta_{Q,m}$ is a universal Laurent polynomial for
+      Taking $\fD=\fD_{(b,c)}$, if $q$ lies in the interior of the first
+      quadrant, then $\Theta_{q,m}$ is a universal Laurent polynomial for
       any $m$.
 
     \item 
       Taking $\fD=\fD_{(b,c)}$, if $m$ lies in the interior of a chamber of
-      $\fD$, and $Q$ lies in the same chamber, then $\Theta_{Q,m}=x^{m}$.
+      $\fD$, and $q$ lies in the same chamber, then $\Theta_{q,m}=x^{m}$.
    
   \end{enumerate}
 \end{theorem}
@@ -831,7 +831,7 @@ The following summarizes the main properties of the theta functions as shown in
   (1) is a main result of \cite{CPS}, quoted in this context in \cite{GHKK},
   Theorem 3.5.  The second statement is \cite{GHKK}, Example 7.18: there,
   $\Theta$ is the subset of $M$ consisting of those $m$ for which
-  $\Theta_{Q,m}$ is a Laurent polynomial for $Q$ in the interior of 
+  $\Theta_{q,m}$ is a Laurent polynomial for $q$ in the interior of 
   some chamber of $\fD$ (and hence by \cite{GHKK}, Proposition 7.1, all 
   chambers).
   Next, (3) follows from (2) by Theorem \ref{univLaurent}. 
@@ -842,11 +842,11 @@ The following summarizes the main properties of the theta functions as shown in
 
 \begin{remark} 
   \label{rk:theta functions g-vector}
-  If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$, and $Q$ lies in
+  If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$, and $q$ lies in
   the first quadrant, then from (1) and (4) of the above theorem,
-  $\Theta_{Q,m}=\theta_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
-  joining the chamber containing $m$ to $Q$. Moreover it follows from the
-  details of the proof of Theorem \ref{univLaurent} that $\Theta_{Q,m}$ is
+  $\Theta_{q,m}=\theta_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
+  joining the chamber containing $m$ to $q$. Moreover it follows from the
+  details of the proof of Theorem \ref{univLaurent} that $\Theta_{q,m}$ is
   a cluster monomial, and from \cite{GHKK}, Theorem 7.5, that the 
   $\bfg$-vector of this cluster monomial is precisely $m$. 
 \end{remark}
@@ -854,19 +854,19 @@ The following summarizes the main properties of the theta functions as shown in
 \begin{example}
   Let us try one more calculation with broken lines. We take the same scattering
   diagram as in example~\ref{brokenex}. Now take the initial momentum $m=(2,-2)$
-  with the same endpoint $Q$. By similar calculations we get 
+  with the same endpoint $q$. By similar calculations we get 
   \[ 
-    \Theta _{Q, (2,-2)} = 
+    \Theta _{q, (2,-2)} = 
     x_1^2 x_2^{-2} + x_1^{-2}x_2^2 + x_1^{-2}x_2^{-2} + 2 x_2^{-2} + 2x_1^{-2}.  
   \]
   Note that 
   \[ 
-    \Theta _{Q, (2,-2)} = 
-    \left(\Theta_{Q, (1,-1)}\right) ^2 -2. 
+    \Theta _{q, (2,-2)} = 
+    \left(\Theta_{q, (1,-1)}\right) ^2 -2. 
   \]
   In this scattering diagram $\fD_{(2,2)}$, the ray with momentum $(1,-1)$ does
-  not lie in the interior of any chamber. So neither $\Theta_{Q,(1,-1)}$ nor 
-  $\Theta _{Q, (2,-2)}$ are cluster monomials.
+  not lie in the interior of any chamber. So neither $\Theta_{q,(1,-1)}$ nor 
+  $\Theta _{q, (2,-2)}$ are cluster monomials.
 
   There are a number of known bases for $\cA(2,2)$, which give different results
   for the basis elements with $\bfg$-vectors $(d,-d)$ for $d>0$. Our
@@ -878,7 +878,7 @@ The following summarizes the main properties of the theta functions as shown in
 \section{Relation to greedy bases}
 \saySS{At a certain point in our discussion in Snowbird we decided we were going
   to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
-  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $Q$ in the
+  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
   first quadrant and most of the rays in the third one. By doing so we get that
   theta functions in $\fD_{\mathrm{gr},(b,c)}$ are parametrized by the
   \emph{negative} of their $\bfd$-vectors. On the other hand, in
@@ -1006,16 +1006,16 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 \begin{theorem}
   \label{thm:T_on_broken_lines}
   The map $T$ defines a one-to-one correspondence between broken lines in $\fD_{(b,c)}$
-  for $m$ with endpoint $Q$ and broken lines in $\fD_{(b,c)}^\bfd$ for $T(m)$
-  with endpoint $T(Q)$. In particular for $Q \in \mathcal{H}_+$ or $\mathcal{H}_-$,
+  for $m$ with endpoint $q$ and broken lines in $\fD_{(b,c)}^\bfd$ for $T(m)$
+  with endpoint $T(q)$. In particular for $q \in \mathcal{H}_+$ or $\mathcal{H}_-$,
   we have
   \[ 
-    \Theta^\bfd_{T(Q),T( m)} = 
-    T_{+} \left(\Theta_{Q, m}\right) 
+    \Theta^\bfd_{T(q),T( m)} = 
+    T_{+} \left(\Theta_{q, m}\right) 
     \quad
     \mbox{or} 
     \quad
-    T_{-} \left(\Theta_{Q, m}\right)
+    T_{-} \left(\Theta_{q, m}\right)
   \]
   respectively.
 \end{theorem}
@@ -1060,19 +1060,19 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
 
 \begin{prop}
-  For any  $m\in M$, if $Q$ lies in the first quadrant, then 
+  For any  $m\in M$, if $q$ lies in the first quadrant, then 
   \[
-    \Theta^\bfd_{Q, m}=x^{m}\left(1+f(x_1,x_2)\right)
+    \Theta^\bfd_{q, m}=x^{m}\left(1+f(x_1,x_2)\right)
   \]
   where $f\in (x_1,x_2)\subseteq \Bbbk[x_1,x_2]$.
   In particular, $m$ is the negative of the $\bfd$-vector of
-  $\Theta^\bfd_{Q,m}$.
+  $\Theta^\bfd_{q,m}$.
 \end{prop}
 
 \begin{proof}
-  For any $m\in M$ and any $Q$ in the first quadrant, there is always a broken
-  line $\gamma$ for $m$ and $Q$ that does not bend at any wall. Therefore $\Mono
-  (\gamma) = x^{m}$ always appears as a term in $\Theta^\bfd_{Q,m}$.
+  For any $m\in M$ and any $q$ in the first quadrant, there is always a broken
+  line $\gamma$ for $m$ and $q$ that does not bend at any wall. Therefore $\Mono
+  (\gamma) = x^{m}$ always appears as a term in $\Theta^\bfd_{q,m}$.
 
   However, because the functions attached to the walls of
   $\fD_{(b,c)}^\bfd$ are all of the form $1+g(x_1,x_2)$ with $g(x_1,x_2) \in
@@ -1089,11 +1089,11 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
   structure that is visible in the classical case.)}
 
 \begin{remark}
-  Combining Theorem \ref{thm:T_on_broken_lines} with the above result, when $Q$
+  Combining Theorem \ref{thm:T_on_broken_lines} with the above result, when $q$
   is in the first quadrant we obtain the parametrization of
   theta functions we were after. Indeed we get 
   \[
-    \Theta^\bfd_{Q,T(m)}=\Theta_{Q,m}
+    \Theta^\bfd_{q,T(m)}=\Theta_{q,m}
   \]
   with $m$ being its $\bfg$-vector and $T(m)$ the negative of its 
   $\bfd$-vector.
