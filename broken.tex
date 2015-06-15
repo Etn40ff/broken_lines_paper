@@ -108,7 +108,7 @@ We prove the equality of two canonical bases of a rank 2 cluster algebra, the gr
 \bigskip
 
 \begin{center}
-{Dedicated to the memory of Andrei Zelevinsky}
+{Dedicated to the memory of Andrei Zelevinsky.}
 \end{center}
 
 \end{abstract}
@@ -122,7 +122,7 @@ Cluster algebras are commutative rings with partial bases of a special form, ori
 
 A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup,GMN}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
 
-The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.  
+The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  \sayGM{Segways in this paragraph are a little funny here. Suggestion to be added later. (Gregg)} The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
 
 The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the greedy basis it is defined for cluster algebras of arbitrary rank.  The coefficients of Laurent expansions of its elements enumerate combinatorial objects called broken lines, which morally capture the geometry of holomorphic disks in the mirror cluster variety.  Broken lines are piecewise-linear paths in a tropicalization of the cluster variety, whose points of non-linearity lie along an object known as a scattering diagram.  This diagram encodes the relations among cluster transformations, or among elements of the tropical vertex group.
 
@@ -206,11 +206,12 @@ a collection of elements of $\cA(b,c)$ with nice properties.
   choice of an initial cluster.
 \end{theorem}
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
-call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.
+call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  \sayGM{Sentence added here for segway. (Gregg)} We now switch our point of view and consider ordinary support rather than pointed support.
 
 Given a Laurent polynomial $f=\sum_{m\in M}c_mx^m$ in $\ZZ[x_1^{\pm1},x_2^{\pm1}]$, the \emph{support} of $f$ is the set
 \[ \{m\in M \mid c_m\neq 0\} \]
-and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ of the support of $f$.\sayGM{ISSUE: Newton polygons are inherently convex; but the region in Figure 1.6b is not.  We may need to replace "Newton polygon" with some terminology which allows a \emph{choice} of polygon containing the support.}
+and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ of the support of $f$.\sayGM{ISSUE: Newton polygons are inherently convex; but the region in Figure 1.6b is not.  We may need to replace "Newton polygon" with some terminology which allows a \emph{choice} of polygon containing the support. (Greg)}
+\sayGM{If we switch all uses of 'Newton polygon' to 'support', does this solve the issue?  This makes it closer to [LLZ]'s exposition. (Gregg)}
 
 \begin{theorem}\label{th:Newton polygons}\cite[Proposition~4.1]{LLZ}, \cite[Corollary 3.5]{LLZ2}
   For $(a_1,a_2)\in\ZZ^2$, the Newton polygon of $x[a_1,a_2]$ is determined as follows.
@@ -377,9 +378,9 @@ and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ 
   \label{fig:greedy polytopes}
 \end{figure}
 \begin{proof}
-  The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.  \sayGM{*** We need this proof to care about the dotted lines rather than the Newton polygon. (gregg)}
+  The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.
 
-  Suppose $z\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polygon of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.  
+  Suppose $z\in\cA(b,c)$ is pointed \sayGM{What do we mean by pointed here?  It appears we need to use the fact that $x_1^{-a_1}x_2^{-a_2}$ is the smallest monomial but do not need the (unproven) fact that there are gaps via $x_1^b$ and $x_2^c$. (Gregg)} at $(a_1,a_2)$ and that the Newton polygon of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient. 
 
   Below we refer to the points $O,A,B,C$ from Figure~\ref{fig:greedy polytopes}.  To reach a contradiction, there are two cases to consider.
   \begin{itemize}
