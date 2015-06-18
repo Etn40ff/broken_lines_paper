@@ -126,7 +126,19 @@ A fundamental issue in the theory is understanding natural completions of the pa
 
 The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  \sayGM{Segways in this paragraph are a little funny here. Suggestion to be added later. (Gregg)} The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
 
-The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the greedy basis it is defined for cluster algebras of arbitrary rank.  The coefficients of Laurent expansions of its elements enumerate combinatorial objects called broken lines, which morally capture the geometry of holomorphic disks in the mirror cluster variety.  Broken lines are piecewise-linear paths in a tropicalization of the cluster variety, whose points of non-linearity lie along an object known as a scattering diagram.  This diagram encodes the relations among cluster transformations, or among elements of the tropical vertex group.
+The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the
+greedy basis it is defined for cluster algebras of arbitrary rank.  In fact,
+this basis is a special case of a much more general construction, based on two
+concepts. The first is that of scattering diagram introduced in \cite{KS} in two
+dimensions and in \cite{GS} in all dimensions. The second is a combinatorial
+notion of broken line, introduced in \cite{G10} with their theory further
+developed in \cite{CPS} and then \cite{GHK11}.  The coefficients of Laurent
+expansions of the elements of this basis enumerate broken lines, which morally
+capture the geometry of holomorphic disks in the mirror cluster variety.  Broken
+lines are piecewise-linear paths in a tropicalization of the cluster variety,
+whose points of non-linearity lie along the scattering diagram.  This diagram
+encodes the relations among cluster transformations, or among elements of the
+tropical vertex group.
 
 \begin{theorem}
 Let $\mathcal{A}$ be a rank 2 cluster algebra.  The greedy and theta bases of $\mathcal{A}$ coincide.
@@ -376,7 +388,7 @@ and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ 
       \draw (1.27,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ imaginary root}};
     \end{scope}
   \end{tikzpicture}
-  \caption{Consider the points $O=(0,0)$, $A=(-a_1+ba_2,-a_2)$, $B=(-a_1,-a_2)$, $C=(-a_1,-a_2+ca_1)$, $D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2})$, and $D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1})$,  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as above.} 
+  \caption{Consider the points $O=(0,0)$, $A=(-a_1+ba_2,-a_2)$, $B=(-a_1,-a_2)$, $C=(-a_1,-a_2+ca_1)$, $D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2})$, and $D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1})$.  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as above.} 
   \label{fig:greedy polytopes}
 \end{figure}
 \begin{proof}
@@ -452,11 +464,16 @@ This enumerative description not only establishes the existence of the greedy ba
 \section{Scattering diagrams and broken lines}
 \saySS{Address whether our exchange matrix/g-vectors conventions are transposed to Fomin-Zelevinsky or not.}
 
-In this section we describe the theta basis of a rank 2 cluster algebra.  All results and constructions are from \cite{GHKK}, though our notation is adapted to the rank 2 situation.
+In this section we describe the theta basis of a rank 2 cluster algebra.  
+We use \cite{GHKK} as a reference, adapting 
+the notation to the rank 2 situation.
 
 %We fix lattices $N = \ZZ^2$ and $M = \Hom (N, \ZZ)$. We write their elements as tuples and denote the standard pairing of $m\in M$ and $n\in N$ as $n \cdot m$. We write $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$. Taking $\ZZ$ to be a field of characteristic 0, for $m\in M$ we will write $x^m$ for the monomial in $\ZZ[M]$.  For notational convenience we will write $x_1=x^{(1,0)}$ and $x_2=x^{(0,1)}$, thus we may identify $x^m$ with $x_1^{m_1}x_2^{m_2}$.
 
 Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \cong \ZZ[x_1^{\pm 1}, x_2^{\pm 1}]$.  We write $N = \Hom (M, \ZZ)$ for its dual lattice, $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$, and denote the standard pairing of $m\in M$ and $n\in N$ by $n \cdot m$.  Given a strictly convex rational cone $\sigma \subsetneq M_{\RR}$, we write $P=\sigma \cap M$.  Let $\widehat{\ZZ[P]}$ denote the completion of the monoid ring $\ZZ[P]$ at the maximal monomial ideal $\fm$ generated by $\left\{x^m \,|\, m\in P\smallsetminus\{0\}\right\}$. \sayHW{Unless it would be mathematically incorrect to do so, all $\ZZ$'s in the paper should be $\ZZ$'s [Mandy: changed. please check if anything goes wrong.]}
+
+The following are special cases of definitions which originally appeared in
+\cite{KS}, \cite{GS}.
 
 \begin{defn}
   \label{walldef}
@@ -532,7 +549,7 @@ Then we define
   $\theta_{\gamma, \fD}$ is well defined.
 \end{defn}
 
-\begin{theorem}\cite{KS}
+\begin{theorem}\cite{KS},\cite{GS}
   \label{th:KS}
   Given any scattering diagram $\fD$, there exists a consistent scattering
   diagram $\fD'$ which contains $\fD$ such that $\fD'\smallsetminus\fD$ only consists
@@ -594,8 +611,9 @@ applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2
 
 For general $b$ and $c$, the diagram $\fD_{(b,c)}$ may consist of an infinite number of rays, and in fact
 it is infinite precisely when $bc\ge 4$. A more detailed description of the rays
-which appear can be found in \cite{GHKK}, Example 1.30. We summarize the crucial
-points here.
+which appear can be found in \cite{GHKK}, Example 1.30, where the description
+is based on the description of a related scattering diagram given in
+\cite{GP}. We summarize the crucial points here.
 
 First of all note that, in view of the definition of scattering diagram, all the
 rays in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ are contained in the
@@ -660,8 +678,9 @@ alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
 
 We need to distinguish two cases. If $bc<4$ this procedure will construct, in
 finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
-\fD_{\mathrm{in},(b,c)}$.  If $bc\geq 4$, instead, we will get two infinite
-families of walls whose supports will converge to the boundary of the convex cone
+\fD_{\mathrm{in},(b,c)}$.  If $bc\ge 4$, instead, we will get two infinite
+families of walls whose supports will converge to a single rational
+ray if $bc=4$ or if $bc>4$, to the boundary of the convex cone
 spanned by the irrational vectors
 \[
   \left(2b,-bc + \sqrt{bc(bc-4)}\right)
@@ -766,7 +785,8 @@ circumstances.
       \]
   \end{itemize}
 \end{defn}
-We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{momentum} of that region.
+We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{momentum} of that domain
+of linearity.
 
 We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$  denote by
@@ -944,7 +964,7 @@ Remark 1.9 ibid.).
 In order to compare the two we will leverage the observation that, in rank 2,
 these families of vectors are related by an easy piecewise-linear transformation
 as explained in the paragraph following Conjecture 3.21 in \cite{RS}. We will do
-so via a scattering diagram $\fD_{\mathrm{gr},(b,c)}$ closely related to
+so via a scattering diagram $\fD^{\bfd}_{(b,c)}$ closely related to
 $\fD_{(b,c)}$.
 
 Let $T:M_\RR\rightarrow M_\RR$ be the piecewise-linear map given by
@@ -1097,7 +1117,7 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
     \left(1+x_1^b\right)^{-m_2(\ell)} 
     \\
     & = 
-    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_1(\ell)}.
+    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_2(\ell)}.
   \end{align*}
   This shows that $T_k(\gamma)$ satisfies the correct rule when bending along
   $(\RR (1,0), 1+x_1^b)$ if $\gamma$ passes from $\mathcal{H}_-$ to
@@ -1301,17 +1321,19 @@ As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be
   \bibitem[FG]{FG} V.~Fock and A.~B.~Goncharov, \emph{Moduli spaces of local systems and higher Teichm\"{u}ller theory}, Publ. Math. de l'IH\'{E}S, {\bf 103} (2006), 1-211.
   \bibitem[FZ]{FZ} S.~Fomin and A.~Zelevinsky, \emph{Cluster algebras I: Foundations},  J. Amer. Math. Soc., \textbf{15} (2002), no. 2, 497--529.
   \bibitem[G10]{G10} M.~Gross,  \emph{Mirror symmetry for $\mathbb{P}^2$ and tropical geometry}, Adv.\ Math., {\bf 224} (2010), 169--245. 
-  \bibitem[GLS]{GLS} C.~Geiss, B.~Leclerc, and J.~Schr\"{o}er, \emph{Semicanonical bases and preprojective algebras}, Ann. Sci. de l'\'{E}cole Norm. Sup., {\bf 38} (2005), no. 2, 193--253.
   \bibitem[GHK11]{GHK11} M.~Gross, P.~Hacking, and S.~Keel, \emph{Mirror symmetry for log Calabi-Yau surfaces I}, Publ. Math. de l'IH\'{E}S, (2015), 1--104.
   \bibitem[GHKK]{GHKK} M.~Gross, P.~Hacking, S.~Keel, and M.~Kontsevich, \emph{Canonical bases for cluster algebras}, preprint, arXiv:1411.1394, 2014.
+  \bibitem[GLS]{GLS} C.~Geiss, B.~Leclerc, and J.~Schr\"{o}er, \emph{Semicanonical bases and preprojective algebras}, Ann. Sci. de l'\'{E}cole Norm. Sup., {\bf 38} (2005), no. 2, 193--253.
   \bibitem[GMN]{GMN} D.~Gaiotto, G.~W.~Moore, and A.~Neitzke, \emph{Framed BPS states}, Adv. Theor. Math. Phys., {\bf 17} (2013), no. 2, 241--397.
+  \bibitem[GP]{GP} M. ~Gross and R. ~Pandharipande, \emph{Quivers, curves, and the tropical vertex}, Port.\ Math.\ {\bf 67} (2010), 211--259. 
+  \bibitem[GS]{GS} M.~Gross and B.~Siebert, \emph{From affine geoemtry to complex geometry}, Annals of Mathematics, {\bf 174}, (2011), 1301-1428.
   \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, and J.~Weyman, \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf, 2014.
   \bibitem[KQ]{KQ} Y.~Kimura and F.~Qin, \emph{Graded quiver varieties, quantum cluster algebras and dual canonical basis}, Adv. Math., {\bf 262} (2012), 261--312.
-  \bibitem[KS]{KS} M.~Kontsevich and Y.~Soibelman, \emph{Wall-crossing structures in Donaldson-Thomas invariants, integrable systems and mirror symmetry}, preprint, arXiv:1303.3253, 2013.
+  \bibitem[KS]{KS} M.\ Kontsevich and Y.\ Soibelman, \emph{Affine structures and non-Archimedean analytic spaces}, in: \textsl{The unity of mathematics} (P.~Etingof, V.~Retakh, I.M.~Singer, eds.),  321--385, Progr.\ Math.~{\bf 244}, Birkh\"auser~2006.
   \bibitem[LLZ2]{LLZ2} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Positivity and tameness in rank 2 cluster algebras}, J. Alg. Comb., {\bf 40} (2014), no. 3, 823--840.
   \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math., \textbf{20} (2014), 57--82.
-  \bibitem[LS]{LS} K.~Lee and R.~Schiffler, \emph{A combinatorial formula for rank 2 cluster variables}, J. Alg. Comb., {\bf 37} (2013), no. 1, 67--85.
   \bibitem[LS2]{LS2} K.~Lee and R.~Schiffler, \emph{Positivity for cluster algebras}, Annals of Math., {\bf 182} (2015), no. 1, 73--125.
+  \bibitem[LS]{LS} K.~Lee and R.~Schiffler, \emph{A combinatorial formula for rank 2 cluster variables}, J. Alg. Comb., {\bf 37} (2013), no. 1, 67--85.
   \bibitem[MSW]{MSW} G.~Musiker, R.~Schiffler, and L.~Williams, \emph{Bases for cluster algebras from surfaces}, Compositio Math., {\bf 149} (2013), no. 2, 217--263.
   \bibitem[R]{R} N.~Reading, \emph{Universal geometric cluster algebras}, Math. Zeit., {\bf 277 } (2014), 499-547.
   \bibitem[RS]{RS} N.~Reading and D.~Speyer, \emph{Combinatorial frameworks for cluster algebras}, Int. Math. Res. Not., (2015), 1--65.
