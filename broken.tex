@@ -71,7 +71,7 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[The Greedy Basis is the Theta Basis]{The Greedy Basis\\ Equals The Theta Basis:\\ A Rank Two Haiku}
+\title[The Greedy Basis is the Theta Basis]{The Greedy Basis \\ Equals The Theta Basis: \\ A Rank Two Haiku}
 \author[C]{Man Wai Cheung}
 \address[Man Wai Cheung]{University of California, San Diego}
 \email{mwc31@cam.ac.uk}
@@ -82,7 +82,7 @@
 \address[Mark Gross]{University of Cambridge}
 \email{mg475@dpmms.cam.ac.uk}
 
-\author[G]{Greg Muller}
+\author[M]{Greg Muller}
 \address[Greg Muller]{University of Michigan}
 \email{morilac@umich.edu}
 
@@ -90,7 +90,9 @@
 \address[Gregg Musiker]{University of Minnesota}
 \email{musiker@math.umn.edu}
 
-\author[ggg]{Dylan Rupel}
+\author[R]{Dylan Rupel}
+\address[Dylan Rupel]{To be added by Dylan}
+\email{rupelrupel@math.somewhere.edu}
 
 \author[S]{Salvatore Stella}
 \address[Salvatore Stella]{Universit\`a degli studi di Roma ``La Sapienza''}
@@ -104,7 +106,15 @@
 
 \begin{abstract}
 We prove the equality of two canonical bases of a rank 2 cluster algebra, the greedy basis of Lee-Li-Zelevinsky and the theta basis of Gross-Hacking-Keel-Kontsevich.
+
+\bigskip
+
+\begin{center}
+{Dedicated to the memory of Andrei Zelevinsky.}
+\end{center}
+
 \end{abstract}
+
 
 \maketitle
 
@@ -114,9 +124,21 @@ Cluster algebras are commutative rings with partial bases of a special form, ori
 
 A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup,GMN}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
 
-The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.  
+The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  \sayGM{I find the phrasing "builds this property into any canonical basis" awkward, but am happy to leave as is if everyone else is happy with this paragraph. (Gregg)} The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
 
-The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the greedy basis it is defined for cluster algebras of arbitrary rank.  The coefficients of Laurent expansions of its elements enumerate combinatorial objects called broken lines, which morally capture the geometry of holomorphic disks in the mirror cluster variety.  Broken lines are piecewise-linear paths in a tropicalization of the cluster variety, whose points of non-linearity lie along an object known as a scattering diagram.  This diagram encodes the relations among cluster transformations, or among elements of the tropical vertex group.
+The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the
+greedy basis it is defined for cluster algebras of arbitrary rank.  In fact,
+this basis is a special case of a much more general construction, based on two
+concepts. The first is that of scattering diagram introduced in \cite{KS} in two
+dimensions and in \cite{GS} in all dimensions. The second is a combinatorial
+notion of broken line, introduced in \cite{G10} with their theory further
+developed in \cite{CPS} and then \cite{GHK11}.  The coefficients of Laurent
+expansions of the elements of this basis enumerate broken lines, which morally
+capture the geometry of holomorphic disks in the mirror cluster variety.  Broken
+lines are piecewise-linear paths in a tropicalization of the cluster variety,
+whose points of non-linearity lie along the scattering diagram.  This diagram
+encodes the relations among cluster transformations, or among elements of the
+tropical vertex group.
 
 \begin{theorem}
 Let $\mathcal{A}$ be a rank 2 cluster algebra.  The greedy and theta bases of $\mathcal{A}$ coincide.
@@ -198,13 +220,14 @@ a collection of elements of $\cA(b,c)$ with nice properties.
   choice of an initial cluster.
 \end{theorem}
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
-call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.
+call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  \sayGM{Sentence added here for segway. (Gregg)} We now switch our point of view and consider ordinary support rather than pointed support.
 
 Given a Laurent polynomial $f=\sum_{m\in M}c_mx^m$ in $\ZZ[x_1^{\pm1},x_2^{\pm1}]$, the \emph{support} of $f$ is the set
 \[ \{m\in M \mid c_m\neq 0\} \]
-and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ of the support of $f$.  
+and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ of the support of $f$.\sayGM{ISSUE: Newton polygons are inherently convex; but the region in Figure 1.6b is not.  We may need to replace "Newton polygon" with some terminology which allows a \emph{choice} of polygon containing the support. (Greg)}
+\sayGM{If we switch all uses of 'Newton polygon' to 'support', does this solve the issue?  This makes it closer to [LLZ]'s exposition. (Gregg)}
 
-\begin{theorem}\label{th:pointed supports}\cite[Proposition~4.1]{LLZ}, \cite[Corollary 3.5]{LLZ2}
+\begin{theorem}\label{th:Newton polygons}\cite[Proposition~4.1]{LLZ}, \cite[Corollary 3.5]{LLZ2}
   For $(a_1,a_2)\in\ZZ^2$, the Newton polygon of $x[a_1,a_2]$ is determined as follows.
   \begin{enumerate}
     %\item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
@@ -365,13 +388,13 @@ and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ 
       \draw (1.27,-1.5) node[anchor=north] {\footnotesize \hspace{10pt} \tiny{$(a_1,a_2):$ imaginary root}};
     \end{scope}
   \end{tikzpicture}
-  \caption{Consider the points $O=(0,0)$, $A=(-a_1+ba_2,-a_2)$, $B=(-a_1,-a_2)$, $C=(-a_1,-a_2+ca_1)$, $D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2})$, and $D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1})$,  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as above.} 
+  \caption{Consider the points $O=(0,0)$, $A=(-a_1+ba_2,-a_2)$, $B=(-a_1,-a_2)$, $C=(-a_1,-a_2+ca_1)$, $D_1=(-a_1+ba_{2},ca_{1}-(bc+1)a_{2})$, and $D_2=(ba_{2}-(bc+1)a_{1},-a_2+ca_{1})$.  Then the Newton polygon of $x[a_1,a_2]$ can be visualized as above.} 
   \label{fig:greedy polytopes}
 \end{figure}
 \begin{proof}
-  The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.  \sayGM{*** We need this proof to care about the dotted lines rather than the Newton polygon. (gregg)}
+  The first part is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary 3.5]{LLZ2}.
 
-  Suppose $z\in\cA(b,c)$ is pointed at $(a_1,a_2)$ and that the Newton polygon of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient.  
+  Suppose $z\in\cA(b,c)$ is pointed \sayGM{What do we mean by pointed here?  It appears we need to use the fact that $x_1^{-a_1}x_2^{-a_2}$ is the smallest monomial but do not need the (unproven) fact that there are gaps via $x_1^b$ and $x_2^c$. (Gregg)} at $(a_1,a_2)$ and that the Newton polygon of $z$ is contained in that of $x[a_1,a_2]$.  Suppose $z\ne x[a_1,a_2]$.  There exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Since $z$ is pointed at $(a_1,a_2)$, for any such monomial we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient. 
 
   Below we refer to the points $O,A,B,C$ from Figure~\ref{fig:greedy polytopes}.  To reach a contradiction, there are two cases to consider.
   \begin{itemize}
@@ -385,7 +408,7 @@ and the \emph{Newton polygon} of $f$ is the convex hull in $M\otimes\mathbb{R}$ 
   It follows that $z=x[a_1,a_2]$.
 \end{proof}
 The proof of Theorem~\ref{th:Newton polygons} actually establishes the following stronger result.
-\begin{scholium}
+\begin{scholium}\label{sch}
   If $z\in\cA(b,c)$ is any element containing the monomial $x_1^{-a_1}x_2^{-a_2}$ with coefficient 1 and whose Newton polygon is contained in the half-open quadrilateral $OABC$ from Figure~\ref{fig:greedy polytopes} associated to $(a_1,a_2)$, then $z=x[a_1,a_2]$. 
 \end{scholium}
 
@@ -441,11 +464,16 @@ This enumerative description not only establishes the existence of the greedy ba
 \section{Scattering diagrams and broken lines}
 \saySS{Address whether our exchange matrix/g-vectors conventions are transposed to Fomin-Zelevinsky or not.}
 
-In this section we describe the theta basis of a rank 2 cluster algebra.  All results and constructions are from \cite{GHKK}, though our notation is adapted to the rank 2 situation.
+In this section we describe the theta basis of a rank 2 cluster algebra.  
+We use \cite{GHKK} as a reference, adapting 
+the notation to the rank 2 situation.
 
-%We fix lattices $N = \ZZ^2$ and $M = \Hom (N, \ZZ)$. We write their elements as tuples and denote the standard pairing of $m\in M$ and $n\in N$ as $n \cdot m$. We write $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$. Taking $\Bbbk$ to be a field of characteristic 0, for $m\in M$ we will write $x^m$ for the monomial in $\Bbbk[M]$.  For notational convenience we will write $x_1=x^{(1,0)}$ and $x_2=x^{(0,1)}$, thus we may identify $x^m$ with $x_1^{m_1}x_2^{m_2}$.
+%We fix lattices $N = \ZZ^2$ and $M = \Hom (N, \ZZ)$. We write their elements as tuples and denote the standard pairing of $m\in M$ and $n\in N$ as $n \cdot m$. We write $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$. Taking $\ZZ$ to be a field of characteristic 0, for $m\in M$ we will write $x^m$ for the monomial in $\ZZ[M]$.  For notational convenience we will write $x_1=x^{(1,0)}$ and $x_2=x^{(0,1)}$, thus we may identify $x^m$ with $x_1^{m_1}x_2^{m_2}$.
 
-Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \cong \ZZ[x_1^{\pm 1}, x_2^{\pm 1}]$.  We write $N = \Hom (M, \ZZ)$ for its dual lattice, $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$, and denote the standard pairing of $m\in M$ and $n\in N$ by $n \cdot m$.  Given a strictly convex rational cone $\sigma \subsetneq M_{\RR}$, we write $P=\sigma \cap M$.  For a fixed field $\Bbbk$ of characteristic zero, let $\widehat{\Bbbk[P]}$ denote the completion of the monoid ring $\Bbbk[P]$ at the maximal monomial ideal $\fm$ generated by $\left\{x^m \,|\, m\in P\smallsetminus\{0\}\right\}$. \sayHW{Unless it would be mathematically incorrect to do so, all $\Bbbk$'s in the paper should be $\ZZ$'s}
+Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \cong \ZZ[x_1^{\pm 1}, x_2^{\pm 1}]$.  We write $N = \Hom (M, \ZZ)$ for its dual lattice, $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$, and denote the standard pairing of $m\in M$ and $n\in N$ by $n \cdot m$.  Given a strictly convex rational cone $\sigma \subsetneq M_{\RR}$, we write $P=\sigma \cap M$.  Let $\widehat{\ZZ[P]}$ denote the completion of the monoid ring $\ZZ[P]$ at the maximal monomial ideal $\fm$ generated by $\left\{x^m \,|\, m\in P\smallsetminus\{0\}\right\}$. \sayHW{Unless it would be mathematically incorrect to do so, all $\ZZ$'s in the paper should be $\ZZ$'s [Mandy: changed. please check if anything goes wrong.]}
+
+The following are special cases of definitions which originally appeared in
+\cite{KS}, \cite{GS}.
 
 \begin{defn}
   \label{walldef}
@@ -457,11 +485,11 @@ Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \
       $\RR w$ with $w\in \sigma \cap(M\smallsetminus 0)$;
 
     \item 
-      $f_{\fd} \in \widehat{\Bbbk [P]}$ is such that 
+      $f_{\fd} \in \widehat{\ZZ [P]}$ is such that 
       \[ 
         f_{\fd} = f_{\fd}(x^w) = 1 + \sum_{k\geq 1} c_k x^{k w},
       \] 
-      for some $c_k \in \Bbbk$. 
+      for some $c_k \in \ZZ$. 
   \end{itemize}
   The set $\fd \subset M_{\mathbb{R}}$ is called the \emph{support} of the wall
   $(\fd, f_{\fd})$.
@@ -486,7 +514,7 @@ For simplicity, we will impose the additional condition that $\fd_1\neq \fd_2$ f
 %\]
 
 Given a wall $(\fd, f_{\fd})$ and a direction $v$ transversal to $\fd$, we associate the element $\theta_{v,\fd}\in
-{\mathrm{Aut}}_{\Bbbk-alg}\left(\widehat{\Bbbk[P]}\right)$ defined by
+{\mathrm{Aut}}_{\ZZ-alg}\left(\widehat{\ZZ[P]}\right)$ defined by
 \[
   \theta_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
 \]
@@ -521,7 +549,7 @@ Then we define
   $\theta_{\gamma, \fD}$ is well defined.
 \end{defn}
 
-\begin{theorem}\cite{KS}
+\begin{theorem}\cite{KS},\cite{GS}
   \label{th:KS}
   Given any scattering diagram $\fD$, there exists a consistent scattering
   diagram $\fD'$ which contains $\fD$ such that $\fD'\smallsetminus\fD$ only consists
@@ -583,8 +611,9 @@ applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2
 
 For general $b$ and $c$, the diagram $\fD_{(b,c)}$ may consist of an infinite number of rays, and in fact
 it is infinite precisely when $bc\ge 4$. A more detailed description of the rays
-which appear can be found in \cite{GHKK}, Example 1.30. We summarize the crucial
-points here.
+which appear can be found in \cite{GHKK}, Example 1.30, where the description
+is based on the description of a related scattering diagram given in
+\cite{GP}. We summarize the crucial points here.
 
 First of all note that, in view of the definition of scattering diagram, all the
 rays in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ are contained in the
@@ -599,7 +628,7 @@ linear on $M_\RR$ set
 \end{equation}
 Note that, even if $(\fd,f_\fd)$ is a wall, $S(\fd,f_\fd)$ needs not be a wall
 since $S(w)$ may lay outside of the cone $\sigma$ (in which case we also get
-that  $f_\fd\left(x^{S(w)}\right)$ is not an element of $\widehat{\Bbbk [P]}$).
+that  $f_\fd\left(x^{S(w)}\right)$ is not an element of $\widehat{\ZZ [P]}$).
 
 Now consider the two linear involutions $S_1$ and $S_2$ given by
 \[
@@ -649,8 +678,9 @@ alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
 
 We need to distinguish two cases. If $bc<4$ this procedure will construct, in
 finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
-\fD_{\mathrm{in},(b,c)}$.  If $bc\geq 4$, instead, we will get two infinite
-families of walls whose supports will converge to the boundary of the convex cone
+\fD_{\mathrm{in},(b,c)}$.  If $bc\ge 4$, instead, we will get two infinite
+families of walls whose supports will converge to a single rational
+ray if $bc=4$ or if $bc>4$, to the boundary of the convex cone
 spanned by the irrational vectors
 \[
   \left(2b,-bc + \sqrt{bc(bc-4)}\right)
@@ -682,13 +712,13 @@ The following result explains the connection between scattering diagrams
 and the corresponding cluster algebras: 
 \begin{theorem} 
   \label{univLaurent} 
-  Let $\fD:=\fD_{(b,c)}$ be as constructed above, and let $f \in \Bbbk[M]$ be a
+  Let $\fD:=\fD_{(b,c)}$ be as constructed above, and let $f \in \ZZ[M]$ be a
   Laurent polynomial. For any path $\gamma$ for which $\theta_{\gamma,\fD}$ is
   defined, $\theta_{\gamma,\fD}(f)$ can be viewed as an element of
-  $\Bbbk[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$. Then $f$ is a universal
+  $\ZZ[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$. Then $f$ is a universal
   Laurent polynomial if, for any path $\gamma$ in
   $M_{\RR}$ with starting point in the first quadrant and endpoint in one of the
-  chambers of $\fD$, $\theta_{\gamma,\fD}(f)$ in fact lies in $\Bbbk[M]$.
+  chambers of $\fD$, $\theta_{\gamma,\fD}(f)$ in fact lies in $\ZZ[M]$.
 \end{theorem}
 
 \begin{proof}
@@ -699,10 +729,10 @@ and the corresponding cluster algebras:
   universal Laurent polynomial, i.e., a Laurent polynomial which remains a
   Laurent polynomial after any sequence of mutations. On the other hand, in
   \cite{GHKK}, \S 4, another variety $\cA'$ is defined. This is done by
-  associating a torus $\cA_{\tau}':= \Spec \Bbbk[M]$ to a chamber $\tau\subseteq
-  M_{\RR}$ of $\fD$. For any two chambers $\tau,\tau'$ we can glue $\cA_{\tau}'$
+  associating a torus $\cA_{\tau}':= \Spec \ZZ[M]$ to a chamber $\tau\subseteq
+  M_{\RR}$ \sayMC{ check if still $\RR$} of $\fD$. For any two chambers $\tau,\tau'$ we can glue $\cA_{\tau}'$
   to $\cA_{\tau'}'$ using the rational map defined on function fields by
-  $\theta_{\gamma,\fD}:\Bbbk(x_1,x_2)\rightarrow \Bbbk(x_1,x_2)$, where $\gamma$
+  $\theta_{\gamma,\fD}:\ZZ(x_1,x_2)\rightarrow \ZZ(x_1,x_2)$, where $\gamma$
   is a path beginning in $\tau'$ and ending in $\tau$. Performing these gluings
   gives $\cA'$.
 
@@ -712,7 +742,7 @@ and the corresponding cluster algebras:
   torus of $\cA$ corresponding to the initial seed and the torus of $\cA'$
   corresponding to the positive chamber. In particular, a function $f$ on this
   torus extends to a function on $\cA'$ if $\theta_{\gamma,\fD}(f)$ lies in
-  $\Bbbk[M]$ for any path $\gamma$ from the positive chamber to any other
+  $\ZZ[M]$ for any path $\gamma$ from the positive chamber to any other
   chamber. This shows the characterization of universal Laurent polynomials.
 \end{proof}
 
@@ -727,7 +757,7 @@ circumstances.
   \emph{exponent} $m$ and endpoint $q$ is a continuous and piecewise linear path
   $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \smallsetminus \{ 0\} $ with
   a finite number of domains of linearity, along with a choice of monomial
-  $c(\ell) x^{m(\ell)} \in \Bbbk[M]$ for each domain of linearity $\ell \subseteq ( -
+  $c(\ell) x^{m(\ell)} \in \ZZ[M]$ for each domain of linearity $\ell \subseteq ( -
   \infty, 0]$ of $\gamma$. 
   
   The path $\gamma$ and the monomials $c(\ell) x^{m(\ell)}$ need to satisfy the
@@ -755,7 +785,8 @@ circumstances.
       \]
   \end{itemize}
 \end{defn}
-We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{momentum} of that region.
+We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{momentum} of that domain
+of linearity.
 
 We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$  denote by
@@ -933,7 +964,7 @@ Remark 1.9 ibid.).
 In order to compare the two we will leverage the observation that, in rank 2,
 these families of vectors are related by an easy piecewise-linear transformation
 as explained in the paragraph following Conjecture 3.21 in \cite{RS}. We will do
-so via a scattering diagram $\fD_{\mathrm{gr},(b,c)}$ closely related to
+so via a scattering diagram $\fD^{\bfd}_{(b,c)}$ closely related to
 $\fD_{(b,c)}$.
 
 Let $T:M_\RR\rightarrow M_\RR$ be the piecewise-linear map given by
@@ -1086,7 +1117,7 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
     \left(1+x_1^b\right)^{-m_2(\ell)} 
     \\
     & = 
-    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_1(\ell)}.
+    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_2(\ell)}.
   \end{align*}
   This shows that $T_k(\gamma)$ satisfies the correct rule when bending along
   $(\RR (1,0), 1+x_1^b)$ if $\gamma$ passes from $\mathcal{H}_-$ to
@@ -1149,7 +1180,7 @@ generic point $q$ in the first quadrant, we have that
 as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
 \end{thm}
 
-The proof will be to show that $\Theta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon as $x[-m_1,-m_2]$.  By Theorem \ref{th:Newton polygons}, this is already enough to show that $\Theta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
+The proof will be to show that $\Theta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon \sayGM{1) do we mean 'pointed element', same issue as in proof of Thm \ref{th:Newton polygons}  2) need to use 'support' rather than 'Newton polygon'.} as $x[-m_1,-m_2]$.  By Scholium \ref{sch}, this is already enough to show that $\Theta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^\mathbf{d}$.  At any point $q=(q_1,q_2)\in \gamma$ at which $\gamma$ is linear with exponent $m=(m_1,m_2)$, define the \emph{angular momentum} of $\gamma$ at $q$ to be $q_2m_1-q_1m_2$.
 
@@ -1172,7 +1203,7 @@ The sign of the angular momentum is a useful invariant for characterizing the qu
 For a broken line ending in the first quadrant, the sign of the angular momentum characterizes whether that broken line could have passed through the fourth quadrant (positive) or the second quadrant (negative).
 
 \begin{lemma}
-Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{g}}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
+Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
 %\begin{itemize}	
 	%\item If $\gamma$ has positive angular momentum, then the slope of the linear domains of $\gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
 	%\item If $\gamma$ has negative angular momentum, then the slope of the linear domains of $\gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
@@ -1263,22 +1294,23 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{thm: main}]
-\sayGM{This proof needs: a restatement of Theorem \ref{th:Newton polygons} which doesn't say `pointed' and only requires the right inequalities.}
+\sayGM{SHOULD BE TAKEN CARE OF This proof needs: a restatement of Theorem \ref{sch} which doesn't say `pointed' and only requires the right inequalities.}
 
-If $m=(m_1,m_2)$ such that $m_1\leq0$, $m_2\leq0$, $m_1\geq bm_2$, or $m_2\geq cm_1$, then $\Theta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$.
+If $m=(m_1,m_2)$ such that $m_1\leq0$ or $m_2\leq0$, then $\Theta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
 
-Next, assume that $m=(m_1,m_2)$ such that
-\[ 0<m_1<bm_2,\;\;\; 0<m_2<am_1\]
+Next, assume that $m=(m_1,m_2)$ such that $m_1\geq0$ and $m_2\geq0$.
+%\saySS{Shouldn't $a$ be $c$ instead?}
+%\[ 0<m_1,\;\;\; 0<m_2\]
 The coefficient of $x^{(a_1,a_2)}$ in $\Theta_{q,m}^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
-\[ m_1\leq a_1\leq \left(\frac{m_1}{m_2}-b\right)a_2,\;\;\; m_2\leq a_2\leq \left(\frac{m_2}{m_1}-b\right)a_1\]
+\[ m_1\leq a_1\leq \left(\frac{m_1}{m_2}-b\right)a_2,\;\;\; m_2\leq a_2\leq \left(\frac{m_2}{m_1}-c\right)a_1\]
 Furthermore, the upper bounds are only satisfied in the specific cases when $(a_1,a_2)$ is equal to $(a_1-ba_2,a_2)$ or $(a_1,a_2-ca_1)$.  
-Since $\Theta_{q,m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Theorem \ref{th:Newton polygons} implies that $\Theta_{q,m}^\mathbf{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
+Since $\Theta_{q,m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Scholium \ref{sch} implies that $\Theta_{q,m}^\mathbf{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
 
 To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each element.  The coefficient of $x^{(m_1,m_2)}$ in $x[-m_1,-m_2]$ is $1$, by the definition of a pointed element. The coefficient of $x^{(m_1,m_2)}$ in $\Theta_{q,m}^\mathbf{d}$ is the sum of the coefficients of all broken lines in $\mathfrak{D}_{(b,c)}^\mathbf{d}$ with initial exponent $(m_1,m_2)$ and final exponent $(m_1,m_2)$.  Since any bend in a broken line would increase one of the components of the exponent, this only happens for the unique broken line with initial exponent $(m_1,m_2)$ that has no bends. Hence, the coefficient of $x^{(m_1,m_2)}$ in $\Theta_{q,m}^\mathbf{d}$ is $1$, and so $\Theta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 \end{proof}
 
 \begin{remark}
-As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{th:pointed supports} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the equality of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
+As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{thm: main} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the equality of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
 \end{remark}
 
 \begin{thebibliography}{99}
@@ -1289,17 +1321,19 @@ As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be
   \bibitem[FG]{FG} V.~Fock and A.~B.~Goncharov, \emph{Moduli spaces of local systems and higher Teichm\"{u}ller theory}, Publ. Math. de l'IH\'{E}S, {\bf 103} (2006), 1-211.
   \bibitem[FZ]{FZ} S.~Fomin and A.~Zelevinsky, \emph{Cluster algebras I: Foundations},  J. Amer. Math. Soc., \textbf{15} (2002), no. 2, 497--529.
   \bibitem[G10]{G10} M.~Gross,  \emph{Mirror symmetry for $\mathbb{P}^2$ and tropical geometry}, Adv.\ Math., {\bf 224} (2010), 169--245. 
-  \bibitem[GLS]{GLS} C.~Geiss, B.~Leclerc, and J.~Schr\"{o}er, \emph{Semicanonical bases and preprojective algebras}, Ann. Sci. de l'\'{E}cole Norm. Sup., {\bf 38} (2005), no. 2, 193--253.
   \bibitem[GHK11]{GHK11} M.~Gross, P.~Hacking, and S.~Keel, \emph{Mirror symmetry for log Calabi-Yau surfaces I}, Publ. Math. de l'IH\'{E}S, (2015), 1--104.
   \bibitem[GHKK]{GHKK} M.~Gross, P.~Hacking, S.~Keel, and M.~Kontsevich, \emph{Canonical bases for cluster algebras}, preprint, arXiv:1411.1394, 2014.
+  \bibitem[GLS]{GLS} C.~Geiss, B.~Leclerc, and J.~Schr\"{o}er, \emph{Semicanonical bases and preprojective algebras}, Ann. Sci. de l'\'{E}cole Norm. Sup., {\bf 38} (2005), no. 2, 193--253.
   \bibitem[GMN]{GMN} D.~Gaiotto, G.~W.~Moore, and A.~Neitzke, \emph{Framed BPS states}, Adv. Theor. Math. Phys., {\bf 17} (2013), no. 2, 241--397.
+  \bibitem[GP]{GP} M. ~Gross and R. ~Pandharipande, \emph{Quivers, curves, and the tropical vertex}, Port.\ Math.\ {\bf 67} (2010), 211--259. 
+  \bibitem[GS]{GS} M.~Gross and B.~Siebert, \emph{From affine geoemtry to complex geometry}, Annals of Mathematics, {\bf 174}, (2011), 1301-1428.
   \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, and J.~Weyman, \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf, 2014.
   \bibitem[KQ]{KQ} Y.~Kimura and F.~Qin, \emph{Graded quiver varieties, quantum cluster algebras and dual canonical basis}, Adv. Math., {\bf 262} (2012), 261--312.
-  \bibitem[KS]{KS} M.~Kontsevich and Y.~Soibelman, \emph{Wall-crossing structures in Donaldson-Thomas invariants, integrable systems and mirror symmetry}, preprint, arXiv:1303.3253, 2013.
+  \bibitem[KS]{KS} M.\ Kontsevich and Y.\ Soibelman, \emph{Affine structures and non-Archimedean analytic spaces}, in: \textsl{The unity of mathematics} (P.~Etingof, V.~Retakh, I.M.~Singer, eds.),  321--385, Progr.\ Math.~{\bf 244}, Birkh\"auser~2006.
   \bibitem[LLZ2]{LLZ2} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Positivity and tameness in rank 2 cluster algebras}, J. Alg. Comb., {\bf 40} (2014), no. 3, 823--840.
   \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math., \textbf{20} (2014), 57--82.
-  \bibitem[LS]{LS} K.~Lee and R.~Schiffler, \emph{A combinatorial formula for rank 2 cluster variables}, J. Alg. Comb., {\bf 37} (2013), no. 1, 67--85.
   \bibitem[LS2]{LS2} K.~Lee and R.~Schiffler, \emph{Positivity for cluster algebras}, Annals of Math., {\bf 182} (2015), no. 1, 73--125.
+  \bibitem[LS]{LS} K.~Lee and R.~Schiffler, \emph{A combinatorial formula for rank 2 cluster variables}, J. Alg. Comb., {\bf 37} (2013), no. 1, 67--85.
   \bibitem[MSW]{MSW} G.~Musiker, R.~Schiffler, and L.~Williams, \emph{Bases for cluster algebras from surfaces}, Compositio Math., {\bf 149} (2013), no. 2, 217--263.
   \bibitem[R]{R} N.~Reading, \emph{Universal geometric cluster algebras}, Math. Zeit., {\bf 277 } (2014), 499-547.
   \bibitem[RS]{RS} N.~Reading and D.~Speyer, \emph{Combinatorial frameworks for cluster algebras}, Int. Math. Res. Not., (2015), 1--65.
@@ -1308,5 +1342,7 @@ As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be
   \bibitem[SZ]{SZ} P.~Sherman and A.~Zelevinsky, \emph{Positivity and canonical bases in rank 2 cluster algebras of finite and affine types}, Mosc. Math. J., \textbf{4} (2004), no. 4, 947--974.
 
 \end{thebibliography}
+
+\sayGM{Dylan, did not know if you wanted to use Northeastern or Notre Dame (Gregg)}
 
 \end{document}
