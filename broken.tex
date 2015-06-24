@@ -72,33 +72,31 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[The Greedy Basis is the Theta Basis]{The Greedy Basis \\ Equals The Theta Basis: \\ A Rank Two Haiku}
-\author[C]{Man Wai Cheung}
+\author[Cheung]{Man Wai Cheung}
 \address[Man Wai Cheung]{University of California, San Diego}
 \email{mwc31@cam.ac.uk}
 
-\author[C]{Maria Angelica Cueto}
-
-\author[G]{Mark Gross}
+\author[Gross]{Mark Gross}
 \address[Mark Gross]{University of Cambridge}
 \email{mg475@dpmms.cam.ac.uk}
 
-\author[M]{Greg Muller}
+\author[Muller]{Greg Muller}
 \address[Greg Muller]{University of Michigan}
 \email{morilac@umich.edu}
 
-\author[M]{Gregg Musiker}
+\author[Musiker]{Gregg Musiker}
 \address[Gregg Musiker]{University of Minnesota}
 \email{musiker@math.umn.edu}
 
-\author[R]{Dylan Rupel}
+\author[Rupel]{Dylan Rupel}
 \address[Dylan Rupel]{To be added by Dylan}
 \email{rupelrupel@math.somewhere.edu}
 
-\author[S]{Salvatore Stella}
+\author[Stella]{Salvatore Stella}
 \address[Salvatore Stella]{Universit\`a degli studi di Roma ``La Sapienza''}
 \email{sstella@ncsu.edu}
 
-\author[H]{Harold Williams}
+\author[Williams]{Harold Williams}
 \address[Harold Williams]{The University of Texas at Austin}
 \email{hwilliams@math.utexas.edu}
 
@@ -124,7 +122,7 @@ Cluster algebras are commutative rings with partial bases of a special form, ori
 
 A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of a cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup,GMN}.  Generally one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  
 
-The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  \sayGM{I find the phrasing "builds this property into any canonical basis" awkward, but am happy to leave as is if everyone else is happy with this paragraph. (Gregg)} The definition of the greedy basis builds this property into any canonical basis element by attempting to describe the minimal conditions for a Laurent polynomial in an initial cluster to be both positive and Laurent in the two adjacent clusters.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
+The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup2} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The greedy basis is defined so that all of its elements, not just cluster variables, have positive Laurent expansions in any cluster and that the coefficients of any such Laurent expansion are as small as possible.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
 
 The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the
 greedy basis it is defined for cluster algebras of arbitrary rank.  In fact,
@@ -148,7 +146,7 @@ The proof is based on an analysis of the Newton polygons of elements of the thet
 
 The organization of the paper is as follows.  In sections 2 and 3 we review the basic definitions and properties of the greedy and theta bases, respectively.  The natural parametrizing sets of the two bases, the $\bfd$-vectors and $\bfg$-vectors, are distinct, and in section 4 we explain how to relate them.  This determines a bijection between the two bases, and in section 5 we show that the basis elements mapped to each other by this bijection actually coincide, proving the main theorem.
 
-\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. The first author would like to thank University of Cambridge for the host during the completion of this paper.
+\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We thank Maria Angelica Cueto, who was also member of our working group but declined to be named as a coauthor.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. The first author would like to thank University of Cambridge for the host during the completion of this paper.
 
 \section{Rank 2 cluster algebras and their greedy bases}
 Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$ indexed by $k\in\ZZ$ and defined recursively by 
@@ -785,7 +783,7 @@ circumstances.
       \]
   \end{itemize}
 \end{defn}
-We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{momentum} of that domain
+We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{exponent} of that domain
 of linearity.
 
 We are finally ready to introduce the main player of our discussion.
@@ -797,7 +795,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \[ 
     \Theta_{q, m} = \sum_{\gamma} \Mono (\gamma), 
   \] 
-  where the sum is over all broken lines with initial momentum $m$ and endpoint
+  where the sum is over all broken lines with initial exponent $m$ and endpoint
   $q$.
 \end{defn}
 
@@ -805,7 +803,7 @@ $\Mono (\gamma)$ the monomial attached to the last domain of linearity of $\gamm
   \label{brokenex}
   Consider the scattering diagram $\fD_{(2,2)}$ and let $q$ be a small
   irrational perturbation of the point $(1.5,1)$. There are three broken lines
-  with initial momentum $m = (1,-1)$ and endpoint $q$ as shown in
+  with initial exponent $m = (1,-1)$ and endpoint $q$ as shown in
   Figure~\ref{figbrokenex}.
   First of all, we can have a broken line $\gamma_1$ which does not bend.
   Therefore
@@ -921,7 +919,7 @@ The following summarizes the main properties of the theta functions as shown in
 
 \begin{example}
   Let us try one more calculation with broken lines. We take the same scattering
-  diagram as in example~\ref{brokenex}. Now take the initial momentum $m=(2,-2)$
+  diagram as in example~\ref{brokenex}. Now take the initial exponent $m=(2,-2)$
   with the same endpoint $q$. By similar calculations we get 
   \[ 
     \Theta _{q, (2,-2)} = 
@@ -932,7 +930,7 @@ The following summarizes the main properties of the theta functions as shown in
     \Theta _{q, (2,-2)} = 
     \left(\Theta_{q, (1,-1)}\right) ^2 -2. 
   \]
-  In this scattering diagram $\fD_{(2,2)}$, the ray with momentum $(1,-1)$ does
+  In this scattering diagram $\fD_{(2,2)}$, the ray with exponent $(1,-1)$ does
   not lie in the interior of any chamber. So neither $\Theta_{q,(1,-1)}$ nor 
   $\Theta _{q, (2,-2)}$ are cluster monomials.
 
