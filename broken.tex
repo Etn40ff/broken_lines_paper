@@ -643,7 +643,7 @@ that  $f_\fd\left(x^{S(w)}\right)$ is not an element of $\widehat{\ZZ [P]}$).
 \]
 If $(\fd, f_{\fd}) \in \fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ and $S_i
 (\fd)$ is contained strictly in the fourth quadrant, then $S_i(\fd, f_{\fd}) \in
-\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$. Moreover both 
+\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$. Moreover, both 
 \begin{equation}
   \label{eq:first-walls}
   S_2\big(\RR_{\leq 0}(-1,0),1+x_1^{-b}\big)
@@ -665,7 +665,7 @@ neither
   %
   \big(\RR_{\leq 0}(0,1),1+x_2^c\big)
 \]
-are walls in $\fD_{(b,c)}$. These considerations gives us a recipe to produce
+is a wall in $\fD_{(b,c)}$. These considerations gives us a recipe to produce
 elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}). \sayDR{This sentence makes it sound like all walls are obtained in this way.}
 
@@ -745,9 +745,9 @@ circumstances.
   \label{brokendef}
   Let $\fD$ be a scattering diagram, $m \in M \smallsetminus \{0\}$, and $q \in
   M_{\RR} \smallsetminus \text{Supp}(\fD)$.  A \emph{broken line} with initial
-  \emph{exponent} $m$ and endpoint $q$ is a continuous and piecewise linear path
+  \emph{exponent} $m$ and endpoint $q$ is a continuous, piecewise linear path
   $\gamma : ( - \infty , 0] \rightarrow M_{\mathbb{R}} \smallsetminus \{ 0\} $ with
-  a finite number of domains of linearity, along with a choice of monomial
+  a finite number of domains of linearity and a choice of monomial
   $c(\ell) x^{m(\ell)} \in \ZZ[M]$ for each domain of linearity $\ell \subseteq ( -
   \infty, 0]$ of $\gamma$. 
   
@@ -755,7 +755,7 @@ circumstances.
   following conditions:
   \begin{itemize}
     \item $\gamma(0) = q$;
-    \item if $\ell$ is the first (i.e., unbounded) domain of linearity of $\gamma$, then 
+    \item if $\ell$ is the first (i.e. unbounded) domain of linearity of $\gamma$, then 
       \[c(\ell) x^{m(\ell)} = x^{m};\]
     \item for $t$ in a domain of linearity $\ell$, $\gamma'(t) = -m(\ell)$;
     \item $\gamma$ bends only when it crosses a wall. If $\gamma$ bends from the
@@ -845,48 +845,30 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
 \end{figure}
 
 The following summarizes the main properties of the theta functions as shown in
-\cite{GHKK}:
+\cite{GHKK}.
 \begin{theorem} $ $
   \begin{enumerate}
     \item
       If $\fD$ is any consistent scattering diagram, $q$ and $q'$ are two general
       irrational points on $M_{\RR} \smallsetminus$ Supp$(\fD)$, and $\gamma$ is a
-      path joining $q$ to $q'$, then the path-ordered product 
-      \saySS{Reconsider this phrasing.}
-      \[
-        \theta_{\gamma, \fD }(\Theta_{q,m}) = \Theta_{q', m}. 
-      \]
-    
-    \item 
-      Taking $\fD=\fD_{(b,c)}$, if $q$ lies in the interior of a chamber of
-      $\fD$, then $\Theta_{q,m}$ is a Laurent polynomial for any $m$.
-    
-    \item 
-      Taking $\fD=\fD_{(b,c)}$, if $q$ lies in the interior of the first
-      quadrant, then $\Theta_{q,m}$ is a universal Laurent polynomial for
-      any $m$.
-
-    \item 
-      Taking $\fD=\fD_{(b,c)}$, if $m$ lies in the interior of a chamber of
-      $\fD$, and $q$ lies in the same chamber, then $\Theta_{q,m}=x^{m}$.
-   
+      path joining $q$ to $q'$, then $\theta_{\gamma, \fD }(\Theta_{q,m}) = \Theta_{q', m}$. 
+    \item Take $\fD=\fD_{(b,c)}$. 
+      \begin{enumerate}
+        \item If $q$ lies in the interior of a chamber of $\fD$, then $\Theta_{q,m}$ is a Laurent polynomial for any $m$.
+        \item If $q$ lies in the interior of the first quadrant, then $\Theta_{q,m}$ is a universal Laurent polynomial for any $m$.
+        \item If $q$ and $m$ lie in the interior of the same chamber of $\fD$, then $\Theta_{q,m}=x^{m}$.
+      \end{enumerate}
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  (1) is a main result of \cite{CPS}, quoted in this context in \cite[Theorem~3.5]{GHKK}.  The second statement is \cite[Example~7.18]{GHKK} where $\Theta$ is taken to be the subset of $M$ consisting of those $m$ for which
-  $\Theta_{q,m}$ is a Laurent polynomial for some $q$ in the interior of a chamber of $\fD$ (and hence by \cite[Proposition~7.1]{GHKK}, all 
-  chambers).
-  Next, (3) follows from (2) by Theorem \ref{univLaurent}. 
-  Finally, (4) follows from \cite[Proposition~3.8]{GHKK} using the argument of
-  \cite[Theorem~4.8]{GHKK} in the case that the chamber is not the positive
-  quadrant.
+  (1) is a main result of \cite{CPS}, quoted in this context in \cite[Theorem~3.5]{GHKK}.  (2a) is \cite[Example~7.18]{GHKK} \sayDR{It isn't clear to me at all how \cite[Example~7.18]{GHKK} is related to the claim.} with $\Theta$ taken to be the subset of $M$ consisting of those $m$ for which $\Theta_{q,m}$ is a Laurent polynomial for some $q$ in the interior of a chamber of $\fD$ (and hence by \cite[Proposition~7.1]{GHKK}, all chambers).  Next, (2b) follows from (2a) by Theorem \ref{univLaurent} and (1).  Finally, (2c) follows from \cite[Proposition~3.8]{GHKK} using the argument of \cite[Theorem~4.8]{GHKK} \sayDR{The statement of \cite[Theorem~4.8]{GHKK} is a much heftier result than what we are proving, maybe it would be good to extract the relevant portion of the proof and present it here.} in the case that the chamber is not the positive quadrant.
 \end{proof}
 
 \begin{remark} 
   \label{rk:theta functions g-vector}
   If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$ and $q$ lies in
-  the first quadrant, then from (1) and (4) above we see that
+  the first quadrant, then from (1) and (2c) above we see that
   $\Theta_{q,m}=\theta_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
   joining the chamber containing $m$ to $q$. Moreover, it follows from the
   details of the proof of Theorem \ref{univLaurent} that $\Theta_{q,m}$ is
@@ -907,12 +889,12 @@ The following summarizes the main properties of the theta functions as shown in
     \Theta _{q, (2,-2)} = 
     \left(\Theta_{q, (1,-1)}\right) ^2 -2. 
   \]
-  In this scattering diagram $\fD_{(2,2)}$, the ray with exponent $(1,-1)$ does
+  In the scattering diagram $\fD_{(2,2)}$ considered here, the ray with exponent $(1,-1)$ does
   not lie in the interior of any chamber. So neither $\Theta_{q,(1,-1)}$ nor 
-  $\Theta _{q, (2,-2)}$ are cluster monomials.
+  $\Theta _{q, (2,-2)}$ is a cluster monomial.
 
-  There are a number of known bases for $\cA(2,2)$, which give different results
-  for the basis elements with $\bfg$-vectors $(d,-d)$ for $d>0$. The
+  There are a number of known bases for $\cA(2,2)$ (see \cite{Dup,MSW,LLZ}) which all prescribe different elements
+  having $\bfg$-vectors $(d,-d)$ for $d>0$. The
   calculations above show that at least for $d=1$ or $2$, theta functions agree with
   the greedy basis elements.
 \end{example}
