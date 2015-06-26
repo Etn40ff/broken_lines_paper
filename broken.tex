@@ -507,10 +507,10 @@ For simplicity, we will impose the additional condition that $\fd_1\neq \fd_2$ f
 %  \text{Supp} (\fD) := \bigcup_{(\fd, f_{\fd}) \in \fD} \fd. 
 %\]
 
-Given a wall $(\fd, f_{\fd})$ and a direction $v\in M$ transversal to $\fd$, we associate the element $\theta_{v,\fd}\in
+Given a wall $(\fd, f_{\fd})$ and a direction $v\in M$ transversal to $\fd$, we associate the element $\frakp_{v,\fd}\in
 {\mathrm{Aut}}_{\ZZ-alg}\left(\widehat{\ZZ[P]}\right)$ defined by
 \[
-  \theta_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
+  \frakp_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
 \]
 where $n\in N$ is primitive, annihilates the tangent space to $\fd$, and is
 uniquely determined by the sign convention $ v\cdot n <0$.  Note
@@ -521,7 +521,7 @@ Let $\fD$ be a scattering diagram and $\gamma$ a smooth immersion
 \[  
   \gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}  
 \]
-transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\theta_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
+transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\frakp_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
 \[
   0< t_1 <  t_2 < \cdots < t_s < 1 
 \]
@@ -529,18 +529,18 @@ be the longest sequence of numbers such that $\gamma(t_i)\in\fd_i$ for some wall
 $(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.  In view of the definition of scattering diagram, such a sequence is finite; we
 can therefore consider the composition 
 \[
-  \theta^k_{\gamma, \fD} :=
-  \theta_{\gamma'(t_s),\fd_s} \circ \cdots \circ \theta_{\gamma'(t_1),\fd_1}.
+  \frakp^k_{\gamma, \fD} :=
+  \frakp_{\gamma'(t_s),\fd_s} \circ \cdots \circ \frakp_{\gamma'(t_1),\fd_1}.
 \]
 \sayDR{The $k$ here looks like an exponent, does anyone oppose moving it to a subscript?} Then we define
 \[
-  \theta_{\gamma, \fD} := \lim_{k \rightarrow \infty} \theta ^k_{\gamma, \fD}. 
+  \frakp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \frakp ^k_{\gamma, \fD}. 
 \]\sayDR{If well-definedness is a potential issue we should mention that here.}
 
 \begin{defn}
-  A scattering diagram is \emph{consistent} if $\theta _{\gamma, \fD}$ depends
+  A scattering diagram is \emph{consistent} if $\frakp _{\gamma, \fD}$ depends
   only on the endpoints of $\gamma$ for any path $\gamma$ for which
-  $\theta_{\gamma, \fD}$ is well-defined.
+  $\frakp_{\gamma, \fD}$ is well-defined.
 \end{defn}
 
 \begin{theorem}\cite{KS},\cite{GS}
@@ -705,11 +705,11 @@ The next result explains the connection between scattering diagrams
 and the corresponding cluster algebras. \sayDR{The statement of the theorem does not a priori have anything to do with cluster algebras, probably something more should be said here if we want to keep this sentence.}
 \begin{theorem} 
   \label{univLaurent} 
-  Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\theta_{\gamma,\fD}$ is
-  well-defined, $\theta_{\gamma,\fD}(f)$ can be viewed as an element of
+  Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\frakp_{\gamma,\fD}$ is
+  well-defined, $\frakp_{\gamma,\fD}(f)$ can be viewed as an element of
   $\ZZ[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$ \sayDR{Is this sentence a part of the theorem or should it be moved above?}.  If for any path $\gamma$ in
   $M_{\RR}$, with starting point in the first quadrant and endpoint in one of the
-  chambers of $\fD$, $\theta_{\gamma,\fD}(f)$ lies in $\ZZ[M]$, then $f$ is a universal
+  chambers of $\fD$, $\frakp_{\gamma,\fD}(f)$ lies in $\ZZ[M]$, then $f$ is a universal
   Laurent polynomial.
 \end{theorem}
 
@@ -723,7 +723,7 @@ and the corresponding cluster algebras. \sayDR{The statement of the theorem does
   associating a torus $\cA_{\tau}':= \Spec \ZZ[M]$ to a chamber $\tau\subseteq
   M_{\RR}$ \sayMC{ check if still $\RR$} of $\fD$. For any two chambers $\tau,\tau'$ we can glue $\cA_{\tau}'$
   to $\cA_{\tau'}'$ using the rational map defined on function fields by
-  $\theta_{\gamma,\fD}:\ZZ(x_1,x_2)\rightarrow \ZZ(x_1,x_2)$, where $\gamma$
+  $\frakp_{\gamma,\fD}:\ZZ(x_1,x_2)\rightarrow \ZZ(x_1,x_2)$, where $\gamma$
   is a path beginning in $\tau'$ and ending in $\tau$. Performing these gluings
   gives $\cA'$.
 
@@ -732,7 +732,7 @@ and the corresponding cluster algebras. \sayDR{The statement of the theorem does
   isomorphic. Furthermore, this isomorphism restricts to the identity on the
   torus of $\cA$ corresponding to the initial seed and the torus of $\cA'$
   corresponding to the positive chamber. In particular, a function $f$ on this
-  torus extends to a function on $\cA'$ if $\theta_{\gamma,\fD}(f)$ lies in
+  torus extends to a function on $\cA'$ if $\frakp_{\gamma,\fD}(f)$ lies in
   $\ZZ[M]$ for any path $\gamma$ from the positive chamber to any other
   chamber. This shows the characterization of universal Laurent polynomials.
 \end{proof}
@@ -761,7 +761,7 @@ circumstances.
     \item $\gamma$ bends only when it crosses a wall. If $\gamma$ bends from the
       domain of linearity $\ell$ to $ \ell'$ when crossing $(\fd, f_{\fd})$, then
       $c(\ell')x^{m(\ell')}$ is a term in 
-      \[\theta_{-m(\ell), \fd} \left(c(\ell) x^{m(\ell)}\right).\]
+      \[\frakp_{-m(\ell), \fd} \left(c(\ell) x^{m(\ell)}\right).\]
   \end{itemize}
 \end{defn}
 We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{exponent} of that domain
@@ -773,7 +773,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
   Let $\fD, m, q$ be as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $q$
   as
   \[ 
-    \Theta_{q, m} = \sum_{\gamma} \Mono (\gamma), 
+    \vartheta_{q, m} = \sum_{\gamma} \Mono (\gamma), 
   \] 
   where the sum is over all broken lines with initial exponent $m$ and endpoint
   $q$.
@@ -792,7 +792,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
   \]
   There is the broken line $\gamma_2$  which bends only at the $x$-axis. Since
   \[ 
-    \theta_{(-1,1), \RR(-1,0)} (x_1 x_2^{-1}) = 
+    \frakp_{(-1,1), \RR(-1,0)} (x_1 x_2^{-1}) = 
     x_1 x_2^{-1}(1+x_1^{-2}) =  x_1 x_2^{-1} + x_1^{-1} x_2^{-1},
   \]
   to bend we need to choose the second term and obtain 
@@ -802,7 +802,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
   The last broken line $\gamma_3$ bends both at the $x$- and $y$-axes, the
   latter bend coming from
   \[ 
-    \theta_{ (1,1), \RR (0,1)} ( x_1^{-1} x_2^{-1}) =  
+    \frakp_{ (1,1), \RR (0,1)} ( x_1^{-1} x_2^{-1}) =  
     x_1^{-1} x_2^{-1} + x_1^{-1} x_2.  
   \]
   This time we have 
@@ -811,7 +811,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
   \]
   Thus the theta function associated to $m = (1,-1)$ with endpoint point $q$ is 
   \[ 
-    \Theta_{q, (1,-1)} =  
+    \vartheta_{q, (1,-1)} =  
     x_1 x_2^{-1} + x_1^{-1} x_2^{-1} +x_1^{-1} x_2 .  
   \]
 \end{example}
@@ -851,27 +851,27 @@ The following summarizes the main properties of the theta functions as shown in
     \item
       If $\fD$ is any consistent scattering diagram, $q$ and $q'$ are two general
       irrational points on $M_{\RR} \smallsetminus$ Supp$(\fD)$, and $\gamma$ is a
-      path joining $q$ to $q'$, then $\theta_{\gamma, \fD }(\Theta_{q,m}) = \Theta_{q', m}$. 
+      path joining $q$ to $q'$, then $\frakp_{\gamma, \fD }(\vartheta_{q,m}) = \vartheta_{q', m}$. 
     \item Take $\fD=\fD_{(b,c)}$. 
       \begin{enumerate}
-        \item If $q$ lies in the interior of a chamber of $\fD$, then $\Theta_{q,m}$ is a Laurent polynomial for any $m$.
-        \item If $q$ lies in the interior of the first quadrant, then $\Theta_{q,m}$ is a universal Laurent polynomial for any $m$.
-        \item If $q$ and $m$ lie in the interior of the same chamber of $\fD$, then $\Theta_{q,m}=x^{m}$.
+        \item If $q$ lies in the interior of a chamber of $\fD$, then $\vartheta_{q,m}$ is a Laurent polynomial for any $m$.
+        \item If $q$ lies in the interior of the first quadrant, then $\vartheta_{q,m}$ is a universal Laurent polynomial for any $m$.
+        \item If $q$ and $m$ lie in the interior of the same chamber of $\fD$, then $\vartheta_{q,m}=x^{m}$.
       \end{enumerate}
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  (1) is a main result of \cite{CPS}, quoted in this context in \cite[Theorem~3.5]{GHKK}.  (2a) is \cite[Example~7.18]{GHKK} \sayDR{It isn't clear to me at all how \cite[Example~7.18]{GHKK} is related to the claim.} with $\Theta$ taken to be the subset of $M$ consisting of those $m$ for which $\Theta_{q,m}$ is a Laurent polynomial for some $q$ in the interior of a chamber of $\fD$ (and hence by \cite[Proposition~7.1]{GHKK}, all chambers).  Next, (2b) follows from (2a) by Theorem \ref{univLaurent} and (1).  Finally, (2c) follows from \cite[Proposition~3.8]{GHKK} using the argument of \cite[Theorem~4.8]{GHKK} \sayDR{The statement of \cite[Theorem~4.8]{GHKK} is a much heftier result than what we are proving, maybe it would be good to extract the relevant portion of the proof and present it here.} in the case that the chamber is not the positive quadrant.
+  (1) is a main result of \cite{CPS}, quoted in this context in \cite[Theorem~3.5]{GHKK}.  (2a) is \cite[Example~7.18]{GHKK} \sayDR{It isn't clear to me at all how \cite[Example~7.18]{GHKK} is related to the claim.} with $\vartheta$ taken to be the subset of $M$ consisting of those $m$ for which $\vartheta_{q,m}$ is a Laurent polynomial for some $q$ in the interior of a chamber of $\fD$ (and hence by \cite[Proposition~7.1]{GHKK}, all chambers).  Next, (2b) follows from (2a) by Theorem \ref{univLaurent} and (1).  Finally, (2c) follows from \cite[Proposition~3.8]{GHKK} using the argument of \cite[Theorem~4.8]{GHKK} \sayDR{The statement of \cite[Theorem~4.8]{GHKK} is a much heftier result than what we are proving, maybe it would be good to extract the relevant portion of the proof and present it here.} in the case that the chamber is not the positive quadrant.
 \end{proof}
 
 \begin{remark} 
   \label{rk:theta functions g-vector}
   If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$ and $q$ lies in
   the first quadrant, then from (1) and (2c) above we see that
-  $\Theta_{q,m}=\theta_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
+  $\vartheta_{q,m}=\frakp_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
   joining the chamber containing $m$ to $q$. Moreover, it follows from the
-  details of the proof of Theorem \ref{univLaurent} that $\Theta_{q,m}$ is
+  details of the proof of Theorem \ref{univLaurent} that $\vartheta_{q,m}$ is
   a cluster monomial and then from \cite[Theorem~7.5]{GHKK} that the 
   $\bfg$-vector of this cluster monomial is precisely $m$. 
 \end{remark}
@@ -881,17 +881,17 @@ The following summarizes the main properties of the theta functions as shown in
   diagram as in Example~\ref{brokenex}. Now take the initial exponent $m=(2,-2)$
   with the same endpoint $q$. By similar calculations we get 
   \[ 
-    \Theta _{q, (2,-2)} = 
+    \vartheta _{q, (2,-2)} = 
     x_1^2 x_2^{-2} + x_1^{-2}x_2^2 + x_1^{-2}x_2^{-2} + 2 x_2^{-2} + 2x_1^{-2}.  
   \]
   Note that 
   \[ 
-    \Theta _{q, (2,-2)} = 
-    \left(\Theta_{q, (1,-1)}\right) ^2 -2. 
+    \vartheta _{q, (2,-2)} = 
+    \left(\vartheta_{q, (1,-1)}\right) ^2 -2. 
   \]
   In the scattering diagram $\fD_{(2,2)}$ considered here, the ray with exponent $(1,-1)$ does
-  not lie in the interior of any chamber. So neither $\Theta_{q,(1,-1)}$ nor 
-  $\Theta _{q, (2,-2)}$ is a cluster monomial.
+  not lie in the interior of any chamber. So neither $\vartheta_{q,(1,-1)}$ nor 
+  $\vartheta _{q, (2,-2)}$ is a cluster monomial.
 
   There are a number of known bases for $\cA(2,2)$ (see \cite{Dup,MSW,LLZ}) which all prescribe different elements
   having $\bfg$-vectors $(d,-d)$ for $d>0$. The
@@ -1035,12 +1035,12 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
   with endpoint $T(q)$. In particular for $q \in \mathcal{H}_+$ or $\mathcal{H}_-$,
   we have
   \[ 
-    \Theta^\bfd_{T(q),T( m)} = 
-    T_{+} \left(\Theta_{q, m}\right) 
+    \vartheta^\bfd_{T(q),T( m)} = 
+    T_{+} \left(\vartheta_{q, m}\right) 
     \quad
     \mbox{or} 
     \quad
-    T_{-} \left(\Theta_{q, m}\right)
+    T_{-} \left(\vartheta_{q, m}\right)
   \]
   respectively.
 \end{theorem}
@@ -1051,7 +1051,7 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
   $\ell$, $\ell'$ be the domains of linearity of $\gamma$ before and after bending
   along $\RR (-1,0)$. So $c(\ell') x^{m(\ell')}$ is a term in 
   \[
-    \theta_{-m(\ell),\RR(-1,0)} \left(c(\ell) x^{m(\ell)}\right)
+    \frakp_{-m(\ell),\RR(-1,0)} \left(c(\ell) x^{m(\ell)}\right)
     = 
     c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{|m_2(\ell)|}.
   \]
@@ -1061,11 +1061,11 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
   $c(\ell')x^{T_+(m(\ell'))} =c(\ell')x^{m(\ell')}$ attached to $\ell'$ in
   $T\circ\gamma$ to satisfy the bending rule, it must be a term in
   \[
-    \theta_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right). 
+    \frakp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right). 
   \]
   Since the second component of $T_-(m(\ell))$ is $m_2(\ell)$ we get
   \begin{align*} 
-    \theta_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right) 
+    \frakp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right) 
     & =
     c(\ell) x^{T_-(m(\ell))} \left(1+x_1^b\right) ^{-m_2(\ell)}
     \\
@@ -1087,17 +1087,17 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
 \begin{prop}
   For any  $m\in M$, if $q$ lies in the first quadrant, then 
   \[
-    \Theta^\bfd_{q, m}=x^{m}\left(1+f(x_1,x_2)\right)
+    \vartheta^\bfd_{q, m}=x^{m}\left(1+f(x_1,x_2)\right)
   \]
   where $f\in (x_1,x_2)\subseteq \Bbbk[x_1,x_2]$.
   In particular, $m$ is the negative of the $\bfd$-vector of
-  $\Theta^\bfd_{q,m}$.
+  $\vartheta^\bfd_{q,m}$.
 \end{prop}
 
 \begin{proof}
   For any $m\in M$ and any $q$ in the first quadrant, there is always a broken
   line $\gamma$ for $m$ and $q$ that does not bend at any wall. Therefore $\Mono
-  (\gamma) = x^{m}$ always appears as a term in $\Theta^\bfd_{q,m}$.
+  (\gamma) = x^{m}$ always appears as a term in $\vartheta^\bfd_{q,m}$.
 
   However, because the functions attached to the walls of
   $\fD_{(b,c)}^\bfd$ are all of the form $1+g(x_1,x_2)$ with $g(x_1,x_2) \in
@@ -1118,7 +1118,7 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
   is in the first quadrant we obtain the parametrization of
   theta functions we were after. Indeed we get 
   \[
-    \Theta^\bfd_{q,T(m)}=\Theta_{q,m}
+    \vartheta^\bfd_{q,T(m)}=\vartheta_{q,m}
   \]
   with $m$ being its $\bfg$-vector and $T(m)$ the negative of its 
   $\bfd$-vector.
@@ -1133,11 +1133,11 @@ We may now state the main theorem in our current notation.
 \begin{thm}\label{thm: main}
 For any integers $b,c>0$, for each $m=(m_1,m_2)\in \mathbb{Z}^2$, and for each
 generic point $q$ in the first quadrant, we have that 
-\[ \Theta_{q,m}^{\mathbf{d}} = x[-m_1,-m_2]\]
+\[ \vartheta_{q,m}^{\mathbf{d}} = x[-m_1,-m_2]\]
 as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
 \end{thm}
 
-The proof will be to show that $\Theta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon \sayGM{1) do we mean 'pointed element', same issue as in proof of Thm \ref{th:Newton polygons}  2) need to use 'support' rather than 'Newton polygon'.} as $x[-m_1,-m_2]$.  By Scholium \ref{sch}, this is already enough to show that $\Theta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
+The proof will be to show that $\vartheta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon \sayGM{1) do we mean 'pointed element', same issue as in proof of Thm \ref{th:Newton polygons}  2) need to use 'support' rather than 'Newton polygon'.} as $x[-m_1,-m_2]$.  By Scholium \ref{sch}, this is already enough to show that $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^\mathbf{d}$.  At any point $q=(q_1,q_2)\in \gamma$ at which $\gamma$ is linear with exponent $m=(m_1,m_2)$, define the \emph{angular momentum} of $\gamma$ at $q$ to be $q_2m_1-q_1m_2$.
 
@@ -1253,17 +1253,17 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 \begin{proof}[Proof of Theorem \ref{thm: main}]
 \sayGM{SHOULD BE TAKEN CARE OF This proof needs: a restatement of Theorem \ref{sch} which doesn't say `pointed' and only requires the right inequalities.}
 
-If $m=(m_1,m_2)$ such that $m_1\leq0$ or $m_2\leq0$, then $\Theta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
+If $m=(m_1,m_2)$ such that $m_1\leq0$ or $m_2\leq0$, then $\vartheta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
 
 Next, assume that $m=(m_1,m_2)$ such that $m_1\geq0$ and $m_2\geq0$.
 %\saySS{Shouldn't $a$ be $c$ instead?}
 %\[ 0<m_1,\;\;\; 0<m_2\]
-The coefficient of $x^{(a_1,a_2)}$ in $\Theta_{q,m}^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
+The coefficient of $x^{(a_1,a_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
 \[ m_1\leq a_1\leq \left(\frac{m_1}{m_2}-b\right)a_2,\;\;\; m_2\leq a_2\leq \left(\frac{m_2}{m_1}-c\right)a_1\]
 Furthermore, the upper bounds are only satisfied in the specific cases when $(a_1,a_2)$ is equal to $(a_1-ba_2,a_2)$ or $(a_1,a_2-ca_1)$.  
-Since $\Theta_{q,m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Scholium \ref{sch} implies that $\Theta_{q,m}^\mathbf{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
+Since $\vartheta_{q,m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Scholium \ref{sch} implies that $\vartheta_{q,m}^\mathbf{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
 
-To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each element.  The coefficient of $x^{(m_1,m_2)}$ in $x[-m_1,-m_2]$ is $1$, by the definition of a pointed element. The coefficient of $x^{(m_1,m_2)}$ in $\Theta_{q,m}^\mathbf{d}$ is the sum of the coefficients of all broken lines in $\mathfrak{D}_{(b,c)}^\mathbf{d}$ with initial exponent $(m_1,m_2)$ and final exponent $(m_1,m_2)$.  Since any bend in a broken line would increase one of the components of the exponent, this only happens for the unique broken line with initial exponent $(m_1,m_2)$ that has no bends. Hence, the coefficient of $x^{(m_1,m_2)}$ in $\Theta_{q,m}^\mathbf{d}$ is $1$, and so $\Theta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
+To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each element.  The coefficient of $x^{(m_1,m_2)}$ in $x[-m_1,-m_2]$ is $1$, by the definition of a pointed element. The coefficient of $x^{(m_1,m_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ is the sum of the coefficients of all broken lines in $\mathfrak{D}_{(b,c)}^\mathbf{d}$ with initial exponent $(m_1,m_2)$ and final exponent $(m_1,m_2)$.  Since any bend in a broken line would increase one of the components of the exponent, this only happens for the unique broken line with initial exponent $(m_1,m_2)$ that has no bends. Hence, the coefficient of $x^{(m_1,m_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ is $1$, and so $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 \end{proof}
 
 \begin{remark}
