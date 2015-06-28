@@ -62,6 +62,7 @@
 \newcommand{\fd}{\mathfrak{d}}
 \newcommand{\fD}{\mathfrak{D}}
 \newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
 
 \newcommand{\bfd}{{\bf d}}
 \newcommand{\bfg}{{\bf g}}
@@ -507,10 +508,10 @@ For simplicity, we will impose the additional condition that $\fd_1\neq \fd_2$ f
 %  \text{Supp} (\fD) := \bigcup_{(\fd, f_{\fd}) \in \fD} \fd. 
 %\]
 
-Given a wall $(\fd, f_{\fd})$ and a direction $v\in M$ transversal to $\fd$, we associate the element $\frakp_{v,\fd}\in
+Given a wall $(\fd, f_{\fd})$ and a direction $v\in M$ transversal to $\fd$, we associate the element $\fp_{v,\fd}\in
 {\mathrm{Aut}}_{\ZZ-alg}\left(\widehat{\ZZ[P]}\right)$ defined by
 \[
-  \frakp_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
+  \fp_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
 \]
 where $n\in N$ is primitive, annihilates the tangent space to $\fd$, and is
 uniquely determined by the sign convention $ v\cdot n <0$.  Note
@@ -521,7 +522,7 @@ Let $\fD$ be a scattering diagram and $\gamma$ a smooth immersion
 \[  
   \gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}  
 \]
-transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\frakp_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
+transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\fp_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
 \[
   0< t_1 <  t_2 < \cdots < t_s < 1 
 \]
@@ -529,18 +530,18 @@ be the longest sequence of numbers such that $\gamma(t_i)\in\fd_i$ for some wall
 $(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.  In view of the definition of scattering diagram, such a sequence is finite; we
 can therefore consider the composition 
 \[
-  \frakp^k_{\gamma, \fD} :=
-  \frakp_{\gamma'(t_s),\fd_s} \circ \cdots \circ \frakp_{\gamma'(t_1),\fd_1}.
+  \fp^k_{\gamma, \fD} :=
+  \fp_{\gamma'(t_s),\fd_s} \circ \cdots \circ \fp_{\gamma'(t_1),\fd_1}.
 \]
 \sayDR{The $k$ here looks like an exponent, does anyone oppose moving it to a subscript?} Then we define
 \[
-  \frakp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \frakp ^k_{\gamma, \fD}. 
+  \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^k_{\gamma, \fD}. 
 \]\sayDR{If well-definedness is a potential issue we should mention that here.}
 
 \begin{defn}
-  A scattering diagram is \emph{consistent} if $\frakp _{\gamma, \fD}$ depends
+  A scattering diagram is \emph{consistent} if $\fp _{\gamma, \fD}$ depends
   only on the endpoints of $\gamma$ for any path $\gamma$ for which
-  $\frakp_{\gamma, \fD}$ is well-defined.
+  $\fp_{\gamma, \fD}$ is well-defined.
 \end{defn}
 
 \begin{theorem}\cite{KS},\cite{GS}
@@ -705,11 +706,11 @@ The next result explains the connection between scattering diagrams
 and the corresponding cluster algebras. \sayDR{The statement of the theorem does not a priori have anything to do with cluster algebras, probably something more should be said here if we want to keep this sentence.}
 \begin{theorem} 
   \label{univLaurent} 
-  Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\frakp_{\gamma,\fD}$ is
-  well-defined, $\frakp_{\gamma,\fD}(f)$ can be viewed as an element of
+  Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\fp_{\gamma,\fD}$ is
+  well-defined, $\fp_{\gamma,\fD}(f)$ can be viewed as an element of
   $\ZZ[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$ \sayDR{Is this sentence a part of the theorem or should it be moved above?}.  If for any path $\gamma$ in
   $M_{\RR}$, with starting point in the first quadrant and endpoint in one of the
-  chambers of $\fD$, $\frakp_{\gamma,\fD}(f)$ lies in $\ZZ[M]$, then $f$ is a universal
+  chambers of $\fD$, $\fp_{\gamma,\fD}(f)$ lies in $\ZZ[M]$, then $f$ is a universal
   Laurent polynomial.
 \end{theorem}
 
@@ -723,7 +724,7 @@ and the corresponding cluster algebras. \sayDR{The statement of the theorem does
   associating a torus $\cA_{\tau}':= \Spec \ZZ[M]$ to a chamber $\tau\subseteq
   M_{\RR}$ of $\fD$. For any two chambers $\tau,\tau'$ we can glue $\cA_{\tau}'$
   to $\cA_{\tau'}'$ using the rational map defined on function fields by
-  $\frakp_{\gamma,\fD}:\ZZ(x_1,x_2)\rightarrow \ZZ(x_1,x_2)$, where $\gamma$
+  $\fp_{\gamma,\fD}:\ZZ(x_1,x_2)\rightarrow \ZZ(x_1,x_2)$, where $\gamma$
   is a path beginning in $\tau'$ and ending in $\tau$. Performing these gluings
   gives $\cA'$.
 
@@ -732,7 +733,7 @@ and the corresponding cluster algebras. \sayDR{The statement of the theorem does
   isomorphic. Furthermore, this isomorphism restricts to the identity on the
   torus of $\cA$ corresponding to the initial seed and the torus of $\cA'$
   corresponding to the positive chamber. In particular, a function $f$ on this
-  torus extends to a function on $\cA'$ if $\frakp_{\gamma,\fD}(f)$ lies in
+  torus extends to a function on $\cA'$ if $\fp_{\gamma,\fD}(f)$ lies in
   $\ZZ[M]$ for any path $\gamma$ from the positive chamber to any other
   chamber. This shows the characterization of universal Laurent polynomials.
 \end{proof}
@@ -761,7 +762,7 @@ circumstances.
     \item $\gamma$ bends only when it crosses a wall. If $\gamma$ bends from the
       domain of linearity $\ell$ to $ \ell'$ when crossing $(\fd, f_{\fd})$, then
       $c(\ell')x^{m(\ell')}$ is a term in 
-      \[\frakp_{-m(\ell), \fd} \left(c(\ell) x^{m(\ell)}\right).\]
+      \[\fp_{-m(\ell), \fd} \left(c(\ell) x^{m(\ell)}\right).\]
   \end{itemize}
 \end{defn}
 We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{exponent} of that domain
@@ -792,7 +793,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
   \]
   There is the broken line $\gamma_2$  which bends only at the $x$-axis. Since
   \[ 
-    \frakp_{(-1,1), \RR(-1,0)} (x_1 x_2^{-1}) = 
+    \fp_{(-1,1), \RR(-1,0)} (x_1 x_2^{-1}) = 
     x_1 x_2^{-1}(1+x_1^{-2}) =  x_1 x_2^{-1} + x_1^{-1} x_2^{-1},
   \]
   to bend we need to choose the second term and obtain 
@@ -802,7 +803,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
   The last broken line $\gamma_3$ bends both at the $x$- and $y$-axes, the
   latter bend coming from
   \[ 
-    \frakp_{ (1,1), \RR (0,1)} ( x_1^{-1} x_2^{-1}) =  
+    \fp_{ (1,1), \RR (0,1)} ( x_1^{-1} x_2^{-1}) =  
     x_1^{-1} x_2^{-1} + x_1^{-1} x_2.  
   \]
   This time we have 
@@ -851,7 +852,7 @@ The following summarizes the main properties of the theta functions as shown in
     \item
       If $\fD$ is any consistent scattering diagram, $q$ and $q'$ are two general
       irrational points on $M_{\RR} \smallsetminus$ Supp$(\fD)$, and $\gamma$ is a
-      path joining $q$ to $q'$, then $\frakp_{\gamma, \fD }(\vartheta_{q,m}) = \vartheta_{q', m}$. 
+      path joining $q$ to $q'$, then $\fp_{\gamma, \fD }(\vartheta_{q,m}) = \vartheta_{q', m}$. 
     \item Take $\fD=\fD_{(b,c)}$. 
       \begin{enumerate}
         \item If $q$ lies in the interior of a chamber of $\fD$, then $\vartheta_{q,m}$ is a Laurent polynomial for any $m$.
@@ -869,7 +870,7 @@ The following summarizes the main properties of the theta functions as shown in
   \label{rk:theta functions g-vector}
   If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$ and $q$ lies in
   the first quadrant, then from (1) and (2c) above we see that
-  $\vartheta_{q,m}=\frakp_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
+  $\vartheta_{q,m}=\fp_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
   joining the chamber containing $m$ to $q$. Moreover, it follows from the
   details of the proof of Theorem \ref{univLaurent} that $\vartheta_{q,m}$ is
   a cluster monomial and then from \cite[Theorem~7.5]{GHKK} that the 
@@ -1051,7 +1052,7 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
   $\ell$, $\ell'$ be the domains of linearity of $\gamma$ before and after bending
   along $\RR (-1,0)$. So $c(\ell') x^{m(\ell')}$ is a term in 
   \[
-    \frakp_{-m(\ell),\RR(-1,0)} \left(c(\ell) x^{m(\ell)}\right)
+    \fp_{-m(\ell),\RR(-1,0)} \left(c(\ell) x^{m(\ell)}\right)
     = 
     c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{|m_2(\ell)|}.
   \]
@@ -1061,11 +1062,11 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
   $c(\ell')x^{T_+(m(\ell'))} =c(\ell')x^{m(\ell')}$ attached to $\ell'$ in
   $T\circ\gamma$ to satisfy the bending rule, it must be a term in
   \[
-    \frakp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right). 
+    \fp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right). 
   \]
   Since the second component of $T_-(m(\ell))$ is $m_2(\ell)$ we get
   \begin{align*} 
-    \frakp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right) 
+    \fp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right) 
     & =
     c(\ell) x^{T_-(m(\ell))} \left(1+x_1^b\right) ^{-m_2(\ell)}
     \\
