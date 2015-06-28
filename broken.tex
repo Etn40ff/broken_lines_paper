@@ -902,6 +902,7 @@ The following summarizes the main properties of the theta functions as shown in
 
 
 \section{From $\bfg$-vectors to $\bfd$-vectors}
+\sayDR{We never actually give a definition of either $g$-vectors or $d$-vectors, maybe this should be added to section 2.}
 %\saySS{At a certain point in our discussion in Snowbird we decided we were going
 %  to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
 %  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
@@ -946,7 +947,7 @@ We will denote its domains of linearity by
 Let $T_+$ and $T_-$ be the linear extensions to $M_\RR$ of $T|_{\mathcal{H}_+}$
 and $T|_{\mathcal{H}_-}$ respectively ($T_+$ is just the identity map but it
 will be convenient to use this notation in what follows). 
-By (\ref{eqn:linear action}) both $T_+$ and $T_-$ act on pairs $(\fd,f_\fd)$ so
+By (\ref{eqn:linear action}), both $T_+$ and $T_-$ act on pairs $(\fd,f_\fd)$ so
 we can use them to define the image of such pairs under $T$. Namely set
 \[
   T(\fd,f_\fd):=
@@ -956,7 +957,7 @@ we can use them to define the image of such pairs under $T$. Namely set
   \right\}.
 \]
 
-Having fixed the notation we are ready to introduce $\fD_{\mathrm{gr},(b,c)}$.
+Having fixed the notation we are ready to introduce $\fD_{(b,c)}^\bfd$.
 The set
 \[
   T(\fD_{(b,c)}):=
@@ -966,9 +967,9 @@ The set
 \]
 is not a scattering diagram according to Definition 
 \ref{def:scattering_diagram} (not all of its elements are walls for the same
-convex cone) but can be made into one by few quick fixes.
+convex cone) but can be made into one by a few simple fixes.
 
-First of all $\big( \RR (0,1), 1+x_2^c\big)$ is the only wall of $\fD_{(b,c)}$
+First of all, $\big( \RR (0,1), 1+x_2^c\big)$ is the only wall of $\fD_{(b,c)}$
 whose support is not totally contained in one of the domains of linearity of
 $T$; therefore, under $T$, it breaks into two parts:
 \[
@@ -980,16 +981,9 @@ $T$; therefore, under $T$, it breaks into two parts:
 \]
 
 Next note that, since $T(-1,0)=(-1,0)$ and $T(b,-1)=(0,-1)$, $T$ maps all the
-walls of $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ to the third quadrant. 
-Indeed 
-\[
-  \big(\RR_{\leq0}(-b,1),1+x_1^{-bc}x_2^c\big)
-\]
-is the wall with the biggest slope in
-$\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is 
-\[
-  \big( \RR_{\le0} (0,1), 1+x_2^c\big).
-\]
+walls of $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ to the third quadrant \sayDR{It seems like a little more details are needed here, we also need to refer to this in the proof of Prop. 4.4 so it might be good to state as a lemma.}. 
+Indeed, $\big(\RR_{\leq0}(-b,1),1+x_1^{-bc}x_2^c\big)$ is the wall with the biggest slope in
+$\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is $\big( \RR_{\le0} (0,1), 1+x_2^c\big)$.
 
 \begin{defn}
   $\fD_{(b,c)}^\bfd$ is the scattering diagram obtained from
@@ -1023,7 +1017,7 @@ $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is
 
 For a broken line $\gamma$ in $\fD_{(b,c)}$, we denote its image under $T$ as
 $T(\gamma)$: this is the broken line in $\fD_{(b,c)}^\bfd$ whose underlying map
-is $\gamma\circ T$. Given any domain of linearity $\ell$ of $\gamma$, by
+is $T\circ\gamma$. Given any domain of linearity $\ell$ of $\gamma$, by
 subdividing it when necessary, we can always assume that either $\gamma(\ell)
 \subset \mathcal{H}_{+} $ or $\gamma(\ell)\subset \mathcal{H}_{-}$. The monomial
 attached to $\ell$ in $T(\gamma)$ is then obtained by applying, accordingly, either
@@ -1031,23 +1025,22 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 
 \begin{theorem}
   \label{thm:T_on_broken_lines}
-  The map $T$ defines a one-to-one correspondence between broken lines in $\fD_{(b,c)}$
-  for $m$ with endpoint $q$ and broken lines in $\fD_{(b,c)}^\bfd$ for $T(m)$
-  with endpoint $T(q)$. In particular for $q \in \mathcal{H}_+$ or $\mathcal{H}_-$,
+  The map $T$ defines a one-to-one correspondence from broken lines in $\fD_{(b,c)}$
+  with exponent $m$ and endpoint $q$ to broken lines in $\fD_{(b,c)}^\bfd$ with exponent $T(m)$
+  and endpoint $T(q)$. In particular, for $q\in\mathcal{H}_+$ or $q\in\mathcal{H}_-$,
   we have
   \[ 
-    \vartheta^\bfd_{T(q),T( m)} = 
-    T_{+} \left(\vartheta_{q, m}\right) 
+    \vartheta^\bfd_{T(q),T(m)}=T_{+} \left(\vartheta_{q,m}\right) 
     \quad
     \mbox{or} 
     \quad
-    T_{-} \left(\vartheta_{q, m}\right)
+    \vartheta^\bfd_{T(q),T(m)}=T_{-}\left(\vartheta_{q,m}\right)
   \]
   respectively.
 \end{theorem}
 
 \begin{proof}
-  This is essentially the same as the argument of \cite{GHKK}, Prop.\ 3.6.  To
+  This is essentially the same as the argument of \cite[Prop.~3.6]{GHKK}.  To
   prove the statement, we only need to check the bending at the $x$-axis. Let
   $\ell$, $\ell'$ be the domains of linearity of $\gamma$ before and after bending
   along $\RR (-1,0)$. So $c(\ell') x^{m(\ell')}$ is a term in 
@@ -1060,31 +1053,24 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
   First, assume $\gamma$ passes from $\mathcal{H}_-$ to $\mathcal{H}_+$. In this
   case, we have $m_2(\ell) < 0$. Now in order for the monomial
   $c(\ell')x^{T_+(m(\ell'))} =c(\ell')x^{m(\ell')}$ attached to $\ell'$ in
-  $T\circ\gamma$ to satisfy the bending rule, it must be a term in
+  $T(\gamma)$ to satisfy the bending rule, it must be a term in
   \[
     \fp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right). 
   \]
-  Since the second component of $T_-(m(\ell))$ is $m_2(\ell)$ we get
+  Since the second component of $T_-(m(\ell))$ is $m_2(\ell)$, we get
   \begin{align*} 
     \fp_{-T_-(m(\ell)),\RR (1,0)} \left(c(\ell) x^{T_-(m(\ell))}\right) 
-    & =
-    c(\ell) x^{T_-(m(\ell))} \left(1+x_1^b\right) ^{-m_2(\ell)}
-    \\
-    & = 
-    c(\ell) x^{m(\ell)} x_1^{b m_2(\ell)} 
-    \left(1+x_1^b\right)^{-m_2(\ell)} 
-    \\
-    & = 
-    c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_2(\ell)}.
+    &=c(\ell) x^{T_-(m(\ell))} \left(1+x_1^b\right) ^{-m_2(\ell)}\\
+    &=c(\ell) x^{m(\ell)} x_1^{b m_2(\ell)}\left(1+x_1^b\right)^{-m_2(\ell)}\\
+    &=c(\ell) x^{m(\ell)} \left(1+x_1^{-b}\right) ^{-m_2(\ell)}.
   \end{align*}
-  This shows that $T_k(\gamma)$ satisfies the correct rule when bending along
+  This shows that $T(\gamma)$ satisfies the correct rule when bending along
   $(\RR (1,0), 1+x_1^b)$ if $\gamma$ passes from $\mathcal{H}_-$ to
   $\mathcal{H}_+$. By repeating similar calculations, we can see that this also
   holds when $\gamma$ passes from $\mathcal{H}_+$ to $\mathcal{H}_-$.
 \end{proof}
 
-The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
-
+The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$.
 \begin{prop}
   For any  $m\in M$, if $q$ lies in the first quadrant, then 
   \[
@@ -1117,7 +1103,7 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$:
 \begin{remark}
   Combining Theorem \ref{thm:T_on_broken_lines} with the above result, when $q$
   is in the first quadrant we obtain the parametrization of
-  theta functions we were after. Indeed we get 
+  theta functions we were after. Indeed, we get 
   \[
     \vartheta^\bfd_{q,T(m)}=\vartheta_{q,m}
   \]
