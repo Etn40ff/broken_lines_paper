@@ -605,9 +605,9 @@ applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2
 \end{figure}
 
 While this example portrays a scattering diagram with finitely many rays, the diagram $\fD_{(b,c)}$ will consist of an infinite number of rays precisely when $bc\ge 4$. A detailed description of the rays
-which appear for $bc\ge4$ can be found in \cite[Example 1.30]{GHKK}, where the description
-is based on the description of a related scattering diagram given in
-\cite{GP} \sayDR{Is the second clause in this sentence necessary?}. We summarize the crucial points here.
+which appear for $bc\ge4$ can be found in \cite[Example 1.30]{GHKK}.
+%, where the description is based on the description of a related scattering diagram given in \cite{GP} \sayDR{Is the second clause in this sentence necessary?}. 
+We summarize the crucial points here.
 
 First of all note that, in view of the definition of scattering diagram, all the
 rays in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ are contained in the
@@ -624,7 +624,7 @@ Note that, even if $(\fd,f_\fd)$ is a wall, $S(\fd,f_\fd)$ needs not be a wall
 since $S(w)$ may lie outside of the cone $\sigma$ (in which case we also get
 that  $f_\fd\left(x^{S(w)}\right)$ is not an element of $\widehat{\ZZ [P]}$).
 
-\sayDR{The next two paragraphs seem to be quoting a non-trivial result, we should probably give a reference.} Now consider the two linear involutions $S_1$ and $S_2$ given by
+\sayDR{The next two paragraphs seem to be quoting a non-trivial result, we should probably give a reference. [Mandy: ref add]} Now consider the two linear involutions $S_1$ and $S_2$ given by
 \[
   S_1 =  
   \begin{pmatrix}
@@ -666,11 +666,12 @@ neither
   %
   \big(\RR_{\leq 0}(0,1),1+x_2^c\big)
 \]
-is a wall in $\fD_{(b,c)}$. These considerations gives us a recipe to produce
+is a wall in $\fD_{(b,c)}$. Using \cite[Section 4]{GP} with a change of basis, these considerations gives us a recipe to produce
 elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
-alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}). \sayDR{This sentence makes it sound like all walls are obtained in this way.}
+alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}) to produce some walls described below. 
+\sayDR{This sentence makes it sound like all walls are obtained in this way.}
 
-We need to distinguish two cases \sayDR{The exposition would probably be slightly cleaner if we distinguish three cases instead.}. If $bc<4$ this procedure will construct, in
+We need to distinguish three cases. If $bc<4$ this procedure will construct, in
 finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
 \fD_{\mathrm{in},(b,c)}$.  If $bc\ge 4$, instead, we will get two infinite
 families of walls whose supports will converge to a single rational
@@ -689,7 +690,8 @@ $\fD_{(b,c)}$ is not completely understood; the expectation is that there is
 a wall for each possible rational slope inside this irrational cone.
 
 On the other hand, the chamber structure one sees outside of the irrational cone
-is very well-behaved and familiar in the theory of cluster algebras \sayDR{Should we also mention root systems here?}. This
+is very well-behaved and familiar in the theory of cluster algebras \sayDR{Should we also mention root systems here?}. \
+\sayMC{if someone are interested in typing, they can :P} This
 chamber structure coincides with the Fock-Goncharov cluster complex, see
 \cite[\S2]{GHKK}, the mutation fan of Reading \cite{R}, and the picture group of
 Igusa-Orr-Todorov-Weyman \cite{IOTW}.
@@ -713,6 +715,7 @@ and the corresponding cluster algebras. \sayDR{The statement of the theorem does
   chambers of $\fD$, $\fp_{\gamma,\fD}(f)$ lies in $\ZZ[M]$, then $f$ is a universal
   Laurent polynomial.
 \end{theorem}
+\sayMC{This theorem is saying $f$ is a universal Laurent poly for cluster. So it is related. The sentence you are quoting can be pulled out in the theorem but it may be good to put them together.}
 
 \begin{proof}
   This is \cite[Theorem 4.4]{GHKK} applied to the case at hand.
@@ -865,7 +868,7 @@ The following summarizes the main properties of the theta functions as shown in
 \begin{proof}
   (1) is a main result of \cite{CPS}, quoted in this context in \cite[Theorem~3.5]{GHKK}.  (2a) is \cite[Example~7.18]{GHKK} \sayDR{It isn't clear to me at all how \cite[Example~7.18]{GHKK} is related to the claim.} with $\vartheta$ taken to be the subset of $M$ consisting of those $m$ for which $\vartheta_{q,m}$ is a Laurent polynomial for some $q$ in the interior of a chamber of $\fD$ (and hence by \cite[Proposition~7.1]{GHKK}, all chambers).  Next, (2b) follows from (2a) by Theorem \ref{univLaurent} and (1).  Finally, (2c) follows from \cite[Proposition~3.8]{GHKK} using the argument of \cite[Theorem~4.8]{GHKK} \sayDR{The statement of \cite[Theorem~4.8]{GHKK} is a much heftier result than what we are proving, maybe it would be good to extract the relevant portion of the proof and present it here.} in the case that the chamber is not the positive quadrant.
 \end{proof}
-
+\sayMC{going to rewrite it}
 \begin{remark} 
   \label{rk:theta functions g-vector}
   If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$ and $q$ lies in
