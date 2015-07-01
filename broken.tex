@@ -121,7 +121,7 @@ We prove the equality of two canonical bases of a rank 2 cluster algebra, the gr
 
 Cluster algebras are commutative rings with partial bases of a special form, originally discovered in the context of dual canonical bases in Lie theory \cite{FZ}.  Their axiomatics encapsulates the fact that many kinds of canonical bases in nature have large subsets which are governed by a uniform combinatorics.  Elements of these subsets are monomials in distinguished elements called cluster variables, which are grouped into overlapping collections called clusters.  Each cluster has an associated skew-symmetrizable matrix, and the entire cluster algebra can be reconstructed recursively from any particular cluster along with this matrix.
 
-A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of the cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup2,GMN}.  Generally, one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to skew-symmetrizable matrices of rank 2.  \sayDR{This makes it sound like we allow larger matrices, should we just say ``$2\times2$ skew-symmetrizable matrices'' here?}
+A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of the cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup2,GMN}.  Generally, one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to $2\times2$ skew-symmetrizable matrices.  \sayDR{This makes it sound like we allow larger matrices, should we just say ``$2\times2$ skew-symmetrizable matrices'' here?} \sayGM{Done. (Gregg)}
 
 The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The greedy basis is defined so that all of its elements, not just cluster variables, have positive Laurent expansions in any cluster and that the coefficients of any such Laurent expansion are as small as possible.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
 
@@ -171,7 +171,7 @@ We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Lauren
  $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.  A primary result of \cite{BFZ} specialized to the rank 2 setting states that $\cA(b,c)$ is precisely the set of univeral Laurent polynomials in $\QQ(x_1,x_2)$.
 
 \begin{theorem}
-\cite{LS,Rup} \sayDR{Lee-Schiffler only establishes positivity for $b=c$.} Each cluster variable of $\cA(b,c)$ is positive.
+\cite[for $b=c$]{LS}, \cite{Rup}\sayDR{Lee-Schiffler only establishes positivity for $b=c$.}\sayGM{Does this look better to you? (Gregg)} Each cluster variable of $\cA(b,c)$ is positive.
 \end{theorem}
 
 An element of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
@@ -455,6 +455,8 @@ This enumerative description not only establishes the existence of the greedy ba
 
 %%%Dyck path comments ends here
 
+\sayGM{Add definitions of d-vectors and g-vectors in this section. (Gregg, Dylan)}
+
 \section{Scattering diagrams and broken lines}
 \saySS{Address whether our exchange matrix/g-vectors conventions are transposed to Fomin-Zelevinsky or not.}
 \sayDR{Yes, they agree.  Both have multiples of $b$ in the exponent of $x_1$ and multiples of $c$ in the exponent of $x_2$.  As long as the exchange matrix is not explicitly mentioned we should not have to worry about it.}
@@ -486,8 +488,8 @@ The following are special cases of definitions which originally appeared in
       \] 
       for some $c_k \in \ZZ$. 
   \end{itemize}
-  \sayDR{Does this clash with the use of ``support'' from section 2?} The set $\fd \subset M_{\mathbb{R}}$ is called the \emph{support} of the wall
-  $(\fd, f_{\fd})$.
+  \sayDR{Does this clash with the use of ``support'' from section 2?}\sayGM{I think this is unavoidable.  Added parenthetical comment. (Gregg)} The set $\fd \subset M_{\mathbb{R}}$ is called the \emph{support} of the wall
+  $(\fd, f_{\fd})$. (Note the different use of the word ``support" in this geometric context.)
 \end{defn}
 
 \begin{defn}
@@ -530,12 +532,12 @@ be the longest sequence of numbers such that $\gamma(t_i)\in\fd_i$ for some wall
 $(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.  In view of the definition of scattering diagram, such a sequence is finite; we
 can therefore consider the composition 
 \[
-  \fp^k_{\gamma, \fD} :=
+  \fp^{(k)}_{\gamma, \fD} :=
   \fp_{\gamma'(t_s),\fd_s} \circ \cdots \circ \fp_{\gamma'(t_1),\fd_1}.
 \]
-\sayDR{The $k$ here looks like an exponent, does anyone oppose moving it to a subscript?} Then we define
+\sayDR{The $k$ here looks like an exponent, does anyone oppose moving it to a subscript?}\sayGM{I think the subscript is already too crowded.  How do like parenthetical exponents instead? (Gregg)} Then we define
 \[
-  \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^k_{\gamma, \fD}. 
+  \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^{(k)}_{\gamma, \fD}. 
 \]\sayDR{If well-definedness is a potential issue we should mention that here.}
 
 \begin{defn}
@@ -624,7 +626,7 @@ Note that, even if $(\fd,f_\fd)$ is a wall, $S(\fd,f_\fd)$ needs not be a wall
 since $S(w)$ may lie outside of the cone $\sigma$ (in which case we also get
 that  $f_\fd\left(x^{S(w)}\right)$ is not an element of $\widehat{\ZZ [P]}$).
 
-\sayDR{The next two paragraphs seem to be quoting a non-trivial result, we should probably give a reference. [Mandy: ref add]} Now consider the two linear involutions $S_1$ and $S_2$ given by
+\sayDR{The next two paragraphs seem to be quoting a non-trivial result, we should probably give a reference. [Mandy: ref added]} Now consider the two linear involutions $S_1$ and $S_2$ given by
 \[
   S_1 =  
   \begin{pmatrix}
@@ -704,8 +706,11 @@ Igusa-Orr-Todorov-Weyman \cite{IOTW}.
   \label{diagram32}
 \end{figure}
 
-The next result explains the connection between scattering diagrams
-and the corresponding cluster algebras. \sayDR{The statement of the theorem does not a priori have anything to do with cluster algebras, probably something more should be said here if we want to keep this sentence.}
+The next result explains how to obtain Laurent polynomials out of scattering diagrams
+and serves as the motivation for our later connections to cluster algebras.
+%The next result explains the connection between scattering diagrams
+%and the corresponding cluster algebras. 
+\sayDR{The statement of the theorem does not a priori have anything to do with cluster algebras, probably something more should be said here if we want to keep this sentence.}\sayGM{I attempted a rewrite, what do you think? (Gregg)}
 \begin{theorem} 
   \label{univLaurent} 
   Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\fp_{\gamma,\fD}$ is
@@ -906,6 +911,7 @@ The following summarizes the main properties of the theta functions as shown in
 
 \section{From $\bfg$-vectors to $\bfd$-vectors}
 \sayDR{We never actually give a definition of either $g$-vectors or $d$-vectors, maybe this should be added to section 2.}
+\sayGM{Agreed. (Gregg)}
 %\saySS{At a certain point in our discussion in Snowbird we decided we were going
 %  to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
 %  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
@@ -1127,7 +1133,7 @@ generic point $q$ in the first quadrant, we have that
 as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
 \end{thm}
 
-The proof will be to show that $\vartheta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon \sayGM{1) do we mean 'pointed element', same issue as in proof of Thm \ref{th:Newton polygons}  2) need to use 'support' rather than 'Newton polygon'.} as $x[-m_1,-m_2]$.  By Scholium \ref{sch}, this is already enough to show that $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
+The proof will be to show that $\vartheta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon \sayGM{1) do we mean 'pointed element', same issue as in proof of Thm \ref{th:Newton polygons}  2) need to use 'support' rather than 'Newton polygon'.}\sayGM{ the term "Newton polygon" also still needs to be updated here. (Gregg)} as $x[-m_1,-m_2]$.  By Scholium \ref{sch}, this is already enough to show that $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^\mathbf{d}$.  At any point $q=(q_1,q_2)\in \gamma$ at which $\gamma$ is linear with exponent $m=(m_1,m_2)$, define the \emph{angular momentum} of $\gamma$ at $q$ to be $q_2m_1-q_1m_2$.
 
@@ -1205,7 +1211,7 @@ Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint 
 \end{figure}
 
 \begin{proof}
-The lemma is straightforward except for broken lines with initial exponent $(m_1,m_2)$ with $m_1,m_2>0$.  
+The lemma is straightforward except for broken lines with initial exponent $(m_1,m_2)$ with $m_1,m_2>0$.\sayGM{Should this be $m_1, m_2 < 0$? (Gregg, Mark)}
 Consider a bend of $\gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(x^{(w_1,w_2)}))$.  If the exponent immediately before the bend is $(m_1,m_2)$, the exponent immediately after the bend is $(m_1+kw_1,m_2+kw_2)$ for some positive integer $k$.  
 
 Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent $(w_1,w_2)$. If the angular momentum $q_2m_1-q_1m_2$ is positive, then the cross-product $w_2m_1-w_1m_2$ is negative. 
@@ -1213,7 +1219,7 @@ Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(
 If the angular momentum is negative, the slope increases by the an identical argument.
 \end{proof}
 
-We can now constrain the possible final exponent of a broken line, which will be used to bound the Newton polygon of the corresponding theta function.
+We can now constrain the possible final exponent of a broken line, which will be used to bound the Newton polygon \sayGM{"Newton polygon" should be changed to "support" or "lattice quadrilateral containing the support" (Gregg)} of the corresponding theta function.
 
 \begin{lemma}
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ which begins in the third quadrant, with endpoint $q$ in the first quadrant.  Denote the  initial exponent by $m=(m_1,m_2)$ and the final exponent by $m^q=(m_1^q,m_2^q)$.  
@@ -1243,7 +1249,7 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 \begin{proof}[Proof of Theorem \ref{thm: main}]
 \sayGM{SHOULD BE TAKEN CARE OF This proof needs: a restatement of Theorem \ref{sch} which doesn't say `pointed' and only requires the right inequalities.}
 
-If $m=(m_1,m_2)$ such that $m_1\leq0$ or $m_2\leq0$, then $\vartheta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
+If $m=(m_1,m_2)$ such that $m_1\leq0$ or $m_2\leq0$\sayGM{Should this be $m_1 \geq 0$ or $m_2 \geq 0$? (Gregg, Mark)}, then $\vartheta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
 
 Next, assume that $m=(m_1,m_2)$ such that $m_1\geq0$ and $m_2\geq0$.
 %\saySS{Shouldn't $a$ be $c$ instead?}
