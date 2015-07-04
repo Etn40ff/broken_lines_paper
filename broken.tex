@@ -537,7 +537,7 @@ can therefore consider the composition
 \[
   \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^{(k)}_{\gamma, \fD}. 
 \]\sayDR{If well-definedness is a potential issue we should mention that here.}
-
+\sayMC{Well defined just means we have the curve is nice, i.e.  not passing origin, transverse to the wall, 'smooth' when passing the wall. We can put it down but it is just a bit too much technical to me.}
 \begin{defn}
   A scattering diagram is \emph{consistent} if $\fp _{\gamma, \fD}$ depends
   only on the endpoints of $\gamma$ for any path $\gamma$ for which
@@ -1245,9 +1245,9 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 
 \begin{proof}[Proof of Theorem \ref{thm: main}]
 
-If $m=(m_1,m_2)$ such that $m_1\leq0$ or $m_2\leq0$\sayGM{Should this be $m_1 \geq 0$ or $m_2 \geq 0$? (Gregg, Mark)}, then $\vartheta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
-
-Next, assume that $m=(m_1,m_2)$ such that $m_1\geq0$ and $m_2\geq0$.
+If $m=(m_1,m_2)$ such that $m_1\geq0$ or $m_2\geq0$\sayGM{Should this be $m_1 \geq 0$ or $m_2 \geq 0$? (Gregg, Mark)}, then $\vartheta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
+\sayMC{inequality changed. and get the 'next' one changed too! (or else it does not make sense to have both cases $\geq$}
+Next, assume that $m=(m_1,m_2)$ such that $m_1\leq0$ and $m_2\leq0$.
 %\saySS{Shouldn't $a$ be $c$ instead?}
 %\[ 0<m_1,\;\;\; 0<m_2\]
 The coefficient of $x^{(a_1,a_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
