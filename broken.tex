@@ -1130,7 +1130,7 @@ generic point $q$ in the first quadrant, we have that
 as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
 \end{thm}
 
-The proof will be to show that $\vartheta_{q,m}^{\mathbf{d}}$ is a pointed element with the same Newton polygon \sayGM{1) do we mean 'pointed element', same issue as in proof of Thm \ref{th:Newton polygons}  2) need to use 'support' rather than 'Newton polygon'.}\sayGM{ the term "Newton polygon" also still needs to be updated here. (Gregg)} as $x[-m_1,-m_2]$.  By Scholium \ref{sch}, this is already enough to show that $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
+\noindent The proof will be to show that the support of $\vartheta_{q,m}^{\mathbf{d}}$ is contained in the polygon $R_{m_1,m_2}$ in Theorem \ref{th:Newton polygons}.  By Scholium \ref{sch}, this is already enough to show that $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^\mathbf{d}$.  At any point $q=(q_1,q_2)\in \gamma$ at which $\gamma$ is linear with exponent $m=(m_1,m_2)$, define the \emph{angular momentum} of $\gamma$ at $q$ to be $q_2m_1-q_1m_2$.
 
@@ -1208,7 +1208,7 @@ Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint 
 \end{figure}
 
 \begin{proof}
-The lemma is straightforward except for broken lines with initial exponent $(m_1,m_2)$ with $m_1,m_2>0$.\sayGM{Should this be $m_1, m_2 < 0$? (Gregg, Mark)}
+The lemma is straightforward except for broken lines with initial exponent $(m_1,m_2)$ with $m_1,m_2<0$.
 Consider a bend of $\gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(x^{(w_1,w_2)}))$.  If the exponent immediately before the bend is $(m_1,m_2)$, the exponent immediately after the bend is $(m_1+kw_1,m_2+kw_2)$ for some positive integer $k$.  
 
 Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent $(w_1,w_2)$. If the angular momentum $q_2m_1-q_1m_2$ is positive, then the cross-product $w_2m_1-w_1m_2$ is negative. 
@@ -1216,7 +1216,7 @@ Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(
 If the angular momentum is negative, the slope increases by the an identical argument.
 \end{proof}
 
-We can now constrain the possible final exponent of a broken line, which will be used to bound the Newton polygon \sayGM{"Newton polygon" should be changed to "support" or "lattice quadrilateral containing the support" (Gregg)} of the corresponding theta function.
+We can now constrain the possible final exponent of a broken line, which will be used to bound the support of the corresponding theta function.
 
 \begin{lemma}
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ which begins in the third quadrant, with endpoint $q$ in the first quadrant.  Denote the  initial exponent by $m=(m_1,m_2)$ and the final exponent by $m^q=(m_1^q,m_2^q)$.  
@@ -1245,8 +1245,7 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 
 \begin{proof}[Proof of Theorem \ref{thm: main}]
 
-If $m=(m_1,m_2)$ such that $m_1\geq0$ or $m_2\geq0$\sayGM{Should this be $m_1 \geq 0$ or $m_2 \geq 0$? (Gregg, Mark)}, then $\vartheta_{q,m}^\mathbb{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
-\sayMC{inequality changed. and get the 'next' one changed too! (or else it does not make sense to have both cases $\geq$}
+If $m=(m_1,m_2)$ such that $m_1\geq0$ or $m_2\geq0$, then $\vartheta_{q,m}^\mathbf{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
 Next, assume that $m=(m_1,m_2)$ such that $m_1\leq0$ and $m_2\leq0$.
 %\saySS{Shouldn't $a$ be $c$ instead?}
 %\[ 0<m_1,\;\;\; 0<m_2\]
