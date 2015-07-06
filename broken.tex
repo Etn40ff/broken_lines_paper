@@ -72,7 +72,7 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[The Greedy Basis is the Theta Basis]{The Greedy Basis \\ Equals The Theta Basis: \\ A Rank Two Haiku}
+\title[The Greedy Basis equals the Theta Basis]{The Greedy Basis \\ Equals The Theta Basis: \\ A Rank Two Haiku}
 \author[Cheung]{Man Wai Cheung}
 \address[Man Wai Cheung]{University of California, San Diego}
 \email{mwc31@cam.ac.uk}
@@ -95,7 +95,7 @@
 
 \author[Stella]{Salvatore Stella}
 \address[Salvatore Stella]{Universit\`a degli studi di Roma ``La Sapienza''}
-\email{sstella@ncsu.edu}
+\email{stella@mat.uniroma1.it}
 
 \author[Williams]{Harold Williams}
 \address[Harold Williams]{The University of Texas at Austin}
@@ -121,7 +121,7 @@ We prove the equality of two canonical bases of a rank 2 cluster algebra, the gr
 
 Cluster algebras are commutative rings with partial bases of a special form, originally discovered in the context of dual canonical bases in Lie theory \cite{FZ}.  Their axiomatics encapsulates the fact that many kinds of canonical bases in nature have large subsets which are governed by a uniform combinatorics.  Elements of these subsets are monomials in distinguished elements called cluster variables, which are grouped into overlapping collections called clusters.  Each cluster has an associated skew-symmetrizable matrix, and the entire cluster algebra can be reconstructed recursively from any particular cluster along with this matrix.
 
-A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of the cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup2,GMN}.  Generally, one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to $2\times2$ skew-symmetrizable matrices.  \sayDR{This makes it sound like we allow larger matrices, should we just say ``$2\times2$ skew-symmetrizable matrices'' here?} \sayGM{Done. (Gregg)}
+A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of the cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup2,GMN}.  Generally, one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to $2\times2$ skew-symmetrizable matrices. 
 
 The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The greedy basis is defined so that all of its elements, not just cluster variables, have positive Laurent expansions in any cluster and that the coefficients of any such Laurent expansion are as small as possible.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
 
@@ -218,7 +218,11 @@ a collection of elements of $\cA(b,c)$ with nice properties.
   choice of an initial cluster.
 \end{theorem}
 We will call $x[a_1,a_2]$ the \emph{greedy element} pointed at $(a_1,a_2)$ and
-call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$.  In order to better connect with the scattering diagram approach from Section 3, we now switch our point of view and consider ordinary support rather than pointed support.  Given a Laurent polynomial $f=\sum_{m\in M}c_mx^m$ in $\ZZ[x_1^{\pm1},x_2^{\pm1}]$, the \emph{support} of $f$ is the set
+call $\{x[a_1,a_2]:(a_1,a_2)\in\ZZ^2\}$ the \emph{greedy basis} of $\cA(b,c)$. 
+In view of the definition of pointed element $(a_1,a_2)$ is the
+\emph{$\bfd$-vector} of $x[a_1,a_2]$; we refer to \cite{FZ4} for the
+ definitions and basic properties of $\bfd$-vectors.
+In order to better connect with the scattering diagram approach from Section 3, we now switch our point of view and consider ordinary support rather than pointed support.  Given a Laurent polynomial $f=\sum_{m\in M}c_mx^m$ in $\ZZ[x_1^{\pm1},x_2^{\pm1}]$, the \emph{support} of $f$ is the se
 \[ \{m\in M \mid c_m\neq 0\}. \]
 
 \begin{theorem}\label{th:Newton polygons}\cite[Proposition~4.1]{LLZ}, \cite[Corollary~3.5]{LLZ2}
@@ -455,8 +459,6 @@ This enumerative description not only establishes the existence of the greedy ba
 
 %%%Dyck path comments ends here
 
-\sayGM{Add definitions of d-vectors and g-vectors in this section. (Gregg, Dylan)}
-
 \section{Scattering diagrams and broken lines}
 
 In this section we describe the theta basis of a rank 2 cluster algebra.  
@@ -486,7 +488,7 @@ The following are special cases of definitions which originally appeared in
       \] 
       for some $c_k \in \ZZ$. 
   \end{itemize}
-  \sayDR{Does this clash with the use of ``support'' from section 2?}\sayGM{I think this is unavoidable.  Added parenthetical comment. (Gregg)} The set $\fd \subset M_{\mathbb{R}}$ is called the \emph{support} of the wall
+  The set $\fd \subset M_{\mathbb{R}}$ is called the \emph{support} of the wall
   $(\fd, f_{\fd})$. (Note the different use of the word ``support" in this geometric context.)
 \end{defn}
 
@@ -501,7 +503,7 @@ The following are special cases of definitions which originally appeared in
   %\cite{GHKK} by requiring that $\fd_1 \neq \fd_2$ whenever $f_{\fd_1}\neq
   %f_{\fd_2}$.
 \end{defn}
-For simplicity, we will impose the additional condition that $\fd_1\neq \fd_2$ for all pairs of walls in the scattering diagram.
+For simplicity, we will impose the additional condition that no two walls in the scattering diagram have the same support.
 
 %For a scattering diagram $\fD$, we denote the support of $\fD$ as
 %\[
@@ -668,13 +670,15 @@ neither
 \]
 is a wall in $\fD_{(b,c)}$. Using \cite[Section 4]{GP} with a change of basis, these considerations gives us a recipe to produce
 elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
-alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}) to produce some walls described below.
+alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
+\saySS{Shortened last sentence; remove this comment whenever you want.}
+%to produce some walls described below.
 
 We need to distinguish three cases. If $bc<4$ this procedure will construct, in
 finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
 \fD_{\mathrm{in},(b,c)}$.  If $bc\ge 4$, instead, we will get two infinite
 families of walls whose supports will converge to a single rational
-ray if $bc=4$ or if $bc>4$, to the boundary of the convex cone
+ray if $bc=4$ or, if $bc>4$, to the boundary of the convex cone
 spanned by the irrational vectors
 \[
   \left(2b,-bc + \sqrt{bc(bc-4)}\right)
@@ -879,7 +883,8 @@ The following summarizes the main properties of the theta functions as shown in
   joining the chamber containing $m$ to $q$. Moreover, it follows from the
   details of the proof of Theorem \ref{univLaurent} that $\vartheta_{q,m}$ is
   a cluster monomial and then from \cite[Theorem~7.5]{GHKK} that the 
-  $\bfg$-vector of this cluster monomial is precisely $m$. 
+  $\bfg$-vector of this cluster monomial is precisely $m$. We again refer to
+  \cite{FZ4} for the definitions and basic properties of \emph{$\bfg$-vectors}.
 \end{remark}
 
 \begin{example}
@@ -907,8 +912,6 @@ The following summarizes the main properties of the theta functions as shown in
 
 
 \section{From $\bfg$-vectors to $\bfd$-vectors}
-\sayDR{We never actually give a definition of either $g$-vectors or $d$-vectors, maybe this should be added to section 2.}
-\sayGM{Agreed. (Gregg)}
 %\saySS{At a certain point in our discussion in Snowbird we decided we were going
 %  to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
 %  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
@@ -965,12 +968,19 @@ we can use them to define the image of such pairs under $T$. Namely set
 
 Having fixed the notation we are ready to introduce $\fD_{(b,c)}^\bfd$.
 The set
+\saySS{Changed the notation here to be consistent with the line just above.
+  Remove this comment whenever you want.}
 \[
   T(\fD_{(b,c)}):=
-  \left\{
-    T(\fd,f_\fd)\, |\, (\fd,f_\fd)\in \fD_{(b,c)}
-  \right\}
+  \bigcup_{(\fd,f_\fd)\in \fD_{(b,c)}}
+  T(\fd,f_\fd)
 \]
+%\[
+%  T(\fD_{(b,c)}):=
+%  \left\{
+%    T(\fd,f_\fd)\, |\, (\fd,f_\fd)\in \fD_{(b,c)}
+%  \right\}
+%\]
 is not a scattering diagram according to Definition 
 \ref{def:scattering_diagram} (not all of its elements are walls for the same
 convex cone) but can be made into one by a few simple fixes.
@@ -1268,7 +1278,8 @@ As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be
   \bibitem[CPS]{CPS} M.~Carl, M.~Pumperla, and B.~Siebert, \emph{A tropical view of Landau-Ginzburg models}, preprint, available at http://www.math.uni-hamburg.de/home/siebert/preprints/LGtrop.pdf, 2010.
   \bibitem[Dup]{Dup} G.~Dupont, \emph{Generic variables in acyclic cluster algebras}, J. Pure Appl. Algebra, \textbf{215} (2011), 628--641.
   \bibitem[FG]{FG} V.~Fock and A.~B.~Goncharov, \emph{Moduli spaces of local systems and higher Teichm\"{u}ller theory}, Publ. Math. de l'IH\'{E}S, {\bf 103} (2006), 1-211.
-  \bibitem[FZ]{FZ} S.~Fomin and A.~Zelevinsky, \emph{Cluster algebras I: Foundations},  J. Amer. Math. Soc., \textbf{15} (2002), no. 2, 497--529.
+  \bibitem[FZ02]{FZ} S.~Fomin and A.~Zelevinsky, \emph{Cluster algebras I: Foundations},  J. Amer. Math. Soc., \textbf{15} (2002), no. 2, 497--529.
+  \bibitem[FZ07]{FZ4} \bysame, \emph{Cluster algebras. {IV}. {C}oefficients}, Compos. Math. \textbf{143} (2007), no.~1, 112--164.
   \bibitem[G10]{G10} M.~Gross,  \emph{Mirror symmetry for $\mathbb{P}^2$ and tropical geometry}, Adv.\ Math., {\bf 224} (2010), 169--245. 
   \bibitem[GHK11]{GHK11} M.~Gross, P.~Hacking, and S.~Keel, \emph{Mirror symmetry for log Calabi-Yau surfaces I}, Publ. Math. de l'IH\'{E}S, (2015), 1--104.
   \bibitem[GHKK]{GHKK} M.~Gross, P.~Hacking, S.~Keel, and M.~Kontsevich, \emph{Canonical bases for cluster algebras}, preprint, arXiv:1411.1394, 2014.
