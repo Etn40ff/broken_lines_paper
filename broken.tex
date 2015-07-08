@@ -540,10 +540,11 @@ can therefore consider the composition
   \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^{(k)}_{\gamma, \fD}. 
 \]\sayDR{If well-definedness is a potential issue we should mention that here.}
 \sayMC{Well defined just means we have the curve is nice, i.e.  not passing origin, transverse to the wall, 'smooth' when passing the wall. We can put it down but it is just a bit too much technical to me.}
+\sayMG{I changed ``well-defined'' to ``defined''; I think this is clearer.}
 \begin{defn}
   A scattering diagram is \emph{consistent} if $\fp _{\gamma, \fD}$ depends
   only on the endpoints of $\gamma$ for any path $\gamma$ for which
-  $\fp_{\gamma, \fD}$ is well-defined.
+  $\fp_{\gamma, \fD}$ is defined.
 \end{defn}
 
 \begin{theorem}\cite{KS},\cite{GS}
@@ -855,7 +856,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
 \end{figure}
 
 The following summarizes the main properties of the theta functions as shown in
-\cite{GHKK}.
+\cite{CPS} and \cite{GHKK}.
 \begin{theorem} $ $
   \begin{enumerate}
     \item
@@ -864,21 +865,46 @@ The following summarizes the main properties of the theta functions as shown in
       path joining $q$ to $q'$, then $\fp_{\gamma, \fD }(\vartheta_{q,m}) = \vartheta_{q', m}$. 
     \item Take $\fD=\fD_{(b,c)}$. 
       \begin{enumerate}
+        \item If $q$ and $m$ lie in the interior of the same chamber of $\fD$, then $\vartheta_{q,m}=x^{m}$.
         \item If $q$ lies in the interior of a chamber of $\fD$, then $\vartheta_{q,m}$ is a Laurent polynomial for any $m$.
         \item If $q$ lies in the interior of the first quadrant, then $\vartheta_{q,m}$ is a universal Laurent polynomial for any $m$.
-        \item If $q$ and $m$ lie in the interior of the same chamber of $\fD$, then $\vartheta_{q,m}=x^{m}$.
       \end{enumerate}
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  (1) is a main result of \cite{CPS}, quoted in this context in \cite[Theorem~3.5]{GHKK}.  (2a) is \cite[Example~7.18]{GHKK} \sayDR{It isn't clear to me at all how \cite[Example~7.18]{GHKK} is related to the claim.} with $\vartheta$ taken to be the subset of $M$ consisting of those $m$ for which $\vartheta_{q,m}$ is a Laurent polynomial for some $q$ in the interior of a chamber of $\fD$ (and hence by \cite[Proposition~7.1]{GHKK}, all chambers).  Next, (2b) follows from (2a) by Theorem \ref{univLaurent} and (1).  Finally, (2c) follows from \cite[Proposition~3.8]{GHKK} using the argument of \cite[Theorem~4.8]{GHKK} \sayDR{The statement of \cite[Theorem~4.8]{GHKK} is a much heftier result than what we are proving, maybe it would be good to extract the relevant portion of the proof and present it here.} in the case that the chamber is not the positive quadrant.
+  (1) is a main result of \cite{CPS}, see also \cite[Theorem~3.5]{GHKK} for its
+application to scattering diagrams in the current context. (2a) is 
+\cite[Proposition~3.8]{GHKK} if $q$ and $m$ are both in the positive quadrant
+of $M_{\RR}$. If $q$ and $m$ are in some other chamber, say $\sigma$, then
+by \cite[Construction~1.38]{GHKK}, there is a scattering diagram $\fD'$
+obtained from a mutation of the initial seed defining $\fD$ and a piecewise
+linear map $T_v:M_{\RR}\rightarrow M_{\RR}$ which takes the support of
+$\fD$ to the support of $\fD'$, and such that the positive chamber of $\fD'$
+pulls back to $\sigma$. Furthermore, there is a one-to-one correspondence
+between broken lines for $\fD$ and $\fD'$ by \cite[Proposition~3.6]{GHKK}.
+Thus the claim follows from \cite[Proposition~3.8]{GHKK} applied to $\fD'$.
+
+(2b) is \cite[Example~7.18]{GHKK}. In slightly more detail, let 
+$\Theta\subseteq M$ denote the
+set of $m\in M$ for which $\vartheta_{q,m}$ is a Laurent polynomial for
+$q$ general in the first quadrant of $M_{\RR}$. By 
+\cite[Theorem~7.16,(3)]{GHKK}, $\Theta$ contains all points of $M$
+contained in chambers (i.e., the set of points denoted as $\Delta^+_V(\ZZ)$
+in \cite[Theorem~7.16,(3)]{GHKK}). Thus in particular, $\Theta$ contains
+all integral points in the first three quadrants of $M_{\RR}$. But
+by \cite[Theorem~7.16,(4)]{GHKK}, $\Theta$ is closed under addition, and
+hence consists of all points in $M$. It then follows that 
+$\vartheta_{q,m}$ is a Laurent polynomial for $q$ in any chamber by
+\cite[Proposition~7.1]{GHKK}.
+
+Finally, (2c) follows from from (2b) and Theorem \ref{univLaurent}.
 \end{proof}
 \sayMC{going to rewrite it}
 \begin{remark} 
   \label{rk:theta functions g-vector}
   If $m\in M$ lies in one of the chambers of $\fD_{(b,c)}$ and $q$ lies in
-  the first quadrant, then from (1) and (2c) above we see that
+  the first quadrant, then from (1) and (2a) above we see that
   $\vartheta_{q,m}=\fp_{\gamma,\fD_{(b,c)}}(x^{m})$ for a path $\gamma$
   joining the chamber containing $m$ to $q$. Moreover, it follows from the
   details of the proof of Theorem \ref{univLaurent} that $\vartheta_{q,m}$ is
