@@ -90,7 +90,7 @@
 \email{musiker@math.umn.edu}
 
 \author[Rupel]{Dylan Rupel}
-\address[Dylan Rupel]{Northeastern University}
+\address[Dylan Rupel]{University of Notre Dame (formerly Northeastern University)}
 \email{drupel@nd.edu}
 
 \author[Stella]{Salvatore Stella}
@@ -119,26 +119,26 @@ We prove the equality of two canonical bases of a rank 2 cluster algebra, the gr
 
 \section{Introduction}
 
-Cluster algebras are commutative rings with partial bases of a special form, originally discovered in the context of dual canonical bases in Lie theory \cite{FZ}.  Their axiomatics encapsulates the fact that many kinds of canonical bases in nature have large subsets which are governed by a uniform combinatorics.  Elements of these subsets are monomials in distinguished elements called cluster variables, which are grouped into overlapping collections called clusters.  Each cluster has an associated skew-symmetrizable matrix, and the entire cluster algebra can be reconstructed recursively from any particular cluster along with this matrix.
+Cluster algebras are commutative rings with partial bases of a special form, originally discovered in the context of dual canonical bases in Lie theory \cite{FZ}.  Their axiomatics encapsulates the fact that many kinds of canonical bases in nature have large subsets which are governed by a uniform combinatorics.  Elements of these subsets are monomials in distinguished elements called cluster variables, which are grouped into overlapping collections called clusters.  Each cluster has an associated skew-symmetrizable matrix and the entire cluster algebra can be reconstructed recursively from any particular cluster along with this matrix.
 
-A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of the cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup2,GMN}.  Generally, one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that in general it is nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to $2\times2$ skew-symmetrizable matrices. 
+A fundamental issue in the theory is understanding natural completions of the partial basis of cluster monomials to a full basis of the cluster algebra.  Depending on the context, this question can be analyzed from a wide range of perspectives drawn from representation theory, geometry, combinatorics, and mathematical physics \cite{Dup,KQ,FG,MSW,BZ,Rup2,GMN}.  In general, one expects any cluster algebra to admit several natural bases related in potentially subtle ways.  A basic example of this is the relationship between the dual canonical and dual semicanonical bases of the coordinate ring of the positive unipotent subgroup of a simple algebraic group \cite{GLS}.  This example illustrates in particular that it is generally nontrivial to tell even whether or not two constructions of canonical bases in a cluster algebra lead to the same result.  The purpose of the present paper is to compare two such constructions for cluster algebras associated to $2\times2$ skew-symmetrizable matrices. 
 
-The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case \cite{LS,Rup} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The greedy basis is defined so that all of its elements, not just cluster variables, have positive Laurent expansions in any cluster and that the coefficients of any such Laurent expansion are as small as possible.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
+The first basis we consider is the greedy basis of \cite{LLZ}.  Every cluster algebra is contained in the ring of Laurent polynomials in the cluster variables of any of its clusters.  The recently-confirmed positivity conjecture, proved in the rank 2 case in \cite{LS,Rup} and in the general case in \cite{LS2,GHKK}, asserts that the coefficients of the Laurent expansion of any cluster variable are positive integers.  The greedy basis is defined so that all of its elements, not just cluster variables, have positive Laurent expansions in any cluster and that the coefficients of any such Laurent expansion are as small as possible.  The resulting coefficients turn out to enumerate combinatorial objects called compatible pairs related to maximal Dyck paths.
 
 The second basis we consider is the theta basis of \cite{GHKK}.  Unlike the
 greedy basis it is defined for cluster algebras of arbitrary rank.  In fact,
-this basis is a special case of a much more general construction, based on two
+this basis is a special case of a much more general construction based on two
 concepts. The first is that of scattering diagram introduced in \cite{KS} in two
-dimensions and in \cite{GS} in all dimensions. The second is a combinatorial
+dimensions and in \cite{GS} in all dimensions.   This diagram
+encodes the relations among cluster transformations and also among elements of the
+tropical vertex group.  The second is a combinatorial
 notion of broken line, introduced in \cite{G10} with their theory further
 developed in \cite{CPS} and then \cite{GHK11}.  The coefficients of Laurent
-expansions of the elements of this basis enumerate broken lines, which morally
-capture the geometry of holomorphic disks in the mirror cluster variety.  Broken
-lines are piecewise-linear paths in a tropicalization of the cluster variety,
-whose points of non-linearity lie along the scattering diagram.  This diagram
-encodes the relations among cluster transformations, or among elements of the
-tropical vertex group.
+expansions of theta basis elements enumerate broken lines.  These are piecewise-linear paths in a tropicalization of the cluster variety
+whose points of non-linearity lie along the scattering diagram.   Morally
+broken lines capture the geometry of holomorphic disks in the mirror cluster variety.
 
+Our main result is the following.
 \begin{theorem}
 Let $\mathcal{A}$ be a rank 2 cluster algebra.  The greedy and theta bases of $\mathcal{A}$ coincide.
 \end{theorem}
@@ -150,7 +150,7 @@ The organization of the paper is as follows.  In sections 2 and 3, we review the
 \textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We thank Maria Angelica Cueto, who was also member of our working group but declined to be named as a coauthor.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. The first author would like to thank University of Cambridge for hosting her during the completion of this paper.
 
 \section{Rank 2 cluster algebras and their greedy bases}
-Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$ indexed by $k\in\ZZ$ and defined recursively by 
+Fix positive integers $b$ and $c$.  Consider rational functions $x_k\in\QQ(x_1,x_2)$ indexed by $k\in\ZZ$ and defined recursively by 
 \begin{equation}\label{eq:exchangerelations}
   x_{k-1}x_{k+1}=
   \begin{cases}
@@ -160,7 +160,7 @@ Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$
 \end{equation}
 These functions are called \emph{cluster variables} and the \emph{cluster
 algebra} $\cA(b,c)$ is the $\ZZ$-subalgebra of $\QQ(x_1,x_2)$ which they
-generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and a monomial in $x_k$ and $x_{k+1}$ is called a \emph{cluster monomial}.  Later, we will fix a rank 2 lattice $M$ together with an algebra isomorphism $\ZZ[M] \cong \ZZ[x_1^{\pm1},x_2^{\pm1}]$, $x^m\mapsto x_1^{m_1}x_2^{m_2}$ for $m \in M$.  This induces a lattice isomorphism $M \cong \ZZ^2$, $m \mapsto (m_1,m_2)$.
+generate.  Each pair $\{x_k, x_{k+1}\}$ is called a \emph{cluster} and a monomial in the variables of a cluster is called a \emph{cluster monomial}.  Later, we will fix a rank 2 lattice $M$ together with an algebra isomorphism $\ZZ[M] \cong \ZZ[x_1^{\pm1},x_2^{\pm1}]$, $x^m\mapsto x_1^{m_1}x_2^{m_2}$ for $m \in M$.  This induces a lattice isomorphism $M \cong \ZZ^2$, $m \mapsto (m_1,m_2)$.
 
 An essential feature of the relations \eqref{eq:exchangerelations} is that they imply $\cA(b,c)$ is actually a subalgebra of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$, rather than merely a subalgebra of $\QQ(x_1,x_2)$.
 \begin{theorem}\label{th:Laurent}
@@ -168,10 +168,10 @@ An essential feature of the relations \eqref{eq:exchangerelations} is that they 
 \end{theorem}
 
 We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Laurent polynomials with positive coefficients.  An element of $\QQ(x_1,x_2)$ is a \emph{universal Laurent polynomial} (resp.  \emph{positive universal Laurent polynomial}) if it is contained in 
- $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.  A primary result of \cite{BFZ} specialized to the rank 2 setting states that $\cA(b,c)$ is precisely the set of univeral Laurent polynomials in $\QQ(x_1,x_2)$.
+ $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.  A primary result of \cite{BFZ}, specialized to the rank 2 setting, states that $\cA(b,c)$ is precisely the set of univeral Laurent polynomials in $\QQ(x_1,x_2)$.
 
 \begin{theorem}
-\cite[for $b=c$]{LS}, \cite{Rup}\sayDR{Lee-Schiffler only establishes positivity for $b=c$.}\sayGM{Does this look better to you? (Gregg)} Each cluster variable of $\cA(b,c)$ is positive.
+\cite{LS,Rup}\sayGM{Does this look better to you? (Gregg)}\sayDR{I only wanted to let people know why I added the extra reference, I don't think it needs to be in the paper.} Each cluster variable of $\cA(b,c)$ is positive.
 \end{theorem}
 
 An element of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
@@ -412,9 +412,9 @@ The proof of Theorem~\ref{th:Newton polygons} actually establishes the following
 
 
 \begin{remark}\label{rem:Dyck}
-The existence of integers $c(p,q)$ satisfying the recursive equations \eqref{eq:greedy recursion}, and thus the existence of the greedy basis itself, is quite non-trivial.  The authors of \cite{LLZ} characterize each $c(p,q)$ as the solution to an enumerative problem; specifically, the number of certain `compatible pairs of edges' inside a type of lattice path called a `maximal Dyck path'.
+The existence of integers $c(p_1,p_2)$ satisfying the recursive equations \eqref{eq:greedy recursion}, and thus the existence of the greedy basis itself, is quite non-trivial.  The authors of \cite{LLZ} characterize each $c(p_1,p_2)$ as the solution to an enumerative problem; specifically, the number of certain `compatible pairs of edges' inside a type of lattice path called a `maximal Dyck path'.
 
-This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p,q)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  %Many remarkable advances in the theory of cluster algebras have been animated by a desire to produce enumerative problems whose solutions define the coefficients of such a basis, such as additive and monodial categorifications, 
+This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p_1,p_2)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  %Many remarkable advances in the theory of cluster algebras have been animated by a desire to produce enumerative problems whose solutions define the coefficients of such a basis, such as additive and monodial categorifications, 
 \end{remark}
 
 %%%Dyck path comment begins here
@@ -467,7 +467,7 @@ the notation to the rank 2 situation.
 
 %We fix lattices $N = \ZZ^2$ and $M = \Hom (N, \ZZ)$. We write their elements as tuples and denote the standard pairing of $m\in M$ and $n\in N$ as $n \cdot m$. We write $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$. Taking $\ZZ$ to be a field of characteristic 0, for $m\in M$ we will write $x^m$ for the monomial in $\ZZ[M]$.  For notational convenience we will write $x_1=x^{(1,0)}$ and $x_2=x^{(0,1)}$, thus we may identify $x^m$ with $x_1^{m_1}x_2^{m_2}$.
 
-Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \cong \ZZ[x_1^{\pm 1}, x_2^{\pm 1}]$.  We write $N = \Hom (M, \ZZ)$ for its dual lattice, $M_{\RR} := M\otimes\RR$, $N_{\RR} := N\otimes\RR$, and we denote the standard pairing of $m\in M$ and $n\in N$ by $m \cdot n$.  Given a strictly convex rational cone $\sigma \subsetneq M_{\RR}$, we write $P=\sigma \cap M$.  Let $\widehat{\ZZ[P]}$ denote the completion of the monoid ring $\ZZ[P]$ at the maximal monomial ideal $\fm$ generated by $\left\{x^m \,|\, m\in P\smallsetminus\{0\}\right\}$.
+Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \cong \ZZ[x_1^{\pm 1}, x_2^{\pm 1}]$.  We write $N = \Hom (M, \ZZ)$ for its dual lattice, $M_{\RR} := M\otimes\RR$, $N_{\RR} := N\otimes\RR$, and we denote the standard pairing of $m\in M$ and $n\in N$ by $m \cdot n$.  Given a strictly convex rational cone $\sigma \subsetneq M_{\RR}$, we write $P=\sigma \cap M$ \sayDR{Since $\sigma$ occasionally changes should we write something like $P_\sigma$ instead?}.  Let $\widehat{\ZZ[P]}$ denote the completion of the monoid ring $\ZZ[P]$ at the maximal monomial ideal $\fm$ generated by $\left\{x^m \,|\, m\in P\smallsetminus\{0\}\right\}$.
 
 The following are special cases of definitions which originally appeared in
 \cite{KS}, \cite{GS}.
@@ -515,32 +515,24 @@ Given a wall $(\fd, f_{\fd})$ and a direction $v\in M$ transversal to $\fd$, we 
 \[
   \fp_{v,\fd} (x^m) := x^m f_{\fd}^{m\cdot n }, 
 \]
-where $n\in N$ is primitive, annihilates the tangent space to $\fd$, and is
-uniquely determined by the sign convention $ v\cdot n <0$.  Note
+where $n\in N$ is the primitive vector annihilating the tangent space to $\fd$ determined by the sign convention $ v\cdot n <0$.  Note
 that the only role of the transversal direction $v$ is to fix which of the two
 normals $\pm n$ is used in the exponent. 
 
-Let $\fD$ be a scattering diagram and $\gamma$ a smooth immersion
-\[  
-  \gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}  
-\]
-transverse to each wall of $\fD$ that it crosses and with endpoints not in the support of $\fD$. We define the \textit{path-ordered product} $\fp_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
+Let $\fD$ be a scattering diagram and $\gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}$ a smooth immersion with endpoints not in the support of $\fD$ which is transverse to each wall of $\fD$ that it crosses. We define the \textit{path-ordered product} $\fp_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
 \[
   0< t_1 <  t_2 < \cdots < t_s < 1 
 \]
-be the longest sequence of numbers such that $\gamma(t_i)\in\fd_i$ for some wall
-$(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.  In view of the definition of scattering diagram, such a sequence is finite; we
-can therefore consider the composition 
+be the longest sequence such that $\gamma(t_i)\in\fd_i$ for a wall
+$(\fd_i,f_{\fd_i}) \in \fD$ with $f_{\fd_i} \neq 1 \text{ mod } \fm^k$.  In view of the definition of scattering diagrams, such a sequence is finite; we can therefore consider the composition 
 \[
   \fp^{(k)}_{\gamma, \fD} :=
   \fp_{\gamma'(t_s),\fd_s} \circ \cdots \circ \fp_{\gamma'(t_1),\fd_1}.
 \]
-\sayDR{The $k$ here looks like an exponent, does anyone oppose moving it to a subscript?}\sayGM{I think the subscript is already too crowded.  How do like parenthetical exponents instead? (Gregg)} Then we define
+Then we define
 \[
   \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^{(k)}_{\gamma, \fD}. 
-\]\sayDR{If well-definedness is a potential issue we should mention that here.}
-\sayMC{Well defined just means we have the curve is nice, i.e.  not passing origin, transverse to the wall, 'smooth' when passing the wall. We can put it down but it is just a bit too much technical to me.}
-\sayMG{I changed ``well-defined'' to ``defined''; I think this is clearer.}
+\]\sayDR{Does this limit always exist?}
 \begin{defn}
   A scattering diagram is \emph{consistent} if $\fp _{\gamma, \fD}$ depends
   only on the endpoints of $\gamma$ for any path $\gamma$ for which
@@ -612,7 +604,7 @@ which appear for $bc\ge4$ can be found in \cite[Example 1.30]{GHKK}.
 %, where the description is based on the description of a related scattering diagram given in \cite{GP} \sayDR{Is the second clause in this sentence necessary?}. 
 We summarize the crucial points here.
 
-First of all note that, in view of the definition of scattering diagram, all the
+First of all note that, in view of the definition of scattering diagrams, all the
 rays in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$ are contained in the
 fourth quadrant.  To make our next observation we need to extend the action of
 linear operators on $M_\RR$ to an action on pairs $(\fd,f_\fd)$. If $S$ is
@@ -672,7 +664,6 @@ neither
 is a wall in $\fD_{(b,c)}$. Using \cite[Section 4]{GP} with a change of basis, these considerations gives us a recipe to produce
 elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
-\saySS{Shortened last sentence; remove this comment whenever you want.}
 %to produce some walls described below.
 
 We need to distinguish three cases. If $bc<4$ this procedure will construct, in
@@ -715,8 +706,7 @@ and serves as the motivation for our later connections to cluster algebras.
 \sayDR{The statement of the theorem does not a priori have anything to do with cluster algebras, probably something more should be said here if we want to keep this sentence.}\sayGM{I attempted a rewrite, what do you think? (Gregg)}
 \begin{theorem} 
   \label{univLaurent} 
-  Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\fp_{\gamma,\fD}$ is
-  well-defined, $\fp_{\gamma,\fD}(f)$ can be viewed as an element of
+  Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\fp_{\gamma,\fD}$ is defined, $\fp_{\gamma,\fD}(f)$ can be viewed as an element of
   $\ZZ[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$ \sayDR{Is this sentence a part of the theorem or should it be moved above?}.  If for any path $\gamma$ in
   $M_{\RR}$, with starting point in the first quadrant and endpoint in one of the
   chambers of $\fD$, $\fp_{\gamma,\fD}(f)$ lies in $\ZZ[M]$, then $f$ is a universal
@@ -1037,7 +1027,7 @@ $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is $\big( \RR_{
       both $ \big( \RR_{\ge0} (0,1), 1+x_2^c\big)$ and $\big( \RR_{\le0} (0,1),
       1+x_2^c\big)$ with $ \big( \RR (0,1), 1+x_2^c\big)$.
   \end{itemize}
-  Its base region is the cone $\sigma^\bfd$ generated by $(1,0)$ and $(0,1)$.
+  Its base region is the cone $\sigma^\bfd$ generated by $(1,0)$ and $(0,1)$. 
 \end{defn}
 
 \begin{remark}
@@ -1316,10 +1306,10 @@ As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be
   \bibitem[IOTW]{IOTW} K.~Igusa, K.~Orr, G.~Todorov, and J.~Weyman, \emph{Picture groups of finite type and cohomology in type $A_n$}, preprint, available at http://people.brandeis.edu/~igusa/Papers/PictureGroup.pdf, 2014.
   \bibitem[KQ]{KQ} Y.~Kimura and F.~Qin, \emph{Graded quiver varieties, quantum cluster algebras and dual canonical basis}, Adv. Math., {\bf 262} (2012), 261--312.
   \bibitem[KS]{KS} M.\ Kontsevich and Y.\ Soibelman, \emph{Affine structures and non-Archimedean analytic spaces}, in: \textsl{The unity of mathematics} (P.~Etingof, V.~Retakh, I.M.~Singer, eds.),  321--385, Progr.\ Math.~{\bf 244}, Birkh\"auser~2006.
-  \bibitem[LLZ2]{LLZ2} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Positivity and tameness in rank 2 cluster algebras}, J. Alg. Comb., {\bf 40} (2014), no. 3, 823--840.
   \bibitem[LLZ]{LLZ} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Greedy elements in rank 2 cluster algebras}, Selecta Math., \textbf{20} (2014), 57--82.
-  \bibitem[LS2]{LS2} K.~Lee and R.~Schiffler, \emph{Positivity for cluster algebras}, Annals of Math., {\bf 182} (2015), no. 1, 73--125.
+  \bibitem[LLZ2]{LLZ2} K.~Lee, L.~Li, and A.~Zelevinsky, \emph{Positivity and tameness in rank 2 cluster algebras}, J. Alg. Comb., {\bf 40} (2014), no. 3, 823--840.
   \bibitem[LS]{LS} K.~Lee and R.~Schiffler, \emph{A combinatorial formula for rank 2 cluster variables}, J. Alg. Comb., {\bf 37} (2013), no. 1, 67--85.
+  \bibitem[LS2]{LS2} K.~Lee and R.~Schiffler, \emph{Positivity for cluster algebras}, Annals of Math., {\bf 182} (2015), no. 1, 73--125.
   \bibitem[MSW]{MSW} G.~Musiker, R.~Schiffler, and L.~Williams, \emph{Bases for cluster algebras from surfaces}, Compositio Math., {\bf 149} (2013), no. 2, 217--263.
   \bibitem[R]{R} N.~Reading, \emph{Universal geometric cluster algebras}, Math. Zeit., {\bf 277 } (2014), 499-547.
   \bibitem[RS]{RS} N.~Reading and D.~Speyer, \emph{Combinatorial frameworks for cluster algebras}, Int. Math. Res. Not., (2015), 1--65.
@@ -1328,8 +1318,5 @@ As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be
   \bibitem[SZ]{SZ} P.~Sherman and A.~Zelevinsky, \emph{Positivity and canonical bases in rank 2 cluster algebras of finite and affine types}, Mosc. Math. J., \textbf{4} (2004), no. 4, 947--974.
 
 \end{thebibliography}
-
-\sayGM{Dylan, did not know if you wanted to use Northeastern or Notre Dame (Gregg)}
-\sayDR{I opted for Northeastern since most of the work was done while I was employed by them.  Hmm, Notre Dame is employing me now though, is there a reasonable way to put both?}
 
 \end{document}
