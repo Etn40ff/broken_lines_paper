@@ -147,7 +147,7 @@ The proof is based on an analysis of exactly which monomials may appear in eleme
 
 The organization of the paper is as follows.  In sections 2 and 3, we review the basic definitions and properties of the greedy and theta bases, respectively.  The natural parametrizing sets of the two bases, the $\bfd$-vectors and $\bfg$-vectors, are distinct and we explain in section 4 how to relate them.  This determines a bijection between the two bases and we show in section 5 that the basis elements mapped to each other by this bijection actually coincide, proving the main theorem.
 
-\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which explains the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We thank Maria Angelica Cueto, who was also member of our working group but declined to be named as a coauthor.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. The first author would like to thank University of Cambridge for hosting her during the completion of this paper.
+\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which accounts for the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We thank Maria Angelica Cueto, who was also member of our working group but declined to be named as a coauthor.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. The first author would like to thank University of Cambridge for hosting her during the completion of this paper.
 
 \section{Rank 2 cluster algebras and their greedy bases}
 Fix positive integers $b,c$ and consider rational functions $x_k\in\QQ(x_1,x_2)$ indexed by $k\in\ZZ$ and defined recursively by 
@@ -171,7 +171,7 @@ We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Lauren
  $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.  A primary result of \cite{BFZ} specialized to the rank 2 setting states that $\cA(b,c)$ is precisely the set of univeral Laurent polynomials in $\QQ(x_1,x_2)$.
 
 \begin{theorem}
-\cite[for $b=c$]{LS}, \cite{Rup}\sayDR{Lee-Schiffler only establishes positivity for $b=c$.}\sayGM{Does this look better to you? (Gregg)} Each cluster variable of $\cA(b,c)$ is positive.
+\cite[for $b=c$]{LS}, \cite[for $b\neq c$]{Rup} Each cluster variable of $\cA(b,c)$ is positive.
 \end{theorem}
 
 An element of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
@@ -535,12 +535,13 @@ can therefore consider the composition
   \fp^{(k)}_{\gamma, \fD} :=
   \fp_{\gamma'(t_s),\fd_s} \circ \cdots \circ \fp_{\gamma'(t_1),\fd_1}.
 \]
-\sayDR{The $k$ here looks like an exponent, does anyone oppose moving it to a subscript?}\sayGM{I think the subscript is already too crowded.  How do like parenthetical exponents instead? (Gregg)} Then we define
+%\sayDR{The $k$ here looks like an exponent, does anyone oppose moving it to a subscript?}\sayGM{I think the subscript is already too crowded.  How do like parenthetical exponents instead? (Gregg)} 
+Then we define
 \[
   \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^{(k)}_{\gamma, \fD}. 
-\]\sayDR{If well-definedness is a potential issue we should mention that here.}
-\sayMC{Well defined just means we have the curve is nice, i.e.  not passing origin, transverse to the wall, 'smooth' when passing the wall. We can put it down but it is just a bit too much technical to me.}
-\sayMG{I changed ``well-defined'' to ``defined''; I think this is clearer.}
+\]%\sayDR{If well-definedness is a potential issue we should mention that here.}
+%\sayMC{Well defined just means we have the curve is nice, i.e.  not passing origin, transverse to the wall, 'smooth' when passing the wall. We can put it down but it is just a bit too much technical to me.}
+%\sayMG{I changed ``well-defined'' to ``defined''; I think this is clearer.}
 \begin{defn}
   A scattering diagram is \emph{consistent} if $\fp _{\gamma, \fD}$ depends
   only on the endpoints of $\gamma$ for any path $\gamma$ for which
@@ -672,7 +673,7 @@ neither
 is a wall in $\fD_{(b,c)}$. Using \cite[Section 4]{GP} with a change of basis, these considerations gives us a recipe to produce
 elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
-\saySS{Shortened last sentence; remove this comment whenever you want.}
+%\saySS{Shortened last sentence; remove this comment whenever you want.}
 %to produce some walls described below.
 
 We need to distinguish three cases. If $bc<4$ this procedure will construct, in
@@ -693,9 +694,10 @@ with support laying outside of this cone. The structure of the remaining part of
 $\fD_{(b,c)}$ is not completely understood; the expectation is that there is
 a wall for each possible rational slope inside this irrational cone.
 
+%\sayDR{Should we also mention root systems here?}. \
+%\sayMC{if someone are interested in typing, they can :P} 
 On the other hand, the chamber structure one sees outside of the irrational cone
-is very well-behaved and familiar in the theory of cluster algebras \sayDR{Should we also mention root systems here?}. \
-\sayMC{if someone are interested in typing, they can :P} This
+is very well-behaved and familiar in the theory of cluster algebras. This
 chamber structure coincides with the Fock-Goncharov cluster complex, see
 \cite[\S2]{GHKK}, the mutation fan of Reading \cite{R}, and the picture group of
 Igusa-Orr-Todorov-Weyman \cite{IOTW}.
@@ -994,8 +996,8 @@ we can use them to define the image of such pairs under $T$. Namely set
 
 Having fixed the notation we are ready to introduce $\fD_{(b,c)}^\bfd$.
 The set
-\saySS{Changed the notation here to be consistent with the line just above.
-  Remove this comment whenever you want.}
+%\saySS{Changed the notation here to be consistent with the line just above.
+%  Remove this comment whenever you want.}
 \[
   T(\fD_{(b,c)}):=
   \bigcup_{(\fd,f_\fd)\in \fD_{(b,c)}}
@@ -1329,7 +1331,7 @@ As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be
 
 \end{thebibliography}
 
-\sayGM{Dylan, did not know if you wanted to use Northeastern or Notre Dame (Gregg)}
-\sayDR{I opted for Northeastern since most of the work was done while I was employed by them.  Hmm, Notre Dame is employing me now though, is there a reasonable way to put both?}
+%\sayGM{Dylan, did not know if you wanted to use Northeastern or Notre Dame (Gregg)}
+%\sayDR{I opted for Northeastern since most of the work was done while I was employed by them.  Hmm, Notre Dame is employing me now though, is there a reasonable way to put both?}
 
 \end{document}
