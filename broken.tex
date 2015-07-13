@@ -519,7 +519,7 @@ where $n\in N$ is the primitive vector annihilating the tangent space to $\fd$ d
 that the only role of the transversal direction $v$ is to fix which of the two
 normals $\pm n$ is used in the exponent. 
 
-Let $\fD$ be a scattering diagram and $\gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}$ a smooth immersion with endpoints not in the support of $\fD$ which is transverse to each wall of $\fD$ that it crosses. We define the \textit{path-ordered product} $\fp_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
+Let $\fD$ be a scattering diagram and $\gamma: [0,1] \rightarrow M_{\mathbb{R}} \smallsetminus  \{0 \}$ a smooth immersion with endpoints not in the support of $\fD$ which is transverse to each wall of $\fD$ that it crosses \sayDR{It seems to make sense to introduce some terminology to refer to such paths since we need it so often, maybe call them \emph{regular with respect to $\fD$}?}. We define the \textit{path-ordered product} $\fp_{\gamma, \fD}$ along $\gamma$ as follows. For each power $k \geq 1$, let  
 \[
   0< t_1 <  t_2 < \cdots < t_s < 1 
 \]
@@ -666,12 +666,11 @@ elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough t
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
 %to produce some walls described below.
 
-We need to distinguish three cases. If $bc<4$ this procedure will construct, in
+We need to distinguish three cases. If $bc<4$, this procedure will construct, in
 finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
-\fD_{\mathrm{in},(b,c)}$.  If $bc\ge 4$, instead, we will get two infinite
-families of walls whose supports will converge to a single rational
-ray if $bc=4$ or, if $bc>4$, to the boundary of the convex cone
-spanned by the irrational vectors
+\fD_{\mathrm{in},(b,c)}$.  If $bc\ge4$, we will get two infinite
+families of walls whose supports will converge respectively to the rays
+spanned by the vectors
 \[
   \left(2b,-bc + \sqrt{bc(bc-4)}\right)
   \quad
@@ -679,16 +678,15 @@ spanned by the irrational vectors
   \quad
   \left(2b,-bc - \sqrt{bc(bc-4)}\right).
 \]
-These will exhaust all the walls in  $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$
-with support laying outside of this cone. The structure of the remaining part of 
+These will exhaust all the walls in $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$
+with support lying outside the convex cone spanned by these vectors.  When $bc=4$, this cone will be a single rational ray in $\fD_{(b,c)}$.  For $bc>4$, the structure of the remaining part of 
 $\fD_{(b,c)}$ is not completely understood; the expectation is that there is
 a wall for each possible rational slope inside this irrational cone.
 
 On the other hand, the chamber structure one sees outside of the irrational cone
-is very well-behaved and familiar in the theory of cluster algebras \sayDR{Should we also mention root systems here?}. \
-\sayMC{if someone are interested in typing, they can :P} This
-chamber structure coincides with the Fock-Goncharov cluster complex, see
-\cite[\S2]{GHKK}, the mutation fan of Reading \cite{R}, and the picture group of
+is very well-behaved and familiar in the theory of cluster algebras.  This
+chamber structure coincides with the Fock-Goncharov cluster complex, see e.g.
+\cite[Section 2]{GHKK}, the mutation fan of Reading \cite{R}, and the picture group of
 Igusa-Orr-Todorov-Weyman \cite{IOTW}.
 
 \begin{figure}
@@ -703,24 +701,22 @@ The next result explains how to obtain Laurent polynomials out of scattering dia
 and serves as the motivation for our later connections to cluster algebras.
 %The next result explains the connection between scattering diagrams
 %and the corresponding cluster algebras. 
-\sayDR{The statement of the theorem does not a priori have anything to do with cluster algebras, probably something more should be said here if we want to keep this sentence.}\sayGM{I attempted a rewrite, what do you think? (Gregg)}
 \begin{theorem} 
   \label{univLaurent} 
   Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ for which $\fp_{\gamma,\fD}$ is defined, $\fp_{\gamma,\fD}(f)$ can be viewed as an element of
-  $\ZZ[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$ \sayDR{Is this sentence a part of the theorem or should it be moved above?}.  If for any path $\gamma$ in
+  $\ZZ[[x_1,x_2^{-1}]]$ localized at $x_1x_2^{-1}$ \sayDR{This claim is not addressed in the proof below, however it does not seem obvious since the functions attached to the walls in the imaginary cone really are power series in $x_1^{-1}$ and $x_2$.}.  If for any path $\gamma$ in
   $M_{\RR}$, with starting point in the first quadrant and endpoint in one of the
   chambers of $\fD$, $\fp_{\gamma,\fD}(f)$ lies in $\ZZ[M]$, then $f$ is a universal
   Laurent polynomial.
 \end{theorem}
-\sayMC{This theorem is saying $f$ is a universal Laurent poly for cluster. So it is related. The sentence you are quoting can be pulled out in the theorem but it may be good to put them together.}
 
 \begin{proof}
   This is \cite[Theorem 4.4]{GHKK} applied to the case at hand.
   Specifically, let $\cA$ be the custer variety defined by the given choice of
-  seed. By definition, $\cA$ is given by gluing together a collection of tori
+  seed. By definition, $\cA$ is obtained by gluing together a collection of tori
   via cluster transformations and thus a regular function on $\cA$ is precisely a
   universal Laurent polynomial.  On the other hand, in
-  \cite{GHKK}, \S 4, another variety $\cA'$ is defined. This is done by
+  \cite[Section 4]{GHKK} another variety $\cA'$ is defined. This is done by
   associating a torus $\cA_{\tau}':= \Spec \ZZ[M]$ to a chamber $\tau\subseteq
   M_{\RR}$ of $\fD$. For any two chambers $\tau,\tau'$ we can glue $\cA_{\tau}'$
   to $\cA_{\tau'}'$ using the rational map defined on function fields by
@@ -984,8 +980,6 @@ we can use them to define the image of such pairs under $T$. Namely set
 
 Having fixed the notation we are ready to introduce $\fD_{(b,c)}^\bfd$.
 The set
-\saySS{Changed the notation here to be consistent with the line just above.
-  Remove this comment whenever you want.}
 \[
   T(\fD_{(b,c)}):=
   \bigcup_{(\fd,f_\fd)\in \fD_{(b,c)}}
@@ -999,7 +993,7 @@ The set
 %\]
 is not a scattering diagram according to Definition 
 \ref{def:scattering_diagram} (not all of its elements are walls for the same
-convex cone) but can be made into one by a few simple fixes.
+convex cone), but can be made into one by a few simple fixes.
 
 First of all, $\big( \RR (0,1), 1+x_2^c\big)$ is the only wall of $\fD_{(b,c)}$
 whose support is not totally contained in one of the domains of linearity of
@@ -1013,7 +1007,7 @@ $T$; therefore, under $T$, it breaks into two parts:
 \]
 
 Next note that, since $T(-1,0)=(-1,0)$ and $T(b,-1)=(0,-1)$, $T$ maps all the
-walls of $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ to the third quadrant \sayDR{It seems like a little more details are needed here, we also need to refer to this in the proof of Prop. 4.4 so it might be good to state as a lemma.}. \sayMC{We can do it. The reason is only that all the rays are between $(b,-1)$ and $(0,-1)$ and as the two 'boundaries' go to the third quadrant, all the rays inside the 'cone' will follow.}
+walls of $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ to the third quadrant.
 Indeed, $\big(\RR_{\leq0}(-b,1),1+x_1^{-bc}x_2^c\big)$ is the wall with the biggest slope in
 $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is $\big( \RR_{\le0} (0,1), 1+x_2^c\big)$.
 
@@ -1179,10 +1173,10 @@ The sign of the angular momentum is a useful invariant for characterizing the qu
 For a broken line ending in the first quadrant, the sign of the angular momentum characterizes whether that broken line could have passed through the fourth quadrant (positive) or the second quadrant (negative).
 
 \begin{lemma}
-Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (respectively, negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
-%\begin{itemize}	
-	%\item If $\gamma$ has positive angular momentum, then the slope of the linear domains of $\gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
-	%\item If $\gamma$ has negative angular momentum, then the slope of the linear domains of $\gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
+Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (resp. negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
+%\begin{itemize}  
+  %\item If $\gamma$ has positive angular momentum, then the slope of the linear domains of $\gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
+  %\item If $\gamma$ has negative angular momentum, then the slope of the linear domains of $\gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
 %\end{itemize}
 \end{lemma}
 
@@ -1194,8 +1188,8 @@ Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint 
 \begin{figure}[h!t]
 \begin{tikzpicture}
     \begin{scope}[scale=.75]
-    	\clip (-5.5,-5.5) rectangle (5.5,5.5);
-    	%\draw[step=1,draw=black!10,very thin] (-10,-10) grid (10,10);
+      \clip (-5.5,-5.5) rectangle (5.5,5.5);
+      %\draw[step=1,draw=black!10,very thin] (-10,-10) grid (10,10);
         \draw[wall] (0,0) to (0,10);
         \draw[wall] (0,0) to (-10,0);
         
@@ -1215,18 +1209,18 @@ Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint 
         \draw[wall,black] (0,0) to (10,0);
         \draw[wall,black] (0,0) to (0,-10);
         \draw[wall,black] (0,0) to (-8,-12);
-				
-			  \draw[blue,thick] (2,1.73) to node[right] {$m=(0,-1)$} (2,0) to node[below right] {$m=(-2,-1)$} (0,-1) to node[below right] {$m=(-2,-2)$} (-2,-3) to node[right] {$m=(-4,-5)$} (-6,-7);
-				\node[dot] at (2,0) {};
-				\node[dot] at (0,-1) {};
-				\node[dot] at (-2,-3) {};
-				\node[dot,draw=black, fill=black] (q) at (2,1.73) {};
-				\node[above right] at (q) {$q$};
-				
-				\node[below left,black!25] at (5.5,5.5) {Quadrant I};
-				\node[below right,black!25] at (-5.5,5.5) {Quadrant II};
-				\node[above left,black!25] at (5.5,-5.5) {Quadrant IV};
-				
+        
+        \draw[blue,thick] (2,1.73) to node[right] {$m=(0,-1)$} (2,0) to node[below right] {$m=(-2,-1)$} (0,-1) to node[below right] {$m=(-2,-2)$} (-2,-3) to node[right] {$m=(-4,-5)$} (-6,-7);
+        \node[dot] at (2,0) {};
+        \node[dot] at (0,-1) {};
+        \node[dot] at (-2,-3) {};
+        \node[dot,draw=black, fill=black] (q) at (2,1.73) {};
+        \node[above right] at (q) {$q$};
+        
+        \node[below left,black!25] at (5.5,5.5) {Quadrant I};
+        \node[below right,black!25] at (-5.5,5.5) {Quadrant II};
+        \node[above left,black!25] at (5.5,-5.5) {Quadrant IV};
+        
     \end{scope}
 \end{tikzpicture}
 \caption{A broken line with positive angular momentum}
@@ -1237,9 +1231,9 @@ Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint 
 The lemma is straightforward except for broken lines with initial exponent $(m_1,m_2)$ with $m_1,m_2<0$.
 Consider a bend of $\gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(x^{(w_1,w_2)}))$.  If the exponent immediately before the bend is $(m_1,m_2)$, the exponent immediately after the bend is $(m_1+kw_1,m_2+kw_2)$ for some positive integer $k$.  
 
-Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent $(w_1,w_2)$. If the angular momentum $q_2m_1-q_1m_2$ is positive, then the cross-product $w_2m_1-w_1m_2$ is negative. 
+Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent $(w_1,w_2)$. If the angular momentum $q_2m_1-q_1m_2$ is positive, then the cross-product $w_2m_1-w_1m_2$ is negative.  But
 \[ w_2m_1-w_1m_2=m_1(m_2+kw_2)-m_2(m_1+kw_1)<0 \Rightarrow \frac{m_2+kw_2}{m_1+kw_1} < \frac{m_2}{m_1}\]
-If the angular momentum is negative, the slope increases by the an identical argument.
+as desired.  If the angular momentum is negative, the slope increases by an identical argument.
 \end{proof}
 
 We can now constrain the possible final exponent of a broken line, which will be used to bound the support of the corresponding theta function.
@@ -1247,13 +1241,13 @@ We can now constrain the possible final exponent of a broken line, which will be
 \begin{lemma}
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ which begins in the third quadrant, with endpoint $q$ in the first quadrant.  Denote the  initial exponent by $m=(m_1,m_2)$ and the final exponent by $m^q=(m_1^q,m_2^q)$.  
 \begin{enumerate}
-	%\item $m_1-m_1^q\in b\mathbb{N}$ and $m_2-m_2^q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
-	\item If $\gamma$ has positive angular momentum, then $m_2\leq m_2^q<0$ and
-	\[ m_1\leq m_1^q\leq\left( \frac{m_1}{m_2}-b\right)m_2^q\]
-	where the upper bound is equality only when $m^q =( m_1-bm_2,m_2)$.
-	\item If $\gamma$ has negative angular momentum, then $m_1\leq  m_1^q<0$ and
-	\[ m_2 \leq m_2^q\leq\left( \frac{m_2}{m_1}-c\right)m_1^q\]
-	where the upper bound is equality only when $m^q =( m_1,m_2-cm_1)$.
+  %\item $m_1-m_1^q\in b\mathbb{N}$ and $m_2-m_2^q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
+  \item If $\gamma$ has positive angular momentum, then $m_2\leq m_2^q<0$ and
+  \[ m_1\leq m_1^q\leq\left( \frac{m_1}{m_2}-b\right)m_2^q\]
+  where the upper bound is equality only when $m^q =( m_1-bm_2,m_2)$.
+  \item If $\gamma$ has negative angular momentum, then $m_1\leq  m_1^q<0$ and
+  \[ m_2 \leq m_2^q\leq\left( \frac{m_2}{m_1}-c\right)m_1^q\]
+  where the upper bound is equality only when $m^q =( m_1,m_2-cm_1)$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1262,7 +1256,7 @@ Assume $\gamma$ has positive angular momentum; consequently, $\gamma$ passes thr
 As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+x^{(b,0)})$.  By definition, the final exponent $m^q$ on $\gamma$ must be an exponent that appears in $x^{(m_1',m_2')}(1+x^{(b,0)})^{-m_2'}$.  It follows that%The possible monomials which may occur in this expression are of the form $A^{(-m_1'+kb,-m_2')}$ for some $0\leq k\leq m_2'$, and so 
 \[ (m_1^q,m_2^q) = (m_1'+kb,m_2')\]
 for some $0\leq k\leq -m_2'$.
-Consequently, $m_2^q=m_2'\leq0$ and 
+Consequently, $m_2^q=m_2'<0$ and 
 \[ m_1^q\leq m_1' - bm_2' = \left(\frac{m_1'}{m_2'} - b\right) m_2'  = \left(\frac{m_1'}{m_2'} - b\right) m_2^q \leq \left(\frac{m_1}{m_2} - b\right) m_2^q\]
 The second inequality is equality only if $(m_1',m_2')=(m_1,m_2)$, and so the composite inequality is equality only if $m^q =( m_1-bm_2,m_2)$.
 
@@ -1277,14 +1271,14 @@ Next, assume that $m=(m_1,m_2)$ such that $m_1\leq0$ and $m_2\leq0$.
 %\[ 0<m_1,\;\;\; 0<m_2\]
 The coefficient of $x^{(a_1,a_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
 \[ m_1\leq a_1\leq \left(\frac{m_1}{m_2}-b\right)a_2,\;\;\; m_2\leq a_2\leq \left(\frac{m_2}{m_1}-c\right)a_1\]
-Furthermore, the upper bounds are only satisfied in the specific cases when $(a_1,a_2)$ is equal to $(a_1-ba_2,a_2)$ or $(a_1,a_2-ca_1)$.  
+Furthermore, the upper bounds are only satisfied in the specific cases when $(a_1,a_2)$ is equal to $(m_1-bm_2,m_2)$ or $(m_1,m_2-cm_1)$.  
 Since $\vartheta_{q,m}^\mathbf{d}\in \mathcal{A}_{b,c}$, Scholium \ref{sch} implies that $\vartheta_{q,m}^\mathbf{d}$ is a scalar multiple of $x[-m_1,-m_2]$. 
 
 To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each element.  The coefficient of $x^{(m_1,m_2)}$ in $x[-m_1,-m_2]$ is $1$, by the definition of a pointed element. The coefficient of $x^{(m_1,m_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ is the sum of the coefficients of all broken lines in $\mathfrak{D}_{(b,c)}^\mathbf{d}$ with initial exponent $(m_1,m_2)$ and final exponent $(m_1,m_2)$.  Since any bend in a broken line would increase one of the components of the exponent, this only happens for the unique broken line with initial exponent $(m_1,m_2)$ that has no bends. Hence, the coefficient of $x^{(m_1,m_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ is $1$, and so $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 \end{proof}
 
 \begin{remark}
-As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{thm: main} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the equality of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
+As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{thm: main} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the coincidence of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
 \end{remark}
 
 \begin{thebibliography}{99}
