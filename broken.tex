@@ -90,7 +90,7 @@
 \email{musiker@math.umn.edu}
 
 \author[Rupel]{Dylan Rupel}
-\address[Dylan Rupel]{University of Notre Dame (formerly Northeastern University)}
+\address[Dylan Rupel]{University of Notre Dame}
 \email{drupel@nd.edu}
 
 \author[Stella]{Salvatore Stella}
@@ -147,7 +147,7 @@ The proof is based on an analysis of exactly which monomials may appear in eleme
 
 The organization of the paper is as follows.  In sections 2 and 3, we review the basic definitions and properties of the greedy and theta bases, respectively.  The natural parametrizing sets of the two bases, the $\bfd$-vectors and $\bfg$-vectors, are distinct and we explain in section 4 how to relate them.  This determines a bijection between the two bases and we show in section 5 that the basis elements mapped to each other by this bijection actually coincide, proving the main theorem.
 
-\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which accounts for the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We thank Maria Angelica Cueto, who was also member of our working group but declined to be named as a coauthor.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. The first author would like to thank University of Cambridge for hosting her during the completion of this paper.
+\textsc{Acknowledgements} This paper is the result of a working group on scattering diagrams at the 2014 AMS Mathematics Research Community on Cluster Algebras in Snowbird, UT, which accounts for the large number of authors.  We thank the AMS and in particular Ellen Maycock and Donna Salter for helping facilitate such an enjoyable and productive environment.  We thank Maria Angelica Cueto, who was also member of our working group but declined to be named as a coauthor.  We also thank the other organizers Gordana Todorov, Michael Gekhtman, and David Speyer for making the workshop possible. Man Wai Cheung would like to thank University of Cambridge for hosting her during the completion of this paper.  A portion of this work was completed while Dylan Rupel was a research instructor at Northeastern University.
 
 \section{Rank 2 cluster algebras and their greedy bases}
 Fix positive integers $b$ and $c$.  Consider rational functions $x_k\in\QQ(x_1,x_2)$ indexed by $k\in\ZZ$ and defined recursively by 
@@ -171,7 +171,7 @@ We will denote by $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$ the subspace of Lauren
  $\ZZ[x_k^{\pm1},x_{k+1}^{\pm1}]$ (resp. $\ZZ_{\ge0}[x_k^{\pm1},x_{k+1}^{\pm1}]$) for every $k \in \ZZ$.  A primary result of \cite{BFZ}, specialized to the rank 2 setting, states that $\cA(b,c)$ is precisely the set of univeral Laurent polynomials in $\QQ(x_1,x_2)$.
 
 \begin{theorem}
-\cite{LS,Rup}\sayGM{Does this look better to you? (Gregg)}\sayDR{Not really, I only wanted to let people know why I added the extra reference, I don't think it needs to be in the paper.} Each cluster variable of $\cA(b,c)$ is positive.
+\cite{LS,Rup} Each cluster variable of $\cA(b,c)$ is positive.
 \end{theorem}
 
 An element of $\ZZ[x_1^{\pm1},x_2^{\pm1}]$ is called \emph{pointed at
@@ -392,14 +392,14 @@ In order to better connect with the scattering diagram approach from Section 3, 
 \begin{proof}
   The first claim is the content of \cite[Proposition~4.1]{LLZ} and \cite[Corollary~3.5]{LLZ2}.
 
-  Suppose $z\in\cA(b,c)$ contains the monomial $x_1^{-a_1}x_2^{-a_2}$ with coefficient 1 and that the support of $z$ is contained in $R_{a_1,a_2}$.  Suppose $z\ne x[a_1,a_2]$.  Then there exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Our assumptions on $z$ imply for any such monomial that we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ maximal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient. 
+  Suppose $z\in\cA(b,c)$ contains the monomial $x_1^{-a_1}x_2^{-a_2}$ with coefficient 1 and that the support of $z$ is contained in $R_{a_1,a_2}$.  Suppose $z\ne x[a_1,a_2]$.  Then there exists a monomial $x_1^{-a'_1}x_2^{-a'_2}$ appearing in $z$ with a different coefficient than in $x[a_1,a_2]$.  Our assumptions on $z$ imply for any such monomial that we have $a'_1<a_1$ or $a'_2<a_2$.  Choose a monomial with $(a'_1,a'_2)$ minimal in lexicographic order.  Then in the greedy basis expansion of $z$ the element $x[a'_1,a'_2]$ must appear with nonzero coefficient. 
 
   Below we refer to the points $O,A,B,C$ from Figure~\ref{fig:greedy polytopes}.  To reach a contradiction, there are two cases to consider.
   \begin{itemize}
-    \item If $(a'_1,a'_2)$ lies on or North of the line segment $OB$, i.e. $a_1a'_2\le a'_1a_2$, then we consider the point $C'=(-a'_1,-a'_2+ca'_2)$ at the Northern boundary of the support region $R_{a'_1,a'_2}$ of $x[a'_1,a'_2]$ and compare with the line segment $OC$.  In this case, we have
+    \item If $(-a'_1,-a'_2)$ lies on or North of the line segment $OB$, i.e. $a_1a'_2\le a'_1a_2$, then we consider the point $C'=(-a'_1,-a'_2+ca'_2)$ at the Northern boundary of the support region $R_{a'_1,a'_2}$ of $x[a'_1,a'_2]$ and compare with the line segment $OC$.  In this case, we have
     \[-a_1(-a'_2+ca'_1)=a_1a'_2-ca_1a'_1\le a'_1a_2-ca_1a'_1=-a'_1(-a_2+ca_1)\]
     and thus $C'$ lies on or North of $OC$.  If $C'$ is North of $OC$ or $C'\ne C$ is on $OC$, then it lies outside $R_{a_1,a_2}$ which is impossible.  Thus we must have $C'=C$, but this implies $(a'_1,a'_2)=(a_1,a_2)$ which clearly must be false.
-    \item If $(a'_1,a'_2)$ lies on or East of the line segment $OB$, i.e. $a'_1a_2\le a_1a'_2$, then we consider the point $A'=(-a'_1+ba'_2,-a'_2)$ at the Eastern boundary of the support region $R_{a'_1,a'_2}$ of $x[a'_1,a'_2]$ and compare with the line segment $OA$.  In this case, we have
+    \item If $(-a'_1,-a'_2)$ lies on or East of the line segment $OB$, i.e. $a'_1a_2\le a_1a'_2$, then we consider the point $A'=(-a'_1+ba'_2,-a'_2)$ at the Eastern boundary of the support region $R_{a'_1,a'_2}$ of $x[a'_1,a'_2]$ and compare with the line segment $OA$.  In this case, we have
     \[(-a'_1+ba'_2)(-a_2)=a'_1a_2-ba_2a'_2\le a_1a'_2-ba_2a'_2=(-a_1+ba_2)(-a'_2)\]
     and thus $A'$ lies on or East of $OA$.  If $A'$ is East of $OA$ or $A'\ne A$ is on $OA$, then it lies outside $R_{a_1,a_2}$ which is impossible.  Thus we must have $A'=A$, but this implies $(a'_1,a'_2)=(a_1,a_2)$ which is clearly false.
   \end{itemize}
