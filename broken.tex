@@ -998,7 +998,6 @@ is not a scattering diagram according to Definition
 \ref{def:scattering_diagram} (not all of its elements are walls for the same
 convex cone), but can be made into one by a few simple fixes.
 \sayDR{Is it true that the resulting scattering functions (the ones we don't toss out anyway) will be elements of $\widehat{\ZZ[P_{\sigma^\bfd}]}$?  The exponent of $x_1$ on the original functions is always $\le0$ but $T$ can only make this exponent more negative.  I think this is the sign convention issue we had before rearing its ugly head again.}
-\sayDR{Should we include an example to match Figure 2?  Salvatore, are you willing to add it?}
 
 First of all, $\big( \RR (0,1), 1+x_2^c\big)$ is the only wall of $\fD_{(b,c)}$
 whose support is not totally contained in one of the domains of linearity of
@@ -1045,6 +1044,18 @@ $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is $\big( \RR_{
   \]
   and obtain $\fD_{(b,c)}^\bfd$ using Theorem \ref{th:KS}. 
 \end{remark}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw (-3,0) -- (3,0) node[right] {$1+x_1^2$};
+    \draw (0,-3) -- (0,3) node[above] {$1+x_2$};
+    \draw (0,0) -- (-3,-3) node[below left] {$1+x_1^2x_2^2$};
+    \draw (0,0) -- (-3,-1.5) node[below left] {$1+x_1^2x_2^1$};
+  \end{tikzpicture}
+  \caption{The scattering diagram $\fD_{(2,1)}^\bfd$.}
+  \label{fig:diagex}
+\end{figure}
 
 For a broken line $\gamma$ in $\fD_{(b,c)}$, we denote its image under $T$ as
 $T(\gamma)$: this is the broken line in $\fD_{(b,c)}^\bfd$ whose underlying map
