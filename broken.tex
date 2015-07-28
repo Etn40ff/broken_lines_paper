@@ -686,7 +686,10 @@ a wall for each possible rational slope inside this irrational cone.
 
 %\sayDR{Should we also mention root systems here?}. \
 %\sayMC{if someone are interested in typing, they can :P} 
-On the other hand, the chamber structure one sees outside of the irrational cone
+On the other hand, the chamber structure (i.e. the collection of cones in which the rays cut the plane)
+\saySS{Mark suggests explaining what we mean here by chamber structure; do you
+  like this attempt? }
+one sees outside of the irrational cone
 is very well-behaved and familiar in the theory of cluster algebras.  This
 chamber structure coincides with the Fock-Goncharov cluster complex, see e.g.
 \cite[Section 2]{GHKK}, the mutation fan of Reading \cite{R}, and the picture group of
@@ -715,7 +718,7 @@ and serves as the motivation for our later connections to cluster algebras.
 
 \begin{proof}
   This is \cite[Theorem 4.4]{GHKK} applied to the case at hand.
-  Specifically, let $\cA$ be the custer variety defined by the given choice of
+  Specifically, let $\cA$ be the cluster variety defined by the given choice of
   seed. By definition, $\cA$ is obtained by gluing together a collection of tori
   via cluster transformations and thus a regular function on $\cA$ is precisely a
   universal Laurent polynomial.  On the other hand, in
@@ -997,7 +1000,7 @@ The set
 is not a scattering diagram according to Definition 
 \ref{def:scattering_diagram} (not all of its elements are walls for the same
 convex cone), but can be made into one by a few simple fixes.
-\sayDR{Is it true that the resulting scattering functions (the ones we don't toss out anyway) will be elements of $\widehat{\ZZ[P_{\sigma^\bfd}]}$?  The exponent of $x_1$ on the original functions is always $\le0$ but $T$ can only make this exponent more negative.  I think this is the sign convention issue we had before rearing its ugly head again.}
+%\sayDR{Is it true that the resulting scattering functions (the ones we don't toss out anyway) will be elements of $\widehat{\ZZ[P_{\sigma^\bfd}]}$?  The exponent of $x_1$ on the original functions is always $\le0$ but $T$ can only make this exponent more negative.  I think this is the sign convention issue we had before rearing its ugly head again.}
 
 First of all, $\big( \RR (0,1), 1+x_2^c\big)$ is the only wall of $\fD_{(b,c)}$
 whose support is not totally contained in one of the domains of linearity of
@@ -1249,6 +1252,11 @@ Consider a bend of $\gamma$ at a point $(q_1,q_2)$ in a wall $(\fd,f_{\fd}(x^{(w
 
 Assume that $(q_1,q_2)$ is not in the boundary of the first quadrant, so that $(q_1,q_2)$ is a negative scalar multiple of the exponent $(w_1,w_2)$. If the angular momentum $q_2m_1-q_1m_2$ is positive, then the cross-product $w_2m_1-w_1m_2$ is negative.  But for positive $k$,
 \[ k(w_2m_1-w_1m_2) =m_1(m_2+kw_2)-m_2(m_1+kw_1)<0 \Rightarrow \frac{m_2+kw_2}{m_1+kw_1} < \frac{m_2}{m_1}\]
+\saySS{Mark pointed out that the implication holds only if both $m_1$ and
+  $m_1+kw_1$ have the same sign. Under the assumption we are dealing with, this
+  is the same as requiring that $m_1 < -kw_1$ with both $k$ and $w_1 >0$. Intuitively this means that after
+  a bend we need to continue to move to the right but I do not see how to
+  establish the inequality.}
 as desired.  If the angular momentum is negative, the slope increases by an identical argument.
 \end{proof}
 
