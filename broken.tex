@@ -20,18 +20,15 @@
 \newcommand{\sayGM}[1]{\say[GM]{#1}}
 
 % ambients
-\newtheorem{lemma}{Lemma}[section]
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{scholium}[theorem]{Scholium}
-\newtheorem{propo}[theorem]{Proposition}
-\newtheorem{prop}[theorem]{Proposition}
-\newtheorem{cor}[theorem]{Corollary}
-\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{claim*}[theorem]{Claim}
 \newtheorem{claim}[theorem]{Claim}
-\newtheorem{claim*}{Claim}
-\newtheorem{rmk}[theorem]{Remark}
-\newtheorem{thm}[theorem]{Theorem}
-\newtheorem{defn}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{scholium}[theorem]{Scholium}
 \theoremstyle{remark}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
@@ -41,10 +38,10 @@
 % cleverref
 \usepackage{cleveref}
 \crefname{theorem}{Theorem}{Theorems}
-\crefname{prop}{Proposition}{Propositions}
+\crefname{proposition}{Proposition}{Propositions}
 \crefname{section}{Section}{Sections}
 \crefname{subsection}{Section}{Sections}
-\crefname{defn}{Definition}{Definitions}
+\crefname{definition}{Definition}{Definitions}
 \crefname{remark}{Remark}{Remarks}
 \crefname{lemma}{Lemma}{Lemmas}
 \crefname{corollary}{Corollary}{Corollaries}
@@ -182,7 +179,7 @@ $(a_1,a_2)\in\ZZ^2$} if it can be written in the form
 \]
 where $c(p_1,p_2)\in\ZZ$ with $c(0,0)=1$.   
 %We will call such an element \emph{positive in the first cluster} if $c(p_1,p_2)\ge0$ for all $p_1,p_2\ge0$. 
-\begin{prop}\cite[Proposition~1.5]{LLZ}
+\begin{proposition}\cite[Proposition~1.5]{LLZ}
   Let $z$ be pointed at $(a_1,a_2)\in\ZZ^2$ and suppose
   $z\in\ZZ_{\ge0}[x_0^{\pm1},x_1^{\pm1}]
   \cap\ZZ_{\ge0}[x_1^{\pm1},x_2^{\pm1}]
@@ -195,7 +192,7 @@ where $c(p_1,p_2)\in\ZZ$ with $c(0,0)=1$.
     &\sum\limits_{k=1}^{p_1} (-1)^{k-1}c(p_1-k,p_2){a_2-cp_2+k-1\choose k},\\
     \nonumber&\sum\limits_{ j =1}^{p_2} (-1)^{ j -1}c(p_1,p_2- j ){a_1-bp_1+ j -1\choose  j }\bigg).
   \end{align}
-\end{prop}
+\end{proposition}
 A positive element of $\cA(b,c)$ is called \emph{indecomposable} if it cannot
 be written as a sum of two positive elements.  In the search for positive bases
 of $\cA(b,c)$ one is naturally led to investigate the indecomposable positive
@@ -412,7 +409,7 @@ The proof of Theorem~\ref{th:Newton polygons} actually establishes the following
 \end{scholium}
 
 
-\begin{remark}\label{rem:Dyck}
+\begin{remark}\label{remark:Dyck}
 The existence of integers $c(p_1,p_2)$ satisfying the recursive equations \eqref{eq:greedy recursion}, and thus the existence of the greedy basis itself, is quite non-trivial.  The authors of \cite{LLZ} characterize each $c(p_1,p_2)$ as the solution to an enumerative problem; specifically, the number of certain `compatible pairs of edges' inside a type of lattice path called a `maximal Dyck path'.
 
 This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p_1,p_2)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  %Many remarkable advances in the theory of cluster algebras have been animated by a desire to produce enumerative problems whose solutions define the coefficients of such a basis, such as additive and monodial categorifications, 
@@ -473,7 +470,7 @@ Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \
 The following are special cases of definitions which originally appeared in
 \cite{KS}, \cite{GS}.
 
-\begin{defn}
+\begin{definition}
   \label{walldef}
   A \emph{wall} is a pair $(\fd, f_{\fd})$, where 
   \begin{itemize}
@@ -491,9 +488,9 @@ The following are special cases of definitions which originally appeared in
   \end{itemize}
   The set $\fd \subset M_{\mathbb{R}}$ is called the \emph{support} of the wall
   $(\fd, f_{\fd})$. (Note the different use of the word ``support" in this geometric context.)
-\end{defn}
+\end{definition}
 
-\begin{defn}
+\begin{definition}
   \label{def:scattering_diagram}
   A scattering diagram $\fD$ is a collection of walls such that, for each $k \geq
   0$, the set
@@ -503,7 +500,7 @@ The following are special cases of definitions which originally appeared in
   is finite. The support of a scattering diagram is the union of the supports of its walls.%For semplicity we diverge slightly form the convention in
   %\cite{GHKK} by requiring that $\fd_1 \neq \fd_2$ whenever $f_{\fd_1}\neq
   %f_{\fd_2}$.
-\end{defn}
+\end{definition}
 For simplicity, we will impose the additional condition that no two walls in the scattering diagram have the same support.
 
 %For a scattering diagram $\fD$, we denote the support of $\fD$ as
@@ -534,11 +531,11 @@ Then we define
 \[
   \fp_{\gamma, \fD} := \lim_{k \rightarrow \infty} \fp ^{(k)}_{\gamma, \fD}. 
 \]
-\begin{defn}
+\begin{definition}
   A scattering diagram is \emph{consistent} if $\fp _{\gamma, \fD}$ depends
   only on the endpoints of $\gamma$ for any path $\gamma$ which is regular 
   with respect to $\fD$.
-\end{defn}
+\end{definition}
 
 \begin{theorem}\cite{KS},\cite{GS}
   \label{th:KS}
@@ -744,7 +741,7 @@ We now recall the notion of broken lines, which are tropical analogues of holomo
 used in \cite{GHK11} and \cite{GHKK} to construct canonical bases in various
 circumstances.
 
-\begin{defn} 
+\begin{definition} 
   \label{brokendef}
   Let $\fD$ be a scattering diagram, $m \in M \smallsetminus \{0\}$, and $q \in
   M_{\RR} \smallsetminus \text{Supp}(\fD)$.  A \emph{broken line} with initial
@@ -766,13 +763,13 @@ circumstances.
       $c(\ell')x^{m(\ell')}$ is a term in 
       \[\fp_{-m(\ell), \fd} \left(c(\ell) x^{m(\ell)}\right).\]
   \end{itemize}
-\end{defn}
+\end{definition}
 We refer to $m(\ell)\in \mathbb{Z}^2$ as the \emph{exponent} of that domain
 of linearity.
 
 We are finally ready to introduce the main player of our discussion.
 For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to the last domain of linearity of $\gamma$.
-\begin{defn}
+\begin{definition}
   Let $\fD, m, q$ be as in Definition~\ref{brokendef}.  Define the \emph{theta function} corresponding to $m$ and $q$
   as
   \[ 
@@ -780,7 +777,7 @@ For a broken line $\gamma$ we denote by $\Mono(\gamma)$ the monomial attached to
   \] 
   where the sum is over all broken lines with initial exponent $m$ and endpoint
   $q$.
-\end{defn}
+\end{definition}
 
 \begin{example} 
   \label{brokenex}
@@ -1018,7 +1015,7 @@ walls of $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ to the third quadran
 Indeed, $\big(\RR_{\leq0}(-b,1),1+x_1^{-bc}x_2^c\big)$ is the wall with the biggest slope in
 $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is $\big( \RR_{\le0} (0,1), 1+x_2^c\big)$.
 
-\begin{defn}
+\begin{definition}
   $\fD_{(b,c)}^\bfd$ is the scattering diagram obtained from
   $T\left(\fD_{(b,c)}\right)$ by replacing 
   \begin{itemize}
@@ -1029,7 +1026,7 @@ $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is $\big( \RR_{
       1+x_2^c\big)$ with $ \big( \RR (0,1), 1+x_2^c\big)$.
   \end{itemize}
   Its base region is the cone $\sigma^\bfd$ generated by $(1,0)$ and $(0,1)$. 
-\end{defn}
+\end{definition}
 
 \begin{remark}
   It is not too hard to see that the scattering diagram $\fD_{(b,c)}^\bfd$ is
@@ -1057,7 +1054,6 @@ $\fD_{(b,c)}\smallsetminus\fD_{\mathrm{in},(b,c)}$ and its image is $\big( \RR_{
     \draw (0,0) -- (-3,-1.5) node[below left] {$1+x_1^2x_2^1$};
   \end{tikzpicture}
   \caption{The scattering diagram $\fD_{(2,1)}^\bfd$.}
-  \label{fig:diagex}
 \end{figure}
 
 For a broken line $\gamma$ in $\fD_{(b,c)}$, we denote its image under $T$ as
@@ -1069,7 +1065,7 @@ attached to $\ell$ in $T(\gamma)$ is then obtained by applying, accordingly, eit
 $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 
 \begin{theorem}
-  \label{thm:T_on_broken_lines}
+  \label{theorem:T_on_broken_lines}
   The map $T$ defines a one-to-one correspondence from broken lines in $\fD_{(b,c)}$
   with exponent $m$ and endpoint $q$ to broken lines in $\fD_{(b,c)}^\bfd$ with exponent $T(m)$
   and endpoint $T(q)$. In particular, for $q\in\mathcal{H}_+$ or $q\in\mathcal{H}_-$,
@@ -1116,7 +1112,7 @@ $T_+$ or $T_-$ to the exponent of the monomial attached to $\ell$ in $\gamma$.
 \end{proof}
 
 The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$.
-\begin{prop}
+\begin{proposition}
   For any  $m\in M$, if $q$ lies in the first quadrant, then 
   \[
     \vartheta^\bfd_{q, m}=x^{m}\left(1+f(x_1,x_2)\right)
@@ -1124,7 +1120,7 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$.
   where $f\in (x_1,x_2)\subseteq \Bbbk[x_1,x_2]$.
   In particular, $m$ is the negative of the $\bfd$-vector of
   $\vartheta^\bfd_{q,m}$.
-\end{prop}
+\end{proposition}
 
 \begin{proof}
   For any $m\in M$ and any $q$ in the first quadrant, there is always a broken
@@ -1146,7 +1142,7 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$.
 %  structure that is visible in the classical case.)}
 
 \begin{remark}
-  Combining Theorem \ref{thm:T_on_broken_lines} with the above result, when $q$
+  Combining Theorem \ref{theorem:T_on_broken_lines} with the above result, when $q$
   is in the first quadrant we obtain the parametrization of
   theta functions we were after. Indeed, we get 
   \[
@@ -1162,12 +1158,12 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$.
 
 We may now state the main theorem in our current notation.
 
-\begin{thm}\label{thm: main}
+\begin{theorem}\label{theorem: main}
 For any integers $b,c>0$, for each $m=(m_1,m_2)\in \mathbb{Z}^2$, and for each
 generic point $q$ in the first quadrant, we have that 
 \[ \vartheta_{q,m}^{\mathbf{d}} = x[-m_1,-m_2]\]
 as elements in the cluster algebra $\mathcal{A}(b,c)$.  Hence, the greedy basis and the theta basis for $\mathcal{A}(b,c)$ coincide.
-\end{thm}
+\end{theorem}
 
 \noindent The proof will be to show that the support of $\vartheta_{q,m}^{\mathbf{d}}$ is contained in the polygon $R_{m_1,m_2}$ in Theorem \ref{th:Newton polygons}.  By Scholium \ref{sch}, this is already enough to show that $\vartheta_{q,m}^\mathbf{d}=x[-m_1,-m_2]$.
 
@@ -1180,7 +1176,7 @@ $\gamma$ \emph{moves left} or \emph{down} in $\ell$.
 
 \begin{lemma}
   \label{lemma: change of direction}
-  Let $\ell$ and $\ell'$ two be consecutive domains of linearity of a broken line
+  Let $\ell$ and $\ell'$ be two consecutive domains of linearity of a broken line
   $\gamma$ in $\mathfrak{D}_{(b,c)}^\mathbf{d}$. Then
   \[
     m_1(\ell) \leq m_1(\ell')
@@ -1328,7 +1324,7 @@ The second inequality is equality only if $(m_1',m_2')=(m_1,m_2)$, and so the co
 Analogous inequalities hold for negative angular momentum by the same argument.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{thm: main}]
+\begin{proof}[Proof of Theorem \ref{theorem: main}]
 
 If $m=(m_1,m_2)$ such that $m_1\geq0$ or $m_2\geq0$, then $\vartheta_{q,m}^\mathbf{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
 Next, assume that $m=(m_1,m_2)$ such that $m_1\leq0$ and $m_2\leq0$.
@@ -1343,7 +1339,7 @@ To show they coincide, we consider the coefficient of $x^{(m_1,m_2)}$ in each el
 \end{proof}
 
 \begin{remark}
-As mentioned in Remark \ref{rem:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{thm: main} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the coincidence of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
+As mentioned in Remark \ref{remark:Dyck}, the coefficients of $x[-m_1,-m_2]$ may be interpreted as counting `compatible pairs' in a lattice path called a `maximal Dyck path'.  One consequence of Theorem \ref{theorem: main} is that the coefficients $c(p,q)$ are equal to a weighted sum of certain broken lines.  An interesting open problem is to reprove the coincidence of the two bases by giving a combinatorial bijection between broken lines and compatible pairs which directly proves the equality of the respective coefficients.
 \end{remark}
 
 \begin{thebibliography}{99}
