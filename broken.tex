@@ -9,15 +9,6 @@
 
 \usepackage[margin=1in,marginparwidth=0.8in, marginparsep=0.1in]{geometry}
 
-% add yourself here in order to make comments on the side
-%\usepackage[draft]{say}
-
-%\newcommand{\sayDR}[1]{\say[DR]{#1}}
-%\newcommand{\saySS}[1]{\say[SS]{#1}}
-%\newcommand{\sayHW}[1]{\say[HW]{#1}}
-%\newcommand{\sayMC}[1]{\say[MC]{#1}}
-%\newcommand{\sayMG}[1]{\say[MG]{#1}}
-%\newcommand{\sayGM}[1]{\say[GM]{#1}}
 
 % ambients
 \newtheorem{theorem}{Theorem}[section]
@@ -178,7 +169,6 @@ $(a_1,a_2)\in\ZZ^2$} if it can be written in the form
   x_1^{-a_1}x_2^{-a_2}\sum\limits_{p_1,p_2\ge0}c(p_1,p_2)x_1^{bp_1}x_2^{cp_2},
 \]
 where $c(p_1,p_2)\in\ZZ$ with $c(0,0)=1$.   
-%We will call such an element \emph{positive in the first cluster} if $c(p_1,p_2)\ge0$ for all $p_1,p_2\ge0$. 
 \begin{proposition}\cite[Proposition~1.5]{LLZ}
   Let $z$ be pointed at $(a_1,a_2)\in\ZZ^2$ and suppose
   $z\in\ZZ_{\ge0}[x_0^{\pm1},x_1^{\pm1}]
@@ -226,23 +216,11 @@ In order to better connect with the scattering diagram approach from Section 3, 
 \begin{theorem}\label{th:Newton polygons}\cite[Proposition~4.1]{LLZ}, \cite[Corollary~3.5]{LLZ2}
   For $(a_1,a_2)\in\ZZ^2$, the smallest (possibly degenerate) lattice quadrilateral $R_{a_1,a_2}$ containing the support of $x[a_1,a_2]$ is determined as follows.
   \begin{enumerate}
-    %\item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(0,0)\}$.
     \item If $a_1 \leq 0$ and $a_2 \leq 0$, then $R_{a_1,a_2} = \{(-a_1,-a_2)\}$.
-    %\item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p_1,0): 0\leq p_1\leq a_2\}$.
     \item If $a_1 \leq 0 < a_2$, then $R_{a_1,a_2} = \{(p_1,-a_2): -a_1\leq p_1\leq -a_1+ba_2\}$.
-    %\item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(0,p_2): 0 \leq p_2 \leq a_1\}$.
     \item If $a_2 \leq 0 < a_1$, then $R_{a_1,a_2} = \{(-a_1,p_2): -a_2 \leq p_2 \leq -a_2+ca_1\}$.
-    %\item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_1\le a_{2},\; p_2\le a_{1}-bp_1\right\}$.
     \item If $0<ba_2\leq a_1$, then $R_{a_1,a_2}=\left\{(p_1,p_2): -a_1\le p_1\le -a_1+ba_2,\; -a_2\le p_2\le -a_2-cp_1\right\}$.
-    %\item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p_1,p_2)\in\ZZ_{\ge0}^2\big|\; p_2\le a_{1},\; p_1\le a_{2}-cp_2\right\}$.
     \item If $0<ca_1\leq a_2$, then $R_{a_1,a_2}=\left\{(p_1,p_2): -a_1\le p_1\le -a_1-bp_2,\; -a_2\le p_2\le -a_2+ca_1\right\}$.
-    %\item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
-    %$$\aligned
-    %R_{a_1,a_2}=&\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_1<\frac{a_1}{b},\; p_2+\Big(b-\frac{ba_2}{ca_1}\Big)p_1<a_1\bigg\}\\
-    %&\bigcup\bigg\{(p_1,p_2)\in\ZZ_{\ge0}^2\bigg|\; 0\le p_2<\frac{a_2}{c},\; p_1+\Big(c-\frac{ca_1}{ba_2}\Big)p_2<a_2\bigg\}\\
-    %&\hspace{1.35em}\bigcup\Big\{(0,a_1),(a_2,0)\Big\}.
-    %\endaligned
-    %$$
     \item If $0 < a_1 < ba_2$ and $0 < a_2 < ca_1$, then
     $$\aligned
     R_{a_1,a_2}=&\bigg\{(p_1,p_2)\bigg|\; -a_1\le p_1<0,\; -a_2\le p_2<\Big(\frac{a_2}{a_1}-c\Big)p_1\bigg\}\\
@@ -301,7 +279,6 @@ In order to better connect with the scattering diagram approach from Section 3, 
     %(4)
     \begin{scope}[shift={(0,0)}]
       \usetikzlibrary{patterns}
-      %\fill[pattern=horizontal lines] (-2.5,2)--(-1,.5)--(-1,-1)--(-2.5,-1)--(-2.5,2);
       \fill[black!10] (0,3)--(1.5,1.5)--(1.5,0)--(0,0)--(0,3);
       \draw[thick] (0,3)--(1.5,1.5)--(1.5,0)--(0,0)--(0,3);
       \draw[dashed,thick](0,3)--(2.15,1.25) (2.15,1.15)--(1.5,0);
@@ -412,58 +389,13 @@ The proof of Theorem~\ref{th:Newton polygons} actually establishes the following
 \begin{remark}\label{remark:Dyck}
 The existence of integers $c(p_1,p_2)$ satisfying the recursive equations \eqref{eq:greedy recursion}, and thus the existence of the greedy basis itself, is quite non-trivial.  The authors of \cite{LLZ} characterize each $c(p_1,p_2)$ as the solution to an enumerative problem; specifically, the number of certain `compatible pairs of edges' inside a type of lattice path called a `maximal Dyck path'.
 
-This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p_1,p_2)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  %Many remarkable advances in the theory of cluster algebras have been animated by a desire to produce enumerative problems whose solutions define the coefficients of such a basis, such as additive and monodial categorifications, 
-\end{remark}
-
-%%%Dyck path comment begins here
-
-%To prove Theorem~\ref{th:Newton polygons} Lee, Li, and Zelevinsky develop a
-%combinatorial construction via compatible pairs on a maximal Dyck path.  
-%
-%For $(a_1,a_2)\in\ZZ_{\ge0}^2$, a Dyck path in the rectangle
-%$[0,a_1]\times[0,a_2]$ is a lattice path beginning at $(0,0)$ which takes steps
-%to the east and north to end at $(a_1,a_2)$ while never crossing above the main
-%diagonal.  Let $D_{a_1,a_2}$ denote the maximal such Dyck path, i.e. any lattice
-%point lying strictly above the Dyck path $D_{a_1,a_2}$ also lies above the main
-%diagonal.  
-%
-%Let $H$ and $V$ denote the sets of horizontal and vertical edges of
-%$D_{a_1,a_2}$.  For edges $e_1,e_2\in D_{a_1,a_2}$ write $e_1e_2$ for the
-%subpath of $D_{a_1,a_2}$ which begins at $e_1$ and terminates at $e_2$.  When
-%$e_1$ comes after $e_2$ the path $e_1e_2$ begins at $e_1$ goes to the end of
-%$D_{a_1,a_2}$ and then continues from the beginning of $D_{a_1,a_2}$ to $e_2$.
-%Write $(e_1e_2)_H$ and $(e_1e_2)_V$ for the sets of horizontal and vertical
-%edges in $e_1e_2$.
-%
-%For $S_1\subset H$ and $S_2\subset V$ we call the pair $(S_1,S_2)$
-%\emph{compatible} if for each $h\in S_1$ and $v\in S_2$ there exists an edge
-%$e\in hv$ such that one of the following holds:
-%\begin{align*}
- %\tag{HSC}\label{eq:horizontal shadow condition}\big|(he)_V\big|=b\big|(he)_H\cap S_1\big|\quad&\text{and}\quad e\ne v;\\
- %\tag{VSC}\label{eq:vertical shadow condition}\big|(ev)_H\big|=c\big|(ev)_V\cap S_2\big|\quad&\text{and}\quad e\ne h.\\
-%\end{align*}
-%We call the first the ``horizontal shadow condition" and call the second the
-%``vertical shadow condition".
-%\begin{theorem}
-  %\label{th:combinatorial greedy}\cite[Theorem~1.11]{LLZ}
-  %For any $(a_1,a_2)\in\ZZ^2$ we have
-  %\begin{equation}
-    %\label{eq:combinatorial greedy}
-    %x[a_1,a_2]=x_1^{-a_1}x_2^{-a_2}\sum\limits_{(S_1,S_2)}x_1^{b|S_2|}x_2^{c|S_1|},
-  %\end{equation}
-  %where $(S_1,S_2)$ runs over all compatible pairs in the maximal Dyck path
-  %$D_{[a_1]_+,[a_2]_+}$.
-%\end{theorem}
-
-%%%Dyck path comments ends here
+This enumerative description not only establishes the existence of the greedy basis, but shows that the coefficients $c(p_1,p_2)$ are manifestly non-negative.  Finding naturally-defined bases for cluster algebras whose elements have positive coefficients has been one of the core goals of the theory since its inception.  \end{remark}
 
 \section{Scattering diagrams and broken lines}
 
 In this section we describe the theta basis of a rank 2 cluster algebra.  
 We use \cite{GHKK} as a reference, adapting 
 the notation to the rank 2 situation.
-
-%We fix lattices $N = \ZZ^2$ and $M = \Hom (N, \ZZ)$. We write their elements as tuples and denote the standard pairing of $m\in M$ and $n\in N$ as $n \cdot m$. We write $M_{\RR} = M\otimes\RR$, $N_{\RR} = N\otimes\RR$. Taking $\ZZ$ to be a field of characteristic 0, for $m\in M$ we will write $x^m$ for the monomial in $\ZZ[M]$.  For notational convenience we will write $x_1=x^{(1,0)}$ and $x_2=x^{(0,1)}$, thus we may identify $x^m$ with $x_1^{m_1}x_2^{m_2}$.
 
 Recall from the previous section the lattice $M \cong \ZZ^2$ such that $\ZZ[M] \cong \ZZ[x_1^{\pm 1}, x_2^{\pm 1}]$.  We write $N = \Hom (M, \ZZ)$ for its dual lattice, $M_{\RR} := M\otimes\RR$, $N_{\RR} := N\otimes\RR$, and we denote the standard pairing of $m\in M$ and $n\in N$ by $m \cdot n$.  Given a strictly convex rational cone $\sigma \subsetneq M_{\RR}$, we write $P=P_{\sigma}=\sigma \cap M$.  Let $\widehat{\ZZ[P]}$ denote the completion of the monoid ring $\ZZ[P]$ at the maximal monomial ideal $\fm$ generated by $\left\{x^m \,|\, m\in P\smallsetminus\{0\}\right\}$.
 
@@ -497,16 +429,9 @@ The following are special cases of definitions which originally appeared in
   \[
     \{ (\fd, f_{\fd}) \in \fD\, |\, f_{\fd} \neq 1 \bmod \fm^k \}
   \]
-  is finite. The support of a scattering diagram is the union of the supports of its walls.%For semplicity we diverge slightly form the convention in
-  %\cite{GHKK} by requiring that $\fd_1 \neq \fd_2$ whenever $f_{\fd_1}\neq
-  %f_{\fd_2}$.
+  is finite. The support of a scattering diagram is the union of the supports of its walls.
 \end{definition}
 For simplicity, we will impose the additional condition that no two walls in the scattering diagram have the same support.
-
-%For a scattering diagram $\fD$, we denote the support of $\fD$ as
-%\[
-%  \text{Supp} (\fD) := \bigcup_{(\fd, f_{\fd}) \in \fD} \fd. 
-%\]
 
 Given a wall $(\fd, f_{\fd})$ and a direction $v\in M$ transversal to $\fd$, we associate the element $\fp_{v,\fd}\in
 {\mathrm{Aut}}_{\ZZ-alg}\left(\widehat{\ZZ[P]}\right)$ defined by
@@ -557,26 +482,6 @@ $(0,1)$. Define the ``initial'' scattering diagram associated $\cA(b,c)$ as
 We then let $\fD_{(b,c)}$ denote the consistent scattering diagram obtained by
 applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2,1)}$ is illustrated in \cref{fig:diagex}.
 
-%\begin{example} 
-%  \label{ex}
-%Since
-%  \[
-%    \fD_{\mathrm{in},(2,1)} =  
-%    \left\{ 
-%      \big(\RR (-1,0), 1+x_1^{-2}\big), 
-%      \big(\RR (0,1), 1+x_2\big)  
-%    \right\}   
-%  \]
-%  the associated consistent scattering diagram $\fD_{(2,1)}$ (shown in
-%  Figure~\ref{fig:diagex}) contains $\fD_{\mathrm{in},(2,1)}$ together with
-%  the two walls
-%  \[ 
-%    \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
-%    \quad \mbox{and} \quad
-%    \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
-%  \]} 
-%\end{example}
-
 \begin{figure}
   \centering
   \begin{tikzpicture}
@@ -588,18 +493,12 @@ applying Theorem \ref{th:KS} to $\fD_{\mathrm{in},(b,c)}$.  The case of $\fD_{(2
   \caption{The scattering diagram $\fD_{(2,1)}$.  Since the initial diagram $\fD_{\mathrm{in},(2,1)}$ consists of the walls $\big(\RR(-1,0),\allowbreak 1+x_1^{-2}\big)$ and $\big(\RR (0,1), 1+x_2\big)$,
   the associated consistent scattering diagram $\fD_{(2,1)}$ contains $\fD_{\mathrm{in},(2,1)}$ together with
   the two walls $\big(\RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)$ and $\big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big)$.
-  %\[ 
-  %  \big( \RR_{\leq 0} (-1,1), 1+x_1^{-2}x_2^2 \big)
-  %  \quad \mbox{and} \quad
-  %  \big( \RR_{\leq 0} (-2,1), 1+x_1^{-2}x_2 \big).
-  %\]
 } 
   \label{fig:diagex}
 \end{figure}
 
 While this example portrays a scattering diagram with finitely many rays, the diagram $\fD_{(b,c)}$ will consist of an infinite number of rays precisely when $bc\ge 4$. A detailed description of the rays
 which appear for $bc\ge4$ can be found in \cite[Example 1.30]{GHKK}.
-%, where the description is based on the description of a related scattering diagram given in \cite{GP} \sayDR{Is the second clause in this sentence necessary?}. 
 We summarize the crucial points here.
 
 First of all note that, in view of the definition of scattering diagrams, all the
@@ -662,7 +561,6 @@ neither
 is a wall in $\fD_{(b,c)}$. Using \cite[Section 4]{GP} with a change of basis, these considerations gives us a recipe to produce
 elements of $\fD_{(b,c)} \smallsetminus \fD_{\mathrm{in},(b,c)}$: it is enough to apply
 alternatively $S_1$ and $S_2$ to the walls (\ref{eq:first-walls}).
-%to produce some walls described below.
 
 We need to distinguish three cases. If $bc<4$, this procedure will construct, in
 finitely many steps, all the walls in $\fD_{(b,c)} \smallsetminus
@@ -681,15 +579,9 @@ with support lying outside the convex cone spanned by these vectors.  When $bc=4
 $\fD_{(b,c)}$ is not completely understood; the expectation is that there is
 a wall for each possible rational slope inside this irrational cone, partial evidence for this is displayed in Figure~\ref{diagram32} for the case $(b,c)=(3,2)$. 
 
-%\sayDR{Should we also mention root systems here?}. \
-%\sayMC{if someone are interested in typing, they can :P} 
-On the other hand, the chamber structure (i.e. the collection of cones in which the rays cut the plane)
-%\saySS{Mark suggests explaining what we mean here by chamber structure; do you %like this attempt? }
-one sees outside of the irrational cone
-is very well-behaved and familiar in the theory of cluster algebras.  This
-chamber structure coincides with the Fock-Goncharov cluster complex, see e.g.
-\cite[Section 2]{GHKK}, the mutation fan of Reading \cite{R}, and the picture group of
-Igusa-Orr-Todorov-Weyman \cite{IOTW}.
+On the other hand, the chamber structure (i.e. the collection of cones in which the rays cut the plane) one sees outside of the irrational cone
+is very well-behaved and familiar in the theory of cluster algebras.  This chamber structure coincides with the Fock-Goncharov cluster complex, see e.g.
+\cite[Section 2]{GHKK}, the mutation fan of Reading \cite{R}, and the picture group of Igusa-Orr-Todorov-Weyman \cite{IOTW}.
 
 \begin{figure}
   \input{scatter32_depth100}
@@ -701,8 +593,6 @@ Igusa-Orr-Todorov-Weyman \cite{IOTW}.
 
 The next result explains how to obtain Laurent polynomials out of scattering diagrams
 and serves as the motivation for our later connections to cluster algebras.
-%The next result explains the connection between scattering diagrams
-%and the corresponding cluster algebras. 
 \begin{theorem} 
   \label{univLaurent} 
   Let $\fD:=\fD_{(b,c)}$ be as constructed above and consider a Laurent polynomial $f \in \ZZ[M]$. For any path $\gamma$ which is regular with respect to $\fD$, $\fp_{\gamma,\fD}(f)$ can be viewed as an element of
@@ -926,18 +816,6 @@ Finally, (2c) follows from from (2b) and Theorem \ref{univLaurent}.
 
 
 \section{From $\bfg$-vectors to $\bfd$-vectors}
-%\saySS{At a certain point in our discussion in Snowbird we decided we were going
-%  to use the scattering diagram $\fD_{\mathrm{gr},(b,c)}$ instead of
-%  $-\fD_{\mathrm{gr},(b,c)}$ because we would have the base point $q$ in the
-%  first quadrant and most of the rays in the third one. By doing so we get that
-%  theta functions in $\fD_{\mathrm{gr},(b,c)}$ are parametrized by the
-%  \emph{negative} of their $\bfd$-vectors. On the other hand, in
-%  $\fD_{(b,c)}$ theta functions are parametrized by their $\bfg$-vectors.
-%  This is slightly counterintuitive, maybe it is  more natural to change
-%  our convention.}
-%\sayMG{I would be slightly inclined to stick with the convention we
-%  are currently using in the paper, as it is a less drastic change
-%  from what is used in GHKK}
 As mentioned in Remark \ref{rk:theta functions g-vector}, theta functions are
 parametrized by their $\bfg$-vectors. On the other hand the description of
 greedy elements given in \cite{LLZ} is in terms of their $\bfd$-vectors (cf.
@@ -987,16 +865,9 @@ The set
   \bigcup_{(\fd,f_\fd)\in \fD_{(b,c)}}
   T(\fd,f_\fd)
 \]
-%\[
-%  T(\fD_{(b,c)}):=
-%  \left\{
-%    T(\fd,f_\fd)\, |\, (\fd,f_\fd)\in \fD_{(b,c)}
-%  \right\}
-%\]
 is not a scattering diagram according to Definition 
 \ref{def:scattering_diagram} (not all of its elements are walls for the same
 convex cone), but can be made into one by a few simple fixes.
-%\sayDR{Is it true that the resulting scattering functions (the ones we don't toss out anyway) will be elements of $\widehat{\ZZ[P_{\sigma^\bfd}]}$?  The exponent of $x_1$ on the original functions is always $\le0$ but $T$ can only make this exponent more negative.  I think this is the sign convention issue we had before rearing its ugly head again.}
 
 First of all, $\big( \RR (0,1), 1+x_2^c\big)$ is the only wall of $\fD_{(b,c)}$
 whose support is not totally contained in one of the domains of linearity of
@@ -1134,13 +1005,6 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$.
   $d_1,d_2\ge 0$, $d_1+d_2>0$. This proves the result.
 \end{proof}
 
-%\sayMG{It might be appropriate to add stuff about the quantum version here.
-%  Right now I don't know if we can easily prove enough facts about the quantum
-%  version for our main result. I suggest we wait until the rest is written up
-%  and then I see whether it is possible to extend the proof given what we
-%  currently know. (For example, in general I don't know how to get the chamber
-%  structure that is visible in the classical case.)}
-
 \begin{remark}
   Combining Theorem \ref{theorem:T_on_broken_lines} with the above result, when $q$
   is in the first quadrant we obtain the parametrization of
@@ -1151,8 +1015,6 @@ The following demonstrates the utility of using $\fD_{(b,c)}^\bfd$.
   with $m$ being its $\bfg$-vector and $T(m)$ the negative of its 
   $\bfd$-vector.
 \end{remark}
-%\saySS{Eventually we want to make a saner version of the bibliography; this is
-%  kind of an hack.}
 
 \section{Proof that the bases coincide}
 
@@ -1229,10 +1091,6 @@ For a broken line ending in the first quadrant, the sign of the angular momentum
 
 \begin{lemma}
 Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint $q$ in the first quadrant. If $\gamma$ has positive (resp. negative) angular momentum, then the slope of the linear domains of $\gamma$ decreases (resp. increases) at each bend, except possibly at the boundary of the first quadrant. 
-%\begin{itemize}  
-  %\item If $\gamma$ has positive angular momentum, then the slope of the linear domains of $\gamma$ decreases at each bend, except possibly at the boundary of the first quadrant.
-  %\item If $\gamma$ has negative angular momentum, then the slope of the linear domains of $\gamma$ increases at each bend, except possibly at the boundary of the first quadrant.
-%\end{itemize}
 \end{lemma}
 
 \tikzstyle{wall}=[draw=black!25,thick]
@@ -1244,7 +1102,6 @@ Let $\gamma$ be a broken line $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ with endpoint 
 \begin{tikzpicture}
     \begin{scope}[scale=.75]
       \clip (-5.5,-5.5) rectangle (5.5,5.5);
-      %\draw[step=1,draw=black!10,very thin] (-10,-10) grid (10,10);
         \draw[wall] (0,0) to (0,10);
         \draw[wall] (0,0) to (-10,0);
         
@@ -1302,7 +1159,6 @@ We can now constrain the possible final exponent of a broken line, which will be
 \begin{lemma}
 Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ which begins in the third quadrant, with endpoint $q$ in the first quadrant.  Denote the  initial exponent by $m=(m_1,m_2)$ and the final exponent by $m^q=(m_1^q,m_2^q)$.  
 \begin{enumerate}
-  %\item $m_1-m_1^q\in b\mathbb{N}$ and $m_2-m_2^q\in c\mathbb{N}$.%\footnote{Are the $b$ and $c$ correct here?}
   \item If $\gamma$ has positive angular momentum, then $m_2\leq m_2^q<0$ and
   \[ m_1\leq m_1^q\leq\left( \frac{m_1}{m_2}-b\right)m_2^q\]
   where the upper bound is equality only when $m^q =( m_1-bm_2,m_2)$.
@@ -1314,7 +1170,7 @@ Let $\gamma$ be a broken line in $\mathfrak{D}_{(b,c)}^{\mathbf{d}}$ which begin
 \begin{proof}
 Assume $\gamma$ has positive angular momentum; consequently, $\gamma$ passes through the fourth quadrant before entering the first quadrant.  Let $(m_1',m_2')$ be the exponent on $\gamma$ in the fourth quadrant.  By the preceding lemma, $\frac{m_2'}{m_1'}\leq \frac{m_2}{m_1}$ with equality only if $\gamma$ doesn't bend before it reaches the fourth quadrant.  
 
-As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+x^{(b,0)})$.  By definition, the final exponent $m^q$ on $\gamma$ must be an exponent that appears in $x^{(m_1',m_2')}(1+x^{(b,0)})^{-m_2'}$.  It follows that%The possible monomials which may occur in this expression are of the form $A^{(-m_1'+kb,-m_2')}$ for some $0\leq k\leq m_2'$, and so 
+As the broken line passes into the first quadrant, it may bend at the wall $(\mathbb{R}(1,0),1+x^{(b,0)})$.  By definition, the final exponent $m^q$ on $\gamma$ must be an exponent that appears in $x^{(m_1',m_2')}(1+x^{(b,0)})^{-m_2'}$.  It follows that 
 \[ (m_1^q,m_2^q) = (m_1'+kb,m_2')\]
 for some $0\leq k\leq -m_2'$.
 Consequently, $m_2^q=m_2'<0$ and 
@@ -1328,8 +1184,6 @@ Analogous inequalities hold for negative angular momentum by the same argument.
 
 If $m=(m_1,m_2)$ such that $m_1\geq0$ or $m_2\geq0$, then $\vartheta_{q,m}^\mathbf{d}$ is the cluster monomial $x[-m_1,-m_2]$, by Remark \ref{rk:theta functions g-vector}.
 Next, assume that $m=(m_1,m_2)$ such that $m_1\leq0$ and $m_2\leq0$.
-%\saySS{Shouldn't $a$ be $c$ instead?}
-%\[ 0<m_1,\;\;\; 0<m_2\]
 The coefficient of $x^{(a_1,a_2)}$ in $\vartheta_{q,m}^\mathbf{d}$ can have non-zero coefficient only if there is a broken line $\gamma$ in $\mathfrak{D}^\mathbf{d}_{(b,c)}$ with initial exponent $m$ and final exponent $a=(a_1,a_2)$.  By the preceding lemma, this implies that 
 \[ m_1\leq a_1\leq \left(\frac{m_1}{m_2}-b\right)a_2,\;\;\; m_2\leq a_2\leq \left(\frac{m_2}{m_1}-c\right)a_1\]
 Furthermore, the upper bounds are only satisfied in the specific cases when $(a_1,a_2)$ is equal to $(m_1-bm_2,m_2)$ or $(m_1,m_2-cm_1)$.  
